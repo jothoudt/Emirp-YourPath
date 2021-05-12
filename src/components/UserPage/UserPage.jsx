@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
+import Hi from '../Hi/Hi';
+import axios from 'axios';
 
 function UserPage() {
 
@@ -12,6 +14,27 @@ function UserPage() {
   }
 
   const form = useSelector((store)=>store.form);
+  // const report =useSelector((store)=>store.report1)
+
+  // const displayFavorite=()=>{
+  //   let reportDisplay=''
+  //   let ComponentTagName=''
+  //   if(!report){
+  //     reportDisplay = <><h1>Loading</h1></>
+  //   }
+  //   else{
+  //     reportDisplay= report.map((report, id)=>{
+  //       console.log(report.component_name)
+  //       ComponentTagName=report.component_name
+  //       return(
+  //         <>
+  //       < report.component_name key={id} />
+  //       </>
+  //       )
+  //     } )
+  //   }
+  //   return reportDisplay
+  // }
 
  let mjy=0;
  let mjn=0;
@@ -67,6 +90,17 @@ const answer2=()=>{
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
       {answer1()}
+      {/* {displayFavorite()} */}
+      {/* {report.map(index=>{
+        let Name=index.component_name
+        return(
+          <>
+        <Name />
+        </>
+        )
+      })
+    } */}
+
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
     </div>
