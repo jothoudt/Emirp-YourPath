@@ -4,6 +4,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import Hi from '../Hi/Hi';
 import axios from 'axios';
 import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
+import MethAllTime from '../MethAllTime/MethAllTime';
 
 function UserPage() {
 
@@ -102,6 +103,7 @@ function UserPage() {
       })
     } */}
     <MarijuanaAllTime />
+    <MethAllTime />
 
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />

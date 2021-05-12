@@ -19,10 +19,10 @@ function MarijuanaAllTime(){
        if(form.length){
        form.map((item)=>{
          let answer=item.answers[119]
-        if(answer.answer){
+        if(answer.answer==='Yes'){
             marijuanaYes++
         }
-        if(!answer.answer){
+        else{
             marijuanaNo++
        }
        console.log(marijuanaYes, marijuanaNo)
