@@ -3,6 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import Hi from '../Hi/Hi';
 import axios from 'axios';
+import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
 
 function UserPage() {
 
@@ -36,47 +37,47 @@ function UserPage() {
   //   return reportDisplay
   // }
 
- let mjy=0;
- let mjn=0;
- let mjAnswers={
-   mjy,
-   mjn
- }
+//  let mjy=0;
+//  let mjn=0;
+//  let mjAnswers={
+//    mjy,
+//    mjn
+//  }
   // const mjMap=form[119].answer
 
-  const answer1 =()=>{
-    let display=''
-    console.log('in answer')
-    if(!form){
-      display=<p>loading</p>
-    }
-    if(form.length){
-    form.map((item)=>{
-      let answer=item.answers[119]
-     if(answer.answer){
-       mjy++
-     }
-     if(!answer.answer){
-      mjn++
-    }
-    console.log(mjy, mjn)
-    // mjAnswers.mjy= mjy
-    // mjAnswers.mjn= mjn
-    console.log(mjAnswers)
-    display= 
-    <>
-    <p>Marijuana Yes:{mjy}</p>
-    <p>Marijuana No: {mjn}</p>
-    </>
-    })
-  }
-  return display;
-}
+//   const answer1 =()=>{
+//     let display=''
+//     console.log('in answer')
+//     if(!form){
+//       display=<p>loading</p>
+//     }
+//     if(form.length){
+//     form.map((item)=>{
+//       let answer=item.answers[119]
+//      if(answer.answer){
+//        mjy++
+//      }
+//      if(!answer.answer){
+//       mjn++
+//     }
+//     console.log(mjy, mjn)
+//     // mjAnswers.mjy= mjy
+//     // mjAnswers.mjn= mjn
+//     console.log(mjAnswers)
+//     display= 
+//     <>
+//     <p>Marijuana Yes:{mjy}</p>
+//     <p>Marijuana No: {mjn}</p>
+//     </>
+//     })
+//   }
+//   return display;
+// }
 
-const answer2=()=>{
+// const answer2=()=>{
 
 
-}
+// }
   
   
   useEffect(()=>
@@ -89,7 +90,7 @@ const answer2=()=>{
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
-      {answer1()}
+      {/* {answer1()} */}
       {/* {displayFavorite()} */}
       {/* {report.map(index=>{
         let Name=index.component_name
@@ -100,6 +101,7 @@ const answer2=()=>{
         )
       })
     } */}
+    <MarijuanaAllTime />
 
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
