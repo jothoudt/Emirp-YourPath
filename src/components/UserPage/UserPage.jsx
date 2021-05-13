@@ -15,7 +15,11 @@ import NicotineAllTime from '../NicotineAllTime/NicotineAllTime';
 import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAllTime';
 import OTCAllTime from '../OTCAllTime/OTCAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
+
+import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
+
 import Gender from '../Gender/Gender';
+
 
 
 function UserPage() {
@@ -123,8 +127,13 @@ function UserPage() {
     <OpiodsAllTime />
     <BenzodiazepinesAllTime />
     <NicotineAllTime />
+    <AlcoholAllTime />
+
     <OtherSubstancesAllTime />
     <OTCAllTime />
+
+    <SexualOrientation />
+
     <SexualOrientation />
     <Gender />
       <p>Your ID is: {user.id}</p>

@@ -1,53 +1,53 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 
-function OtherSubstancesAllTime(){
+function AlcoholAllTime(){
   //get information from the store
     const form = useSelector((store)=>store.form);
 
     //variables for counting
-    let otherYes=0;
-    let otherNo=0;
+    let alcoholYes=0;
+    let alcoholNo=0;
 
     //function to display results
-    const answerMeth =()=>{
+    const answerAlcohol =()=>{
        //variable to be returned
-        let otherDisplay=''
+        let alcoholDisplay=''
         console.log('in answer')
         //if the form data doesn't exist
         if(!form){
-          otherDisplay=<p>loading</p>
+          alcoholDisplay=<p>loading</p>
         }
         //map through form data and count yes/no answers
         if(form.length){
         form.map((item)=>{
-          let answer=item.answers[128]
+          let answer=item.answers[118]
          if(answer.answer==='Yes'){
-             otherYes++
+             alcoholYes++
          }
          else{
-             otherNo++
+             alcoholNo++
          }
         //console log results
-        console.log(otherYes, otherNo)
+        console.log(alcoholYes, alcoholNo)
 
         //define display
-        otherDisplay= 
+        alcoholDisplay= 
         <>
-        <p>Other Substances Used Yes:{ otherYes}</p>
-        <p>Other Substances Used No: {otherNo}</p>
+        <p>Alcohol Used Yes:{ alcoholYes}</p>
+        <p>Alcohol Used No: {alcoholNo}</p>
         </>
         })
       }
       //return display
-      return otherDisplay;
+      return alcoholDisplay;
     }
 
     //to display on the dom
     return(
         <>
-        {answerMeth()}
+        {answerAlcohol()}
         </>
     )
 }
-export default OtherSubstancesAllTime;
+export default AlcoholAllTime;
