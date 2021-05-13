@@ -14,6 +14,7 @@ import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAll
 import NicotineAllTime from '../NicotineAllTime/NicotineAllTime';
 import OTCAllTime from '../OTCAllTime/OTCAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
+import Gender from '../Gender/Gender';
 
 
 function UserPage() {
@@ -124,6 +125,7 @@ function UserPage() {
     <OTCAllTime />
 
     <SexualOrientation />
+    <Gender />
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
     </div>
