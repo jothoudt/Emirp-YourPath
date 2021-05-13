@@ -32,6 +32,7 @@ import Gender from '../Gender/Gender';
 import Hi from '../Hi/Hi';
 
 import './App.css';
+import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
 
 
 function App() {
@@ -166,6 +167,12 @@ function App() {
           path="/gender"
           >
             <Gender />
+          </ProtectedRoute>
+          <ProtectedRoute
+          exact
+          path="/alldrugs_alltime"
+          >
+            <AllDrugsAllTime />
           </ProtectedRoute>
 
           <ProtectedRoute 
