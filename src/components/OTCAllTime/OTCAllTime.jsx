@@ -18,7 +18,7 @@ function OTCAllTime(){
        }
        if(form.length){
        form.map((item)=>{
-         let answer=item.answers[119]
+         let answer=item.answers[127]
         if(answer.answer==='Yes'){
             OTCYes++
         }
