@@ -8,6 +8,7 @@ import MethAllTime from '../MethAllTime/MethAllTime';
 import InhalantsAllTime from '../InhalantsAllTime/InhalantsAllTime';
 import HeroinAllTime from '../HeroinAllTime/HeroinAllTime';
 import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
+import HallucinogenAllTime from '../HallucinogenAllTime/HallucinogenAllTime';
 function UserPage() {
 
   const dispatch=useDispatch();
@@ -106,8 +107,8 @@ function UserPage() {
     } */}
     <MarijuanaAllTime />
     <MethAllTime />
+    <HallucinogenAllTime />
     <HeroinAllTime />
-
     <InhalantsAllTime />
     <CocaineAllTime />
 
