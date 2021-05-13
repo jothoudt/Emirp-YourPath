@@ -29,6 +29,7 @@ import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 import Gender from '../Gender/Gender';
 import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
+import MentalHealth from '../MentalHealth/MentalHealth';
 import Hi from '../Hi/Hi';
 
 import './App.css';
@@ -186,6 +187,12 @@ function App() {
           path="/justice_involved"
           >
             <JusticeInvolved />
+          </ProtectedRoute>
+          <ProtectedRoute 
+          exact
+          path="/mental_health"
+          >
+            <MentalHealth />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

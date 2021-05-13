@@ -16,10 +16,9 @@ import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAll
 import OTCAllTime from '../OTCAllTime/OTCAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
-
 import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
-
 import Gender from '../Gender/Gender';
+import MentalHealth from '../MentalHealth/MentalHealth';
 
 
 
@@ -134,6 +133,7 @@ function UserPage() {
     <SexualOrientation />
     <JusticeInvolved />
     <Gender />
+    <MentalHealth />
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
     </div>
