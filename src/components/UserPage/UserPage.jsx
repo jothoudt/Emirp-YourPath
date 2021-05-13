@@ -5,7 +5,8 @@ import Hi from '../Hi/Hi';
 import axios from 'axios';
 import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
 import MethAllTime from '../MethAllTime/MethAllTime';
-
+import InhalantsAllTime from '../InhalantsAllTime/InhalantsAllTime';
+import HeroinAllTime from '../HeroinAllTime/HeroinAllTime';
 function UserPage() {
 
   const dispatch=useDispatch();
@@ -104,6 +105,10 @@ function UserPage() {
     } */}
     <MarijuanaAllTime />
     <MethAllTime />
+    <HeroinAllTime />
+
+    <InhalantsAllTime />
+
 
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
