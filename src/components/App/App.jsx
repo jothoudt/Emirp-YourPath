@@ -26,11 +26,13 @@ import HallucinogenAllTime from '../HallucinogenAllTime/HallucinogenAllTime';
 import OpiodsAllTime from '../OpiodsAllTime/OpiodsAllTime';
 import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
+import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 
 import Gender from '../Gender/Gender';
 import Hi from '../Hi/Hi';
 
 import './App.css';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -158,11 +160,19 @@ function App() {
           >
             <SexualOrientation />
           </ProtectedRoute>
+
           <ProtectedRoute 
           exact
           path="/gender"
           >
             <Gender />
+          </ProtectedRoute>
+
+          <ProtectedRoute 
+          exact
+          path="/fas"
+          >
+            <FetalAlcoholSyndrome />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

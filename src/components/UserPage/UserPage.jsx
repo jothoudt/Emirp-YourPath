@@ -19,6 +19,7 @@ import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
 
 import Gender from '../Gender/Gender';
+import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 
 
 
@@ -136,6 +137,7 @@ function UserPage() {
 
     <SexualOrientation />
     <Gender />
+    <FetalAlcoholSyndrome />
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
     </div>
