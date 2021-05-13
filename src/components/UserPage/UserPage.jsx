@@ -7,6 +7,7 @@ import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
 import MethAllTime from '../MethAllTime/MethAllTime';
 import InhalantsAllTime from '../InhalantsAllTime/InhalantsAllTime';
 import HeroinAllTime from '../HeroinAllTime/HeroinAllTime';
+import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
 function UserPage() {
 
   const dispatch=useDispatch();
@@ -108,7 +109,7 @@ function UserPage() {
     <HeroinAllTime />
 
     <InhalantsAllTime />
-
+    <CocaineAllTime />
 
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />

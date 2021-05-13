@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
 import InhalantsAllTime from '../InhalantsAllTime/InhalantsAllTime';
+import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
 import Hi from '../Hi/Hi';
 
 import './App.css';
@@ -111,11 +112,19 @@ function App() {
           >
             <MarijuanaAllTime />
           </ProtectedRoute>
+
           <ProtectedRoute 
           exact
           path="/inhalants_all_time"
           >
             <InhalantsAllTime />
+          </ProtectedRoute>
+
+          <ProtectedRoute 
+          exact
+          path="/cocaine_all_time"
+          >
+            <CocaineAllTime />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
