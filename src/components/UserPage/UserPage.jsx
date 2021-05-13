@@ -15,6 +15,7 @@ import NicotineAllTime from '../NicotineAllTime/NicotineAllTime';
 import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAllTime';
 import OTCAllTime from '../OTCAllTime/OTCAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
+import Pregnant from '../Pregnant/Pregnant';
 
 import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
 
@@ -133,7 +134,7 @@ function UserPage() {
     <OTCAllTime />
 
     <SexualOrientation />
-
+    <Pregnant />
     <SexualOrientation />
     <Gender />
       <p>Your ID is: {user.id}</p>
