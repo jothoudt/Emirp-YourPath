@@ -25,7 +25,7 @@ import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
 import HallucinogenAllTime from '../HallucinogenAllTime/HallucinogenAllTime';
 import OpiodsAllTime from '../OpiodsAllTime/OpiodsAllTime';
 import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
-
+import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import Hi from '../Hi/Hi';
 
 import './App.css';
@@ -149,6 +149,12 @@ function App() {
           path="/hallucinogen_all_time"
           >
             <HallucinogenAllTime />
+          </ProtectedRoute>
+          <ProtectedRoute 
+          exact
+          path="/sexual_orientation"
+          >
+            <SexualOrientation />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
