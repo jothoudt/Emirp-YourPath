@@ -18,8 +18,8 @@ import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import Pregnant from '../Pregnant/Pregnant';
 import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
 import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
-
 import Gender from '../Gender/Gender';
+import MentalHealth from '../MentalHealth/MentalHealth';
 import TotalAssessments from '../TotalAssesments/TotalAssesments';
 
 
@@ -138,6 +138,7 @@ function UserPage() {
     <SexualOrientation />
     <JusticeInvolved />
     <Gender />
+    <MentalHealth />
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
     </div>
