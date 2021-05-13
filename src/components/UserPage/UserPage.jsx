@@ -15,11 +15,11 @@ import NicotineAllTime from '../NicotineAllTime/NicotineAllTime';
 import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAllTime';
 import OTCAllTime from '../OTCAllTime/OTCAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
+import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
 
 import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
 
 import Gender from '../Gender/Gender';
-import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 
 
 
@@ -129,15 +129,11 @@ function UserPage() {
     <BenzodiazepinesAllTime />
     <NicotineAllTime />
     <AlcoholAllTime />
-
     <OtherSubstancesAllTime />
     <OTCAllTime />
-
     <SexualOrientation />
-
-    <SexualOrientation />
+    <JusticeInvolved />
     <Gender />
-    <FetalAlcoholSyndrome />
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
     </div>
