@@ -23,6 +23,9 @@ import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
 import InhalantsAllTime from '../InhalantsAllTime/InhalantsAllTime';
 import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
 import HallucinogenAllTime from '../HallucinogenAllTime/HallucinogenAllTime';
+import OpiodsAllTime from '../OpiodsAllTime/OpiodsAllTime';
+import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
+
 import Hi from '../Hi/Hi';
 
 import './App.css';
@@ -126,6 +129,19 @@ function App() {
           path="/cocaine_all_time"
           >
             <CocaineAllTime />
+          </ProtectedRoute>
+          <ProtectedRoute 
+          exact
+          path="/benzodiazepines_all_time"
+          >
+            <BenzodiazepinesAllTime />
+          </ProtectedRoute>
+
+          <ProtectedRoute 
+          exact
+          path="/opiods_all_time"
+          >
+            <OpiodsAllTime />
           </ProtectedRoute>
 
           <ProtectedRoute 
