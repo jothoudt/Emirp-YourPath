@@ -12,6 +12,7 @@ import HallucinogenAllTime from '../HallucinogenAllTime/HallucinogenAllTime';
 import OpiodsAllTime from '../OpiodsAllTime/OpiodsAllTime';
 import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
 import NicotineAllTime from '../NicotineAllTime/NicotineAllTime';
+import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAllTime';
 import OTCAllTime from '../OTCAllTime/OTCAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
 
@@ -121,8 +122,8 @@ function UserPage() {
     <OpiodsAllTime />
     <BenzodiazepinesAllTime />
     <NicotineAllTime />
+    <OtherSubstancesAllTime />
     <OTCAllTime />
-
     <SexualOrientation />
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
