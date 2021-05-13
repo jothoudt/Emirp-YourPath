@@ -8,6 +8,7 @@ import MethAllTime from '../MethAllTime/MethAllTime';
 import InhalantsAllTime from '../InhalantsAllTime/InhalantsAllTime';
 import HeroinAllTime from '../HeroinAllTime/HeroinAllTime';
 import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
+import OpiodsAllTime from '../OpiodsAllTime/OpiodsAllTime';
 import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
 import NicotineAllTime from '../NicotineAllTime/NicotineAllTime';
 
@@ -113,9 +114,9 @@ function UserPage() {
 
     <InhalantsAllTime />
     <CocaineAllTime />
+    <OpiodsAllTime />
     <BenzodiazepinesAllTime />
     <NicotineAllTime />
-
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
     </div>
