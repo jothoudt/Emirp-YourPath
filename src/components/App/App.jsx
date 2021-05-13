@@ -31,6 +31,7 @@ import Gender from '../Gender/Gender';
 import Hi from '../Hi/Hi';
 
 import './App.css';
+import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
 
 function App() {
   const dispatch = useDispatch();
@@ -163,6 +164,12 @@ function App() {
           path="/gender"
           >
             <Gender />
+          </ProtectedRoute>
+          <ProtectedRoute
+          exact
+          path="/alldrugs_alltime"
+          >
+            <AllDrugsAllTime />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
