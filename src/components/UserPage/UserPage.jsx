@@ -20,6 +20,7 @@ import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
 import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
 
 import Gender from '../Gender/Gender';
+import TotalAssessments from '../TotalAssesments/TotalAssesments';
 
 
 
@@ -119,6 +120,7 @@ function UserPage() {
         )
       })
     } */}
+    <TotalAssessments />
     <MarijuanaAllTime />
     <MethAllTime />
     <HallucinogenAllTime />
