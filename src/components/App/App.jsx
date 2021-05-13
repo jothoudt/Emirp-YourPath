@@ -22,9 +22,8 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
 import InhalantsAllTime from '../InhalantsAllTime/InhalantsAllTime';
 import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
-
+import HallucinogenAllTime from '../HallucinogenAllTime/HallucinogenAllTime';
 import OpiodsAllTime from '../OpiodsAllTime/OpiodsAllTime';
-
 import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
 
 import Hi from '../Hi/Hi';
@@ -143,6 +142,13 @@ function App() {
           path="/opiods_all_time"
           >
             <OpiodsAllTime />
+          </ProtectedRoute>
+
+          <ProtectedRoute 
+          exact
+          path="/hallucinogen_all_time"
+          >
+            <HallucinogenAllTime />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

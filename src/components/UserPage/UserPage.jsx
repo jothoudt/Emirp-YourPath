@@ -8,6 +8,7 @@ import MethAllTime from '../MethAllTime/MethAllTime';
 import InhalantsAllTime from '../InhalantsAllTime/InhalantsAllTime';
 import HeroinAllTime from '../HeroinAllTime/HeroinAllTime';
 import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
+import HallucinogenAllTime from '../HallucinogenAllTime/HallucinogenAllTime';
 import OpiodsAllTime from '../OpiodsAllTime/OpiodsAllTime';
 import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
 import NicotineAllTime from '../NicotineAllTime/NicotineAllTime';
@@ -110,8 +111,8 @@ function UserPage() {
     } */}
     <MarijuanaAllTime />
     <MethAllTime />
+    <HallucinogenAllTime />
     <HeroinAllTime />
-
     <InhalantsAllTime />
     <CocaineAllTime />
     <OpiodsAllTime />
