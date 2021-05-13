@@ -1,12 +1,12 @@
 import React from 'react';
 import {useSelector} from 'react-redux'
 
-function InhalantsAllTime(){
+function BenzodiazepinesAllTime(){
 
     const form = useSelector((store)=>store.form);
 
-    let inhalantYes=0;
-    let inhalantNo=0;
+    let benzYes=0;
+    let benzNo=0;
     
      // const mjMap=form[119].answer
     const answer1 =()=>{
@@ -17,18 +17,18 @@ function InhalantsAllTime(){
       }
       if(form.length){
         form.map((item)=>{
-          let answer=item.answers[126]
+          let answer=item.answers[124]
         if(answer.answer === 'Yes'){
-            inhalantYes++
+            benzYes++
         }
         else {
-            inhalantNo++
+            benzNo++
       }
-      console.log(inhalantYes, inhalantNo)
+      console.log(benzYes, benzNo)
       display= 
       <>
-      <p>Inhalant Yes:{inhalantYes}</p>
-      <p>Inhalant No: {inhalantNo}</p>
+      <p>Benzodiazepines Yes:{benzYes}</p>
+      <p>Benzodiazepines No: {benzNo}</p>
       </>
       })
     }
@@ -42,4 +42,4 @@ function InhalantsAllTime(){
     )
 }
 
-export default InhalantsAllTime;
+export default BenzodiazepinesAllTime;

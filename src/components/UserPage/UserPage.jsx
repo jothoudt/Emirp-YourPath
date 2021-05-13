@@ -8,7 +8,9 @@ import MethAllTime from '../MethAllTime/MethAllTime';
 import InhalantsAllTime from '../InhalantsAllTime/InhalantsAllTime';
 import HeroinAllTime from '../HeroinAllTime/HeroinAllTime';
 import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
+import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
 import NicotineAllTime from '../NicotineAllTime/NicotineAllTime';
+
 function UserPage() {
 
   const dispatch=useDispatch();
@@ -111,6 +113,7 @@ function UserPage() {
 
     <InhalantsAllTime />
     <CocaineAllTime />
+    <BenzodiazepinesAllTime />
     <NicotineAllTime />
 
       <p>Your ID is: {user.id}</p>
