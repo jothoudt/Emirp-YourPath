@@ -216,12 +216,21 @@ function App() {
 
             <MarijuanaPieChart />
           </ProtectedRoute>
+          
           <ProtectedRoute 
           exact
           path="/lsdPie"
           >
 
             <HallucinogenPieChart />
+          </ProtectedRoute>
+          
+          <ProtectedRoute 
+          exact
+          path="/otcPie"
+          >
+
+            <OTCPieChart />
           </ProtectedRoute>
 
           <ProtectedRoute 
