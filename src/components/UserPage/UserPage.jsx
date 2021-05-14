@@ -22,7 +22,11 @@ import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
 import Gender from '../Gender/Gender';
 import MentalHealth from '../MentalHealth/MentalHealth';
 import TotalAssessments from '../TotalAssesments/TotalAssesments';
+
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
+
+import PastServices from '../PastServices/PastServices';
+
 
 
 
@@ -31,7 +35,8 @@ function UserPage() {
   const dispatch=useDispatch();
   const onLoad=()=>{
     dispatch({type:'FETCH_FORM'});
-    dispatch({type:'FETCH_ASSESSMENT'});
+    dispatch({type:'FETCH_ASSESSMENT'})
+    dispatch({type:'FETCH_PROMOTER_SCORES'})
     // dispatch({type:'FETCH_REPORT_1'});
   }
 
@@ -143,6 +148,7 @@ function UserPage() {
     <FetalAlcoholSyndrome />
     <Race />
     <MentalHealth />
+    <PastServices />
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
     </div>
