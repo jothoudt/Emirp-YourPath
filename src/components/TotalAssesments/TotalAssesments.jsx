@@ -1,5 +1,13 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+import { 
+    Card,
+    CardActions,
+    CardContent,
+    CardHeader,
+    Divider,
+    Typography
+  } from '@material-ui/core';
 
 function TotalAssessments(){
 
@@ -11,7 +19,16 @@ function TotalAssessments(){
             totalDisplay= <><h2>Loading</h2></>
         }
         else{
-            totalDisplay=<><h1>Total Number of Assessments: {form.length}</h1></>
+            totalDisplay=
+            <Card>
+            <CardHeader
+            title="Assessments taken" 
+            />
+            <CardContent>
+                <Divider />
+                <p>Total number of assessments: {form.length}</p>
+            </CardContent>
+            </Card>
         }
         return totalDisplay;
     }

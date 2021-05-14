@@ -1,5 +1,14 @@
 import React from 'react';
 import {useSelector} from 'react-redux'
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
+import MarijuanaPieChart from '../MarijuanaPieChart/MarijuanaPieChart';
 
 function MarijuanaAllTime(){
 
@@ -27,10 +36,17 @@ function MarijuanaAllTime(){
        }
        console.log(marijuanaYes, marijuanaNo)
        display= 
-       <>
-       <p>Marijuana Yes:{marijuanaYes}</p>
-       <p>Marijuana No: {marijuanaNo}</p>
-       </>
+       <Card>
+          <CardHeader 
+          title={answer.text}
+          />
+        <CardContent>
+          <Divider />
+          <MarijuanaPieChart />
+          <p>Marijuana Yes:{marijuanaYes}</p>
+          <p>Marijuana No: {marijuanaNo}</p>
+        </CardContent>
+       </Card>
        })
      }
      return display;

@@ -1,5 +1,13 @@
 import React from 'react';
 import {useSelector} from 'react-redux'
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function Gender(){
 
@@ -46,14 +54,20 @@ function Gender(){
         }
       console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
-      <>
-        <h2>{answer.text}</h2>
-        <p>Male: {male}</p>
-        <p>Female: {female}</p>
-        <p>Transgender: {transgender}</p>
-        <p>Non-binary: {nonBinary}</p>
-        <p>Declined: {declined}</p>
-      </>
+        <Card>
+          <CardHeader 
+          title={answer.text}
+          />
+          <CardContent>
+            <Divider />
+            <p>Male: {male}</p>
+            <p>Female: {female}</p>
+            <p>Transgender: {transgender}</p>
+            <p>Non-binary: {nonBinary}</p>
+            <p>Declined: {declined}</p>
+          </CardContent>
+        </Card>
+      
       })
     }
     return display;

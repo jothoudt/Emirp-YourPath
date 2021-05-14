@@ -1,5 +1,14 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
+
 
 function MethAllTime(){
     
@@ -35,10 +44,16 @@ function MethAllTime(){
         console.log(methYes, methNo)
         //define display
         methDisplay= 
-        <>
-        <p>Meth Yes:{ methYes}</p>
-        <p>Meth No: {methNo}</p>
-        </>
+        <Card>
+          <CardHeader
+          title={answer.text}
+          />
+          <CardContent>
+            <Divider />
+            <p>Meth Yes:{ methYes}</p>
+            <p>Meth No: {methNo}</p>
+          </CardContent>
+        </Card>
         })
       }
       return methDisplay;
