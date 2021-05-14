@@ -29,7 +29,8 @@ function UserPage() {
   const dispatch=useDispatch();
   const onLoad=()=>{
     dispatch({type:'FETCH_FORM'});
-    dispatch({type:'FETCH_ASSESSMENT'});
+    dispatch({type:'FETCH_ASSESSMENT'})
+    dispatch({type:'FETCH_PROMOTER_SCORES'})
     // dispatch({type:'FETCH_REPORT_1'});
   }
 

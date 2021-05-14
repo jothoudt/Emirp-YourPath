@@ -33,6 +33,7 @@ import Hi from '../Hi/Hi';
 
 import './App.css';
 import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
+import NetPromoterScore from '../NetPromoterScore/NetPromoterScore';
 
 
 function App() {
@@ -186,6 +187,12 @@ function App() {
           path="/justice_involved"
           >
             <JusticeInvolved />
+          </ProtectedRoute>
+          <ProtectedRoute
+          exact
+          path="/net_promoter_scores"
+          >
+            <NetPromoterScore />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
