@@ -35,6 +35,7 @@ function SexualOrientation(){
       console.log('in orientation:', heterosexual, homosexual, bisexual, asexual)
       display= 
       <>
+        <h2>{answer.text}</h2>
         <p>heterosexual: {heterosexual}</p>
         <p>homosexual: {homosexual}</p>
         <p>bisexual: {bisexual}</p>
