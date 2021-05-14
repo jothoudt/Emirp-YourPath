@@ -28,6 +28,10 @@ import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAll
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 import MarijuanaPieChart from '../MarijuanaPieChart/MarijuanaPieChart';
+import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
+import MentalHealth from '../MentalHealth/MentalHealth';
+import Race from '../Race/Race';
+import Pregnant from '../Pregnant/Pregnant'
 
 import Gender from '../Gender/Gender';
 import Hi from '../Hi/Hi';
@@ -193,6 +197,8 @@ function App() {
           >
             <NetPromoterScore />
 
+          </ProtectedRoute>
+
           <ProtectedRoute 
           exact
           path="/mental_health"
@@ -207,9 +213,24 @@ function App() {
           >
 
             <MarijuanaPieChart />
+          </ProtectedRoute>
 
+          <ProtectedRoute 
+          exact
+          path="/race">
             <Race />
 
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/all_drugs_all_time"
+           > 
+           <AllDrugsAllTime />
+           </ProtectedRoute>
+           <ProtectedRoute
+           exact
+           path="/pregnant">
+             <Pregnant />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
