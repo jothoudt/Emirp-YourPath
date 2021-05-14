@@ -21,6 +21,7 @@ import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
 import Gender from '../Gender/Gender';
 import MentalHealth from '../MentalHealth/MentalHealth';
 import TotalAssessments from '../TotalAssesments/TotalAssesments';
+import PastServices from '../PastServices/PastServices';
 
 
 
@@ -139,6 +140,7 @@ function UserPage() {
     <JusticeInvolved />
     <Gender />
     <MentalHealth />
+    <PastServices />
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
     </div>
