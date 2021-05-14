@@ -27,15 +27,16 @@ import OpiodsAllTime from '../OpiodsAllTime/OpiodsAllTime';
 import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
-import Race from '../Race/Race';
+import MarijuanaPieChart from '../MarijuanaPieChart/MarijuanaPieChart';
+
 import Gender from '../Gender/Gender';
-import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
-import MentalHealth from '../MentalHealth/MentalHealth';
 import Hi from '../Hi/Hi';
 
 import './App.css';
+
 import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
 import NetPromoterScore from '../NetPromoterScore/NetPromoterScore';
+
 
 
 function App() {
@@ -171,12 +172,6 @@ function App() {
           >
             <Gender />
           </ProtectedRoute>
-          <ProtectedRoute
-          exact
-          path="/alldrugs_alltime"
-          >
-            <AllDrugsAllTime />
-          </ProtectedRoute>
 
           <ProtectedRoute 
           exact
@@ -184,6 +179,8 @@ function App() {
           >
             <FetalAlcoholSyndrome />
           </ProtectedRoute>
+
+
           <ProtectedRoute 
           exact
           path="/justice_involved"
@@ -203,10 +200,14 @@ function App() {
             <MentalHealth />
           </ProtectedRoute>
 
+
           <ProtectedRoute 
           exact
-          path="/race"
+          path="/mjPie"
           >
+
+            <MarijuanaPieChart />
+
             <Race />
 
           </ProtectedRoute>
