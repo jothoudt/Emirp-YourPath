@@ -4,6 +4,7 @@ import user from './user.reducer';
 import form from './form.reducer';
 import care from './care.reducer';
 import promoterscore from './promoterscore.reducer';
+import preferences from './preferences.reducer'
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   form,
   care,
   promoterscore,
+  preferences,
 });
 
 export default rootReducer;

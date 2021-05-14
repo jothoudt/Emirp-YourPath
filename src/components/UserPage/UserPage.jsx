@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
-import Hi from '../Hi/Hi';
+import Hi from '../HiComponent/HiComponent';
 import axios from 'axios';
 //pass thru all datasets
 import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';

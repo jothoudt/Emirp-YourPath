@@ -35,7 +35,7 @@ import Pregnant from '../Pregnant/Pregnant'
 import PastServices from '../PastServices/PastServices';
 
 import Gender from '../Gender/Gender';
-import Hi from '../Hi/Hi';
+import Hi from '../HiComponent/HiComponent';
 
 import './App.css';
 

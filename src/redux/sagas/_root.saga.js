@@ -5,6 +5,7 @@ import userSaga from './user.saga';
 import formSaga from './form.saga';
 import careSaga from './care.saga';
 import PromoterScoreSaga from './promoterscore.saga';
+import preferencesSaga from './preferences.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -21,5 +22,6 @@ export default function* rootSaga() {
     formSaga(),
     careSaga(),
     PromoterScoreSaga(),
+    preferencesSaga(),
   ]);
 }
