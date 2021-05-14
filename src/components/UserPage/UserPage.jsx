@@ -3,6 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import Hi from '../Hi/Hi';
 import axios from 'axios';
+//pass thru all datasets
 import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
 import MethAllTime from '../MethAllTime/MethAllTime';
 import InhalantsAllTime from '../InhalantsAllTime/InhalantsAllTime';
@@ -22,10 +23,16 @@ import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
 import Gender from '../Gender/Gender';
 import MentalHealth from '../MentalHealth/MentalHealth';
 import TotalAssessments from '../TotalAssesments/TotalAssesments';
-
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
-
 import PastServices from '../PastServices/PastServices';
+//material-ui for styling
+import { Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+//styling
+const useStyles = makeStyles( ( theme )=> ({
+
+
+}))
 
 
 
@@ -39,7 +46,9 @@ function UserPage() {
     dispatch({type:'FETCH_PROMOTER_SCORES'})
     // dispatch({type:'FETCH_REPORT_1'});
   }
-
+  //for styling
+  const classes= useStyles();
+  //get Jotform data from redux store
   const form = useSelector((store)=>store.form);
   // const report =useSelector((store)=>store.report1)
 
@@ -127,28 +136,74 @@ function UserPage() {
         )
       })
     } */}
-    <TotalAssessments />
-    <MarijuanaAllTime />
-    <MethAllTime />
-    <HallucinogenAllTime />
-    <HeroinAllTime />
-    <InhalantsAllTime />
-    <CocaineAllTime />
-    <OpiodsAllTime />
-    <BenzodiazepinesAllTime />
-    <NicotineAllTime />
-    <AlcoholAllTime />
-    <OtherSubstancesAllTime />
-    <OTCAllTime />
-    <SexualOrientation />
-    <Pregnant />
-    <SexualOrientation />
-    <JusticeInvolved />
-    <Gender />
-    <FetalAlcoholSyndrome />
-    <Race />
-    <MentalHealth />
-    <PastServices />
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={4}>
+        <TotalAssessments />
+      </Grid>
+      <Grid item xs={12} sm={4}>  
+        <MarijuanaAllTime />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <MethAllTime />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <HallucinogenAllTime />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <HeroinAllTime />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <InhalantsAllTime />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <CocaineAllTime />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <OpiodsAllTime />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <BenzodiazepinesAllTime />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <NicotineAllTime />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <AlcoholAllTime />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <OtherSubstancesAllTime />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <OTCAllTime />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <SexualOrientation />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <Pregnant />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <SexualOrientation />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <JusticeInvolved />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <Gender />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <FetalAlcoholSyndrome />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <Race />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <MentalHealth />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <PastServices />
+      </Grid>
+    </Grid>
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
     </div>

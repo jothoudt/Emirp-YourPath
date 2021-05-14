@@ -55,7 +55,7 @@ function Race(){
 
        display= 
        <>
-       <p>RACE</p>
+       <h2>{answer.text}</h2>
        <p>Black or African American: {blackOrAfricanAmerican}</p>
        <p>East African/Somali/AfricanBorn: {eastAfricanSomaliAfricanBorn}</p>
        <p>Asian: {asian}</p>
