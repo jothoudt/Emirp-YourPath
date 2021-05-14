@@ -41,6 +41,7 @@ import './App.css';
 
 import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
 import NetPromoterScore from '../NetPromoterScore/NetPromoterScore';
+import RacePieChart from '../RacePieChart/RacePieChart';
 
 
 
@@ -237,6 +238,12 @@ function App() {
           exact
           path="/past_services">
             <PastServices />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          exact
+          path="/racePie">
+            <RacePieChart />
           </ProtectedRoute>
           
 
