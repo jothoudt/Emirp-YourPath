@@ -6,7 +6,7 @@ import { Pie } from 'react-chartjs-2';
 
 
   
-function HallucinogenPieChart () {
+function OTCPieChart () {
     const form = useSelector((store)=>store.form);
 
     let OTCTotal=form.length;
@@ -54,4 +54,4 @@ function HallucinogenPieChart () {
     )
 }
   
-  export default HallucinogenPieChart;
+  export default OTCPieChart;
