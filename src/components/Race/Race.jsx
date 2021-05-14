@@ -1,5 +1,14 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+import RacePieChart from '../RacePieChart/RacePieChart';
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function Race(){
   // pulls down assessment results from the store
@@ -53,18 +62,24 @@ function Race(){
           noDisclosure++
         }
 
-       display= 
-       <>
-       <h2>{answer.text}</h2>
-       <p>Black or African American: {blackOrAfricanAmerican}</p>
-       <p>East African/Somali/AfricanBorn: {eastAfricanSomaliAfricanBorn}</p>
-       <p>Asian: {asian}</p>
-       <p>Native Hawaiin/Pacific Islander: {nativeHawaiinOrPacificIslander}</p>
-       <p>Alaska Native: {alaskaNative}</p>
-       <p>White: {white}</p>
-       <p>Native American: {nativeAmerican}</p>
-       <p>Did not disclose: {noDisclosure}</p>
-       </>
+      display= 
+        <Card>
+          <CardHeader 
+          title={answer.text}
+          />
+          <CardContent>
+            <Divider />
+            <RacePieChart />
+            <p>Black or African American: {blackOrAfricanAmerican}</p>
+            <p>East African/Somali/AfricanBorn: {eastAfricanSomaliAfricanBorn}</p>
+            <p>Asian: {asian}</p>
+            <p>Native Hawaiin/Pacific Islander: {nativeHawaiinOrPacificIslander}</p>
+            <p>Alaska Native: {alaskaNative}</p>
+            <p>White: {white}</p>
+            <p>Native American: {nativeAmerican}</p>
+            <p>Did not disclose: {noDisclosure}</p>
+          </CardContent>
+        </Card>
        })
      }
      return display;

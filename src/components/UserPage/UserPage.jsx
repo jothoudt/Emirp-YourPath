@@ -144,6 +144,9 @@ function UserPage() {
         <MarijuanaAllTime />
       </Grid>
       <Grid item xs={12} sm={4}>
+        <Race />
+      </Grid>
+      <Grid item xs={12} sm={4}>
         <MethAllTime />
       </Grid>
       <Grid item xs={12} sm={4}>
@@ -193,9 +196,6 @@ function UserPage() {
       </Grid>
       <Grid item xs={12} sm={4}>
         <FetalAlcoholSyndrome />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <Race />
       </Grid>
       <Grid item xs={12} sm={4}>
         <MentalHealth />
