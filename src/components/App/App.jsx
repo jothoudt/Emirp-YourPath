@@ -27,15 +27,20 @@ import OpiodsAllTime from '../OpiodsAllTime/OpiodsAllTime';
 import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
-import Race from '../Race/Race';
-import Gender from '../Gender/Gender';
+import MarijuanaPieChart from '../MarijuanaPieChart/MarijuanaPieChart';
 import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
 import MentalHealth from '../MentalHealth/MentalHealth';
+import Race from '../Race/Race';
+import Pregnant from '../Pregnant/Pregnant'
+
+import Gender from '../Gender/Gender';
 import Hi from '../Hi/Hi';
 
 import './App.css';
+
 import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
 import NetPromoterScore from '../NetPromoterScore/NetPromoterScore';
+
 
 
 function App() {
@@ -171,12 +176,6 @@ function App() {
           >
             <Gender />
           </ProtectedRoute>
-          <ProtectedRoute
-          exact
-          path="/alldrugs_alltime"
-          >
-            <AllDrugsAllTime />
-          </ProtectedRoute>
 
           <ProtectedRoute 
           exact
@@ -184,6 +183,8 @@ function App() {
           >
             <FetalAlcoholSyndrome />
           </ProtectedRoute>
+
+
           <ProtectedRoute 
           exact
           path="/justice_involved"
@@ -196,6 +197,8 @@ function App() {
           >
             <NetPromoterScore />
 
+          </ProtectedRoute>
+
           <ProtectedRoute 
           exact
           path="/mental_health"
@@ -203,12 +206,31 @@ function App() {
             <MentalHealth />
           </ProtectedRoute>
 
+
           <ProtectedRoute 
           exact
-          path="/race"
+          path="/mjPie"
           >
+
+            <MarijuanaPieChart />
+          </ProtectedRoute>
+
+          <ProtectedRoute 
+          exact
+          path="/race">
             <Race />
 
+          </ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/all_drugs_all_time"
+           > 
+           <AllDrugsAllTime />
+           </ProtectedRoute>
+           <ProtectedRoute
+           exact
+           path="/pregnant">
+             <Pregnant />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
