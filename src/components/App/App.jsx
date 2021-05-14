@@ -28,11 +28,13 @@ import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAll
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 import Race from '../Race/Race';
-
 import Gender from '../Gender/Gender';
+import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
+import MentalHealth from '../MentalHealth/MentalHealth';
 import Hi from '../Hi/Hi';
 
 import './App.css';
+import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
 
 
 function App() {
@@ -168,12 +170,30 @@ function App() {
           >
             <Gender />
           </ProtectedRoute>
+          <ProtectedRoute
+          exact
+          path="/alldrugs_alltime"
+          >
+            <AllDrugsAllTime />
+          </ProtectedRoute>
 
           <ProtectedRoute 
           exact
           path="/fas"
           >
             <FetalAlcoholSyndrome />
+          </ProtectedRoute>
+          <ProtectedRoute 
+          exact
+          path="/justice_involved"
+          >
+            <JusticeInvolved />
+          </ProtectedRoute>
+          <ProtectedRoute 
+          exact
+          path="/mental_health"
+          >
+            <MentalHealth />
           </ProtectedRoute>
 
           <ProtectedRoute 

@@ -16,11 +16,12 @@ import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAll
 import OTCAllTime from '../OTCAllTime/OTCAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import Race from '../Race/Race';
-
+import Pregnant from '../Pregnant/Pregnant';
+import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
 import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
-
 import Gender from '../Gender/Gender';
-import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
+import MentalHealth from '../MentalHealth/MentalHealth';
+import TotalAssessments from '../TotalAssesments/TotalAssesments';
 
 
 
@@ -120,6 +121,7 @@ function UserPage() {
         )
       })
     } */}
+    <TotalAssessments />
     <MarijuanaAllTime />
     <MethAllTime />
     <HallucinogenAllTime />
@@ -130,16 +132,16 @@ function UserPage() {
     <BenzodiazepinesAllTime />
     <NicotineAllTime />
     <AlcoholAllTime />
-
     <OtherSubstancesAllTime />
     <OTCAllTime />
-
     <SexualOrientation />
-
+    <Pregnant />
     <SexualOrientation />
+    <JusticeInvolved />
     <Gender />
     <FetalAlcoholSyndrome />
     <Race />
+    <MentalHealth />
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
     </div>
