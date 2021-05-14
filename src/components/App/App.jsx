@@ -27,6 +27,7 @@ import OpiodsAllTime from '../OpiodsAllTime/OpiodsAllTime';
 import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
+import Race from '../Race/Race';
 
 import Gender from '../Gender/Gender';
 import Hi from '../Hi/Hi';
@@ -173,6 +174,13 @@ function App() {
           path="/fas"
           >
             <FetalAlcoholSyndrome />
+          </ProtectedRoute>
+
+          <ProtectedRoute 
+          exact
+          path="/race"
+          >
+            <Race />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
