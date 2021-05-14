@@ -28,6 +28,8 @@ import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAll
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 import MarijuanaPieChart from '../MarijuanaPieChart/MarijuanaPieChart';
+import HallucinogenPieChart from '../HallucinogenPieChart/HallucinogenPieChart';
+import OTCPieChart from '../OTCPieChart/OTCPieChart';
 import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
 import MentalHealth from '../MentalHealth/MentalHealth';
 import Race from '../Race/Race';
@@ -215,6 +217,22 @@ function App() {
           >
 
             <MarijuanaPieChart />
+          </ProtectedRoute>
+          
+          <ProtectedRoute 
+          exact
+          path="/lsdPie"
+          >
+
+            <HallucinogenPieChart />
+          </ProtectedRoute>
+          
+          <ProtectedRoute 
+          exact
+          path="/otcPie"
+          >
+
+            <OTCPieChart />
           </ProtectedRoute>
 
           <ProtectedRoute 
