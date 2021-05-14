@@ -27,14 +27,13 @@ import OpiodsAllTime from '../OpiodsAllTime/OpiodsAllTime';
 import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
-import Race from '../Race/Race';
+import MarijuanaPieChart from '../MarijuanaPieChart/MarijuanaPieChart';
+
 import Gender from '../Gender/Gender';
-import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
-import MentalHealth from '../MentalHealth/MentalHealth';
 import Hi from '../Hi/Hi';
 
 import './App.css';
-import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
+
 
 
 function App() {
@@ -170,12 +169,6 @@ function App() {
           >
             <Gender />
           </ProtectedRoute>
-          <ProtectedRoute
-          exact
-          path="/alldrugs_alltime"
-          >
-            <AllDrugsAllTime />
-          </ProtectedRoute>
 
           <ProtectedRoute 
           exact
@@ -183,24 +176,12 @@ function App() {
           >
             <FetalAlcoholSyndrome />
           </ProtectedRoute>
-          <ProtectedRoute 
-          exact
-          path="/justice_involved"
-          >
-            <JusticeInvolved />
-          </ProtectedRoute>
-          <ProtectedRoute 
-          exact
-          path="/mental_health"
-          >
-            <MentalHealth />
-          </ProtectedRoute>
 
           <ProtectedRoute 
           exact
-          path="/race"
+          path="/mjPie"
           >
-            <Race />
+            <MarijuanaPieChart />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

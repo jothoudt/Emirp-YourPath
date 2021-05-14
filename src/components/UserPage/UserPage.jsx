@@ -22,6 +22,7 @@ import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
 import Gender from '../Gender/Gender';
 import MentalHealth from '../MentalHealth/MentalHealth';
 import TotalAssessments from '../TotalAssesments/TotalAssesments';
+import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 
 
 
