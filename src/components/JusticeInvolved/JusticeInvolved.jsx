@@ -28,30 +28,34 @@ function JusticeInvolved(){
           let answer=item.answers[106]
           console.log( 'justice involved:', answer.answer );
         if ( answer.answer ) {
-          if(answer.answer[0] === 'No current or past legal issues'){
-            none++
-          }
-          else if (answer.answer[0] === 'Past issues, no current') {
-            past++
-          }
-          else if (answer.answer[0] === 'Awaiting sentencing') {
-            awaitingSentencing++
-          }
-          else if (answer.answer[0] === 'Part of drug court or other treatment court') {
-            drugCourt++
-          }
-          else if (answer.answer[0] === 'Out on bail') {
-            outOnBail++
-          }
-          else if (answer.answer[0] === 'On probation') {
-            probation++
-          }
-          else if (answer.answer[0] === 'On parole') {
-            parole++
-          }
-          else if (answer.answer[0] === 'In the workhouse') {
-            workhouse++
-          }
+          let answerArray = answer.answer
+          console.log( 'answer length:', answerArray.length );
+          answerArray.map( ( itemAnswer )=>{  
+            if(itemAnswer === 'No current or past legal issues'){
+              none++
+            }
+            else if (itemAnswer === 'Past issues, no current') {
+              past++
+            }
+            else if (itemAnswer === 'Awaiting sentencing') {
+              awaitingSentencing++
+            }
+            else if (itemAnswer === 'Part of drug court or other treatment court') {
+              drugCourt++
+            }
+            else if (itemAnswer === 'Out on bail') {
+              outOnBail++
+            }
+            else if (itemAnswer === 'On probation') {
+              probation++
+            }
+            else if (itemAnswer === 'On parole') {
+              parole++
+            }
+            else if (itemAnswer === 'In the workhouse') {
+              workhouse++
+            }
+        })
       }
         else{
           declined++
@@ -59,6 +63,7 @@ function JusticeInvolved(){
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
       <>
+        <h2>{answer.text}</h2>
         <p>No current or past legal issues: {none}</p>
         <p>Past issues, no current: {past}</p>
         <p>Awaiting sentencing: {awaitingSentencing}</p>

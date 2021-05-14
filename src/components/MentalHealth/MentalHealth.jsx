@@ -27,39 +27,43 @@ function MentalHealth(){
       if(form.length){
         form.map((item)=>{
           console.log( 'item', item );
-          let answer=item.answers[106]
-          console.log( 'justice involved:', answer.answer );
+          let answer=item.answers[150]
+          console.log( 'mental health:', answer.answer );
         if ( answer.answer ) {
-          if(answer.answer[0] === 'Post-Traumatic Stress Disorder or PTSD'){
-            ptsd++
-          }
-          else if (answer.answer[0] === 'Anxiety or Panic Attacks') {
-            anxiety++
-          }
-          else if (answer.answer[0] === 'Depression') {
-            depression++
-          }
-          else if (answer.answer[0] === 'Bipolar Disorder') {
-            bipolar++
-          }
-          else if (answer.answer[0] === 'Schizophrenia') {
-            schizophrenia++
-          }
-          else if (answer.answer[0] === 'Attention-deficit hyperactivity disorder (ADHD)') {
-            adhd++
-          }
-          else if (answer.answer[0] === 'Eating disorder, including anorexia or bulimia') {
-            eatingDisorder++
-          }
-          else if (answer.answer[0] === 'Obsessive-Compulsive Disorder') {
-            ocd++
-          }
-          else if (answer.answer[0] === 'Borderline Personality Disorder') {
-            personalityDisorder++
-          }
-          else if (answer.answer[0] === 'Other mental health issue') {
-            other++
-          }
+          let answerArray = answer.answer
+          console.log( 'answer length:', answerArray.length );
+          answerArray.map( ( itemAnswer )=>{
+            if(itemAnswer === 'Post-Traumatic Stress Disorder or PTSD'){
+              ptsd++
+            }
+            else if (itemAnswer === 'Anxiety or Panic Attacks') {
+              anxiety++
+            }
+            else if (itemAnswer === 'Depression') {
+              depression++
+            }
+            else if (itemAnswer === 'Bipolar Disorder') {
+              bipolar++
+            }
+            else if (itemAnswer === 'Schizophrenia') {
+              schizophrenia++
+            }
+            else if (itemAnswer === 'Attention-deficit hyperactivity disorder (ADHD)') {
+              adhd++
+            }
+            else if (itemAnswer === 'Eating disorder, including anorexia or bulimia') {
+              eatingDisorder++
+            }
+            else if (itemAnswer === 'Obsessive-Compulsive Disorder') {
+              ocd++
+            }
+            else if (itemAnswer === 'Borderline Personality Disorder') {
+              personalityDisorder++
+            }
+            else if (itemAnswer === 'Other mental health issue') {
+              other++
+            }
+        })
       }
         else{
           declined++
@@ -67,6 +71,7 @@ function MentalHealth(){
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
       <>
+        <h2>{answer.text}</h2>
         <p>Post-Traumatic Stress Disorder or PTSD: {ptsd}</p>
         <p>Anxiety or Panic Attacks: {anxiety}</p>
         <p>Depression: {depression}</p>

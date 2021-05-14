@@ -24,18 +24,22 @@ function Gender(){
           let answer=item.answers[83]
           console.log( 'gender answer:', answer.answer );
         if ( answer.answer ) {
-          if(answer.answer[0] === 'Male'){
-            male++
-          }
-          else if (answer.answer[0] === 'Female') {
-            female++
-          }
-          else if (answer.answer[0] === 'Transgender') {
-            transgender++
-          }
-          else if (answer.answer[0] === 'Non-binary') {
-            nonBinary++
-          }
+          let answerArray = answer.answer
+          console.log( 'answer length:', answerArray.length );
+          answerArray.map( ( itemAnswer )=>{
+            if(itemAnswer === 'Male'){
+              male++
+            }
+            else if (itemAnswer === 'Female') {
+              female++
+            }
+            else if (itemAnswer === 'Transgender') {
+              transgender++
+            }
+            else if (itemAnswer === 'Non-binary') {
+              nonBinary++
+            }
+        })
       }
         else{
           declined++
@@ -43,6 +47,7 @@ function Gender(){
       console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
       <>
+        <h2>{answer.text}</h2>
         <p>Male: {male}</p>
         <p>Female: {female}</p>
         <p>Transgender: {transgender}</p>
