@@ -32,6 +32,7 @@ import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
 import MentalHealth from '../MentalHealth/MentalHealth';
 import Race from '../Race/Race';
 import Pregnant from '../Pregnant/Pregnant'
+import PastServices from '../PastServices/PastServices';
 
 import Gender from '../Gender/Gender';
 import Hi from '../Hi/Hi';
@@ -224,14 +225,20 @@ function App() {
           <ProtectedRoute
             exact
             path="/all_drugs_all_time"
-           > 
-           <AllDrugsAllTime />
-           </ProtectedRoute>
-           <ProtectedRoute
-           exact
-           path="/pregnant">
-             <Pregnant />
+          > 
+          <AllDrugsAllTime />
           </ProtectedRoute>
+          <ProtectedRoute
+          exact
+          path="/pregnant">
+            <Pregnant />
+          </ProtectedRoute>
+          <ProtectedRoute
+          exact
+          path="/past_services">
+            <PastServices />
+          </ProtectedRoute>
+          
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
