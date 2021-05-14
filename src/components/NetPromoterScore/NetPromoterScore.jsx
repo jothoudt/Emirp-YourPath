@@ -3,10 +3,12 @@ import {useSelector, useDispatch} from 'react-redux';
 
 function NetPromoterScore(){
 
+    //define dispatch and store
     const dispatch= useDispatch();
     const scores= useSelector((store)=>store.promoterscore);
-
+    // -------------------array to target for visual------------------------------
     let promoterScores= []
+    //---------------------------------------------------------------------------
     const getPromoterScores=()=>{
         dispatch({type:'FETCH_PROMOTER_SCORES'});
         if(!scores){
