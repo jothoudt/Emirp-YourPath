@@ -12,6 +12,7 @@ const userRouter = require('./routes/user.router');
 const apiRouter = require('./routes/api.router');
 const careRouter = require('./routes/care.router');
 const promoterRouter =require('./routes/promoter.router');
+const preferencesRouter=require('./routes/preferences.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -29,6 +30,7 @@ app.use('/api/user', userRouter);
 app.use('/api/form', apiRouter);
 app.use('/api/care', careRouter);
 app.use('/api/promoterscores', promoterRouter);
+app.use('/api/preferences', preferencesRouter)
 
 // Serve static files
 app.use(express.static('build'));
