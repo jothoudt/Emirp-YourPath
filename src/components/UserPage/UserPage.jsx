@@ -15,6 +15,7 @@ import NicotineAllTime from '../NicotineAllTime/NicotineAllTime';
 import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAllTime';
 import OTCAllTime from '../OTCAllTime/OTCAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
+import Race from '../Race/Race';
 import Pregnant from '../Pregnant/Pregnant';
 import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
 import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
@@ -30,7 +31,8 @@ function UserPage() {
   const dispatch=useDispatch();
   const onLoad=()=>{
     dispatch({type:'FETCH_FORM'});
-    dispatch({type:'FETCH_ASSESSMENT'});
+    dispatch({type:'FETCH_ASSESSMENT'})
+    dispatch({type:'FETCH_PROMOTER_SCORES'})
     // dispatch({type:'FETCH_REPORT_1'});
   }
 
@@ -139,6 +141,8 @@ function UserPage() {
     <SexualOrientation />
     <JusticeInvolved />
     <Gender />
+    <FetalAlcoholSyndrome />
+    <Race />
     <MentalHealth />
     <PastServices />
       <p>Your ID is: {user.id}</p>
