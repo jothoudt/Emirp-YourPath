@@ -15,12 +15,14 @@ import NicotineAllTime from '../NicotineAllTime/NicotineAllTime';
 import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAllTime';
 import OTCAllTime from '../OTCAllTime/OTCAllTime';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
+import Race from '../Race/Race';
 import Pregnant from '../Pregnant/Pregnant';
 import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
 import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
-
 import Gender from '../Gender/Gender';
+import MentalHealth from '../MentalHealth/MentalHealth';
 import TotalAssessments from '../TotalAssesments/TotalAssesments';
+import PastServices from '../PastServices/PastServices';
 
 
 
@@ -139,6 +141,10 @@ function UserPage() {
     <SexualOrientation />
     <JusticeInvolved />
     <Gender />
+    <FetalAlcoholSyndrome />
+    <Race />
+    <MentalHealth />
+    <PastServices />
       <p>Your ID is: {user.id}</p>
       <LogOutButton className="btn" />
     </div>
