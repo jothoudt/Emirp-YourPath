@@ -8,29 +8,34 @@ import { Pie } from 'react-chartjs-2';
 function MarijuanaPieChart () {
     const form = useSelector((store)=>store.form);
 
+    
+
     let marijuanaTotal=form.length;
     let marijuanaYes=0;
     let marijuanaNo=0;
-    let marijuanaYesDisplay= marijuanaYes / marijuanaTotal //figure out a way to get percentages
+    let marijuanaYesDisplay= 0;
+    let marijuanaNoDisplay=0;
 
 
     form.map((item)=>{
         let answer=item.answers[119]
-        marijuanaTotal++
        if(answer.answer==='Yes'){
            marijuanaYes++
        }
        else{
            marijuanaNo++
       }
+        marijuanaYesDisplay = ((marijuanaYes / marijuanaTotal) * 100).toFixed(1);
+        marijuanaNoDisplay = ((marijuanaNo / marijuanaTotal) * 100).toFixed(1);
       })
+      
 
     const data = {
-        labels: ['Yes', 'No'],
+        labels: ['Yes %', 'No %'],
         datasets: [
           {
             label: '# of Votes',
-            data: [marijuanaYes, marijuanaNo],
+            data: [marijuanaYesDisplay, marijuanaNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
