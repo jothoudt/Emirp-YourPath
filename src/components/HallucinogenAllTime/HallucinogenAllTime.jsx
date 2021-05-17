@@ -1,5 +1,16 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+//for card styling
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
+//pass thru pie chart
+import HallucinogenPieChart from '../HallucinogenPieChart/HallucinogenPieChart';
 
 function HallucinogenAllTime(){
 
@@ -9,32 +20,38 @@ function HallucinogenAllTime(){
     let hallucinogenNo=0;
     
      // const mjMap=form[119].answer
-   
-     const answer1 =()=>{
-       let display=''
-       console.log('in answer')
-       if(!form){
-         display=<p>loading</p>
-       }
-       if(form.length){
-       form.map((item)=>{
-         let answer=item.answers[125]
+    const answer1 =()=>{
+      let display=''
+      console.log('in answer')
+      if(!form){
+        display=<p>loading</p>
+      }
+      if(form.length){
+      form.map((item)=>{
+        let answer=item.answers[125]
         if(answer.answer==='Yes'){
             hallucinogenYes++
         }
         else{
             hallucinogenNo++
-       }
-       console.log(hallucinogenYes, hallucinogenNo)
-       display= 
-       <>
-       <p>Hallucinogen Yes:{hallucinogenYes}</p>
-       <p>Hallucinogen No: {hallucinogenNo}</p>
-       </>
-       })
-     }
-     return display;
-   }
+      }
+      console.log(hallucinogenYes, hallucinogenNo)
+      display= 
+      <Card>
+        <HallucinogenPieChart />
+        <CardHeader 
+            title={answer.text}
+            />
+        <CardContent>
+          <Divider />
+          <p>Hallucinogen Yes:{hallucinogenYes}</p>
+          <p>Hallucinogen No: {hallucinogenNo}</p>
+        </CardContent>
+      </Card>
+      })
+    }
+    return display;
+  }
     return(
         <>
         {answer1()}
