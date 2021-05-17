@@ -1,5 +1,13 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function HeroinAllTime(){
 
@@ -28,10 +36,16 @@ function HeroinAllTime(){
         // }
         console.log(heroinYes, heroinNo)
         heroinDisplay= 
-        <>
-        <p>Heroin Yes:{heroinYes}</p>
-        <p>Heroin No: {heroinNo}</p>
-        </>
+        <Card>
+          <CardHeader 
+            title={answer.text}
+          />
+          <CardContent>
+            <Divider />            
+            <p>Heroin Yes:{heroinYes}</p>
+            <p>Heroin No: {heroinNo}</p>
+          </CardContent>
+        </Card>
         })
       }
       return heroinDisplay;

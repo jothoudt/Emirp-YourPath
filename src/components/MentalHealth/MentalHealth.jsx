@@ -1,5 +1,14 @@
 import React from 'react';
 import {useSelector} from 'react-redux'
+//styling for card
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function MentalHealth(){
 
@@ -70,20 +79,25 @@ function MentalHealth(){
         }
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
-      <>
-        <h2>{answer.text}</h2>
-        <p>Post-Traumatic Stress Disorder or PTSD: {ptsd}</p>
-        <p>Anxiety or Panic Attacks: {anxiety}</p>
-        <p>Depression: {depression}</p>
-        <p>Bipolar Disorder {bipolar}</p>
-        <p>Schizophrenia: {schizophrenia}</p>
-        <p>Attention-deficit hyperactivity disorder or ADHD: {adhd}</p>
-        <p>Eating disorder, including anorexia or bulimia: {eatingDisorder}</p>
-        <p>Obsessive-Compulsive Disorder: {ocd}</p>
-        <p>Borderline Personality Disorder: {personalityDisorder}</p>
-        <p>Other mental health issue: {other}</p>        
-        <p>Declined: {declined}</p>
-      </>
+      <Card>
+        <CardHeader 
+          title={answer.text}
+        />
+        <CardContent>
+          <Divider />          
+          <p>Post-Traumatic Stress Disorder or PTSD: {ptsd}</p>
+          <p>Anxiety or Panic Attacks: {anxiety}</p>
+          <p>Depression: {depression}</p>
+          <p>Bipolar Disorder {bipolar}</p>
+          <p>Schizophrenia: {schizophrenia}</p>
+          <p>Attention-deficit hyperactivity disorder or ADHD: {adhd}</p>
+          <p>Eating disorder, including anorexia or bulimia: {eatingDisorder}</p>
+          <p>Obsessive-Compulsive Disorder: {ocd}</p>
+          <p>Borderline Personality Disorder: {personalityDisorder}</p>
+          <p>Other mental health issue: {other}</p>        
+          <p>Declined: {declined}</p>
+          </CardContent>
+      </Card>
       })
     }
     return display;

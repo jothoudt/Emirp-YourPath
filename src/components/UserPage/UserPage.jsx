@@ -180,9 +180,6 @@ function UserPage() {
         <OTCAllTime />
       </Grid>
       <Grid item xs={12} sm={4}>
-        <SexualOrientation />
-      </Grid>
-      <Grid item xs={12} sm={4}>
         <Pregnant />
       </Grid>
       <Grid item xs={12} sm={4}>
