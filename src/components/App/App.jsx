@@ -45,6 +45,7 @@ import './App.css';
 import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
 import NetPromoterScore from '../NetPromoterScore/NetPromoterScore';
 import RacePieChart from '../RacePieChart/RacePieChart';
+import PregnantPieChart from '../PregnantPieChart/PregnantPieChart';
 
 //monthly charts for drugs
 import NicotineMonth from '../NicotineMonth/NicotineMonth';
@@ -272,6 +273,13 @@ function App() {
           path="/pregnant">
             <Pregnant />
           </ProtectedRoute>
+          
+          <ProtectedRoute
+          exact
+          path="/pregnant_pie">
+            <PregnantPie />
+          </ProtectedRoute>
+
           <ProtectedRoute
           exact
           path="/past_services">

@@ -12,7 +12,8 @@ function OTCPieChart () {
     let OTCTotal=form.length;
     let OTCYes=0;
     let OTCNo=0;
-    let OTCYesDisplay= OTCYes / OTCTotal //figure out a way to get percentages
+    let OTCYesDisplay= 0;
+    let OTCNoDisplay= 0;
 
 
     form.map((item)=>{
@@ -24,14 +25,16 @@ function OTCPieChart () {
        else{
           OTCNo++
       }
+      OTCYesDisplay = ((OTCYes / OTCTotal) * 100).toFixed(1);
+      OTCNoDisplay = ((OTCNo / OTCTotal) * 100).toFixed(1);
       })
 
     const data = {
-        labels: ['Yes', 'No'],
+        labels: ['Yes %', 'No %'],
         datasets: [
           {
             label: '# of Votes',
-            data: [OTCYes, OTCNo],
+            data: [OTCYesDisplay, OTCNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
