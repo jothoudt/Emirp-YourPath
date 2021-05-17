@@ -53,6 +53,7 @@ import MarijuanaMonth from '../MarijuanaMonth/MarijuanaMonth';
 import InhalantsMonth from '../InhalantsMonth/InhalantsMonth';
 import OtherOpiodsMonth from '../OpiodsMonth/OpiodsMonth';
 import BenzodiazepinesMonth from '../BenzodiazepinesMonth/BenzodiazepinesMonth';
+import HallucinogenMonth from '../HallucinogenMonth/HallucinogenMonth';
 
 
 
@@ -295,6 +296,9 @@ function App() {
          </ProtectedRoute>
          <ProtectedRoute exact path="/benzodiazepines_last_month">
            <BenzodiazepinesMonth />
+         </ProtectedRoute>
+         <ProtectedRoute exact path="/hallucinogen_last_month">
+           <HallucinogenMonth />
          </ProtectedRoute>
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
