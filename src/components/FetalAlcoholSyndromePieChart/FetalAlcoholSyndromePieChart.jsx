@@ -17,7 +17,7 @@ function FASChart () {
     let fasNoDisplay=0;
 
 
-    form.map((item)=>{
+    form.map((item)=>{ 
         let answer=item.answers[108]
        if(answer.answer==='Yes'){
            fasYes++
