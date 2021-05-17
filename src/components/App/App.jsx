@@ -57,6 +57,7 @@ import InhalantsMonth from '../InhalantsMonth/InhalantsMonth';
 import OtherOpiodsMonth from '../OpiodsMonth/OpiodsMonth';
 import BenzodiazepinesMonth from '../BenzodiazepinesMonth/BenzodiazepinesMonth';
 import HallucinogenMonth from '../HallucinogenMonth/HallucinogenMonth';
+import OTCMonth from '../OTCMonth/OTCMonth';
 
 
 
@@ -309,6 +310,9 @@ function App() {
          </ProtectedRoute>
          <ProtectedRoute exact path="/hallucinogen_last_month">
            <HallucinogenMonth />
+         </ProtectedRoute>
+         <ProtectedRoute exact path="/otc_last_month">
+           <OTCMonth />
          </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

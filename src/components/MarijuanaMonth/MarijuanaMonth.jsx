@@ -18,7 +18,7 @@ function MarijuanaMonth(){
     let marijuanaMonthlyYes=0;
     let marijuanaMonthlyNo=0;
 
-    //function to display count of Nicotine users in the last month
+    //function to display count of Marijuana users in the last month
     const answerMarijuana=()=>{
         let marijuanaDisplay=''
         console.log('in answer')
