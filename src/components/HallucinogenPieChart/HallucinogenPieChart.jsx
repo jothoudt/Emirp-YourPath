@@ -12,7 +12,8 @@ function HallucinogenPieChart () {
     let hallucinogenTotal=form.length;
     let hallucinogenYes=0;
     let hallucinogenNo=0;
-    let hallucinogenYesDisplay= hallucinogenYes / hallucinogenTotal //figure out a way to get percentages
+    let hallucinogenYesDisplay= 0;
+    let hallucinogenNoDisplay=0;
 
 
     form.map((item)=>{
@@ -24,14 +25,16 @@ function HallucinogenPieChart () {
        else{
           hallucinogenNo++
       }
+      hallucinogenYesDisplay = ((hallucinogenYes / hallucinogenTotal) * 100).toFixed(1);
+      hallucinogenNoDisplay = ((hallucinogenNo / hallucinogenTotal) * 100).toFixed(1);
       })
 
     const data = {
-        labels: ['Yes', 'No'],
+        labels: ['Yes %', 'No %'],
         datasets: [
           {
             label: '# of Votes',
-            data: [hallucinogenYes, hallucinogenNo],
+            data: [hallucinogenYesDisplay, hallucinogenNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
