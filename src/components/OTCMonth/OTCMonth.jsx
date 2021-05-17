@@ -8,6 +8,7 @@ import {
     Divider,
     Typography
   } from '@material-ui/core';
+import OTCMonthPie from '../OTCMonthPie/OTCMonthPie';
 
 function OTCMonth(){
 
@@ -45,6 +46,7 @@ function OTCMonth(){
            />
          <CardContent>
            <Divider />
+           <OTCMonthPie />
            <p>Over the counter used in the last month Yes:{OTCMonthlyYes}</p>
            <p>Over the Counter used in the last month No: {OTCMonthlyNo}</p>
          </CardContent>
