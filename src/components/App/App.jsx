@@ -45,6 +45,9 @@ import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
 import NetPromoterScore from '../NetPromoterScore/NetPromoterScore';
 import RacePieChart from '../RacePieChart/RacePieChart';
 
+//monthly charts for drugs
+import NicotineMonth from '../NicotineMonth/NicotineMonth';
+
 
 
 function App() {
@@ -262,6 +265,10 @@ function App() {
           exact
           path="/racePie">
             <RacePieChart />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/nicotine_last_month">
+            <NicotineMonth />
           </ProtectedRoute>
           
 
