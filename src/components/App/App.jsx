@@ -35,6 +35,7 @@ import MentalHealth from '../MentalHealth/MentalHealth';
 import Race from '../Race/Race';
 import Pregnant from '../Pregnant/Pregnant'
 import PastServices from '../PastServices/PastServices';
+import FetalAlcoholSyndromePieChart from '../FetalAlcoholSyndromePieChart/FetalAlcoholSyndromePieChart';
 
 import Gender from '../Gender/Gender';
 import Hi from '../HiComponent/HiComponent';
@@ -262,6 +263,12 @@ function App() {
           exact
           path="/racePie">
             <RacePieChart />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          exact
+          path="/fasPie">
+            <FetalAlcoholSyndromePieChart />
           </ProtectedRoute>
           
 
