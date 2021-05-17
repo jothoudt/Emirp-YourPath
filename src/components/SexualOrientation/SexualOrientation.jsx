@@ -1,5 +1,14 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+//styling for card
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function SexualOrientation(){
 
@@ -34,13 +43,18 @@ function SexualOrientation(){
         }
       console.log('in orientation:', heterosexual, homosexual, bisexual, asexual)
       display= 
-      <>
-        <h2>{answer.text}</h2>
-        <p>heterosexual: {heterosexual}</p>
-        <p>homosexual: {homosexual}</p>
-        <p>bisexual: {bisexual}</p>
-        <p>asexual: {asexual}</p>
-      </>
+      <Card>
+        <CardHeader 
+            title={answer.text}
+        />
+        <CardContent>
+          <Divider />
+          <p>heterosexual: {heterosexual}</p>
+          <p>homosexual: {homosexual}</p>
+          <p>bisexual: {bisexual}</p>
+          <p>asexual: {asexual}</p>
+        </CardContent>
+      </Card>
       })
     }
     return display;

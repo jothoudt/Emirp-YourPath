@@ -1,5 +1,14 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+//styling for card
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function JusticeInvolved(){
 
@@ -62,18 +71,23 @@ function JusticeInvolved(){
         }
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
-      <>
-        <h2>{answer.text}</h2>
-        <p>No current or past legal issues: {none}</p>
-        <p>Past issues, no current: {past}</p>
-        <p>Awaiting sentencing: {awaitingSentencing}</p>
-        <p>Part of drug court or other treatment court: {drugCourt}</p>
-        <p>Out on bail: {outOnBail}</p>
-        <p>On probation: {probation}</p>
-        <p>On parole: {parole}</p>
-        <p>In the workhouse: {workhouse}</p>        
-        <p>Declined: {declined}</p>
-      </>
+      <Card>
+        <CardHeader 
+          title={answer.text}
+        />
+        <CardContent>
+          <Divider />        
+          <p>No current or past legal issues: {none}</p>
+          <p>Past issues, no current: {past}</p>
+          <p>Awaiting sentencing: {awaitingSentencing}</p>
+          <p>Part of drug court or other treatment court: {drugCourt}</p>
+          <p>Out on bail: {outOnBail}</p>
+          <p>On probation: {probation}</p>
+          <p>On parole: {parole}</p>
+          <p>In the workhouse: {workhouse}</p>        
+          <p>Declined: {declined}</p>
+        </CardContent>
+      </Card>
       })
     }
     return display;

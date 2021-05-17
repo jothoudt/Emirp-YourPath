@@ -1,5 +1,13 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function CocaineAllTime(){
 
@@ -27,10 +35,16 @@ function CocaineAllTime(){
        }
        console.log(cocaineYes, cocaineNo)
        display= 
-       <>
-       <p>Cocaine Yes:{cocaineYes}</p>
-       <p>Cocaine No: {cocaineNo}</p>
-       </>
+       <Card>
+          <CardHeader 
+            title={answer.text}
+          />
+          <CardContent>
+            <Divider />
+            <p>Cocaine Yes:{cocaineYes}</p>
+            <p>Cocaine No: {cocaineNo}</p>
+          </CardContent>
+       </Card>
        })
      }
      return display;
