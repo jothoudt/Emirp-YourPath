@@ -51,6 +51,7 @@ import NicotineMonth from '../NicotineMonth/NicotineMonth';
 import AlcoholMonth from '../AlcoholMonth/AlcoholMonth';
 import MarijuanaMonth from '../MarijuanaMonth/MarijuanaMonth';
 import InhalantsMonth from '../InhalantsMonth/InhalantsMonth';
+import OtherOpiodsMonth from '../OpiodsMonth/OpiodsMonth';
 
 
 
@@ -288,7 +289,9 @@ function App() {
           <ProtectedRoute exact path="/inhalants_last_month">
             <InhalantsMonth />
           </ProtectedRoute>
-
+          <ProtectedRoute exact path="/opiods_last_month">
+            <OtherOpiodsMonth />
+         </ProtectedRoute>
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
             <h1>404</h1>
