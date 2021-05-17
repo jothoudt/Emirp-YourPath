@@ -50,6 +50,7 @@ import RacePieChart from '../RacePieChart/RacePieChart';
 import NicotineMonth from '../NicotineMonth/NicotineMonth';
 import AlcoholMonth from '../AlcoholMonth/AlcoholMonth';
 import MarijuanaMonth from '../MarijuanaMonth/MarijuanaMonth';
+import InhalantsMonth from '../InhalantsMonth/InhalantsMonth';
 
 
 
@@ -283,6 +284,9 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/marijuana_last_month">
             <MarijuanaMonth />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/inhalants_last_month">
+            <InhalantsMonth />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
