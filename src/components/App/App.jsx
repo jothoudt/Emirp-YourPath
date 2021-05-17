@@ -48,6 +48,8 @@ import RacePieChart from '../RacePieChart/RacePieChart';
 
 //monthly charts for drugs
 import NicotineMonth from '../NicotineMonth/NicotineMonth';
+import AllDrugsBar from '../AllDrugsBar/AllDrugsBar';
+
 import AlcoholMonth from '../AlcoholMonth/AlcoholMonth';
 
 import CocaineMonth from '../CocaineMonth/CocaineMonth';
@@ -57,6 +59,7 @@ import InhalantsMonth from '../InhalantsMonth/InhalantsMonth';
 import OtherOpiodsMonth from '../OpiodsMonth/OpiodsMonth';
 import BenzodiazepinesMonth from '../BenzodiazepinesMonth/BenzodiazepinesMonth';
 import HallucinogenMonth from '../HallucinogenMonth/HallucinogenMonth';
+
 
 
 
@@ -280,12 +283,25 @@ function App() {
 
           <ProtectedRoute exact path="/nicotine_last_month">
             <NicotineMonth />
+
+          </ProtectedRoute> 
+
           </ProtectedRoute>
+
           <ProtectedRoute
           exact
           path="/fasPie">
             <FetalAlcoholSyndromePieChart />
           </ProtectedRoute>
+
+
+          <ProtectedRoute
+          exact
+          path="/drugsBar">
+            <AllDrugsBar />
+          </ProtectedRoute>
+          
+
           <ProtectedRoute exact path="/alcohol_last_month">
             <AlcoholMonth />
           </ProtectedRoute>
@@ -310,6 +326,7 @@ function App() {
          <ProtectedRoute exact path="/hallucinogen_last_month">
            <HallucinogenMonth />
          </ProtectedRoute>
+
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
