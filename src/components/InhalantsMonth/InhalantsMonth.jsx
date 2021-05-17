@@ -18,7 +18,7 @@ function InhalantsMonth(){
     let inhalantsMonthlyYes=0;
     let inhalantsMonthlyNo=0;
 
-    //function to display count of Nicotine users in the last month
+    //function to display count of Inhalants users in the last month
     const answerInhalants=()=>{
         let inhalantsDisplay=''
         console.log('in answer')

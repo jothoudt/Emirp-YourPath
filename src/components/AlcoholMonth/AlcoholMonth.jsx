@@ -18,7 +18,7 @@ function AlcoholMonth(){
     let alcoholMonthlyYes=0;
     let alcoholMonthlyNo=0;
 
-    //function to display count of Nicotine users in the last month
+    //function to display count of Alcohol users in the last month
     const answerAlcohol=()=>{
         let alcoholDisplay=''
         console.log('in answer')

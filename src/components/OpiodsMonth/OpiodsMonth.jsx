@@ -18,7 +18,7 @@ function OpiodsMonth(){
     let opiodsMonthlyYes=0;
     let opiodsMonthlyNo=0;
 
-    //function to display count of Nicotine users in the last month
+    //function to display count of Opiod users in the last month
     const answerOpiods=()=>{
         let opiodsDisplay=''
         console.log('in answer')

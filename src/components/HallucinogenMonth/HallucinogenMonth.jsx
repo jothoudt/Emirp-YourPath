@@ -18,7 +18,7 @@ function HallucinogenMonth(){
     let hallucinogenMonthlyYes=0;
     let hallucinogenMonthlyNo=0;
 
-    //function to display count of Nicotine users in the last month
+    //function to display count of Hallucinogen users in the last month
     const answerHallucinogen=()=>{
         let hallucinogenDisplay=''
         console.log('in answer')
