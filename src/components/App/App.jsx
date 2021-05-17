@@ -48,6 +48,7 @@ import RacePieChart from '../RacePieChart/RacePieChart';
 
 //monthly charts for drugs
 import NicotineMonth from '../NicotineMonth/NicotineMonth';
+import AlcoholMonth from '../AlcoholMonth/AlcoholMonth';
 
 
 
@@ -270,12 +271,15 @@ function App() {
 
           <ProtectedRoute exact path="/nicotine_last_month">
             <NicotineMonth />
+          </ProtectedRoute>
           <ProtectedRoute
           exact
           path="/fasPie">
             <FetalAlcoholSyndromePieChart />
           </ProtectedRoute>
-          
+          <ProtectedRoute exact path="/alcohol_last_month">
+            <AlcoholMonth />
+          </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
