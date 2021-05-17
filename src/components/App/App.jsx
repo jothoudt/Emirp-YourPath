@@ -61,6 +61,7 @@ import BenzodiazepinesMonth from '../BenzodiazepinesMonth/BenzodiazepinesMonth';
 import HallucinogenMonth from '../HallucinogenMonth/HallucinogenMonth';
 import OTCMonth from '../OTCMonth/OTCMonth';
 import OtherSubstancesMonth from '../OtherSubstancesMonth/OtherSubstancesMonth';
+import AllDrugsLastMonth from '../AllDrugsLastMonth/AllDrugsLastMonth';
 
 
 
@@ -332,6 +333,10 @@ function App() {
 
          <ProtectedRoute exact path="/other_substances_last_month">
            <OtherSubstancesMonth />
+         </ProtectedRoute>
+
+         <ProtectedRoute exact path="/all_drugs_last_month">
+           <AllDrugsLastMonth />
          </ProtectedRoute>
 
 
