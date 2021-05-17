@@ -1,5 +1,15 @@
 import React from 'react';
 import {useSelector} from 'react-redux'
+import OTCPieChart from '../OTCPieChart/OTCPieChart';
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
+
 
 function OTCAllTime(){
 
@@ -27,10 +37,17 @@ function OTCAllTime(){
        }
        console.log(OTCYes, OTCNo)
        display= 
-       <>
-       <p>Over-the-Counter Yes:{OTCYes}</p>
-       <p>Over-the-Counter No: {OTCNo}</p>
-       </>
+      <Card>
+        <CardHeader 
+          title={answer.text}
+        />
+        <CardContent>
+          <Divider />
+          <OTCPieChart />
+          <p>Over-the-Counter Yes:{OTCYes}</p>
+          <p>Over-the-Counter No: {OTCNo}</p>
+        </CardContent>
+      </Card>
        })
      }
      return display;
