@@ -1,5 +1,16 @@
 import React from 'react';
 import {useSelector} from 'react-redux'
+//pass thru pie chart
+import FetalAlcoholSyndromePieChart from '../FetalAlcoholSyndromePieChart/FetalAlcoholSyndromePieChart';
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
+
 
 function FetalAlcoholSyndrome(){
 
@@ -9,8 +20,8 @@ function FetalAlcoholSyndrome(){
     let fasNo=0;
     
      // const mjMap=form[119].answer
-   
-     const answer1 =()=>{
+
+    const answer1 =()=>{
        let display=''
        console.log('in answer')
        if(!form){
@@ -26,11 +37,18 @@ function FetalAlcoholSyndrome(){
             fasNo++
        }
        console.log(fasYes, fasNo)
-       display= 
-       <>
-       <p>Fetal Alcohol Syndrome Yes: {fasYes}</p>
-       <p>Fetal Alcohol Syndrome No: {fasNo}</p>
-       </>
+      display= 
+        <Card>
+          <CardHeader 
+          title={answer.text}
+          />
+          <CardContent>
+            <Divider />
+            <FetalAlcoholSyndromePieChart />
+              <p>Fetal Alcohol Syndrome Yes: {fasYes}</p>
+              <p>Fetal Alcohol Syndrome No: {fasNo}</p>
+          </CardContent>
+        </Card>
        })
      }
      return display;

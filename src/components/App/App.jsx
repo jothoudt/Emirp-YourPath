@@ -270,6 +270,7 @@ function App() {
 
           <ProtectedRoute exact path="/nicotine_last_month">
             <NicotineMonth />
+          </ProtectedRoute>
           <ProtectedRoute
           exact
           path="/fasPie">
