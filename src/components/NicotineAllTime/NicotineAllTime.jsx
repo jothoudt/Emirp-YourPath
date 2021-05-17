@@ -1,5 +1,14 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+//styling for card
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function NicotineAllTime(){
 
@@ -34,10 +43,16 @@ function NicotineAllTime(){
 
         //define display
         nicotineDisplay= 
-        <>
-        <p>Nicotine Yes:{ nicotineYes}</p>
-        <p>Nicotine No: {nicotineNo}</p>
-        </>
+        <Card>
+          <CardHeader 
+            title={answer.text}
+          />
+          <CardContent>
+            <Divider />           
+            <p>Nicotine Yes:{nicotineYes}</p>
+            <p>Nicotine No: {nicotineNo}</p>
+          </CardContent>
+        </Card>
         })
       }
       return nicotineDisplay;

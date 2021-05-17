@@ -1,5 +1,14 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+//styling for card
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function BenzodiazepinesAllTime(){
 
@@ -26,10 +35,16 @@ function BenzodiazepinesAllTime(){
       }
       console.log(benzYes, benzNo)
       display= 
-      <>
-      <p>Benzodiazepines Yes:{benzYes}</p>
-      <p>Benzodiazepines No: {benzNo}</p>
-      </>
+      <Card>
+          <CardHeader 
+            title={answer.text}
+          />
+          <CardContent>
+            <Divider />
+            <p>Benzodiazepines Yes:{benzYes}</p>
+            <p>Benzodiazepines No: {benzNo}</p>
+          </CardContent>
+      </Card>
       })
     }
     return display;

@@ -1,5 +1,14 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+//styling for card
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function AlcoholAllTime(){
   //get information from the store
@@ -33,10 +42,16 @@ function AlcoholAllTime(){
 
         //define display
         alcoholDisplay= 
-        <>
-        <p>Alcohol Used Yes:{ alcoholYes}</p>
-        <p>Alcohol Used No: {alcoholNo}</p>
-        </>
+        <Card>
+          <CardHeader 
+            title={answer.text}
+          />
+          <CardContent>
+            <Divider />
+            <p>Alcohol Used Yes:{ alcoholYes}</p>
+            <p>Alcohol Used No: {alcoholNo}</p>
+          </CardContent>
+        </Card>
         })
       }
       //return display

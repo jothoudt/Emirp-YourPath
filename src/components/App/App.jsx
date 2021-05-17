@@ -50,6 +50,18 @@ import RacePieChart from '../RacePieChart/RacePieChart';
 import NicotineMonth from '../NicotineMonth/NicotineMonth';
 import AllDrugsBar from '../AllDrugsBar/AllDrugsBar';
 
+import AlcoholMonth from '../AlcoholMonth/AlcoholMonth';
+
+import CocaineMonth from '../CocaineMonth/CocaineMonth';
+
+import MarijuanaMonth from '../MarijuanaMonth/MarijuanaMonth';
+import InhalantsMonth from '../InhalantsMonth/InhalantsMonth';
+import OtherOpiodsMonth from '../OpiodsMonth/OpiodsMonth';
+import BenzodiazepinesMonth from '../BenzodiazepinesMonth/BenzodiazepinesMonth';
+import HallucinogenMonth from '../HallucinogenMonth/HallucinogenMonth';
+
+
+
 
 
 function App() {
@@ -271,12 +283,17 @@ function App() {
 
           <ProtectedRoute exact path="/nicotine_last_month">
             <NicotineMonth />
+
           </ProtectedRoute> 
+
+          </ProtectedRoute>
+
           <ProtectedRoute
           exact
           path="/fasPie">
             <FetalAlcoholSyndromePieChart />
           </ProtectedRoute>
+
 
           <ProtectedRoute
           exact
@@ -284,6 +301,32 @@ function App() {
             <AllDrugsBar />
           </ProtectedRoute>
           
+
+          <ProtectedRoute exact path="/alcohol_last_month">
+            <AlcoholMonth />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/cocaine_last_month">
+            <CocaineMonth />
+          </ProtectedRoute>
+
+
+          <ProtectedRoute exact path="/marijuana_last_month">
+            <MarijuanaMonth />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/inhalants_last_month">
+            <InhalantsMonth />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/opiods_last_month">
+            <OtherOpiodsMonth />
+         </ProtectedRoute>
+         <ProtectedRoute exact path="/benzodiazepines_last_month">
+           <BenzodiazepinesMonth />
+         </ProtectedRoute>
+         <ProtectedRoute exact path="/hallucinogen_last_month">
+           <HallucinogenMonth />
+         </ProtectedRoute>
+
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>

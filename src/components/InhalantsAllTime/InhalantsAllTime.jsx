@@ -1,5 +1,14 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+//for styling
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function InhalantsAllTime(){
 
@@ -26,10 +35,16 @@ function InhalantsAllTime(){
       }
       console.log(inhalantYes, inhalantNo)
       display= 
-      <>
-      <p>Inhalant Yes:{inhalantYes}</p>
-      <p>Inhalant No: {inhalantNo}</p>
-      </>
+      <Card>
+        <CardHeader 
+          title={answer.text}
+        />
+        <CardContent>
+          <Divider />
+          <p>Inhalant Yes:{inhalantYes}</p>
+          <p>Inhalant No: {inhalantNo}</p>
+        </CardContent>
+      </Card>
       })
     }
     return display;

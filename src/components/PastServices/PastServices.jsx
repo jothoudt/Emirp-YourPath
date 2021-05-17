@@ -1,5 +1,14 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+//styling for card
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function PastServices(){
 
@@ -66,8 +75,12 @@ function PastServices(){
         }
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
-      <>
-        <h2>{answer.text}</h2>
+      <Card>
+        <CardHeader 
+          title={answer.text}
+        />
+        <CardContent>
+          <Divider />         
         <p>A psych ward or a psychiatric hold: {psychWard}</p>
         <p>Detox: {detox}</p>
         <p>Residential Treatment: {residential}</p>
@@ -78,7 +91,8 @@ function PastServices(){
         <p>Been prescribed medication for mental health issues, i.e. depression, anxiety, sleep, etc... {prescribed}</p>   
         <p>Sober Housing: {soberHousing}</p>     
         <p>Declined: {declined}</p>
-      </>
+        </CardContent>
+      </Card>
       })
     }
     return display;

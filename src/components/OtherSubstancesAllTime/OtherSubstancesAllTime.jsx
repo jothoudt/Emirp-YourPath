@@ -1,5 +1,14 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+//styling for card
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function OtherSubstancesAllTime(){
   //get information from the store
@@ -33,10 +42,16 @@ function OtherSubstancesAllTime(){
 
         //define display
         otherDisplay= 
-        <>
-        <p>Other Substances Used Yes:{ otherYes}</p>
-        <p>Other Substances Used No: {otherNo}</p>
-        </>
+        <Card>
+          <CardHeader 
+            title={answer.text}
+          />
+          <CardContent>
+            <Divider />             
+            <p>Other Substances Used Yes:{ otherYes}</p>
+            <p>Other Substances Used No: {otherNo}</p>
+         </CardContent>
+        </Card>
         })
       }
       //return display
