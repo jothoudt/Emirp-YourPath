@@ -60,6 +60,7 @@ import OtherOpiodsMonth from '../OpiodsMonth/OpiodsMonth';
 import BenzodiazepinesMonth from '../BenzodiazepinesMonth/BenzodiazepinesMonth';
 import HallucinogenMonth from '../HallucinogenMonth/HallucinogenMonth';
 import OTCMonth from '../OTCMonth/OTCMonth';
+import OtherSubstancesMonth from '../OtherSubstancesMonth/OtherSubstancesMonth';
 
 
 
@@ -287,8 +288,6 @@ function App() {
 
           </ProtectedRoute> 
 
-          </ProtectedRoute>
-
           <ProtectedRoute
           exact
           path="/fasPie">
@@ -329,6 +328,10 @@ function App() {
          </ProtectedRoute>
          <ProtectedRoute exact path="/otc_last_month">
            <OTCMonth />
+         </ProtectedRoute>
+
+         <ProtectedRoute exact path="/other_substances_last_month">
+           <OtherSubstancesMonth />
          </ProtectedRoute>
 
 
