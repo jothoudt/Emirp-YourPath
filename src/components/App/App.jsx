@@ -67,6 +67,7 @@ import AllDrugsLastMonth from '../AllDrugsLastMonth/AllDrugsLastMonth';
 //charts for demographic data
 import PastServicesBar from '../PastServicesBar/PastServicesBar';
 import AlcoholPieChart from '../AlcoholPieChart/AlcoholPieChart';
+import NicotinePieChart from '../NicotinePieChart/NicotinePieChart';
 
 
 
@@ -356,8 +357,12 @@ function App() {
         </ProtectedRoute>
          <ProtectedRoute exact path="/alcohol_pie_chart">       
           <AlcoholPieChart />
+        </ProtectedRoute>
+        
+        <ProtectedRoute exact path="/nicotine_pie_chart">       
+          <NicotinePieChart />
          </ProtectedRoute>
-
+        
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
