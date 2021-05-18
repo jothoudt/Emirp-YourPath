@@ -77,6 +77,7 @@ import MarijuanaMonthPieChart from '../MarijuanaMonthPieChart/MarijuanaMonthPieC
 
 import MethAllTime from "../MethAllTime/MethAllTime";
 import HeroinAllTime from '../HeroinAllTime/HeroinAllTime';
+import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAllTime';
 
 
 
@@ -418,6 +419,10 @@ function App() {
 
           <ProtectedRoute exact path="/heroin_all_time">
             <HeroinAllTime />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/other_substances_all_time">
+            <OtherSubstancesAllTime />
           </ProtectedRoute>
           
 

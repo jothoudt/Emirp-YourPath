@@ -9,6 +9,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import OtherSubstanceAllTimePie from '../OtherSubstancesAllTimePie/OtherSubstancesAllTimePie';
 
 function OtherSubstancesAllTime(){
   //get information from the store
@@ -47,7 +48,8 @@ function OtherSubstancesAllTime(){
             title={answer.text}
           />
           <CardContent>
-            <Divider />             
+            <Divider />
+            <OtherSubstanceAllTimePie />             
             <p>Other Substances Used Yes:{ otherYes}</p>
             <p>Other Substances Used No: {otherNo}</p>
          </CardContent>
