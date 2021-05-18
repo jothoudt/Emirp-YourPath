@@ -5,28 +5,28 @@ import { Pie } from 'react-chartjs-2';
 
 
   
-function MarijuanaPieChart () {
+function NicotinePieChart () {
     const form = useSelector((store)=>store.form);
 
     
 
-    let marijuanaTotal=form.length;
-    let marijuanaYes=0;
-    let marijuanaNo=0;
-    let marijuanaYesDisplay= 0;
-    let marijuanaNoDisplay=0;
+    let nicotineTotal=form.length;
+    let nicotineYes=0;
+    let nicotineNo=0;
+    let nicotineYesDisplay= 0;
+    let nicotineNoDisplay=0;
 
 
     form.map((item)=>{
-        let answer=item.answers[119]
+        let answer=item.answers[117]
        if(answer.answer==='Yes'){
-           marijuanaYes++
+           nicotineYes++
        }
        else{
-           marijuanaNo++
+           nicotineNo++
       }
-        marijuanaYesDisplay = ((marijuanaYes / marijuanaTotal) * 100).toFixed(1);
-        marijuanaNoDisplay = ((marijuanaNo / marijuanaTotal) * 100).toFixed(1);
+        nicotineYesDisplay = ((nicotineYes / nicotineTotal) * 100).toFixed(1);
+        nicotineNoDisplay = ((nicotineNo / nicotineTotal) * 100).toFixed(1);
       })
       
 
@@ -35,7 +35,7 @@ function MarijuanaPieChart () {
         datasets: [
           {
             label: '# of Votes',
-            data: [marijuanaYesDisplay, marijuanaNoDisplay],
+            data: [nicotineYesDisplay, nicotineNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -51,11 +51,11 @@ function MarijuanaPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Marijuana Use</h1>
+            <h1 className='title'>Nicotine Use</h1>
         </div>
         <Pie data={data} />
         </>
     )
 }
   
-  export default MarijuanaPieChart;
+  export default NicotinePieChart;
