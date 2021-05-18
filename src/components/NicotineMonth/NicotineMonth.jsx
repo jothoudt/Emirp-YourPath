@@ -8,6 +8,7 @@ import {
     Divider,
     Typography
   } from '@material-ui/core';
+import NicotineMonthPie from '../NicotineMonthPieChart/NicotineMonthPieChart';
 
 function NicotineMonth(){
 
@@ -45,6 +46,7 @@ function NicotineMonth(){
            />
          <CardContent>
            <Divider />
+           <NicotineMonthPie />
            <p>Nicotine in the last month Yes:{nicotineMonthlyYes}</p>
            <p>Nicotine in the last month No: {nicotineMonthlyNo}</p>
          </CardContent>
