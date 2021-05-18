@@ -66,6 +66,7 @@ import AllDrugsLastMonth from '../AllDrugsLastMonth/AllDrugsLastMonth';
 
 //charts for demographic data
 import PastServicesBar from '../PastServicesBar/PastServicesBar';
+import AlcoholPieChart from '../AlcoholPieChart/AlcoholPieChart';
 
 
 
@@ -278,7 +279,7 @@ function App() {
           <ProtectedRoute
           exact
           path="/pregnant_pie">
-            <PregnantPie />
+            <PregnantPieChart />
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -349,6 +350,10 @@ function App() {
          </ProtectedRoute>
          <ProtectedRoute exact path="/past_services_bar">       
           <PastServicesBar />
+         </ProtectedRoute>
+
+         <ProtectedRoute exact path="/alcohol_pie_chart">       
+          <AlcoholPieChart />
          </ProtectedRoute>
 
 
