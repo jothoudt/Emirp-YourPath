@@ -8,6 +8,7 @@ import {
     Divider,
     Typography
   } from '@material-ui/core';
+import BenzodiazepinesMonthPie from '../BenzodiazepinesMonthPie/BenzodiazepinesMonthPie';
 
 function BenzodiazepinesMonth(){
 
@@ -45,6 +46,7 @@ function BenzodiazepinesMonth(){
            />
          <CardContent>
            <Divider />
+           <BenzodiazepinesMonthPie />
            <p>Benzodiazepines in the last month Yes:{benzodiazepinesMonthlyYes}</p>
            <p>Benzodiazepines in the last month No: {benzodiazepinesMonthlyNo}</p>
          </CardContent>

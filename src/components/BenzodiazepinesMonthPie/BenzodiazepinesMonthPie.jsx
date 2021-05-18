@@ -5,31 +5,31 @@ import { Pie } from 'react-chartjs-2';
 
 
   
-function HallucinogenMonthPie () {
+function BenzodiazepinesMonthPie () {
     //get information from the store
     const form = useSelector((store)=>store.form);
 
     //define variables
-    let hallucinogenTotal=form.length;
-    let hallucinogenYes=0;
-    let hallucinogenNo=0;
-    let hallucinogenYesDisplay= 0;
-    let hallucinogenNoDisplay=0;
+    let benzodiazepinesTotal=form.length;
+    let benzodiazepinesYes=0;
+    let benzodiazepinesNo=0;
+    let benzodiazepinesYesDisplay= 0;
+    let benzodiazepinesNoDisplay=0;
 
     //map through store info
     form.map((item)=>{
         //targets data set needed
-        let answer=item.answers[141]
+        let answer=item.answers[140]
         //if the answer is yes
        if(answer.answer){
-        hallucinogenYes++
+        benzodiazepinesYes++
        }
        //otherwise undecided and no equal No
        else{
-        hallucinogenNo++
+        benzodiazepinesNo++
       }
-      hallucinogenYesDisplay = ((hallucinogenYes / hallucinogenTotal) * 100).toFixed(1);
-      hallucinogenNoDisplay = ((hallucinogenNo / hallucinogenTotal) * 100).toFixed(1);
+      benzodiazepinesYesDisplay = ((benzodiazepinesYes / benzodiazepinesTotal) * 100).toFixed(1);
+      benzodiazepinesNoDisplay = ((benzodiazepinesNo / benzodiazepinesTotal) * 100).toFixed(1);
       })
       
       //data for Pie Chart
@@ -38,7 +38,7 @@ function HallucinogenMonthPie () {
         datasets: [
           {
             label: '# of Votes',
-            data: [hallucinogenYesDisplay, hallucinogenNoDisplay],
+            data: [benzodiazepinesYesDisplay, benzodiazepinesNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -55,11 +55,11 @@ function HallucinogenMonthPie () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Hallucinogens used in the Last Month</h1>
+            <h1 className='title'>Benzodiazepines used in the Last Month</h1>
         </div>
         <Pie data={data} />
         </>
     )
 }
   
-  export default HallucinogenMonthPie;
+  export default BenzodiazepinesMonthPie;
