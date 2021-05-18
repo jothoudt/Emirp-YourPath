@@ -8,6 +8,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import HeroinAllTimePie from '../HeroinAllTimePie/HeroinAllTimePie';
 
 function HeroinAllTime(){
 
@@ -41,7 +42,8 @@ function HeroinAllTime(){
             title={answer.text}
           />
           <CardContent>
-            <Divider />            
+            <Divider />   
+            <HeroinAllTimePie />         
             <p>Heroin Yes:{heroinYes}</p>
             <p>Heroin No: {heroinNo}</p>
           </CardContent>
