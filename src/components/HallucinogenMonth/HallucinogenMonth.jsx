@@ -8,6 +8,7 @@ import {
     Divider,
     Typography
   } from '@material-ui/core';
+import HallucinogenMonthPie from '../HallucinogenMonthPie/HallucinogenMonthPie';
 
 function HallucinogenMonth(){
 
@@ -45,6 +46,7 @@ function HallucinogenMonth(){
            />
          <CardContent>
            <Divider />
+           <HallucinogenMonthPie />
            <p>Hallucinogen in the last month Yes:{hallucinogenMonthlyYes}</p>
            <p>Hallucinogen in the last month No: {hallucinogenMonthlyNo}</p>
          </CardContent>
