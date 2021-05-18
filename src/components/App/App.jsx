@@ -47,6 +47,7 @@ import NetPromoterScore from '../NetPromoterScore/NetPromoterScore';
 import RacePieChart from '../RacePieChart/RacePieChart';
 import PregnantPieChart from '../PregnantPieChart/PregnantPieChart';
 import BenzodiazepinesPieChart from '../BenzodiazepinesPieChart/BenzodiazepinesPieChart';
+import InhalantsPieChart from '../InhalantsPieChart/InhalantsPieChart';
 //monthly charts for drugs
 import NicotineMonth from '../NicotineMonth/NicotineMonth';
 import AllDrugsBar from '../AllDrugsBar/AllDrugsBar';
@@ -332,6 +333,7 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/opiods_last_month">
             <OtherOpiodsMonth />
+
          </ProtectedRoute>
          <ProtectedRoute exact path="/benzodiazepines_last_month">
            <BenzodiazepinesMonth />
@@ -368,6 +370,38 @@ function App() {
           <MarijuanaMonthPieChart />
          </ProtectedRoute>
         
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/benzodiazepines_last_month">
+            <BenzodiazepinesMonth />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/hallucinogen_last_month">
+            <HallucinogenMonth />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/otc_last_month">
+            <OTCMonth />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/other_substances_last_month">
+            <OtherSubstancesMonth />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/all_drugs_last_month">
+            <AllDrugsLastMonth />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/past_services_bar">       
+            <PastServicesBar />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/benzodiazepines_pie_chart">
+            <BenzodiazepinesPieChart />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/alcohol_pie_chart">       
+            <AlcoholPieChart />
+          </ProtectedRoute> 
+          <ProtectedRoute exact path="/nicotine_pie_chart">       
+            <NicotinePieChart />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/inhalants_pie_chart">
+            <InhalantsPieChart />
+          </ProtectedRoute>
+          
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
