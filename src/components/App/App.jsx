@@ -47,7 +47,11 @@ import NetPromoterScore from '../NetPromoterScore/NetPromoterScore';
 import RacePieChart from '../RacePieChart/RacePieChart';
 import PregnantPieChart from '../PregnantPieChart/PregnantPieChart';
 import BenzodiazepinesPieChart from '../BenzodiazepinesPieChart/BenzodiazepinesPieChart';
+
+import CocainePieChart from '../CocainePieChart/CocainePieChart';
+
 import InhalantsPieChart from '../InhalantsPieChart/InhalantsPieChart';
+
 //monthly charts for drugs
 import NicotineMonth from '../NicotineMonth/NicotineMonth';
 import AllDrugsBar from '../AllDrugsBar/AllDrugsBar';
@@ -254,6 +258,13 @@ function App() {
           >
 
             <HallucinogenPieChart />
+          </ProtectedRoute>
+          <ProtectedRoute 
+          exact
+          path="/cocainepie"
+          >
+
+            <CocainePieChart />
           </ProtectedRoute>
           
           <ProtectedRoute 
