@@ -68,6 +68,7 @@ import AllDrugsLastMonth from '../AllDrugsLastMonth/AllDrugsLastMonth';
 import PastServicesBar from '../PastServicesBar/PastServicesBar';
 import AlcoholPieChart from '../AlcoholPieChart/AlcoholPieChart';
 import NicotinePieChart from '../NicotinePieChart/NicotinePieChart';
+import MarijuanaMonthPieChart from '../MarijuanaMonthPieChart/MarijuanaMonthPieChart';
 
 
 
@@ -361,6 +362,10 @@ function App() {
         
         <ProtectedRoute exact path="/nicotine_pie_chart">       
           <NicotinePieChart />
+         </ProtectedRoute>
+
+         <ProtectedRoute exact path="/marijuana_month_pie_chart">       
+          <MarijuanaMonthPieChart />
          </ProtectedRoute>
         
 
