@@ -8,6 +8,7 @@ import {
     Divider,
     Typography
   } from '@material-ui/core';
+import CocaineMonthPie from '../CocaineMonthPie/CocaineMonthPie';
 
 function CocaineMonth(){
 
@@ -40,6 +41,7 @@ function CocaineMonth(){
         //display for counts
         cocaineDisplay= 
         <Card>
+           <CocaineMonthPie />
            <CardHeader 
            title={answer.text}
            />

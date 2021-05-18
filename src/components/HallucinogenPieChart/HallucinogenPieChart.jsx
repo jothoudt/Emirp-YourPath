@@ -18,7 +18,6 @@ function HallucinogenPieChart () {
 
     form.map((item)=>{
         let answer=item.answers[125]
-        hallucinogenTotal++
        if(answer.answer==='Yes'){
           hallucinogenYes++
        }
