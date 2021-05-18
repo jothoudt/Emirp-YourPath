@@ -8,6 +8,7 @@ import {
     Divider,
     Typography
   } from '@material-ui/core';
+import OpiodsMonthPie from '../OpiodsMonthPie/OpiodsMonthPie';
 
 function OpiodsMonth(){
 
@@ -45,8 +46,9 @@ function OpiodsMonth(){
            />
          <CardContent>
            <Divider />
-           <p>Opiods in the last month Yes:{opiodsMonthlyYes}</p>
-           <p>Opiods in the last month No: {opiodsMonthlyNo}</p>
+           <OpiodsMonthPie />
+           <p>Opioids in the last month Yes:{opiodsMonthlyYes}</p>
+           <p>Opioids in the last month No: {opiodsMonthlyNo}</p>
          </CardContent>
         </Card>
         })
