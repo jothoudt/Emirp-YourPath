@@ -1,7 +1,7 @@
 import React from 'react';
 import AlcoholTabs from '../AlcoholTabs/AlcoholTabs'
 
-function NicotineDetails (){
+function AlcoholDetails (){
 
     return(
         <>
@@ -10,4 +10,4 @@ function NicotineDetails (){
     )
 }
 
-export default NicotineDetails;
+export default AlcoholDetails;
