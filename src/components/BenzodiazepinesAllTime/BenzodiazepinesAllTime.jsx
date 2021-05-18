@@ -1,5 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+//pass thru pie chart
+import BenzodiazepinesPieChart from '../BenzodiazepinesPieChart/BenzodiazepinesPieChart';
 //styling for card
 import { 
   Card,
@@ -36,14 +38,16 @@ function BenzodiazepinesAllTime(){
       console.log(benzYes, benzNo)
       display= 
       <Card>
-          <CardHeader 
-            title={answer.text}
-          />
-          <CardContent>
-            <Divider />
-            <p>Benzodiazepines Yes:{benzYes}</p>
-            <p>Benzodiazepines No: {benzNo}</p>
-          </CardContent>
+        <BenzodiazepinesPieChart />
+        <CardHeader 
+          title={answer.text}
+        />
+        <CardContent>
+          
+          <Divider />
+          <p>Benzodiazepines Yes:{benzYes}</p>
+          <p>Benzodiazepines No: {benzNo}</p>
+        </CardContent>
       </Card>
       })
     }
