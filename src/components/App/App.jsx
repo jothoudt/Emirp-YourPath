@@ -68,6 +68,7 @@ import HallucinogenMonth from '../HallucinogenMonth/HallucinogenMonth';
 import OTCMonth from '../OTCMonth/OTCMonth';
 import OtherSubstancesMonth from '../OtherSubstancesMonth/OtherSubstancesMonth';
 import AllDrugsLastMonth from '../AllDrugsLastMonth/AllDrugsLastMonth';
+import MethMonth from '../MethMonth/MethMonth';
 
 //charts for demographic data
 import PastServicesBar from '../PastServicesBar/PastServicesBar';
@@ -82,6 +83,7 @@ import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAll
 import MarijuanaDetails from '../MarijuanaDetails/MarijuanaDetails';
 import NicotineDetails from '../NicotineDetails/NicotineDetails';
 import AlcoholDetails from '../AlcoholDetails/AlcoholDetails';
+
 
 
 
@@ -391,6 +393,9 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/hallucinogen_last_month">
             <HallucinogenMonth />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/meth_last_month">
+            <MethMonth />
           </ProtectedRoute>
           <ProtectedRoute exact path="/otc_last_month">
             <OTCMonth />
