@@ -71,6 +71,8 @@ import AlcoholPieChart from '../AlcoholPieChart/AlcoholPieChart';
 import NicotinePieChart from '../NicotinePieChart/NicotinePieChart';
 import MarijuanaMonthPieChart from '../MarijuanaMonthPieChart/MarijuanaMonthPieChart';
 
+import MethAllTime from "../MethAllTime/MethAllTime";
+
 
 
 function App() {
@@ -399,6 +401,10 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/inhalants_pie_chart">
             <InhalantsPieChart />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/meth_all_time">
+            <MethAllTime />
           </ProtectedRoute>
           
 
