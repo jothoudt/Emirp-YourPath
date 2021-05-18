@@ -370,7 +370,6 @@ function App() {
           <MarijuanaMonthPieChart />
          </ProtectedRoute>
         
-          </ProtectedRoute>
           <ProtectedRoute exact path="/benzodiazepines_last_month">
             <BenzodiazepinesMonth />
           </ProtectedRoute>
