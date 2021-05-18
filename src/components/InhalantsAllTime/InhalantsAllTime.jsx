@@ -1,5 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+//pass thru pie chart
+import InhalantsPieChart from '../InhalantsPieChart/InhalantsPieChart';
 //for styling
 import { 
   Card,
@@ -36,6 +38,7 @@ function InhalantsAllTime(){
       console.log(inhalantYes, inhalantNo)
       display= 
       <Card>
+        <InhalantsPieChart />
         <CardHeader 
           title={answer.text}
         />
