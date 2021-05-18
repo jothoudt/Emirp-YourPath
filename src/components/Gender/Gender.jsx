@@ -1,5 +1,8 @@
 import React from 'react';
 import {useSelector} from 'react-redux'
+//pass thru bar chart
+import GenderBarChart from '../GenderBarChart/GenderBarChart';
+//styling
 import { 
   Card,
   CardActions,
@@ -55,6 +58,7 @@ function Gender(){
       console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
         <Card>
+          <GenderBarChart />
           <CardHeader 
           title={answer.text}
           />
