@@ -1,5 +1,7 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+//pass thru bar chart
+import MentalHealthBar from '../MentalHealthBar/MentalHealthBar';
 //styling for card
 import { 
   Card,
@@ -80,6 +82,7 @@ function MentalHealth(){
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
       <Card>
+        <MentalHealthBar />
         <CardHeader 
           title={answer.text}
         />
