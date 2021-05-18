@@ -8,6 +8,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import MethAllTimePie from '../MethAllTimePie/MethAllTimePie';
 
 
 function MethAllTime(){
@@ -50,6 +51,7 @@ function MethAllTime(){
           />
           <CardContent>
             <Divider />
+            <MethAllTimePie />
             <p>Meth Yes:{ methYes}</p>
             <p>Meth No: {methNo}</p>
           </CardContent>
