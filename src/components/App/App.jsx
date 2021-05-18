@@ -360,17 +360,13 @@ function App() {
         </ProtectedRoute>
          <ProtectedRoute exact path="/alcohol_pie_chart">       
           <AlcoholPieChart />
-        </ProtectedRoute>
-        
+        </ProtectedRoute>    
         <ProtectedRoute exact path="/nicotine_pie_chart">       
           <NicotinePieChart />
          </ProtectedRoute>
-
          <ProtectedRoute exact path="/marijuana_month_pie_chart">       
           <MarijuanaMonthPieChart />
          </ProtectedRoute>
-        
-          </ProtectedRoute>
           <ProtectedRoute exact path="/benzodiazepines_last_month">
             <BenzodiazepinesMonth />
           </ProtectedRoute>
