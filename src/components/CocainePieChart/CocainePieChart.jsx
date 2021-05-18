@@ -2,30 +2,30 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
 
-
-
+//Cocaine
+//cocaine
 
   
-function OTCPieChart () {
+function CocainePieChart () {
     const form = useSelector((store)=>store.form);
 
-    let OTCTotal=form.length;
-    let OTCYes=0;
-    let OTCNo=0;
-    let OTCYesDisplay= 0;
-    let OTCNoDisplay= 0;
+    let cocaineTotal=form.length;
+    let cocaineYes=0;
+    let cocaineNo=0;
+    let cocaineYesDisplay= 0;
+    let cocaineNoDisplay=0;
 
 
     form.map((item)=>{
-        let answer=item.answers[127]
+        let answer=item.answers[120]
        if(answer.answer==='Yes'){
-          OTCYes++
+        cocaineYes++
        }
        else{
-          OTCNo++
+        cocaineNo++
       }
-      OTCYesDisplay = ((OTCYes / OTCTotal) * 100).toFixed(1);
-      OTCNoDisplay = ((OTCNo / OTCTotal) * 100).toFixed(1);
+      cocaineYesDisplay = ((cocaineYes / cocaineTotal) * 100).toFixed(1);
+      cocaineNoDisplay = ((cocaineNo / cocaineTotal) * 100).toFixed(1);
       })
 
     const data = {
@@ -33,7 +33,7 @@ function OTCPieChart () {
         datasets: [
           {
             label: '# of Votes',
-            data: [OTCYesDisplay, OTCNoDisplay],
+            data: [cocaineYesDisplay, cocaineNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -49,11 +49,11 @@ function OTCPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Over-the-Counter Drug Use</h1>
+            <h1 className='title'>Cocaine Use</h1>
         </div>
         <Pie data={data} />
         </>
     )
 }
   
-  export default OTCPieChart;
+  export default CocainePieChart;

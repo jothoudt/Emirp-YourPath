@@ -4,36 +4,38 @@ import { Pie } from 'react-chartjs-2';
 
 
 
-
   
-function OTCPieChart () {
+function NicotineMonthPie () {
+    //get information from the store
     const form = useSelector((store)=>store.form);
 
-    let OTCTotal=form.length;
-    let OTCYes=0;
-    let OTCNo=0;
-    let OTCYesDisplay= 0;
-    let OTCNoDisplay= 0;
+    //define variables
+    let nicotineTotal=form.length;
+    let nicotineYes=0;
+    let nicotineNo=0;
+    let nicotineYesDisplay= 0;
+    let nicotineNoDisplay=0;
 
 
     form.map((item)=>{
-        let answer=item.answers[127]
-       if(answer.answer==='Yes'){
-          OTCYes++
+        let answer=item.answers[133]
+       if(answer.answer){
+           nicotineYes++
        }
        else{
-          OTCNo++
+           nicotineNo++
       }
-      OTCYesDisplay = ((OTCYes / OTCTotal) * 100).toFixed(1);
-      OTCNoDisplay = ((OTCNo / OTCTotal) * 100).toFixed(1);
+        nicotineYesDisplay = ((nicotineYes / nicotineTotal) * 100).toFixed(1);
+        nicotineNoDisplay = ((nicotineNo / nicotineTotal) * 100).toFixed(1);
       })
+      
 
     const data = {
         labels: ['Yes %', 'No %'],
         datasets: [
           {
             label: '# of Votes',
-            data: [OTCYesDisplay, OTCNoDisplay],
+            data: [nicotineYesDisplay, nicotineNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -49,11 +51,11 @@ function OTCPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Over-the-Counter Drug Use</h1>
+            <h1 className='title'>Nicotine Use(within last month)</h1>
         </div>
         <Pie data={data} />
         </>
     )
 }
   
-  export default OTCPieChart;
+  export default NicotineMonthPie;

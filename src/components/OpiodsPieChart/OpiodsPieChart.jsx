@@ -4,36 +4,38 @@ import { Pie } from 'react-chartjs-2';
 
 
 
-
   
-function OTCPieChart () {
+function OpiodsPieChart () {
     const form = useSelector((store)=>store.form);
 
-    let OTCTotal=form.length;
-    let OTCYes=0;
-    let OTCNo=0;
-    let OTCYesDisplay= 0;
-    let OTCNoDisplay= 0;
+    
+
+    let opiodsTotal=form.length;
+    let opiodsYes=0;
+    let opiodsNo=0;
+    let opiodsYesDisplay= 0;
+    let opiodsNoDisplay=0;
 
 
     form.map((item)=>{
-        let answer=item.answers[127]
+        let answer=item.answers[123]
        if(answer.answer==='Yes'){
-          OTCYes++
+           opiodsYes++
        }
        else{
-          OTCNo++
+           opiodsNo++
       }
-      OTCYesDisplay = ((OTCYes / OTCTotal) * 100).toFixed(1);
-      OTCNoDisplay = ((OTCNo / OTCTotal) * 100).toFixed(1);
+        opiodsYesDisplay = ((opiodsYes / opiodsTotal) * 100).toFixed(1);
+        opiodsNoDisplay = ((opiodsNo / opiodsTotal) * 100).toFixed(1);
       })
+      
 
     const data = {
         labels: ['Yes %', 'No %'],
         datasets: [
           {
             label: '# of Votes',
-            data: [OTCYesDisplay, OTCNoDisplay],
+            data: [opiodsYesDisplay, opiodsNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -49,11 +51,11 @@ function OTCPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Over-the-Counter Drug Use</h1>
+            <h1 className='title'>Opiods Use(within last month)</h1>
         </div>
         <Pie data={data} />
         </>
     )
 }
   
-  export default OTCPieChart;
+  export default OpiodsPieChart;

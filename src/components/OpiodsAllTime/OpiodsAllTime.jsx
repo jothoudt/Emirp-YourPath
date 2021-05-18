@@ -9,6 +9,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import OpiodsPieChart from '../OpiodsPieChart/OpiodsPieChart';
 
 function OpiodsAllTime(){
 
@@ -41,7 +42,8 @@ function OpiodsAllTime(){
             title={answer.text}
           />
           <CardContent>
-            <Divider />           
+            <Divider />   
+            <OpiodsPieChart />        
             <p>Opioids Yes:{opiodsYes}</p>
             <p>Opioids No: {opiodsNo}</p>
           </CardContent>

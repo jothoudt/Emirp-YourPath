@@ -8,6 +8,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import CocainePieChart from '../CocainePieChart/CocainePieChart';
 
 function CocaineAllTime(){
 
@@ -36,6 +37,7 @@ function CocaineAllTime(){
        console.log(cocaineYes, cocaineNo)
        display= 
        <Card>
+          <CocainePieChart />
           <CardHeader 
             title={answer.text}
           />
