@@ -1,5 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+//pass thru chart
+import PastServicesBar from '../PastServicesBar/PastServicesBar';
 //styling for card
 import { 
   Card,
@@ -80,7 +82,19 @@ function PastServices(){
           title={answer.text}
         />
         <CardContent>
-          <Divider />         
+          <Divider />
+          <PastServicesBar 
+              psychWard={psychWard}
+              detox={detox}
+              residential={residential}
+              outpatient={outpatient}
+              mutualSupport={mutualSupport}
+              therapy={therapy}
+              medicationAssisted={medicationAssisted}
+              prescribed={prescribed}
+              soberHousing={soberHousing}
+              declined={declined}
+          />         
         <p>A psych ward or a psychiatric hold: {psychWard}</p>
         <p>Detox: {detox}</p>
         <p>Residential Treatment: {residential}</p>
