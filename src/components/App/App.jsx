@@ -63,7 +63,8 @@ import OTCMonth from '../OTCMonth/OTCMonth';
 import OtherSubstancesMonth from '../OtherSubstancesMonth/OtherSubstancesMonth';
 import AllDrugsLastMonth from '../AllDrugsLastMonth/AllDrugsLastMonth';
 
-
+//charts for demographic data
+import PastServicesBar from '../PastServicesBar/PastServicesBar';
 
 
 
@@ -337,6 +338,9 @@ function App() {
 
          <ProtectedRoute exact path="/all_drugs_last_month">
            <AllDrugsLastMonth />
+         </ProtectedRoute>
+         <ProtectedRoute exact path="/past_services_bar">       
+          <PastServicesBar />
          </ProtectedRoute>
 
 
