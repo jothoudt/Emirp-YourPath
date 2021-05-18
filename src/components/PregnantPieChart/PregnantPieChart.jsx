@@ -78,4 +78,4 @@ function PregnantPieChart () {
     )
 }
   
-  export default PreganantPieChart;
+  export default PregnantPieChart;

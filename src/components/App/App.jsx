@@ -278,7 +278,7 @@ function App() {
           <ProtectedRoute
           exact
           path="/pregnant_pie">
-            <PregnantPie />
+            <PregnantPieChart />
           </ProtectedRoute>
 
           <ProtectedRoute
