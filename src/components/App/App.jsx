@@ -41,12 +41,12 @@ import Gender from '../Gender/Gender';
 import Hi from '../HiComponent/HiComponent';
 
 import './App.css';
-
+//all-time charts
 import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
 import NetPromoterScore from '../NetPromoterScore/NetPromoterScore';
 import RacePieChart from '../RacePieChart/RacePieChart';
 import PregnantPieChart from '../PregnantPieChart/PregnantPieChart';
-
+import BenzodiazepinesPieChart from '../BenzodiazepinesPieChart/BenzodiazepinesPieChart';
 //monthly charts for drugs
 import NicotineMonth from '../NicotineMonth/NicotineMonth';
 import AllDrugsBar from '../AllDrugsBar/AllDrugsBar';
@@ -351,7 +351,9 @@ function App() {
          <ProtectedRoute exact path="/past_services_bar">       
           <PastServicesBar />
          </ProtectedRoute>
-
+        <ProtectedRoute exact path="/benzodiazepines_pie_chart">
+          <BenzodiazepinesPieChart />
+        </ProtectedRoute>
          <ProtectedRoute exact path="/alcohol_pie_chart">       
           <AlcoholPieChart />
          </ProtectedRoute>
