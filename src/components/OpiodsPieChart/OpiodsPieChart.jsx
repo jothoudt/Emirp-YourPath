@@ -5,28 +5,28 @@ import { Pie } from 'react-chartjs-2';
 
 
   
-function NicotineMonthPie () {
-    //get information from the store
+function OpiodsPieChart () {
     const form = useSelector((store)=>store.form);
 
-    //define variables
-    let nicotineTotal=form.length;
-    let nicotineYes=0;
-    let nicotineNo=0;
-    let nicotineYesDisplay= 0;
-    let nicotineNoDisplay=0;
+    
+
+    let opiodsTotal=form.length;
+    let opiodsYes=0;
+    let opiodsNo=0;
+    let opiodsYesDisplay= 0;
+    let opiodsNoDisplay=0;
 
 
     form.map((item)=>{
-        let answer=item.answers[133]
-       if(answer.answer){
-           nicotineYes++
+        let answer=item.answers[123]
+       if(answer.answer==='Yes'){
+           opiodsYes++
        }
        else{
-           nicotineNo++
+           opiodsNo++
       }
-        nicotineYesDisplay = ((nicotineYes / nicotineTotal) * 100).toFixed(1);
-        nicotineNoDisplay = ((nicotineNo / nicotineTotal) * 100).toFixed(1);
+        opiodsYesDisplay = ((opiodsYes / opiodsTotal) * 100).toFixed(1);
+        opiodsNoDisplay = ((opiodsNo / opiodsTotal) * 100).toFixed(1);
       })
       
 
@@ -35,7 +35,7 @@ function NicotineMonthPie () {
         datasets: [
           {
             label: '# of Votes',
-            data: [nicotineYesDisplay, nicotineNoDisplay],
+            data: [opiodsYesDisplay, opiodsNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -51,11 +51,11 @@ function NicotineMonthPie () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Nicotine Use(within last month)</h1>
+            <h1 className='title'>Opiods Use(within last month)</h1>
         </div>
         <Pie data={data} />
         </>
     )
 }
   
-  export default NicotineMonthPie;
+  export default OpiodsPieChart;
