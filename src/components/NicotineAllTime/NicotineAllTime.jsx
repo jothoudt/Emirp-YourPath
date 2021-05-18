@@ -9,6 +9,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import NicotinePieChart from '../NicotinePieChart/NicotinePieChart';
 
 function NicotineAllTime(){
 
@@ -48,7 +49,8 @@ function NicotineAllTime(){
             title={answer.text}
           />
           <CardContent>
-            <Divider />           
+            <Divider />
+            <NicotinePieChart />           
             <p>Nicotine Yes:{nicotineYes}</p>
             <p>Nicotine No: {nicotineNo}</p>
           </CardContent>

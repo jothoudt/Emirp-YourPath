@@ -8,6 +8,7 @@ import {
     Divider,
     Typography
   } from '@material-ui/core';
+import MarijuanaMonthPieChart from '../MarijuanaMonthPieChart/MarijuanaMonthPieChart';
 
 function MarijuanaMonth(){
 
@@ -45,6 +46,7 @@ function MarijuanaMonth(){
            />
          <CardContent>
            <Divider />
+           <MarijuanaMonthPieChart />
            <p>Marijuana in the last month Yes:{marijuanaMonthlyYes}</p>
            <p>Marijuana in the last month No: {marijuanaMonthlyNo}</p>
          </CardContent>

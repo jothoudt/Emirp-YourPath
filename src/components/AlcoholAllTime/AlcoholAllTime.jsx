@@ -9,6 +9,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import AlcoholPieChart from '../AlcoholPieChart/AlcoholPieChart';
 
 function AlcoholAllTime(){
   //get information from the store
@@ -48,6 +49,7 @@ function AlcoholAllTime(){
           />
           <CardContent>
             <Divider />
+            <AlcoholPieChart />
             <p>Alcohol Used Yes:{ alcoholYes}</p>
             <p>Alcohol Used No: {alcoholNo}</p>
           </CardContent>
