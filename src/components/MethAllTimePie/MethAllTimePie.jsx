@@ -4,38 +4,41 @@ import { Pie } from 'react-chartjs-2';
 
 
 
-  
-function MarijuanaPieChart () {
+//function to return pie chart for lifetime meth use
+function MethAllTimePie () {
+    //select items from the store
     const form = useSelector((store)=>store.form);
 
-    
+    //define variables
+    let methTotal=form.length;
+    let methYes=0;
+    let methNo=0;
+    let methYesDisplay= 0;
+    let methNoDisplay=0;
 
-    let marijuanaTotal=form.length;
-    let marijuanaYes=0;
-    let marijuanaNo=0;
-    let marijuanaYesDisplay= 0;
-    let marijuanaNoDisplay=0;
-
-
+    //map through the store data
     form.map((item)=>{
-        let answer=item.answers[119]
+        let answer=item.answers[121]
+        //if answer is yes add one to yes
        if(answer.answer==='Yes'){
-           marijuanaYes++
+        methYes++
        }
+       //if answer is no or undecided add one to no
        else{
-           marijuanaNo++
+        methNo++
       }
-        marijuanaYesDisplay = ((marijuanaYes / marijuanaTotal) * 100).toFixed(1);
-        marijuanaNoDisplay = ((marijuanaNo / marijuanaTotal) * 100).toFixed(1);
+      //display in percentages
+      methYesDisplay = ((methYes / methTotal) * 100).toFixed(1);
+      methNoDisplay = ((methNo / methTotal) * 100).toFixed(1);
       })
       
-
+      //data for pie chart
     const data = {
         labels: ['Yes %', 'No %'],
         datasets: [
           {
             label: '# of Votes',
-            data: [marijuanaYesDisplay, marijuanaNoDisplay],
+            data: [methYesDisplay, methNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -48,14 +51,15 @@ function MarijuanaPieChart () {
           },
         ],
     };
+    //render to dom
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Marijuana Use</h1>
+            <h1 className='title'>Meth Use Lifetime</h1>
         </div>
         <Pie data={data} />
         </>
     )
 }
   
-  export default MarijuanaPieChart;
+  export default MethAllTimePie;

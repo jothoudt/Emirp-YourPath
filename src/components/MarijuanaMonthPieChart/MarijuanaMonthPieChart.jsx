@@ -5,7 +5,7 @@ import { Pie } from 'react-chartjs-2';
 
 
   
-function MarijuanaPieChart () {
+function MarijuanaMonthPieChart () {
     const form = useSelector((store)=>store.form);
 
     
@@ -18,8 +18,8 @@ function MarijuanaPieChart () {
 
 
     form.map((item)=>{
-        let answer=item.answers[119]
-       if(answer.answer==='Yes'){
+        let answer=item.answers[135]
+       if(answer.answer){
            marijuanaYes++
        }
        else{
@@ -51,11 +51,11 @@ function MarijuanaPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Marijuana Use</h1>
+            <h1 className='title'>Marijuana Use(with in last month)</h1>
         </div>
         <Pie data={data} />
         </>
     )
 }
   
-  export default MarijuanaPieChart;
+  export default MarijuanaMonthPieChart;

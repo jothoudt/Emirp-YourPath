@@ -1,5 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+//pass thru pie chart
+import SexualOrientationPieChart from '../SexualOrientationPieChart/SexualOrientationPieChart';
 //styling for card
 import { 
   Card,
@@ -44,6 +46,7 @@ function SexualOrientation(){
       console.log('in orientation:', heterosexual, homosexual, bisexual, asexual)
       display= 
       <Card>
+        <SexualOrientationPieChart />
         <CardHeader 
             title={answer.text}
         />
