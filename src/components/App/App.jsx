@@ -79,6 +79,10 @@ import MethAllTime from "../MethAllTime/MethAllTime";
 import HeroinAllTime from '../HeroinAllTime/HeroinAllTime';
 import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAllTime';
 
+import MarijuanaDetails from '../MarijuanaDetails/MarijuanaDetails';
+import NicotineDetails from '../NicotineDetails/NicotineDetails';
+import AlcoholDetails from '../AlcoholDetails/AlcoholDetails';
+
 
 
 function App() {
@@ -424,7 +428,17 @@ function App() {
           <ProtectedRoute exact path="/other_substances_all_time">
             <OtherSubstancesAllTime />
           </ProtectedRoute>
+
+          <ProtectedRoute exact path="/marijuana_details">
+            <MarijuanaDetails />
+          </ProtectedRoute>
           
+          <ProtectedRoute exact path="/nicotine_details">
+            <NicotineDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/alcohol_details">
+            <AlcoholDetails />
+          </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
