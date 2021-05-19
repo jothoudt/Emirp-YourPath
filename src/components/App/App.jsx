@@ -102,6 +102,7 @@ import OtherSubstancesDetails from '../OtherSubstancesDetails/OtherSubstancesDet
 import DrugStatistics from '../DrugStatistics/DrugStatistics';
 import Demographics from '../Demographics/Demographics';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
+import TreatmentOptions from '../TreatmentOptions/TreatmentOptions';
 
 
 
@@ -505,6 +506,10 @@ function App() {
 
           <ProtectedRoute exact path="/layout">
             <Album />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/treatmentoptions">
+            <TreatmentOptions />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
