@@ -136,10 +136,11 @@ function UserPage() {
         )
       })
     } */}
+    <TotalAssessments />
     <Grid container spacing={2}>
-      <Grid item xs={12} sm={4}>
+      {/* <Grid item xs={12} sm={4}>
         <TotalAssessments />
-      </Grid>
+      </Grid> */}
       <Grid item xs={12} sm={4}>  
         <MarijuanaAllTime />
       </Grid>

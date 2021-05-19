@@ -88,6 +88,8 @@ import BenzodiazepinesDetails from '../BenzodiazepinesDetails/BenzodiazepinesDet
 import HallucinogenDetails from '../HallucinogenDetails/HallucinogenDetails';
 import InhalantsDetails from '../InhalantsDetails/InhalantsDetails';
 import OTCDetails from '../OTCDetails/OTCDetails';
+import AllDrugsDetails from '../AllDrugsDetails/AllDrugsDetails';
+import OtherSubstancesDetails from '../OtherSubstancesDetails/OtherSubstancesDetails';
 
 
 
@@ -463,6 +465,12 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/OTC_details">
             <OTCDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/all_drugs_details">
+            <AllDrugsDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/other_substances_details">
+            <OtherSubstancesDetails />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
