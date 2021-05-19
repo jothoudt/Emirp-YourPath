@@ -1,4 +1,5 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import './Layout.css';
@@ -82,6 +83,48 @@ const cards = [<AlcoholPieChart/>, <BenzodiazepinesPieChart/>, <CocainePieChart/
 
 export default function Album() {
   const classes = useStyles();
+  const history = useHistory();
+
+  const viewClick = (card) => {
+        let chartName = card.card.type.name;
+        console.log('in viewClick', chartName);
+        if (chartName === 'AlcoholPieChart'){
+            history.push('/alcohol_details')
+        }
+        else if (chartName === 'BenzodiazepinesPieChart'){
+            history.push('/benzodiazepines_details')
+        }
+        else if (chartName === 'CocainePieChart'){
+            history.push('/cocaine_details')
+        }
+        else if (chartName === 'HallucinogenPieChart'){
+            history.push('/hallucinogen_details')
+        }
+        // else if (chartName === 'HeroinAllTimePie'){
+        //     history.push('')
+        // }
+        else if (chartName === 'InhalantsPieChart'){
+            history.push('/inhalants_details')
+        }
+        else if (chartName === 'MarijuanaPieChart'){
+            history.push('/marijuana_details')
+        }
+        // else if (chartName === 'MethAllTimePie'){
+        //     history.push('')
+        // }
+        else if (chartName === 'NicotinePieChart'){
+            history.push('/nicotine_details')
+        }
+        else if (chartName === 'OpiodsPieChart'){
+            history.push('/opioids_details')
+        }
+        else if (chartName === 'OTCPieChart'){
+            history.push('/OTC_details')
+        }
+        else if (chartName === 'OtherSubstanceAllTimePie'){
+            history.push('/other_substances_details')
+        }
+   }
 
   return (
     <React.Fragment>
@@ -126,7 +169,7 @@ export default function Album() {
                       Select button below to view more details including use in last month
                     </Typography>
                   <CardActions>
-                    <Button className="cardBtn" size="small" color="primary" textAlign="center">
+                    <Button onClick={()=>viewClick({card})} className="cardBtn" size="small" color="primary" textAlign="center">
                       View Details
                     </Button>
                   </CardActions>
@@ -147,3 +190,5 @@ export default function Album() {
     </React.Fragment>
   );
 }
+
+// Source: https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/album 
