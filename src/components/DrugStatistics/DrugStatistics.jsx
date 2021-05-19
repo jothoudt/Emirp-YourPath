@@ -84,7 +84,7 @@ useEffect(()=>
           </div>
           <div className="select-drug">
             <select className="drug-dropdown" name="Drug Information" onChange={(event)=>setComponent(event.target.value)}>
-              <option></option>
+              <option>Select a Chart</option>
               <option value="AllDrugsDetails">All Drugs</option>
               <option value= "AlcoholDetails" >Alcohol</option>
               <option value="BenzodiazepinesDetails">Benzodiazepines</option>
