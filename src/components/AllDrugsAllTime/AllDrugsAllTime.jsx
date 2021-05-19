@@ -1,5 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+import AllDrugsBar from '../AllDrugsBar/AllDrugsBar';
 
 function AllDrugsAllTime(){
     //select info from store
@@ -363,6 +364,7 @@ function AllDrugsAllTime(){
 
     return(
         <>
+        <AllDrugsBar />
         {getNicotineAT()}
         {getAlcoholAT()}
         {getMarijuanaAT()}
