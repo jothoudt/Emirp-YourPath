@@ -8,60 +8,60 @@ import {
     Divider,
     Typography
   } from '@material-ui/core';
-import MarijuanaMonthPieChart from '../MarijuanaMonthPieChart/MarijuanaMonthPieChart';
+import MethMonthPie from '../MethMonthPie/MethMonthPie'
 
-function MarijuanaMonth(){
+function MethMonth(){
 
     //select info from store
     const form = useSelector((store)=>store.form);
 
     //define variables for counting
-    let marijuanaMonthlyYes=0;
-    let marijuanaMonthlyNo=0;
+    let methMonthlyYes=0;
+    let methMonthlyNo=0;
 
     //function to display count of Marijuana users in the last month
-    const answerMarijuana=()=>{
-        let marijuanaDisplay=''
+    const answerMeth=()=>{
+        let methDisplay=''
         console.log('in answer')
         //if no data exists
         if(!form){
-            marijuanaDisplay=<p>loading</p>
+            methDisplay=<p>loading</p>
         }//end if
         //if data exists map through for counts of yes and no
         if(form.length){
         form.map((item)=>{
-          let answer=item.answers[135]
+          let answer=item.answers[137]
          if(answer.answer){
-            marijuanaMonthlyYes++
+            methMonthlyYes++
          }//end if
          else{
-            marijuanaMonthlyNo++
+            methMonthlyNo++
         }//end else
-        console.log(marijuanaMonthlyYes, marijuanaMonthlyNo)
+        console.log(methMonthlyYes, methMonthlyNo)
         //display for counts
-        marijuanaDisplay= 
+        methDisplay= 
         <Card>
            <CardHeader 
            title={answer.text}
            />
+         <MethMonthPie />
          <CardContent>
            <Divider />
-           <MarijuanaMonthPieChart />
-           <p>Marijuana in the last month Yes:{marijuanaMonthlyYes}</p>
-           <p>Marijuana in the last month No: {marijuanaMonthlyNo}</p>
+           <p>Meth in the last month Yes:{methMonthlyYes}</p>
+           <p>Meth in the last month No: {methMonthlyNo}</p>
          </CardContent>
         </Card>
         })
       }//end if
-      return marijuanaDisplay;
+      return methDisplay;
     }
 
     //render to dom
     return(
         <>
-        {answerMarijuana()}
+        {answerMeth()}
         </>
     )
 }
 
-export default MarijuanaMonth;
+export default MethMonth;

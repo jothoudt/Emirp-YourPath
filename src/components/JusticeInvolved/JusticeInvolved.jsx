@@ -1,5 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+//pass thru bar chart
+import JusticeInvolvedBar from '../JusticeInvolvedBar/JusticeInvolvedBar';
 //styling for card
 import { 
   Card,
@@ -72,6 +74,7 @@ function JusticeInvolved(){
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
       <Card>
+        <JusticeInvolvedBar />
         <CardHeader 
           title={answer.text}
         />

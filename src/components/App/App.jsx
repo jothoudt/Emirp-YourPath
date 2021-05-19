@@ -68,7 +68,11 @@ import HallucinogenMonth from '../HallucinogenMonth/HallucinogenMonth';
 import OTCMonth from '../OTCMonth/OTCMonth';
 import OtherSubstancesMonth from '../OtherSubstancesMonth/OtherSubstancesMonth';
 import AllDrugsLastMonth from '../AllDrugsLastMonth/AllDrugsLastMonth';
+
 import HeroinMonth from '../HeroinMonth/HeroinMonth';
+
+import MethMonth from '../MethMonth/MethMonth';
+
 
 //charts for demographic data
 import PastServicesBar from '../PastServicesBar/PastServicesBar';
@@ -79,6 +83,19 @@ import MarijuanaMonthPieChart from '../MarijuanaMonthPieChart/MarijuanaMonthPieC
 import MethAllTime from "../MethAllTime/MethAllTime";
 import HeroinAllTime from '../HeroinAllTime/HeroinAllTime';
 import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAllTime';
+
+import MarijuanaDetails from '../MarijuanaDetails/MarijuanaDetails';
+import NicotineDetails from '../NicotineDetails/NicotineDetails';
+import AlcoholDetails from '../AlcoholDetails/AlcoholDetails';
+import CocaineDetails from '../CocaineDetails/CocaineDetails';
+import OpioidsDetails from '../OpioidsDetails/OpioidsDetails';
+import BenzodiazepinesDetails from '../BenzodiazepinesDetails/BenzodiazepinesDetails'
+import HallucinogenDetails from '../HallucinogenDetails/HallucinogenDetails';
+import InhalantsDetails from '../InhalantsDetails/InhalantsDetails';
+import OTCDetails from '../OTCDetails/OTCDetails';
+import AllDrugsDetails from '../AllDrugsDetails/AllDrugsDetails';
+import OtherSubstancesDetails from '../OtherSubstancesDetails/OtherSubstancesDetails';
+
 
 
 
@@ -393,6 +410,9 @@ function App() {
           <ProtectedRoute exact path="/hallucinogen_last_month">
             <HallucinogenMonth />
           </ProtectedRoute>
+          <ProtectedRoute exact path="/meth_last_month">
+            <MethMonth />
+          </ProtectedRoute>
           <ProtectedRoute exact path="/otc_last_month">
             <OTCMonth />
           </ProtectedRoute>
@@ -429,7 +449,42 @@ function App() {
           <ProtectedRoute exact path="/other_substances_all_time">
             <OtherSubstancesAllTime />
           </ProtectedRoute>
+
+          <ProtectedRoute exact path="/marijuana_details">
+            <MarijuanaDetails />
+          </ProtectedRoute>
           
+          <ProtectedRoute exact path="/nicotine_details">
+            <NicotineDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/alcohol_details">
+            <AlcoholDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/cocaine_details">
+            <CocaineDetails />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/opioids_details">
+            <OpioidsDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/benzodiazepines_details">
+            <BenzodiazepinesDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/hallucinogen_details">
+            <HallucinogenDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/inhalants_details">
+            <InhalantsDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/OTC_details">
+            <OTCDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/all_drugs_details">
+            <AllDrugsDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/other_substances_details">
+            <OtherSubstancesDetails />
+          </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
