@@ -84,6 +84,8 @@ import MarijuanaDetails from '../MarijuanaDetails/MarijuanaDetails';
 import NicotineDetails from '../NicotineDetails/NicotineDetails';
 import AlcoholDetails from '../AlcoholDetails/AlcoholDetails';
 
+//layout mess around
+import Album from '../Layout/Layout'
 
 
 
@@ -443,6 +445,10 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/alcohol_details">
             <AlcoholDetails />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/layout">
+            <Album />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
