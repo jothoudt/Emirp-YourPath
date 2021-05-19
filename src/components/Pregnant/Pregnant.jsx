@@ -9,6 +9,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import PregnantPieChart from '../PregnantPieChart/PregnantPieChart';
 
 function Pregnant(){
 
@@ -45,7 +46,8 @@ function Pregnant(){
           title={answer.text}
         />
         <CardContent>
-          <Divider />          
+          <Divider />    
+          <PregnantPieChart />      
           <p>Pregnant: {pregnant}</p>
           <p>Not Pregnant: {notPregnant}</p>
           <p>Not Sure: {notSure}</p>

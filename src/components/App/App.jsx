@@ -97,6 +97,7 @@ import AllDrugsDetails from '../AllDrugsDetails/AllDrugsDetails';
 import OtherSubstancesDetails from '../OtherSubstancesDetails/OtherSubstancesDetails';
 import DrugStatistics from '../DrugStatistics/DrugStatistics';
 import Demographics from '../Demographics/Demographics';
+import HealthStatistics from '../HealthStatistics/HealthStatistics';
 
 
 
@@ -491,6 +492,10 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/demographics">
             <Demographics />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/healthstatistics">
+            <HealthStatistics />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
