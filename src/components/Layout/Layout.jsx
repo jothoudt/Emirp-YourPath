@@ -21,6 +21,18 @@ import AlcoholMonthPie from '../AlcoholMonthPie/AlcoholMonthPie';
 import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
 import AllDrugsBar from '../AllDrugsBar/AllDrugsBar';
 import HeroinAllTimePie from '../HeroinAllTimePie/HeroinAllTimePie';
+import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
+import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
+import HallucinogenAllTime from '../HallucinogenAllTime/HallucinogenAllTime';
+import BenzodiazepinesPieChart from '../BenzodiazepinesPieChart/BenzodiazepinesPieChart';
+import CocainePieChart from '../CocainePieChart/CocainePieChart';
+import HallucinogenPieChart from '../HallucinogenPieChart/HallucinogenPieChart';
+import InhalantsPieChart from '../InhalantsPieChart/InhalantsPieChart';
+import MethAllTimePie from '../MethAllTimePie/MethAllTimePie';
+import NicotinePieChart from '../NicotinePieChart/NicotinePieChart';
+import OpiodsPieChart from '../OpiodsPieChart/OpiodsPieChart';
+import OTCPieChart from '../OTCPieChart/OTCPieChart';
+import OtherSubstanceAllTimePie from '../OtherSubstancesAllTimePie/OtherSubstancesAllTimePie';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -66,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [<MarijuanaPieChart/>, <AlcoholPieChart/>, <HeroinAllTimePie/>, <AllDrugsBar/>]
+const cards = [<AlcoholPieChart/>, <BenzodiazepinesPieChart/>, <CocainePieChart/>, <HallucinogenPieChart/>, <HeroinAllTimePie/>, <InhalantsPieChart/>, <MarijuanaPieChart/>, <MethAllTimePie/>, <NicotinePieChart/>, <OpiodsPieChart/>, <OTCPieChart/>, <OtherSubstanceAllTimePie/> ]
 
 export default function Album() {
   const classes = useStyles();
@@ -82,9 +94,8 @@ export default function Album() {
               Dashboard
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-              entirely.
+              All of the charts located on the Dashboard below reflect whether or not applicants have ever used the substance in question.
+              For more information and to see the data element reflected for the last month click the view button. 
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
@@ -108,15 +119,15 @@ export default function Album() {
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
-                  <CardMedia >
+                  <CardMedia className="cards" >
                       {card}
                   </CardMedia>
                   <Typography className="cardText">
                       Select button below to view more details including use in last month
                     </Typography>
                   <CardActions>
-                    <Button size="small" color="primary" textAlign="center">
-                      View
+                    <Button className="cardBtn" size="small" color="primary" textAlign="center">
+                      View Details
                     </Button>
                   </CardActions>
                 </Card>
@@ -128,12 +139,9 @@ export default function Album() {
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          YourPath Dashboard
         </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
+            copyright YourPath 2021
       </footer>
       {/* End footer */}
     </React.Fragment>
