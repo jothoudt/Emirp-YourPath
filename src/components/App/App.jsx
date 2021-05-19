@@ -91,6 +91,7 @@ import InhalantsDetails from '../InhalantsDetails/InhalantsDetails';
 import OTCDetails from '../OTCDetails/OTCDetails';
 import AllDrugsDetails from '../AllDrugsDetails/AllDrugsDetails';
 import OtherSubstancesDetails from '../OtherSubstancesDetails/OtherSubstancesDetails';
+import DrugStatistics from '../DrugStatistics/DrugStatistics';
 
 
 
@@ -476,6 +477,9 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/other_substances_details">
             <OtherSubstancesDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/drugstatistics">
+            <DrugStatistics />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
