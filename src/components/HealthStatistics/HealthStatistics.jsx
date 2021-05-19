@@ -41,7 +41,7 @@ function HealthStatistics(){
                   <option>Select a Chart</option>
                   <option value="FetalAlcoholSyndrome">Fetal Alcohol Syndrome</option>
                   <option value="MentalHealth">Mental Health</option>
-                  <option value="Past Services">Past Services</option>
+                  <option value="PastServices">Past Services</option>
                   <option value="Pregnant">Pregnant</option>
               </select>
           </div>
