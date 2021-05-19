@@ -142,6 +142,7 @@ function UserPage() {
         <TotalAssessments />
       </Grid>
       <Grid item xs={12} sm={3}>  
+      </Grid>
       {/* <Grid item xs={12} sm={4}>
         <TotalAssessments />
       </Grid> */}
