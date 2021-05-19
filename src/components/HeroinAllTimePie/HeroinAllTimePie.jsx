@@ -55,7 +55,7 @@ function HeroinAllTimePie () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Heroin Use Lifetime</h1>
+            <h1 className='title'>Heroin</h1>
         </div>
         <Pie data={data} />
         </>

@@ -55,7 +55,7 @@ function MethAllTimePie () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Meth Use Lifetime</h1>
+            <h1 className='title'>Methamphetamine</h1>
         </div>
         <Pie data={data} />
         </>

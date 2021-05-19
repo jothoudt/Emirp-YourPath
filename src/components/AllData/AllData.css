@@ -1,0 +1,31 @@
+.allDataTable{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.allDataTable thead tr {
+    background-color: #004974;
+    color: #ffffff;
+    text-align: left;
+}
+
+.allDataTable th,
+.allDataTable td {
+    padding: 10px 12px;
+}
+
+.allDataTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.allDataTable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.allDataTable tbody tr:last-of-type {
+    border-bottom: 2px solid #004974;
+}

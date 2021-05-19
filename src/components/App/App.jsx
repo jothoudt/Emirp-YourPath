@@ -39,7 +39,7 @@ import FetalAlcoholSyndromePieChart from '../FetalAlcoholSyndromePieChart/FetalA
 
 import Gender from '../Gender/Gender';
 import Hi from '../HiComponent/HiComponent';
-
+//styling
 import './App.css';
 //all-time charts
 import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
@@ -87,10 +87,6 @@ import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAll
 import MarijuanaDetails from '../MarijuanaDetails/MarijuanaDetails';
 import NicotineDetails from '../NicotineDetails/NicotineDetails';
 import AlcoholDetails from '../AlcoholDetails/AlcoholDetails';
-
-
-//layout mess around
-import Album from '../Layout/Layout'
 import CocaineDetails from '../CocaineDetails/CocaineDetails';
 import OpioidsDetails from '../OpioidsDetails/OpioidsDetails';
 import BenzodiazepinesDetails from '../BenzodiazepinesDetails/BenzodiazepinesDetails'
@@ -104,7 +100,10 @@ import Demographics from '../Demographics/Demographics';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
 import TreatmentOptions from '../TreatmentOptions/TreatmentOptions';
 
+import Layout from '../Layout/Layout';
 
+//all data table
+import AllData from '../AllData/AllData';
 
 
 function App() {
@@ -496,16 +495,11 @@ function App() {
           <ProtectedRoute exact path="/drugstatistics">
             <DrugStatistics />
           </ProtectedRoute>
-          <ProtectedRoute exact path="/demographics">
-            <Demographics />
+          <ProtectedRoute exact path="/all_data">
+            <AllData />
           </ProtectedRoute>
-
-          <ProtectedRoute exact path="/healthstatistics">
-            <HealthStatistics />
-          </ProtectedRoute>
-
           <ProtectedRoute exact path="/layout">
-            <Album />
+            <Layout />
           </ProtectedRoute>
 
           <ProtectedRoute exact path="/treatmentoptions">
