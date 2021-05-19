@@ -49,7 +49,7 @@ function HallucinogenPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Use of Hallucinogens</h1>
+            <h1 className='title'>Hallucinogens</h1>
         </div>
         <Pie data={data} />
         </>

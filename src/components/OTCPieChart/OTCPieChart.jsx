@@ -49,7 +49,7 @@ function OTCPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Over-the-Counter Drug Use</h1>
+            <h1 className='title'>Over-the-Counter</h1>
         </div>
         <Pie data={data} />
         </>

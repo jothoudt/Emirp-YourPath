@@ -49,7 +49,7 @@ function CocainePieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Cocaine Use</h1>
+            <h1 className='title'>Cocaine</h1>
         </div>
         <Pie data={data} />
         </>

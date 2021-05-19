@@ -55,7 +55,7 @@ function OtherSubstanceAllTimePie () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Other Substances Use Lifetime</h1>
+            <h1 className='title'>Other Substances</h1>
         </div>
         <Pie data={data} />
         </>

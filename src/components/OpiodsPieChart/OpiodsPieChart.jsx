@@ -51,7 +51,7 @@ function OpiodsPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Opiods Use(within last month)</h1>
+            <h1 className='title'>Opiods</h1>
         </div>
         <Pie data={data} />
         </>

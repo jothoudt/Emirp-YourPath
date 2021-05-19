@@ -52,7 +52,7 @@ function InhalantsPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Inhalants Use - All time</h1>
+            <h1 className='title'>Inhalants</h1>
         </div>
         <Pie data={data} />
         </>
