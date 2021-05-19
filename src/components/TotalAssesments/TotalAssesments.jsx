@@ -8,6 +8,7 @@ import {
     Divider,
     Typography
   } from '@material-ui/core';
+  import './TotalAssessments.css';
 
 function TotalAssessments(){
 
@@ -16,19 +17,24 @@ function TotalAssessments(){
     const getTotalAssessments=()=>{
         let totalDisplay=''
         if(!form){
-            totalDisplay= <><h2>Loading</h2></>
+            totalDisplay= 
+            <div className="total-assessments">
+              <h2>Loading</h2>
+            </div>
         }
         else{
             totalDisplay=
-            <Card>
-            <CardHeader
-            title="Assessments taken" 
-            />
-            <CardContent>
-                <Divider />
-                <p>Total number of assessments: {form.length}</p>
-            </CardContent>
-            </Card>
+            // // <Card>
+            // // <CardHeader
+            // // title="Assessments taken" 
+            // // />
+            // {/* <CardContent>
+            //     <Divider /> */}
+                <div className="total-assessments">
+                  <h2>Total number of assessments: {form.length}</h2>
+                </div>
+            // {/* </CardContent>
+            // </Card> */}
         }
         return totalDisplay;
     }
