@@ -87,6 +87,10 @@ import OtherSubstancesAllTime from '../OtherSubstancesAllTime/OtherSubstancesAll
 import MarijuanaDetails from '../MarijuanaDetails/MarijuanaDetails';
 import NicotineDetails from '../NicotineDetails/NicotineDetails';
 import AlcoholDetails from '../AlcoholDetails/AlcoholDetails';
+
+
+//layout mess around
+import Album from '../Layout/Layout'
 import CocaineDetails from '../CocaineDetails/CocaineDetails';
 import OpioidsDetails from '../OpioidsDetails/OpioidsDetails';
 import BenzodiazepinesDetails from '../BenzodiazepinesDetails/BenzodiazepinesDetails'
@@ -98,6 +102,7 @@ import OtherSubstancesDetails from '../OtherSubstancesDetails/OtherSubstancesDet
 import DrugStatistics from '../DrugStatistics/DrugStatistics';
 import Demographics from '../Demographics/Demographics';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
+
 
 
 
@@ -496,6 +501,10 @@ function App() {
 
           <ProtectedRoute exact path="/healthstatistics">
             <HealthStatistics />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/layout">
+            <Album />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
