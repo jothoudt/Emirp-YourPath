@@ -68,6 +68,7 @@ import HallucinogenMonth from '../HallucinogenMonth/HallucinogenMonth';
 import OTCMonth from '../OTCMonth/OTCMonth';
 import OtherSubstancesMonth from '../OtherSubstancesMonth/OtherSubstancesMonth';
 import AllDrugsLastMonth from '../AllDrugsLastMonth/AllDrugsLastMonth';
+import HeroinMonth from '../HeroinMonth/HeroinMonth';
 
 //charts for demographic data
 import PastServicesBar from '../PastServicesBar/PastServicesBar';
@@ -358,6 +359,10 @@ function App() {
          </ProtectedRoute>
          <ProtectedRoute exact path="/otc_last_month">
            <OTCMonth />
+         </ProtectedRoute>
+         
+         <ProtectedRoute exact path="/heroin_last_month">
+           <HeroinMonth />
          </ProtectedRoute>
 
          <ProtectedRoute exact path="/other_substances_last_month">
