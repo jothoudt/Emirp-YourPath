@@ -12,6 +12,7 @@ import HallucinogenDetails from '../HallucinogenDetails/HallucinogenDetails';
 import InhalantsDetails from '../InhalantsDetails/InhalantsDetails';
 import OTCDetails from '../OTCDetails/OTCDetails';
 import OtherSubstancesDetails from '../OtherSubstancesDetails/OtherSubstancesDetails';
+import HeroinDetails from '../HeroinDetails/HeroinDetails';
 import './DrugStatistics.css';
 
 
@@ -66,6 +67,8 @@ function DrugStatistics(){
           case 'OtherSubstancesDetails':
             return <OtherSubstancesDetails />
             break;
+          case 'HeroinDetails':
+            return <HeroinDetails />
         default:
             return <><h2>Select a chart</h2></>
     }
@@ -87,6 +90,7 @@ useEffect(()=>
               <option value="BenzodiazepinesDetails">Benzodiazepines</option>
               <option value="CocaineDetails">Cocaine</option>
               <option value="HallucinogenDetails">Hallucinogen</option>
+              <option value="HeroinDetails">Heroin</option>
               <option value="InhalantsDetails">Inhalants</option>
               <option value="MarijuanaDetails">Marijuana</option>
               <option value="MethDetails">Methamphetamine</option>
