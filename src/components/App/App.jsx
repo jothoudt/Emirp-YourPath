@@ -39,7 +39,7 @@ import FetalAlcoholSyndromePieChart from '../FetalAlcoholSyndromePieChart/FetalA
 
 import Gender from '../Gender/Gender';
 import Hi from '../HiComponent/HiComponent';
-
+//styling
 import './App.css';
 //all-time charts
 import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
