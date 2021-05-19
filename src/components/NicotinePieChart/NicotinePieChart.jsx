@@ -51,7 +51,7 @@ function NicotinePieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Nicotine Use</h1>
+            <h1 className='title'>Nicotine</h1>
         </div>
         <Pie data={data} />
         </>

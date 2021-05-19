@@ -49,7 +49,7 @@ function AlcoholPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Alcohol Use</h1>
+            <h1 className='title'>Alcohol</h1>
         </div>
         <Pie data={data} />
         </>

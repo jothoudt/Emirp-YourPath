@@ -52,7 +52,7 @@ function BenzodiazepinesPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Benzodiazepines Use - All time</h1>
+            <h1 className='title'>Benzodiazepines</h1>
         </div>
         <Pie data={data} />
         </>

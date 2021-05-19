@@ -51,7 +51,7 @@ function MarijuanaPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Marijuana Use</h1>
+            <h1 className='title'>Marijuana</h1>
         </div>
         <Pie data={data} />
         </>
