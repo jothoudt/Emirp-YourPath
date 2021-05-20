@@ -96,6 +96,10 @@ import OTCDetails from '../OTCDetails/OTCDetails';
 import AllDrugsDetails from '../AllDrugsDetails/AllDrugsDetails';
 import OtherSubstancesDetails from '../OtherSubstancesDetails/OtherSubstancesDetails';
 import DrugStatistics from '../DrugStatistics/DrugStatistics';
+import Demographics from '../Demographics/Demographics';
+import HealthStatistics from '../HealthStatistics/HealthStatistics';
+import TreatmentOptions from '../TreatmentOptions/TreatmentOptions';
+
 import Layout from '../Layout/Layout';
 
 //all data table
@@ -496,6 +500,10 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/layout">
             <Layout />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/treatmentoptions">
+            <TreatmentOptions />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
