@@ -96,10 +96,21 @@ import OTCDetails from '../OTCDetails/OTCDetails';
 import AllDrugsDetails from '../AllDrugsDetails/AllDrugsDetails';
 import OtherSubstancesDetails from '../OtherSubstancesDetails/OtherSubstancesDetails';
 import DrugStatistics from '../DrugStatistics/DrugStatistics';
+import Demographics from '../Demographics/Demographics';
+import HealthStatistics from '../HealthStatistics/HealthStatistics';
+import TreatmentOptions from '../TreatmentOptions/TreatmentOptions';
+
+import Favorites from '../Favorites/Favorites'
+
+import MethDetails from '../MethDetails/MethDetails';
+import HeroinDetails from '../HeroinDetails/HeroinDetails';
+
+
 import Layout from '../Layout/Layout';
 
 //all data table
 import AllData from '../AllData/AllData';
+
 
 
 function App() {
@@ -476,8 +487,14 @@ function App() {
           <ProtectedRoute exact path="/hallucinogen_details">
             <HallucinogenDetails />
           </ProtectedRoute>
+          <ProtectedRoute exact path="/heroin_details">
+            <HeroinDetails />
+          </ProtectedRoute>
           <ProtectedRoute exact path="/inhalants_details">
             <InhalantsDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/meth_details">
+            <MethDetails />
           </ProtectedRoute>
           <ProtectedRoute exact path="/OTC_details">
             <OTCDetails />
@@ -496,6 +513,19 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/layout">
             <Layout />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/treatmentoptions">
+            <TreatmentOptions />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/demographics">
+            <Demographics />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/healthstatistics">
+            <HealthStatistics />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/favorites">
+            <Favorites />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

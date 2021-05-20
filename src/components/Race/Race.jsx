@@ -1,5 +1,5 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import RacePieChart from '../RacePieChart/RacePieChart';
 import { 
   Card,
@@ -9,10 +9,16 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import UserPage from '../UserPage/UserPage';
+import { PlaylistAddOutlined } from '@material-ui/icons';
+import Button from '@material-ui/core/Button';
 
 function Race(){
   // pulls down assessment results from the store
     const form = useSelector((store)=>store.form);
+    const user = useSelector((store)=>store.user);
+
+    const dispatch=useDispatch();
 
     // naming variables to track totals for each response category
     let blackOrAfricanAmerican=0;
@@ -33,6 +39,17 @@ function Race(){
        }
        if(form.length){
        form.map((item)=>{
+          
+        const addToFavorites=()=>{
+          console.log('in add favorites')
+           let toAdd={
+             id: user.id,
+             component_name: 'Race'
+           }
+           dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+         }
+
+
          let answer=item.answers[95] 
         if(answer.answer==='Native American'){
           nativeAmerican++
@@ -79,6 +96,9 @@ function Race(){
             <p>Native American: {nativeAmerican}</p>
             <p>Did not disclose: {noDisclosure}</p>
           </CardContent>
+          <CardActions>
+            <Button onClick={addToFavorites}>Add to Favorites</Button>
+          </CardActions>
         </Card>
        })
      }

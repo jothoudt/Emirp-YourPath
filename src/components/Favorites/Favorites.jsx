@@ -1,8 +1,9 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
+import {useSelector} from 'react-redux'
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import './Layout.css';
+import './Favorites.css';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -100,18 +101,18 @@ export default function Album() {
         else if (chartName === 'HallucinogenPieChart'){
             history.push('/hallucinogen_details')
         }
-        else if (chartName === 'HeroinAllTimePie'){
-            history.push('heroin_details')
-        }
+        // else if (chartName === 'HeroinAllTimePie'){
+        //     history.push('')
+        // }
         else if (chartName === 'InhalantsPieChart'){
             history.push('/inhalants_details')
         }
         else if (chartName === 'MarijuanaPieChart'){
             history.push('/marijuana_details')
         }
-        else if (chartName === 'MethAllTimePie'){
-            history.push('/meth_details')
-        }
+        // else if (chartName === 'MethAllTimePie'){
+        //     history.push('')
+        // }
         else if (chartName === 'NicotinePieChart'){
             history.push('/nicotine_details')
         }
@@ -125,6 +126,8 @@ export default function Album() {
             history.push('/other_substances_details')
         }
    }
+
+   const prefs = useSelector((store)=>store.preferences);
 
   return (
     <React.Fragment>
