@@ -81,24 +81,25 @@ function Race(){
 
       display= 
         <Card>
+          <RacePieChart />
           <CardHeader 
-          title={answer.text}
+          // title={answer.text}
           />
           <CardContent>
             <Divider />
-            <RacePieChart />
-            <p>Black or African American: {blackOrAfricanAmerican}</p>
+            
+            {/* <p>Black or African American: {blackOrAfricanAmerican}</p>
             <p>East African/Somali/AfricanBorn: {eastAfricanSomaliAfricanBorn}</p>
             <p>Asian: {asian}</p>
             <p>Native Hawaiin/Pacific Islander: {nativeHawaiinOrPacificIslander}</p>
             <p>Alaska Native: {alaskaNative}</p>
             <p>White: {white}</p>
             <p>Native American: {nativeAmerican}</p>
-            <p>Did not disclose: {noDisclosure}</p>
+            <p>Did not disclose: {noDisclosure}</p> */}
           </CardContent>
-          <CardActions>
+          {/* <CardActions>
             <Button onClick={addToFavorites}>Add to Favorites</Button>
-          </CardActions>
+          </CardActions> */}
         </Card>
        })
      }

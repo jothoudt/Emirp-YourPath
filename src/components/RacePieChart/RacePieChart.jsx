@@ -104,10 +104,10 @@ function RacePieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Demographics(Race)</h1>
+            <h1 className='title'>Race</h1>
         </div>
         <Pie data={data} />
-        <p>{blackOrAfricanAmerican}</p>
+        {/* <p>{blackOrAfricanAmerican}</p> */}
         </>
     )
 }
