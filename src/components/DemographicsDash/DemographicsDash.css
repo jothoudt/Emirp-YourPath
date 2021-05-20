@@ -1,0 +1,17 @@
+.cardText {
+    text-align: center;
+    font-size: small;
+    padding-top: 15px;
+}
+
+.cards {
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.cardBtn {
+    margin: auto;
+}
