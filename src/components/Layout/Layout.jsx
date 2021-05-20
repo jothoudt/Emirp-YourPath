@@ -100,18 +100,18 @@ export default function Album() {
         else if (chartName === 'HallucinogenPieChart'){
             history.push('/hallucinogen_details')
         }
-        // else if (chartName === 'HeroinAllTimePie'){
-        //     history.push('')
-        // }
+        else if (chartName === 'HeroinAllTimePie'){
+            history.push('heroin_details')
+        }
         else if (chartName === 'InhalantsPieChart'){
             history.push('/inhalants_details')
         }
         else if (chartName === 'MarijuanaPieChart'){
             history.push('/marijuana_details')
         }
-        // else if (chartName === 'MethAllTimePie'){
-        //     history.push('')
-        // }
+        else if (chartName === 'MethAllTimePie'){
+            history.push('/meth_details')
+        }
         else if (chartName === 'NicotinePieChart'){
             history.push('/nicotine_details')
         }
