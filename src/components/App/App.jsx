@@ -99,6 +99,7 @@ import DrugStatistics from '../DrugStatistics/DrugStatistics';
 import Demographics from '../Demographics/Demographics';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
 import TreatmentOptions from '../TreatmentOptions/TreatmentOptions';
+import Favorites from '../Favorites/Favorites'
 
 import Layout from '../Layout/Layout';
 
@@ -504,6 +505,15 @@ function App() {
 
           <ProtectedRoute exact path="/treatmentoptions">
             <TreatmentOptions />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/demographics">
+            <Demographics />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/healthstatistics">
+            <HealthStatistics />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/favorites">
+            <Favorites />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

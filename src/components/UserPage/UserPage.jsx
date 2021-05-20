@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
-import Hi from '../HiComponent/HiComponent';
 import axios from 'axios';
 //pass thru all datasets
 import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
@@ -25,6 +24,7 @@ import MentalHealth from '../MentalHealth/MentalHealth';
 import TotalAssessments from '../TotalAssesments/TotalAssesments';
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 import PastServices from '../PastServices/PastServices';
+import HiComponent from '../HiComponent/HiComponent';
 //material-ui for styling
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -44,75 +44,23 @@ function UserPage() {
     dispatch({type:'FETCH_FORM'});
     dispatch({type:'FETCH_ASSESSMENT'})
     dispatch({type:'FETCH_PROMOTER_SCORES'})
+    dispatch({type: 'FETCH_PREFERENCES'})
     // dispatch({type:'FETCH_REPORT_1'});
   }
   //for styling
   const classes= useStyles();
   //get Jotform data from redux store
   const form = useSelector((store)=>store.form);
+  const prefs = useSelector((store)=>store.preferences);
   // const report =useSelector((store)=>store.report1)
 
-  // const displayFavorite=()=>{
-  //   let reportDisplay=''
-  //   let ComponentTagName=''
-  //   if(!report){
-  //     reportDisplay = <><h1>Loading</h1></>
-  //   }
-  //   else{
-  //     reportDisplay= report.map((report, id)=>{
-  //       console.log(report.component_name)
-  //       ComponentTagName=report.component_name
-  //       return(
-  //         <>
-  //       < report.component_name key={id} />
-  //       </>
-  //       )
-  //     } )
-  //   }
-  //   return reportDisplay
-  // }
 
-//  let mjy=0;
-//  let mjn=0;
-//  let mjAnswers={
-//    mjy,
-//    mjn
-//  }
-  // const mjMap=form[119].answer
+  const componentMapping={
+    HiComponent: <HiComponent />,
+    CocaineAllTime: <CocaineAllTime />,
+    Race: <Race />
+  }
 
-//   const answer1 =()=>{
-//     let display=''
-//     console.log('in answer')
-//     if(!form){
-//       display=<p>loading</p>
-//     }
-//     if(form.length){
-//     form.map((item)=>{
-//       let answer=item.answers[119]
-//      if(answer.answer){
-//        mjy++
-//      }
-//      if(!answer.answer){
-//       mjn++
-//     }
-//     console.log(mjy, mjn)
-//     // mjAnswers.mjy= mjy
-//     // mjAnswers.mjn= mjn
-//     console.log(mjAnswers)
-//     display= 
-//     <>
-//     <p>Marijuana Yes:{mjy}</p>
-//     <p>Marijuana No: {mjn}</p>
-//     </>
-//     })
-//   }
-//   return display;
-// }
-
-// const answer2=()=>{
-
-
-// }
   
   
   useEffect(()=>
@@ -125,17 +73,16 @@ function UserPage() {
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
+      {/* <div>
+        {displayFavorite()}
+      </div> */}
       {/* {answer1()} */}
       {/* {displayFavorite()} */}
-      {/* {report.map(index=>{
-        let Name=index.component_name
-        return(
-          <>
-        <Name />
-        </>
-        )
+      {prefs.map(index=>{
+        let Name= componentMapping[index.component_name]
+        return Name
       })
-    } */}
+    }
     <TotalAssessments />
     <Grid container spacing={2}>
       <Grid item xs={12} sm={3}>
