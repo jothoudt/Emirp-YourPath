@@ -22,6 +22,14 @@ preferencesRouter.get('/', (req, res)=>{
 
 })
 
+preferencesRouter.post('/', (req, res)=>{
+  const addQuery=`INSERT INTO favorite (component_name, user_id) VALUES ($1, $2);`;
+  pool.query(addQuery, [req.body.component_name, req.body.id]).then(()=>res.sendStatus(200))
+    .catch((err)=>{
+      res.sendStatus(500);
+    })
+})
+
 //get route
 
 module.exports= preferencesRouter;
