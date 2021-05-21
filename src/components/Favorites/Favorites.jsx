@@ -46,6 +46,7 @@ import PregnantPieChart from '../PregnantPieChart/PregnantPieChart';
 //import sweetalert2
 const Swal = require('sweetalert2')
 
+import Icon from '@material-ui/core/Icon';
 
 import HiComponent from '../HiComponent/HiComponent';
 
@@ -381,7 +382,9 @@ export default function Favorites() {
               All of the charts located on the Dashboard below reflect whether or not applicants have ever used the substance in question.
               For more information and to see the data element reflected for the last month click the view button. 
             </Typography> */}
-            <Button onClick={addMenu} color="primary">Add a Chart to Dashboard</Button>
+            <Button onClick={addMenu} color="primary" ><Icon className={classes.icon} color="primary" style={{fontSize:'48px'}}>
+        add_circle
+      </Icon>Add a Chart</Button>
             {/* <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>

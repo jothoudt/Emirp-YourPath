@@ -31,6 +31,7 @@ import { Button, Grid, Card, CardActions, Collapse, IconButton } from '@material
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { makeStyles } from '@material-ui/core/styles';
 
+
 import Favorites from '../Favorites/Favorites';
 
 //pass thru AllData
@@ -104,113 +105,15 @@ function UserPage() {
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
-      {/* <div>
-        {displayFavorite()}
-      </div> */}
-      {/* {answer1()} */}
-      {/* {displayFavorite()} */}
-      {prefs.map(index=>{
-        let Name= componentMapping[index.component_name]
-        return Name
-      })
-    }
-    <TotalAssessments />
-    <Favorites />
-    {/* <Grid container spacing={2}>
-      <Grid item xs={12} sm={3}>
-        <TotalAssessments />
-      </Grid>
-      <Grid item xs={12} sm={4}>  
-        <MarijuanaAllTime />
-      </Grid>
-      <Grid item xs={4} sm={3}>
-        <Race />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <MethAllTime />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <HallucinogenAllTime />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <HeroinAllTime />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <InhalantsAllTime />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <CocaineAllTime />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <OpiodsAllTime />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <BenzodiazepinesAllTime />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <NicotineAllTime />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <AlcoholAllTime />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <OtherSubstancesAllTime />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <OTCAllTime />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <Pregnant />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <SexualOrientation />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <JusticeInvolved />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <Gender />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <FetalAlcoholSyndrome />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <MentalHealth />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <PastServices />
-      </Grid>
-    </Grid>
-
-      <p>Your ID is: {user.id}</p> */}
+      <TotalAssessments />
+      <Favorites />
       <LogOutButton className="btn" />
-
-    <Button
-      onClick={handleExpandClick}
-    >
-    All Data
-    </Button>
-    {/* <Card>
-      <CardActions>
-      <IconButton
-          className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-          >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <AllData />
-      </Collapse>
-    </Card> */}
-
-    
-    <p>Your ID is: {user.id}</p>
-    <LogOutButton className="btn" />
+      {/* <Button
+        onClick={handleExpandClick}
+      >
+      All Data
+      </Button>
+      <LogOutButton className="btn" /> */}
 
     </div>
   );
