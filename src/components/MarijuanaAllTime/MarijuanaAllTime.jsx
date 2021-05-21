@@ -45,6 +45,8 @@ function MarijuanaAllTime(){
           <MarijuanaPieChart />
           <p>Marijuana Yes:{marijuanaYes}</p>
           <p>Marijuana No: {marijuanaNo}</p>
+          <Divider />
+          <p>This pie chart shows the percentage of people completing their assessment through YourPath who marked that they had used marijuana, including wax, K2 and spice, at some point in their life.</p>
         </CardContent>
        </Card>
        })

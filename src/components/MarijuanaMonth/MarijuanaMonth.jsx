@@ -41,15 +41,17 @@ function MarijuanaMonth(){
         //display for counts
         marijuanaDisplay= 
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
-         <CardContent>
-           <Divider />
-           <MarijuanaMonthPieChart />
-           <p>Marijuana in the last month Yes:{marijuanaMonthlyYes}</p>
-           <p>Marijuana in the last month No: {marijuanaMonthlyNo}</p>
-         </CardContent>
+          <CardHeader 
+          title={answer.text}
+          />
+        <CardContent>
+          <Divider />
+          <MarijuanaMonthPieChart />
+            <p>Marijuana in the last month Yes:{marijuanaMonthlyYes}</p>
+            <p>Marijuana in the last month No: {marijuanaMonthlyNo}</p>
+          <Divider />
+            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they ingested marijuana, including K2, wax and spice. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
+        </CardContent>
         </Card>
         })
       }//end if

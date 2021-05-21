@@ -46,6 +46,8 @@ function HallucinogenAllTime(){
           <Divider />
           <p>Hallucinogen Yes:{hallucinogenYes}</p>
           <p>Hallucinogen No: {hallucinogenNo}</p>
+          <Divider />
+          <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used hallucinogens, including LSD, mushrooms or DMT, at some point in their life. </p>
         </CardContent>
       </Card>
       })
