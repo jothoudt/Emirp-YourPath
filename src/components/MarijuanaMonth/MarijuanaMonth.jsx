@@ -8,6 +8,7 @@ import {
     Divider,
     Typography
   } from '@material-ui/core';
+import Box from '@material-ui/core/Box';
 import MarijuanaMonthPieChart from '../MarijuanaMonthPieChart/MarijuanaMonthPieChart';
 
 function MarijuanaMonth(){
@@ -40,19 +41,23 @@ function MarijuanaMonth(){
         console.log(marijuanaMonthlyYes, marijuanaMonthlyNo)
         //display for counts
         marijuanaDisplay= 
-        <Card>
+        <Box mx='auto' width="75%" >
+        <Card >
           <CardHeader 
           title={answer.text}
           />
         <CardContent>
           <Divider />
+          {/* <Box mx="auto" width="40%"> */}
           <MarijuanaMonthPieChart />
+          {/* </Box> */}
             <p>Marijuana in the last month Yes:{marijuanaMonthlyYes}</p>
             <p>Marijuana in the last month No: {marijuanaMonthlyNo}</p>
           <Divider />
             <p>YourPath assessment takers were given the choice of entering how many days in the previous month they ingested marijuana, including K2, wax and spice. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
         </CardContent>
         </Card>
+        </Box>
         })
       }//end if
       return marijuanaDisplay;
