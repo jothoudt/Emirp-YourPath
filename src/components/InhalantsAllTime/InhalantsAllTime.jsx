@@ -46,6 +46,8 @@ function InhalantsAllTime(){
           <Divider />
           <p>Inhalant Yes:{inhalantYes}</p>
           <p>Inhalant No: {inhalantNo}</p>
+          <Divider />
+          <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used inhalants, including dust-off, glue, paint or whippets at some point in their life.</p>
         </CardContent>
       </Card>
       })
