@@ -9,6 +9,7 @@ import {
     Typography
   } from '@material-ui/core';
 import CocaineMonthPie from '../CocaineMonthPie/CocaineMonthPie';
+import Box from '@material-ui/core/Box';
 
 function CocaineMonth(){
 
@@ -40,6 +41,7 @@ function CocaineMonth(){
         console.log(cocaineMonthlyYes, cocaineMonthlyNo)
         //display for counts
         cocaineDisplay= 
+        <Box mx='auto' width="75%" >
         <Card>
            <CocaineMonthPie />
            <CardHeader 
@@ -53,6 +55,7 @@ function CocaineMonth(){
            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used cocaine, including powder or crack. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
          </CardContent>
         </Card>
+        </Box>
         })
       }//end if
       return cocaineDisplay;

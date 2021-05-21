@@ -8,7 +8,9 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
-import MethAllTimePie from '../MethAllTimePie/MethAllTimePie';
+import Box from '@material-ui/core/Box';
+import MethPieChartDetails from '../MethPieChartDetails/MethPieChartDetails';
+
 
 
 function MethAllTime(){
@@ -45,19 +47,21 @@ function MethAllTime(){
         console.log(methYes, methNo)
         //define display
         methDisplay= 
-        <Card>
-          <CardHeader
-          title={answer.text}
-          />
-          <CardContent>
-            <Divider />
-            <MethAllTimePie />
-            <p>Meth Yes:{methYes}</p>
-            <p>Meth No: {methNo}</p>
-            <Divider />
-            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used meth or other amphetamines at some point in their life. </p>
-          </CardContent>
-        </Card>
+        <Box mx='auto' width="75%" >
+          <Card>
+            <CardHeader
+            title={answer.text}
+            />
+            <CardContent>
+              <Divider />
+              <MethPieChartDetails />
+              <p>Meth Yes:{methYes}</p>
+              <p>Meth No: {methNo}</p>
+              <Divider />
+              <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used meth or other amphetamines at some point in their life. </p>
+            </CardContent>
+          </Card>
+        </Box>
         })
       }
       return methDisplay;

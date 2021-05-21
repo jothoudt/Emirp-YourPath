@@ -1,33 +1,35 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
+import PastServicesBar from '../PastServicesBar/PastServicesBar';
 import Box from '@material-ui/core/Box';
 
 
 
+
   
-function HeroinMonthPie () {
+function InhalantsPieChartDetails () {
     const form = useSelector((store)=>store.form);
 
     
 
-    let heroinTotal=form.length;
-    let heroinYes=0;
-    let heroinNo=0;
-    let heroinYesDisplay= 0;
-    let heroinNoDisplay=0;
+    let total=form.length;
+    let yes=0;
+    let no=0;
+    let yesDisplay= 0;
+    let noDisplay=0;
 
 
     form.map((item)=>{
-        let answer=item.answers[138]
-       if(answer.answer){
-           heroinYes++
+        let answer=item.answers[126]
+       if(answer.answer==='Yes'){
+           yes++
        }
        else{
-           heroinNo++
+           no++
       }
-        heroinYesDisplay = ((heroinYes / heroinTotal) * 100).toFixed(1);
-        heroinNoDisplay = ((heroinNo / heroinTotal) * 100).toFixed(1);
+        yesDisplay = ((yes / total) * 100).toFixed(1);
+        noDisplay = ((no / total) * 100).toFixed(1);
       })
       
 
@@ -36,7 +38,7 @@ function HeroinMonthPie () {
         datasets: [
           {
             label: '# of Votes',
-            data: [heroinYesDisplay, heroinNoDisplay],
+            data: [yesDisplay, noDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -52,13 +54,13 @@ function HeroinMonthPie () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Heroin Use(with in last month)</h1>
+            <h1 className='title'>Inhalants</h1>
         </div>
         <Box mx="auto" width="40%">
-          <Pie data={data} />
+            <Pie data={data} />
         </Box>
         </>
     )
 }
   
-  export default HeroinMonthPie;
+  export default InhalantsPieChartDetails;

@@ -8,7 +8,9 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
-import CocainePieChart from '../CocainePieChart/CocainePieChart';
+import CocainePieChartDetails from '../CocainePieChartDetails/CocainePieChartDetails';
+import Box from '@material-ui/core/Box';
+
 
 function CocaineAllTime(){
 
@@ -36,19 +38,21 @@ function CocaineAllTime(){
        }
        console.log(cocaineYes, cocaineNo)
        display= 
-       <Card>
-          <CocainePieChart />
-          <CardHeader 
-            title={answer.text}
-          />
-          <CardContent>
-            <Divider />
-            <p>Cocaine Yes:{cocaineYes}</p>
-            <p>Cocaine No: {cocaineNo}</p>
-            <Divider />
-            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used cocaine, including powder or crack, at some point in their life. </p>
-          </CardContent>
-       </Card>
+       <Box mx='auto' width="75%" >
+        <Card>
+            <CocainePieChartDetails />
+            <CardHeader 
+              title={answer.text}
+            />
+            <CardContent>
+              <Divider />
+              <p>Cocaine Yes:{cocaineYes}</p>
+              <p>Cocaine No: {cocaineNo}</p>
+              <Divider />
+              <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used cocaine, including powder or crack, at some point in their life. </p>
+            </CardContent>
+        </Card>
+       </Box>
        })
      }
      return display;
