@@ -45,6 +45,8 @@ function CocaineAllTime(){
             <Divider />
             <p>Cocaine Yes:{cocaineYes}</p>
             <p>Cocaine No: {cocaineNo}</p>
+            <Divider />
+            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used cocaine, including powder or crack, at some point in their life. </p>
           </CardContent>
        </Card>
        })

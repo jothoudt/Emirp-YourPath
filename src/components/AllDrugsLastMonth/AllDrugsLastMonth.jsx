@@ -2,6 +2,14 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import { Bar } from 'react-chartjs-2';
 import { LogarithmicScale } from 'chart.js';
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
 
 function AllDrugsLastMonth (){
 
@@ -78,12 +86,16 @@ function AllDrugsLastMonth (){
       };
 
     return(
-        <>
-        <div className='header'>
-            <h1 className='title'>All Drugs Used</h1>
+        <Card>
+          <CardContent>
+            <div className='header'>
+              <h1 className='title'>All Drugs Used</h1>
             </div>
             <Bar data={data} options={options} />
-        </>
+            <Divider />
+            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they ingested a selection of different substances in the last month. This bar chart summarizes the percentage of people who had used at least one day in the previous month, across all of the included categories.</p>
+          </CardContent>
+        </Card>
     )
 }
 

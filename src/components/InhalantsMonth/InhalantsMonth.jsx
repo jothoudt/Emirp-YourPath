@@ -49,6 +49,8 @@ function InhalantsMonth(){
            <InhalantsMonthPie />
            <p>Inhalants in the last month Yes:{inhalantsMonthlyYes}</p>
            <p>Inhalants in the last month No: {inhalantsMonthlyNo}</p>
+           <Divider />
+           <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used inhalants, including dust-off, glue, paint or whippets. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
          </CardContent>
         </Card>
         })

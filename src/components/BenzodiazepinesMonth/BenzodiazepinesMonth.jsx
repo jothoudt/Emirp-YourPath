@@ -49,6 +49,8 @@ function BenzodiazepinesMonth(){
            <BenzodiazepinesMonthPie />
            <p>Benzodiazepines in the last month Yes:{benzodiazepinesMonthlyYes}</p>
            <p>Benzodiazepines in the last month No: {benzodiazepinesMonthlyNo}</p>
+           <Divider />
+           <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used benzodiazepines such as Xanax, Klonopin or Valium. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
          </CardContent>
         </Card>
         })

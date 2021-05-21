@@ -43,10 +43,11 @@ function BenzodiazepinesAllTime(){
           title={answer.text}
         />
         <CardContent>
-          
           <Divider />
           <p>Benzodiazepines Yes:{benzYes}</p>
           <p>Benzodiazepines No: {benzNo}</p>
+          <Divider />
+          <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used benzodiazepines such as Xanax, Klonopin or Valium, at some point in their life. </p>
         </CardContent>
       </Card>
       })

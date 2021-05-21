@@ -49,6 +49,8 @@ function CocaineMonth(){
            <Divider />
            <p>Cocaine in the last month Yes:{cocaineMonthlyYes}</p>
            <p>Cocaine in the last month No: {cocaineMonthlyNo}</p>
+           <Divider />
+           <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used cocaine, including powder or crack. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
          </CardContent>
         </Card>
         })
