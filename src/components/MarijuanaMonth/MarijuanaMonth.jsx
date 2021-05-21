@@ -41,11 +41,7 @@ function MarijuanaMonth(){
         //display for counts
         marijuanaDisplay= 
         <Card>
-          <CardHeader 
-          title={answer.text}
-          />
         <CardContent>
-          <Divider />
           <MarijuanaMonthPieChart />
             <p>Marijuana in the last month Yes:{marijuanaMonthlyYes}</p>
             <p>Marijuana in the last month No: {marijuanaMonthlyNo}</p>

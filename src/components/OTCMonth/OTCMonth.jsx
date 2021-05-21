@@ -41,11 +41,7 @@ function OTCMonth(){
         //display for counts
         OTCDisplay= 
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
          <CardContent>
-           <Divider />
            <OTCMonthPie />
            <p>Over the counter used in the last month Yes:{OTCMonthlyYes}</p>
            <p>Over the Counter used in the last month No: {OTCMonthlyNo}</p>

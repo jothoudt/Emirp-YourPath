@@ -41,11 +41,7 @@ function BenzodiazepinesMonth(){
         //display for counts
         benzodiazepinesDisplay= 
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
          <CardContent>
-           <Divider />
            <BenzodiazepinesMonthPie />
            <p>Benzodiazepines in the last month Yes:{benzodiazepinesMonthlyYes}</p>
            <p>Benzodiazepines in the last month No: {benzodiazepinesMonthlyNo}</p>

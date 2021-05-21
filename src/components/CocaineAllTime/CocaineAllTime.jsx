@@ -37,12 +37,9 @@ function CocaineAllTime(){
        console.log(cocaineYes, cocaineNo)
        display= 
        <Card>
-          <CocainePieChart />
-          <CardHeader 
-            title={answer.text}
-          />
+          
           <CardContent>
-            <Divider />
+            <CocainePieChart />
             <p>Cocaine Yes:{cocaineYes}</p>
             <p>Cocaine No: {cocaineNo}</p>
             <Divider />

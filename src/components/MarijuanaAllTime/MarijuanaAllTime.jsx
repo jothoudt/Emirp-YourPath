@@ -37,11 +37,7 @@ function MarijuanaAllTime(){
        console.log(marijuanaYes, marijuanaNo)
        display= 
        <Card>
-          <CardHeader 
-          title={answer.text}
-          />
         <CardContent>
-          <Divider />
           <MarijuanaPieChart />
           <p>Marijuana Yes:{marijuanaYes}</p>
           <p>Marijuana No: {marijuanaNo}</p>

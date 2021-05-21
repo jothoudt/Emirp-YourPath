@@ -41,11 +41,7 @@ function InhalantsMonth(){
         //display for counts
         inhalantsDisplay= 
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
          <CardContent>
-           <Divider />
            <InhalantsMonthPie />
            <p>Inhalants in the last month Yes:{inhalantsMonthlyYes}</p>
            <p>Inhalants in the last month No: {inhalantsMonthlyNo}</p>

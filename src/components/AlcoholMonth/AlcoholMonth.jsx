@@ -41,11 +41,7 @@ function AlcoholMonth(){
         //display for counts
         alcoholDisplay= 
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
          <CardContent>
-           <Divider />
            <AlcoholMonthPie />
            <p>Alcohol in the last month Yes:{alcoholMonthlyYes}</p>
            <p>Alcohol in the last month No: {alcoholMonthlyNo}</p>

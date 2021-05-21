@@ -38,11 +38,7 @@ function OpiodsAllTime(){
        console.log(opiodsYes, opiodsNo)
        display= 
        <Card>
-          <CardHeader 
-            title={answer.text}
-          />
-          <CardContent>
-            <Divider />   
+          <CardContent> 
             <OpiodsPieChart />        
             <p>Opioids Yes:{opiodsYes}</p>
             <p>Opioids No: {opiodsNo}</p>

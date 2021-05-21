@@ -39,11 +39,7 @@ function InhalantsAllTime(){
       display= 
       <Card>
         <InhalantsPieChart />
-        <CardHeader 
-          title={answer.text}
-        />
         <CardContent>
-          <Divider />
           <p>Inhalant Yes:{inhalantYes}</p>
           <p>Inhalant No: {inhalantNo}</p>
           <Divider />

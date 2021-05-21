@@ -41,12 +41,8 @@ function MethMonth(){
         //display for counts
         methDisplay= 
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
          <MethMonthPie />
          <CardContent>
-           <Divider />
            <p>Meth in the last month Yes:{methMonthlyYes}</p>
            <p>Meth in the last month No: {methMonthlyNo}</p>
            <Divider />

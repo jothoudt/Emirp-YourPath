@@ -41,11 +41,7 @@ function HallucinogenMonth(){
         //display for counts
         hallucinogenDisplay= 
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
          <CardContent>
-           <Divider />
            <HallucinogenMonthPie />
            <p>Hallucinogen in the last month Yes:{hallucinogenMonthlyYes}</p>
            <p>Hallucinogen in the last month No: {hallucinogenMonthlyNo}</p>

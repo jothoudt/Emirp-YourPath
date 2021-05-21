@@ -41,11 +41,7 @@ function HeroinMonth(){
         //display for counts
         heroinDisplay= 
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
          <CardContent>
-          <Divider />
           <HeroinMonthPie />  
           <p>Heroin in the last month Yes:{heroinMonthlyYes}</p>
           <p>Heroin in the last month No: {heroinMonthlyNo}</p>

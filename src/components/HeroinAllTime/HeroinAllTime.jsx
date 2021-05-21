@@ -38,11 +38,7 @@ function HeroinAllTime(){
         console.log(heroinYes, heroinNo)
         heroinDisplay= 
         <Card>
-          <CardHeader 
-            title={answer.text}
-          />
-          <CardContent>
-            <Divider />   
+          <CardContent>  
             <HeroinAllTimePie />         
             <p>Heroin Yes:{heroinYes}</p>
             <p>Heroin No: {heroinNo}</p>

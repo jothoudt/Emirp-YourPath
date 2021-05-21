@@ -41,11 +41,7 @@ function OtherSubstancesMonth(){
         //display for counts
         otherSubstancesDisplay= 
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
          <CardContent>
-           <Divider />
            <OtherSubstancesMonthPie />
            <p>Other Substances in the last month Yes:{otherSubstancesMonthlyYes}</p>
            <p>Other Substances in the last month No: {otherSubstancesMonthlyNo}</p>

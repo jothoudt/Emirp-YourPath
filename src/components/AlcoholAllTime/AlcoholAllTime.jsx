@@ -44,11 +44,7 @@ function AlcoholAllTime(){
         //define display
         alcoholDisplay= 
         <Card>
-          <CardHeader 
-            title={answer.text}
-          />
           <CardContent>
-            <Divider />
             <AlcoholPieChart />
             <p>Alcohol Used Yes:{ alcoholYes}</p>
             <p>Alcohol Used No: {alcoholNo}</p>

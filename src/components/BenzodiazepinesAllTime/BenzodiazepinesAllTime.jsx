@@ -38,12 +38,8 @@ function BenzodiazepinesAllTime(){
       console.log(benzYes, benzNo)
       display= 
       <Card>
-        <BenzodiazepinesPieChart />
-        <CardHeader 
-          title={answer.text}
-        />
         <CardContent>
-          <Divider />
+          <BenzodiazepinesPieChart />
           <p>Benzodiazepines Yes:{benzYes}</p>
           <p>Benzodiazepines No: {benzNo}</p>
           <Divider />
