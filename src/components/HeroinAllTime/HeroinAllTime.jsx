@@ -8,7 +8,9 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
-import HeroinAllTimePie from '../HeroinAllTimePie/HeroinAllTimePie';
+import Box from '@material-ui/core/Box';
+import HeroinPieChartDetails from '../HeroinPieChartDetails/HeroinPieChartDetails';
+
 
 function HeroinAllTime(){
 
@@ -37,19 +39,21 @@ function HeroinAllTime(){
         // }
         console.log(heroinYes, heroinNo)
         heroinDisplay= 
-        <Card>
-          <CardHeader 
-            title={answer.text}
-          />
-          <CardContent>
-            <Divider />   
-            <HeroinAllTimePie />         
-            <p>Heroin Yes:{heroinYes}</p>
-            <p>Heroin No: {heroinNo}</p>
-            <Divider />
-            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used heroin or fentanyl powder at some point in their life. </p>
-          </CardContent>
-        </Card>
+        <Box mx='auto' width="75%" >
+          <Card>
+            <CardHeader 
+              title={answer.text}
+            />
+            <CardContent>
+              <Divider />   
+              <HeroinPieChartDetails />         
+              <p>Heroin Yes:{heroinYes}</p>
+              <p>Heroin No: {heroinNo}</p>
+              <Divider />
+              <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used heroin or fentanyl powder at some point in their life. </p>
+            </CardContent>
+          </Card>
+        </Box>
         })
       }
       return heroinDisplay;

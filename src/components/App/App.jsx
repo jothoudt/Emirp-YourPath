@@ -102,8 +102,10 @@ import TreatmentOptions from '../TreatmentOptions/TreatmentOptions';
 
 import Favorites from '../Favorites/Favorites'
 
+
 import MethDetails from '../MethDetails/MethDetails';
 import HeroinDetails from '../HeroinDetails/HeroinDetails';
+
 
 
 import Layout from '../Layout/Layout';
@@ -528,8 +530,13 @@ function App() {
           <ProtectedRoute exact path="/favorites">
             <Favorites />
           </ProtectedRoute>
+
+          <ProtectedRoute exact path="/fetal_alcohol_syndrome">
+            <FetalAlcoholSyndrome />
+          </ProtectedRoute>
           <ProtectedRoute exact path="/demographics_dash">
             <DemographicsDash />
+
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
