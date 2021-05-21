@@ -49,6 +49,8 @@ function AlcoholMonth(){
            <AlcoholMonthPie />
            <p>Alcohol in the last month Yes:{alcoholMonthlyYes}</p>
            <p>Alcohol in the last month No: {alcoholMonthlyNo}</p>
+           <Divider />
+           <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used alcohol, including beer, wine or liquor. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
          </CardContent>
         </Card>
         })

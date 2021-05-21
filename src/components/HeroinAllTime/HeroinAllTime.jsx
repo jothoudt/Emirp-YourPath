@@ -46,6 +46,8 @@ function HeroinAllTime(){
             <HeroinAllTimePie />         
             <p>Heroin Yes:{heroinYes}</p>
             <p>Heroin No: {heroinNo}</p>
+            <Divider />
+            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used heroin or fentanyl powder at some point in their life. </p>
           </CardContent>
         </Card>
         })
