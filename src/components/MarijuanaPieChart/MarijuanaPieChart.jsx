@@ -1,6 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
+import Box from '@material-ui/core/Box';
 
 
 
@@ -53,7 +54,7 @@ function MarijuanaPieChart () {
         <div className='header'>
             <h1 className='title'>Marijuana</h1>
         </div>
-        <Pie data={data} />
+          <Pie data={data} />
         </>
     )
 }

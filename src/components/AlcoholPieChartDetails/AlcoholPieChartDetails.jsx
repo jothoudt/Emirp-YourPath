@@ -4,30 +4,28 @@ import { Pie } from 'react-chartjs-2';
 import Box from '@material-ui/core/Box';
 
 
-
-  
-function MarijuanaMonthPieChart () {
+function AlcoholPieChartDetails () {
     const form = useSelector((store)=>store.form);
 
     
 
-    let marijuanaTotal=form.length;
-    let marijuanaYes=0;
-    let marijuanaNo=0;
-    let marijuanaYesDisplay= 0;
-    let marijuanaNoDisplay=0;
+    let alcoholTotal=form.length;
+    let alcoholYes=0;
+    let alcoholNo=0;
+    let alcoholYesDisplay= 0;
+    let alcoholNoDisplay=0;
 
 
     form.map((item)=>{
-        let answer=item.answers[135]
-       if(answer.answer){
-           marijuanaYes++
+        let answer=item.answers[118]
+       if(answer.answer==='Yes'){
+           alcoholYes++
        }
        else{
-           marijuanaNo++
+           alcoholNo++
       }
-        marijuanaYesDisplay = ((marijuanaYes / marijuanaTotal) * 100).toFixed(1);
-        marijuanaNoDisplay = ((marijuanaNo / marijuanaTotal) * 100).toFixed(1);
+        alcoholYesDisplay = ((alcoholYes / alcoholTotal) * 100).toFixed(1);
+        alcoholNoDisplay = ((alcoholNo / alcoholTotal) * 100).toFixed(1);
       })
       
 
@@ -36,7 +34,7 @@ function MarijuanaMonthPieChart () {
         datasets: [
           {
             label: '# of Votes',
-            data: [marijuanaYesDisplay, marijuanaNoDisplay],
+            data: [alcoholYesDisplay, alcoholNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -52,13 +50,13 @@ function MarijuanaMonthPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Marijuana Use(with in last month)</h1>
+            <h1 className='title'>Alcohol</h1>
         </div>
         <Box mx="auto" width="40%">
-        <Pie data={data} />
+            <Pie data={data} />
         </Box>
         </>
     )
 }
   
-  export default MarijuanaMonthPieChart;
+  export default AlcoholPieChartDetails;
