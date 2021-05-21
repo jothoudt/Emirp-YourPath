@@ -9,7 +9,7 @@ require('dotenv').config();
 
 preferencesRouter.get('/', (req, res)=>{
   console.log('in apiRouter')
-  const preferencesQuery=`SELECT component_name From favorite WHERE user_id=1;`
+  const preferencesQuery=`SELECT component_name, id From favorite WHERE user_id=1;`
   pool.query(preferencesQuery)
   .then(result=>{
       console.log(result.rows)
@@ -28,6 +28,14 @@ preferencesRouter.post('/', (req, res)=>{
     .catch((err)=>{
       res.sendStatus(500);
     })
+})
+
+preferencesRouter.delete('/', (req, res)=>{
+  console.log(req.body)
+  const deleteQuery=`DELETE FROM favorite WHERE id= $1`
+  pool.query(deleteQuery, [req.body.id]).then(()=>res.sendStatus(200)).catch((err)=>{
+    res.sendStatus(500)
+  })
 })
 
 //get route

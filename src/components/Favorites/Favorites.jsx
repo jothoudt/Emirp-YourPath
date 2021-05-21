@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import './Favorites.css';
@@ -35,6 +35,11 @@ import NicotinePieChart from '../NicotinePieChart/NicotinePieChart';
 import OpiodsPieChart from '../OpiodsPieChart/OpiodsPieChart';
 import OTCPieChart from '../OTCPieChart/OTCPieChart';
 import OtherSubstanceAllTimePie from '../OtherSubstancesAllTimePie/OtherSubstancesAllTimePie';
+import HiComponent from '../HiComponent/HiComponent';
+import Race from '../Race/Race';
+import { CardHeader } from '@material-ui/core';
+import UserPage from '../UserPage/UserPage';
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -80,11 +85,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [<AlcoholPieChart/>, <BenzodiazepinesPieChart/>, <CocainePieChart/>, <HallucinogenPieChart/>, <HeroinAllTimePie/>, <InhalantsPieChart/>, <MarijuanaPieChart/>, <MethAllTimePie/>, <NicotinePieChart/>, <OpiodsPieChart/>, <OTCPieChart/>, <OtherSubstanceAllTimePie/> ]
+// const cards = [<AlcoholPieChart/>, <BenzodiazepinesPieChart/>, <CocainePieChart/>, <HallucinogenPieChart/>, <HeroinAllTimePie/>, <InhalantsPieChart/>, <MarijuanaPieChart/>, <MethAllTimePie/>, <NicotinePieChart/>, <OpiodsPieChart/>, <OTCPieChart/>, <OtherSubstanceAllTimePie/> ]
 
 export default function Album() {
   const classes = useStyles();
   const history = useHistory();
+  const dispatch = useDispatch();
+
+  const prefs = useSelector((store)=>store.preferences)
+  const user= useSelector((store)=>store.user)
+
+  const cards=prefs;
+
+  const componentMapping={
+    HiComponent: <HiComponent />,
+    CocaineAllTime: <CocaineAllTime />,
+    Race: <Race />
+  }
 
   const viewClick = (card) => {
         let chartName = card.card.type.name;
@@ -126,8 +143,49 @@ export default function Album() {
             history.push('/other_substances_details')
         }
    }
+   let cardDisplay=''
+   const displayFavorites=()=>{
+     if(cards.length === '0'){
+       cardDisplay=<><p>Click Below to add Charts</p></>
+     }
+     else{
+       cardDisplay=
+       cards.map((card) => {
 
-   const prefs = useSelector((store)=>store.preferences);
+        const removeFavorite=()=>{
+          let toRemove={
+            id: card.id
+          }
+          console.log(toRemove);
+          dispatch({type:'DELETE_CHART', payload:toRemove})
+          dispatch({type: 'FETCH_PREFERENCES'})
+        }
+
+        return(
+              <Grid item key={card.id} xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
+                  <CardMedia className="cards" >
+                      {componentMapping[card.component_name]}
+                  </CardMedia>
+                  <Typography className="cardText">
+                      Select button below to view more details including use in last month
+                    </Typography>
+                  <CardActions>
+                    <Button onClick={()=>viewClick({card})} className="cardBtn" size="small" color="primary" textAlign="center">
+                      View Details
+                    </Button>
+                    <Button onClick={removeFavorite} className="cardBtn" size="small" color="primary" textAlign="center">
+                      Remove
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            )}
+       )
+     }
+     return cardDisplay
+   }
+   
 
   return (
     <React.Fragment>
@@ -162,23 +220,7 @@ export default function Album() {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia className="cards" >
-                      {card}
-                  </CardMedia>
-                  <Typography className="cardText">
-                      Select button below to view more details including use in last month
-                    </Typography>
-                  <CardActions>
-                    <Button onClick={()=>viewClick({card})} className="cardBtn" size="small" color="primary" textAlign="center">
-                      View Details
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
+            {displayFavorites()} 
           </Grid>
         </Container>
       </main>

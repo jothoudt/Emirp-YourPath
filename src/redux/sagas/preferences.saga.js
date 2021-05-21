@@ -4,6 +4,7 @@ import axios from 'axios';
 function* preferencesSaga(){
     yield takeEvery('FETCH_PREFERENCES', fetchPreferences);
     yield takeEvery('ADD_PREFERENCES', addPreferences);
+    yield takeEvery('DELETE_CHART', deletePreferences)
 }//end searchSaga
 
 //to fetch recipes from 3rd party api that match the search
@@ -21,9 +22,20 @@ function* addPreferences(action){
     try{
         console.log('in add preferences')
         const post=yield axios.post('/api/preferences/', action.payload)
+        yield put({type:'FETCH_PREFERENCES'})
     }
     catch{
         console.log('add preferences error' )
+    }
+}
+
+function* deletePreferences(action){
+    try{
+        console.log('in delete', action.payload.id)
+       const response=yield axios.delete('/api/preferences/', {data: action.payload}) 
+    }
+    catch(error){
+        console.log('delete chart error', error)
     }
 }
 
