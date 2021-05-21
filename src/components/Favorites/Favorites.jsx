@@ -16,27 +16,39 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import MarijuanaMonthPieChart from '../MarijuanaMonthPieChart/MarijuanaMonthPieChart';
-import MarijuanaPieChart from '../MarijuanaPieChart/MarijuanaPieChart'
+
+//drug charts
 import AlcoholPieChart from '../AlcoholPieChart/AlcoholPieChart';
-import AlcoholMonthPie from '../AlcoholMonthPie/AlcoholMonthPie';
-import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
-import AllDrugsBar from '../AllDrugsBar/AllDrugsBar';
-import HeroinAllTimePie from '../HeroinAllTimePie/HeroinAllTimePie';
-import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
-import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
-import HallucinogenAllTime from '../HallucinogenAllTime/HallucinogenAllTime';
 import BenzodiazepinesPieChart from '../BenzodiazepinesPieChart/BenzodiazepinesPieChart';
 import CocainePieChart from '../CocainePieChart/CocainePieChart';
 import HallucinogenPieChart from '../HallucinogenPieChart/HallucinogenPieChart';
+import HeroinAllTimePie from '../HeroinAllTimePie/HeroinAllTimePie';
 import InhalantsPieChart from '../InhalantsPieChart/InhalantsPieChart';
+import MarijuanaPieChart from '../MarijuanaPieChart/MarijuanaPieChart'
 import MethAllTimePie from '../MethAllTimePie/MethAllTimePie';
 import NicotinePieChart from '../NicotinePieChart/NicotinePieChart';
 import OpiodsPieChart from '../OpiodsPieChart/OpiodsPieChart';
 import OTCPieChart from '../OTCPieChart/OTCPieChart';
 import OtherSubstanceAllTimePie from '../OtherSubstancesAllTimePie/OtherSubstancesAllTimePie';
+
+//demographics components
+import GenderBarChart from '../GenderBarChart/GenderBarChart';
+import JusticeInvolvedBar from '../JusticeInvolvedBar/JusticeInvolvedBar';
+import RacePieChart from '../RacePieChart/RacePieChart';
+import SexualOrientationPieChart from '../SexualOrientationPieChart/SexualOrientationPieChart';
+
+//health statistics
+import FetalAlcoholSyndromePieChart from '../FetalAlcoholSyndromePieChart/FetalAlcoholSyndromePieChart';
+import MentalHealthBar from '../MentalHealthBar/MentalHealthBar';
+import PastServicesBar  from '../PastServicesBar/PastServicesBar';
+import PregnantPieChart from '../PregnantPieChart/PregnantPieChart';
+
+//import sweetalert2
+const Swal = require('sweetalert2')
+
+
 import HiComponent from '../HiComponent/HiComponent';
-import Race from '../Race/Race';
+
 import { CardHeader } from '@material-ui/core';
 import UserPage from '../UserPage/UserPage';
 
@@ -52,7 +64,7 @@ function Copyright() {
     </Typography>
   );
 }
-
+//styles
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -85,82 +97,250 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const cards = [<AlcoholPieChart/>, <BenzodiazepinesPieChart/>, <CocainePieChart/>, <HallucinogenPieChart/>, <HeroinAllTimePie/>, <InhalantsPieChart/>, <MarijuanaPieChart/>, <MethAllTimePie/>, <NicotinePieChart/>, <OpiodsPieChart/>, <OTCPieChart/>, <OtherSubstanceAllTimePie/> ]
-
-export default function Album() {
+//function to return dashboard
+export default function Favorites() {
+  //define variables
   const classes = useStyles();
   const history = useHistory();
   const dispatch = useDispatch();
 
+  //get information from the store
   const prefs = useSelector((store)=>store.preferences)
   const user= useSelector((store)=>store.user)
 
+  //variable for components
   const cards=prefs;
 
+  //A map of components so they can be loaded from the database
   const componentMapping={
-    HiComponent: <HiComponent />,
-    CocaineAllTime: <CocaineAllTime />,
-    Race: <Race />
+    AlcoholPieChart: <AlcoholPieChart />,
+    BenzodiazepinesPieChart: <BenzodiazepinesPieChart />,
+    CocainePieChart: <CocainePieChart />,
+    HallucinogenPieChart: <HallucinogenPieChart />,
+    HeroinAllTimePie: <HeroinAllTimePie />,
+    InhalantsPieChart: <InhalantsPieChart />,
+    MarijuanaPieChart: <MarijuanaPieChart />,
+    MethAllTimePie: <MethAllTimePie />,
+    NicotinePieChart: <NicotinePieChart />,
+    OpiodsPieChart: <OpiodsPieChart />,
+    OTCPieChart: <OTCPieChart />,
+    OtherSubstanceAllTimePie: <OtherSubstanceAllTimePie />,
+    // GenderBarChart: <GenderBarChart />,
+    // JusticeInvolved: <JusticeInvolved />,
+    RacePieChart: <RacePieChart />,
+    SexualOrientationPieChart: <SexualOrientationPieChart />,
+    FetalAlcoholSyndromePieChart: <FetalAlcoholSyndromePieChart />,
+    // MentalHealth: <MentalHealth />,
+    // PastServices: <PastServices />,
+    PregnantPieChart: <PregnantPieChart />,
   }
 
-  const viewClick = (card) => {
-        let chartName = card.card.type.name;
-        console.log('in viewClick', chartName);
-        if (chartName === 'AlcoholPieChart'){
-            history.push('/alcohol_details')
+  //function to add a chart to the database for the users favorites
+  const addMenu=()=>{
+    //object to be sent to the database
+    let toAdd={
+      id: user.id,
+      component_name:''
+    }
+    console.log('in addMenu')
+    //pop up menu that allows users to select a chart to add to their dashboard
+    const { value: charts} = Swal.fire({
+      title: 'Select Chart',
+      input: 'select',
+      inputOptions: {
+       Drugs: {
+        AlcoholPieChart: 'Alcohol',
+        BenzodiazepinesPieChart: 'Benzodiazepines',
+        CocainePieChart: 'Cocaine',
+        HallucinogenPieChart: 'Hallucinogen',
+        InhalantsPieChart: 'Inhalants',
+        MarijuanaPieChart: 'Marijuana',
+        MethAllTimePie: 'Meth',
+        NicotinePieChart: 'Nicotine',
+        OpiodsPieChart: 'Opioids',
+        OTCPieChart: 'Over the Counter',
+        OtherSubstanceAllTimePie: 'Other Substances',
+        },
+        Demographics: {
+          // GenderBarChart: 'Gender',
+          RacePieChart: 'Race',
+          SexualOrientationPieChart: 'Sexual Orientation'
+        },
+        HealthStatistics:{
+          FetalAlcoholSyndromePieChart: 'Fetal Alcohol Syndrome',
+          // MentalHealth: 'Mental Health',
+          PregnantPieChart: 'Pregnant'
         }
-        else if (chartName === 'BenzodiazepinesPieChart'){
-            history.push('/benzodiazepines_details')
+      },
+      inputPlaceholder: 'Select a Chart',
+      showCancelButton: true,
+      //selects the value the user selected and dispatches the matching component to add to the database
+      inputValidator: (value) => {
+        if(value==='AlcoholPieChart'){
+          toAdd.component_name= 'AlcoholPieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
         }
-        else if (chartName === 'CocainePieChart'){
-            history.push('/cocaine_details')
+        if(value==='BenzodiazepinesPieChart'){
+          toAdd.component_name= 'BenzodiazepinesPieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
         }
-        else if (chartName === 'HallucinogenPieChart'){
-            history.push('/hallucinogen_details')
+        if(value==='CocainePieChart'){
+          toAdd.component_name= 'CocainePieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
         }
-        // else if (chartName === 'HeroinAllTimePie'){
-        //     history.push('')
+        if(value==='HallucinogenPieChart'){
+          toAdd.component_name= 'HallucinogenPieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+        }
+        if(value==='InhalantsPieChart'){
+          toAdd.component_name= 'InhalantsPieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+        }
+        if(value==='MarijuanaPieChart'){
+          toAdd.component_name= 'MarijuanaPieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+        }
+        if(value==='MethAllTimePie'){
+          toAdd.component_name= 'MethAllTimePie';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+        }
+        if(value==='NicotinePieChart'){
+          toAdd.component_name= 'NicotinePieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+        }
+        if(value==='OpiodsPieChart'){
+          toAdd.component_name= 'OpiodsPieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+        }
+        if(value==='OTCPieChart'){
+          toAdd.component_name= 'OTCPieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+        }
+        if(value==='OtherSubstanceAllTimePie'){
+          toAdd.component_name= 'OtherSubstanceAllTimePie';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+        }
+        // if(value==='Gender'){
+        //   toAdd.component_name= 'GenderBarChart';
+        //   dispatch({type:'ADD_PREFERENCES', payload:toAdd})
         // }
-        else if (chartName === 'InhalantsPieChart'){
-            history.push('/inhalants_details')
+        if(value==='RacePieChart'){
+          toAdd.component_name= 'RacePieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
         }
-        else if (chartName === 'MarijuanaPieChart'){
-            history.push('/marijuana_details')
+        if(value==='SexualOrientationPieChart'){
+          toAdd.component_name= 'SexualOrientationPieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
         }
-        // else if (chartName === 'MethAllTimePie'){
-        //     history.push('')
+        if(value==='FetalAlcoholSyndromePieChart'){
+          toAdd.component_name= 'FetalAlcoholSyndromePieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+        }
+        // if(value==='MentalHealth'){
+        //   toAdd.component_name= 'MentalHealth';
+        //   dispatch({type:'ADD_PREFERENCES', payload:toAdd})
         // }
-        else if (chartName === 'NicotinePieChart'){
-            history.push('/nicotine_details')
+        if(value==='PregnantPieChart'){
+          toAdd.component_name= 'PregnantPieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
         }
-        else if (chartName === 'OpiodsPieChart'){
-            history.push('/opioids_details')
-        }
-        else if (chartName === 'OTCPieChart'){
-            history.push('/OTC_details')
-        }
-        else if (chartName === 'OtherSubstanceAllTimePie'){
-            history.push('/other_substances_details')
-        }
-   }
+      }
+    })
+    if (charts) {
+    
+      Swal.fire(`You selected: ${charts}`)
+    }
+  }
+
+  //variable to display
    let cardDisplay=''
+   //function to return the users saved components from the database
    const displayFavorites=()=>{
+     //if there are no cards will display a message to add cards to the dashboard
      if(cards.length === '0'){
        cardDisplay=<><p>Click Below to add Charts</p></>
      }
+     //else display the cards
      else{
        cardDisplay=
        cards.map((card) => {
 
+        //function to remove card from users dashboard
         const removeFavorite=()=>{
+          //object that defines the id to delete
           let toRemove={
             id: card.id
           }
           console.log(toRemove);
+          //dispatch to delete and then dispatch to get updated preferences
           dispatch({type:'DELETE_CHART', payload:toRemove})
           dispatch({type: 'FETCH_PREFERENCES'})
         }
 
+        // function that brings the user to the details of the chart depending on which one they clicked
+        const viewClick = (card) => {
+          let chart = card.card.component_name;
+          console.log(chart)
+          switch (chart){
+            case 'AlcoholPieChart':
+              return history.push('/alcohol_details');
+              break;
+            case 'BenzodiazepinesPieChart':
+              return history.push('/benzodiazepines_details');
+              break;
+              case 'CocainePieChart':
+                return history.push('/cocaine_details');
+                break;
+              case 'HallucinogenPieChart':
+                return history.push('/hallucinogen_details');
+                break;
+              case 'HeroinAllTimePie':
+                return history.push('/heroin_details')
+                break;
+              case 'InhalantsPieChart':
+                return history.push('/inhalants_details')
+                break;
+              case 'MarijuanaPieChart':
+                return  history.push('/marijuana_details')
+                break;
+              case 'MethAllTimePie':
+                return history.push('/meth_details')
+                break;
+              case 'NicotinePieChart':
+                return history.push('/nicotine_details')
+                break;
+              case 'OpiodsPieChart':
+                return history.push('/opioids_details')
+                break;
+              case 'OTCPieChart':
+                return history.push('/OTC_details')
+                break;
+              case 'OtherSubstanceAllTimePie':
+                return history.push('/other_substances_details')
+                break;
+              case 'Gender':
+                return history.push('/gender')
+                break;
+              case 'Race':
+                return history.push('/race')
+                break;
+              case 'SexualOrientation':
+                return history.push('/sexualorientation')
+                break;
+              case 'FetalAlcoholSyndrome':
+                return history.push('/fetal_alcohol_syndrome')
+                break;
+              case 'MentalHealth':
+                  return history.push('/mental_health')
+                  break;
+              case 'Pregnant':
+                  return history.push('/pregnant')
+                  break;
+              default:
+                return <><h2>Select a chart</h2></>
+          }
+        };
+        //to be rendered to the dom
         return(
               <Grid item key={card.id} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
@@ -195,13 +375,14 @@ export default function Album() {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Dashboard
+              Your Saved Charts
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+            {/* <Typography variant="h5" align="center" color="textSecondary" paragraph>
               All of the charts located on the Dashboard below reflect whether or not applicants have ever used the substance in question.
               For more information and to see the data element reflected for the last month click the view button. 
-            </Typography>
-            <div className={classes.heroButtons}>
+            </Typography> */}
+            <Button onClick={addMenu} color="primary">Add a Chart to Dashboard</Button>
+            {/* <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
                   <Button variant="contained" color="primary">
@@ -214,7 +395,7 @@ export default function Album() {
                   </Button>
                 </Grid>
               </Grid>
-            </div>
+            </div> */}
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
@@ -222,7 +403,11 @@ export default function Album() {
           <Grid container spacing={4}>
             {displayFavorites()} 
           </Grid>
+          <Grid container spacing={4}>
+          
+          </Grid>
         </Container>
+        
       </main>
       {/* Footer */}
       <footer className={classes.footer}>

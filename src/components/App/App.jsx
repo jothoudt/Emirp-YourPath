@@ -101,6 +101,7 @@ import HealthStatistics from '../HealthStatistics/HealthStatistics';
 import TreatmentOptions from '../TreatmentOptions/TreatmentOptions';
 import Favorites from '../Favorites/Favorites'
 
+
 import Layout from '../Layout/Layout';
 
 //all data table
@@ -514,6 +515,9 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/favorites">
             <Favorites />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/fetal_alcohol_syndrome">
+            <FetalAlcoholSyndrome />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

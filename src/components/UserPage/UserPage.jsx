@@ -28,6 +28,7 @@ import HiComponent from '../HiComponent/HiComponent';
 //material-ui for styling
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import Favorites from '../Favorites/Favorites';
 //styling
 const useStyles = makeStyles( ( theme )=> ({
 
@@ -84,17 +85,10 @@ function UserPage() {
       })
     }
     <TotalAssessments />
-    <Grid container spacing={2}>
+    <Favorites />
+    {/* <Grid container spacing={2}>
       <Grid item xs={12} sm={3}>
         <TotalAssessments />
-      </Grid>
-      <Grid item xs={12} sm={3}> 
-
-
-      <Grid item xs={12} sm={3}>  
-      </Grid>
-      {/* <Grid item xs={12} sm={4}>
-        <TotalAssessments /> */}
       </Grid>
       <Grid item xs={12} sm={4}>  
         <MarijuanaAllTime />
@@ -157,7 +151,7 @@ function UserPage() {
         <PastServices />
       </Grid>
     </Grid>
-      <p>Your ID is: {user.id}</p>
+      <p>Your ID is: {user.id}</p> */}
       <LogOutButton className="btn" />
     </div>
   );
