@@ -39,11 +39,7 @@ function HallucinogenAllTime(){
       display= 
       <Card>
         <HallucinogenPieChart />
-        <CardHeader 
-            title={answer.text}
-            />
         <CardContent>
-          <Divider />
           <p>Hallucinogen Yes:{hallucinogenYes}</p>
           <p>Hallucinogen No: {hallucinogenNo}</p>
           <Divider />

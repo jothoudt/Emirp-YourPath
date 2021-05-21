@@ -6,7 +6,7 @@ import Box from '@material-ui/core/Box';
 
 
   
-function MarijuanaMonthPieChart () {
+function MarijuanaPieChartDetails () {
     const form = useSelector((store)=>store.form);
 
     
@@ -19,8 +19,8 @@ function MarijuanaMonthPieChart () {
 
 
     form.map((item)=>{
-        let answer=item.answers[135]
-       if(answer.answer){
+        let answer=item.answers[119]
+       if(answer.answer==='Yes'){
            marijuanaYes++
        }
        else{
@@ -52,13 +52,13 @@ function MarijuanaMonthPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Marijuana Use(with in last month)</h1>
+            <h1 className='title'>Marijuana</h1>
         </div>
         <Box mx="auto" width="40%">
-        <Pie data={data} />
+            <Pie data={data} />
         </Box>
         </>
     )
 }
   
-  export default MarijuanaMonthPieChart;
+  export default MarijuanaPieChartDetails;

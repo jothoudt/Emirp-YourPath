@@ -71,7 +71,7 @@ function PregnantPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Demographics(Pregnant?)</h1>
+            <h1 className='title'>Pregnant</h1>
         </div>
         <Pie data={data} />
         </>

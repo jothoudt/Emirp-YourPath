@@ -9,7 +9,9 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
-import AlcoholPieChart from '../AlcoholPieChart/AlcoholPieChart';
+import Box from '@material-ui/core/Box';
+import AlcoholPieChartDetails from '../AlcoholPieChartDetails/AlcoholPieChartDetails';
+
 
 function AlcoholAllTime(){
   //get information from the store
@@ -43,15 +45,21 @@ function AlcoholAllTime(){
 
         //define display
         alcoholDisplay= 
-        <Card>
-          <CardContent>
-            <AlcoholPieChart />
-            <p>Alcohol Used Yes:{ alcoholYes}</p>
-            <p>Alcohol Used No: {alcoholNo}</p>
-            <Divider />
-            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used alcohol, including beer, wine or liquor, at some point in their life. </p>
-          </CardContent>
-        </Card>
+          <Box mx="auto" width="75%">
+            <Card>
+              <CardHeader 
+                title={answer.text}
+              />
+              <CardContent>
+                <Divider />
+                <AlcoholPieChartDetails />
+                <p>Alcohol Used Yes:{ alcoholYes}</p>
+                <p>Alcohol Used No: {alcoholNo}</p>
+                <Divider />
+                <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used alcohol, including beer, wine or liquor, at some point in their life. </p>
+              </CardContent>
+            </Card>
+        </Box>
         })
       }
       //return display
