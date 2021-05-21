@@ -1,6 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
+import clsx from 'clsx';
 import axios from 'axios';
 //pass thru all datasets
 import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
@@ -26,13 +27,27 @@ import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 import PastServices from '../PastServices/PastServices';
 import HiComponent from '../HiComponent/HiComponent';
 //material-ui for styling
-import { Grid } from '@material-ui/core';
+import { Button, Grid, Card, CardActions, Collapse, IconButton } from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { makeStyles } from '@material-ui/core/styles';
+
 import Favorites from '../Favorites/Favorites';
+
+//pass thru AllData
+import AllData from '../AllData/AllData';
+
 //styling
 const useStyles = makeStyles( ( theme )=> ({
-
-
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+    }),
+},
+expandOpen: {
+    transform: 'rotate(180deg)',
+},
 }))
 
 
@@ -62,6 +77,21 @@ function UserPage() {
     Race: <Race />
   }
 
+  //for collapsable table
+  //local state to expand email
+  const [ expanded, setExpanded ] = useState( false );
+  //handle expand click
+  const handleExpandClick = () => {
+      setExpanded(!expanded);
+  };
+  //expand conditional
+  if ( expanded ){
+    return (
+      <>
+        <AllData />
+      </>
+    )
+  }
   
   
   useEffect(()=>
@@ -151,8 +181,37 @@ function UserPage() {
         <PastServices />
       </Grid>
     </Grid>
+
       <p>Your ID is: {user.id}</p> */}
       <LogOutButton className="btn" />
+
+    <Button
+      onClick={handleExpandClick}
+    >
+    All Data
+    </Button>
+    {/* <Card>
+      <CardActions>
+      <IconButton
+          className={clsx(classes.expand, {
+              [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+          >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <AllData />
+      </Collapse>
+    </Card> */}
+
+    
+    <p>Your ID is: {user.id}</p>
+    <LogOutButton className="btn" />
+
     </div>
   );
 }

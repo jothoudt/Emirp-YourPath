@@ -74,8 +74,8 @@ function TabPanel(props) {
             variant="fullWidth"
             aria-label="full width tabs example"
           >
-            <Tab label="Inhalants Use in Last Month" {...a11yProps(0)} />
-            <Tab label="Inhalants Use Lifetime " {...a11yProps(1)} />
+            <Tab label="Heroin Use in Last Month" {...a11yProps(0)} />
+            <Tab label="Heroin Use Lifetime " {...a11yProps(1)} />
             {/* <Tab label="Item Three" {...a11yProps(2)} /> */}
           </Tabs>
         {/* </AppBar> */}

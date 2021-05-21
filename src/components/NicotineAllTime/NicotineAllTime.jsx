@@ -53,6 +53,8 @@ function NicotineAllTime(){
             <NicotinePieChart />           
             <p>Nicotine Yes:{nicotineYes}</p>
             <p>Nicotine No: {nicotineNo}</p>
+            <Divider />
+            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used nicotine products (cigarettes, vaping, chew, cigars, etc.), at some point in their life. </p>
           </CardContent>
         </Card>
         })

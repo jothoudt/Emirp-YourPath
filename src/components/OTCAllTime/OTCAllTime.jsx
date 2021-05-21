@@ -46,6 +46,8 @@ function OTCAllTime(){
           <OTCPieChart />
           <p>Over-the-Counter Yes:{OTCYes}</p>
           <p>Over-the-Counter No: {OTCNo}</p>
+          <Divider />
+          <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used over-the-counter drugs such as Robitussin or Imodium at some point in their life. </p>
         </CardContent>
       </Card>
        })

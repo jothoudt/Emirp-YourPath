@@ -52,8 +52,10 @@ function MethAllTime(){
           <CardContent>
             <Divider />
             <MethAllTimePie />
-            <p>Meth Yes:{ methYes}</p>
+            <p>Meth Yes:{methYes}</p>
             <p>Meth No: {methNo}</p>
+            <Divider />
+            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used meth or other amphetamines at some point in their life. </p>
           </CardContent>
         </Card>
         })

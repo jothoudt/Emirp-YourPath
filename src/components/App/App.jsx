@@ -99,13 +99,21 @@ import DrugStatistics from '../DrugStatistics/DrugStatistics';
 import Demographics from '../Demographics/Demographics';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
 import TreatmentOptions from '../TreatmentOptions/TreatmentOptions';
+
 import Favorites from '../Favorites/Favorites'
+
+
+import MethDetails from '../MethDetails/MethDetails';
+import HeroinDetails from '../HeroinDetails/HeroinDetails';
+
 
 
 import Layout from '../Layout/Layout';
 
 //all data table
 import AllData from '../AllData/AllData';
+import DemographicsDash from '../DemographicsDash/DemographicsDash';
+
 
 
 function App() {
@@ -482,8 +490,14 @@ function App() {
           <ProtectedRoute exact path="/hallucinogen_details">
             <HallucinogenDetails />
           </ProtectedRoute>
+          <ProtectedRoute exact path="/heroin_details">
+            <HeroinDetails />
+          </ProtectedRoute>
           <ProtectedRoute exact path="/inhalants_details">
             <InhalantsDetails />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/meth_details">
+            <MethDetails />
           </ProtectedRoute>
           <ProtectedRoute exact path="/OTC_details">
             <OTCDetails />
@@ -516,8 +530,13 @@ function App() {
           <ProtectedRoute exact path="/favorites">
             <Favorites />
           </ProtectedRoute>
+
           <ProtectedRoute exact path="/fetal_alcohol_syndrome">
             <FetalAlcoholSyndrome />
+
+          <ProtectedRoute exact path="/demographics_dash">
+            <DemographicsDash />
+
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

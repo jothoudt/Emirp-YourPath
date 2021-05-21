@@ -2,7 +2,7 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import './Layout.css';
+import './DemographicsDash.css';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -15,37 +15,15 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import MarijuanaMonthPieChart from '../MarijuanaMonthPieChart/MarijuanaMonthPieChart';
-import MarijuanaPieChart from '../MarijuanaPieChart/MarijuanaPieChart'
-import AlcoholPieChart from '../AlcoholPieChart/AlcoholPieChart';
-import AlcoholMonthPie from '../AlcoholMonthPie/AlcoholMonthPie';
-import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
-import AllDrugsBar from '../AllDrugsBar/AllDrugsBar';
-import HeroinAllTimePie from '../HeroinAllTimePie/HeroinAllTimePie';
-import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
-import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
-import HallucinogenAllTime from '../HallucinogenAllTime/HallucinogenAllTime';
-import BenzodiazepinesPieChart from '../BenzodiazepinesPieChart/BenzodiazepinesPieChart';
-import CocainePieChart from '../CocainePieChart/CocainePieChart';
-import HallucinogenPieChart from '../HallucinogenPieChart/HallucinogenPieChart';
-import InhalantsPieChart from '../InhalantsPieChart/InhalantsPieChart';
-import MethAllTimePie from '../MethAllTimePie/MethAllTimePie';
-import NicotinePieChart from '../NicotinePieChart/NicotinePieChart';
-import OpiodsPieChart from '../OpiodsPieChart/OpiodsPieChart';
-import OTCPieChart from '../OTCPieChart/OTCPieChart';
-import OtherSubstanceAllTimePie from '../OtherSubstancesAllTimePie/OtherSubstancesAllTimePie';
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import FASChart from '../FetalAlcoholSyndromePieChart/FetalAlcoholSyndromePieChart';
+import GenderBar from '../GenderBarChart/GenderBarChart';
+import HealthStatistics from '../HealthStatistics/HealthStatistics';
+import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
+import MentalHealth from '../MentalHealth/MentalHealth';
+import PregnantPieChart from '../PregnantPieChart/PregnantPieChart';
+import RacePieChart from '../RacePieChart/RacePieChart';
+import SexualOrientationPieChart from '../SexualOrientationPieChart/SexualOrientationPieChart';
+
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -79,52 +57,52 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [<AlcoholPieChart/>, <BenzodiazepinesPieChart/>, <CocainePieChart/>, <HallucinogenPieChart/>, <HeroinAllTimePie/>, <InhalantsPieChart/>, <MarijuanaPieChart/>, <MethAllTimePie/>, <NicotinePieChart/>, <OpiodsPieChart/>, <OTCPieChart/>, <OtherSubstanceAllTimePie/> ]
+const cards = [<FASChart/>, <GenderBar/>, <JusticeInvolved/>, <MentalHealth/>, <PregnantPieChart/>, <RacePieChart/>, <SexualOrientationPieChart/>]
 
-export default function Album() {
+export default function DemographicsDash() {
   const classes = useStyles();
   const history = useHistory();
 
   const viewClick = (card) => {
         let chartName = card.card.type.name;
-        console.log('in viewClick', chartName);
-        if (chartName === 'AlcoholPieChart'){
-            history.push('/alcohol_details')
-        }
-        else if (chartName === 'BenzodiazepinesPieChart'){
-            history.push('/benzodiazepines_details')
-        }
-        else if (chartName === 'CocainePieChart'){
-            history.push('/cocaine_details')
-        }
-        else if (chartName === 'HallucinogenPieChart'){
-            history.push('/hallucinogen_details')
-        }
-        else if (chartName === 'HeroinAllTimePie'){
-            history.push('heroin_details')
-        }
-        else if (chartName === 'InhalantsPieChart'){
-            history.push('/inhalants_details')
-        }
-        else if (chartName === 'MarijuanaPieChart'){
-            history.push('/marijuana_details')
-        }
-        else if (chartName === 'MethAllTimePie'){
-            history.push('/meth_details')
-        }
-        else if (chartName === 'NicotinePieChart'){
-            history.push('/nicotine_details')
-        }
-        else if (chartName === 'OpiodsPieChart'){
-            history.push('/opioids_details')
-        }
-        else if (chartName === 'OTCPieChart'){
-            history.push('/OTC_details')
-        }
-        else if (chartName === 'OtherSubstanceAllTimePie'){
-            history.push('/other_substances_details')
-        }
-   }
+        console.log('in viewClick', chartName);}
+//         if (chartName === 'AlcoholPieChart'){
+//             history.push('/alcohol_details')
+//         }
+//         else if (chartName === 'BenzodiazepinesPieChart'){
+//             history.push('/benzodiazepines_details')
+//         }
+//         else if (chartName === 'CocainePieChart'){
+//             history.push('/cocaine_details')
+//         }
+//         else if (chartName === 'HallucinogenPieChart'){
+//             history.push('/hallucinogen_details')
+//         }
+//         else if (chartName === 'HeroinAllTimePie'){
+//             history.push('heroin_details')
+//         }
+//         else if (chartName === 'InhalantsPieChart'){
+//             history.push('/inhalants_details')
+//         }
+//         else if (chartName === 'MarijuanaPieChart'){
+//             history.push('/marijuana_details')
+//         }
+//         else if (chartName === 'MethAllTimePie'){
+//             history.push('/meth_details')
+//         }
+//         else if (chartName === 'NicotinePieChart'){
+//             history.push('/nicotine_details')
+//         }
+//         else if (chartName === 'OpiodsPieChart'){
+//             history.push('/opioids_details')
+//         }
+//         else if (chartName === 'OTCPieChart'){
+//             history.push('/OTC_details')
+//         }
+//         else if (chartName === 'OtherSubstanceAllTimePie'){
+//             history.push('/other_substances_details')
+//         }
+//    }
 
   return (
     <React.Fragment>
@@ -137,8 +115,7 @@ export default function Album() {
               Dashboard
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              All of the charts located on the Dashboard below reflect whether or not applicants have ever used the substance in question.
-              For more information and to see the data element reflected for the last month click the view button. 
+              All of the charts located on the Dashboard below reflect whether assessment takers have self identified in any of these categories.
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">

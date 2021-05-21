@@ -49,6 +49,8 @@ function OTCMonth(){
            <OTCMonthPie />
            <p>Over the counter used in the last month Yes:{OTCMonthlyYes}</p>
            <p>Over the Counter used in the last month No: {OTCMonthlyNo}</p>
+           <Divider />
+           <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used over-the-counter drugs such as Robitussin or Imodium. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
          </CardContent>
         </Card>
         })

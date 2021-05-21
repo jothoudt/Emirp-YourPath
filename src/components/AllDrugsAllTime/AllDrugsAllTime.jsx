@@ -1,6 +1,15 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import AllDrugsBar from '../AllDrugsBar/AllDrugsBar';
+import { 
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography
+} from '@material-ui/core';
+
 
 function AllDrugsAllTime(){
     //select info from store
@@ -363,22 +372,27 @@ function AllDrugsAllTime(){
     }
 
     return(
-        <>
-        <AllDrugsBar />
-        {getNicotineAT()}
-        {getAlcoholAT()}
-        {getMarijuanaAT()}
-        {getCocaineAT()}
-        {getMethAT()}
-        {getHeroinAT()}
-        {getOtherOpiodsAT()}
-        {getBenzoAT()}
-        {getHallucinogenAT()}
-        {getInhalantAT()}
-        {getOTCAT()}
-        {getOtherSubsAT()}
-        </>
+      <Card>
+        <CardContent>
+          <AllDrugsBar />
+          {getNicotineAT()}
+          {getAlcoholAT()}
+          {getMarijuanaAT()}
+          {getCocaineAT()}
+          {getMethAT()}
+          {getHeroinAT()}
+          {getOtherOpiodsAT()}
+          {getBenzoAT()}
+          {getHallucinogenAT()}
+          {getInhalantAT()}
+          {getOTCAT()}
+          {getOtherSubsAT()}    
+        </CardContent>
+        <Divider />
+        <p>This bar chart shows all-time drug usage rates, by category, of YourPath assessment takers. Each category of drug shows the percentage of responders who indicated they had ingested the respective substance at some point in their life. </p>
+    </Card>
     )
+        
 }
 
 export default AllDrugsAllTime;

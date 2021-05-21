@@ -49,6 +49,8 @@ function HallucinogenMonth(){
            <HallucinogenMonthPie />
            <p>Hallucinogen in the last month Yes:{hallucinogenMonthlyYes}</p>
            <p>Hallucinogen in the last month No: {hallucinogenMonthlyNo}</p>
+           <Divider />
+           <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used hallucinogens, including LSD, mushrooms or DMT. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
          </CardContent>
         </Card>
         })

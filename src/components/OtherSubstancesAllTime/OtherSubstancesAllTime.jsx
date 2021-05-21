@@ -52,6 +52,8 @@ function OtherSubstancesAllTime(){
             <OtherSubstanceAllTimePie />             
             <p>Other Substances Used Yes:{ otherYes}</p>
             <p>Other Substances Used No: {otherNo}</p>
+            <Divider />
+            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used other substances such as bath salts, GHB, ketamine or khat at some point in their life. </p>
          </CardContent>
         </Card>
         })

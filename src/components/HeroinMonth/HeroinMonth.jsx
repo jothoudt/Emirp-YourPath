@@ -45,10 +45,12 @@ function HeroinMonth(){
            title={answer.text}
            />
          <CardContent>
-           <Divider />
-           <HeroinMonthPie />  
-           <p>Heroin in the last month Yes:{heroinMonthlyYes}</p>
-           <p>Heroin in the last month No: {heroinMonthlyNo}</p>
+          <Divider />
+          <HeroinMonthPie />  
+          <p>Heroin in the last month Yes:{heroinMonthlyYes}</p>
+          <p>Heroin in the last month No: {heroinMonthlyNo}</p>
+          <Divider />
+          <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used heroin or fentanyl powder. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
          </CardContent>
         </Card>
         })
