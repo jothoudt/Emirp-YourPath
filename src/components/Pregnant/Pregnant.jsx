@@ -10,6 +10,7 @@ import {
   Typography
 } from '@material-ui/core';
 import PregnantPieChart from '../PregnantPieChart/PregnantPieChart';
+import HealthStatistics from '../HealthStatistics/HealthStatistics';
 
 function Pregnant(){
 
@@ -59,6 +60,7 @@ function Pregnant(){
   }
     return(
         <>
+        <HealthStatistics />
         {answer1()}
         </>
 

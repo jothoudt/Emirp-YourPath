@@ -5,29 +5,31 @@ import MentalHealth from '../MentalHealth/MentalHealth';
 import PastServices from '../PastServices/PastServices';
 import Pregnant from '../Pregnant/Pregnant';
 import './HealthStatistics.css';
+import {useHistory} from 'react-router-dom';
 
 function HealthStatistics(){
 
     const dispatch=useDispatch();
+    const history=useHistory;
     
     let [component, setComponent]=useState('')
 
     const getComponent=()=>{
         switch(component){
             case 'FetalAlcoholSyndrome':
-                return <FetalAlcoholSyndrome />
+                return history.push('/fetal_alcohol_syndrome');
                 break;
             case 'MentalHealth':
-                return <MentalHealth />
+                return history.push('/mental_health');
                 break;
             case 'PastServices':
-                return <PastServices />
+                return history.push('/past_services');
                 break;
             case 'Pregnant':
-                return <Pregnant />
+                return history.push('/pregnant');
                 break;
             default:
-                return <h2>Select a chart.</h2>
+                return <></>
         }
     }
 

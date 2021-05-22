@@ -11,6 +11,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import HealthStatistics from '../HealthStatistics/HealthStatistics';
 
 function MentalHealth(){
 
@@ -107,6 +108,7 @@ function MentalHealth(){
   }
     return(
         <>
+        <HealthStatistics />
         {answer1()}
         </>
 

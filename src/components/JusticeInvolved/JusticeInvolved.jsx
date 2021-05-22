@@ -11,6 +11,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import Demographics from '../Demographics/Demographics';
 
 function JusticeInvolved(){
 
@@ -97,6 +98,7 @@ function JusticeInvolved(){
   }
     return(
         <>
+        <Demographics />
         {answer1()}
         </>
 

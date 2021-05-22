@@ -11,6 +11,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import Demographics from '../Demographics/Demographics';
 
 function Gender(){
 
@@ -78,6 +79,7 @@ function Gender(){
   }
     return(
         <>
+        <Demographics />
         {answer1()}
         </>
 
