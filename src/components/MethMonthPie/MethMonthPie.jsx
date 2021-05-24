@@ -59,7 +59,7 @@ function MethMonthPie () {
         <div className='header'>
             <h1 className='title'>Meth use in the Last Month</h1>
         </div>
-        <Box mx="auto" width="40%">
+        <Box mx="auto" width="40%" >
           <Pie data={data} />
         </Box>
         </>

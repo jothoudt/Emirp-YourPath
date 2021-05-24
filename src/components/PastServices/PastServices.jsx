@@ -11,6 +11,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import HealthStatistics from '../HealthStatistics/HealthStatistics';
 
 function PastServices(){
 
@@ -113,6 +114,7 @@ function PastServices(){
   }
     return(
         <>
+        <HealthStatistics />
         {answer1()}
         </>
 

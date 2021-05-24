@@ -44,11 +44,7 @@ function NicotineMonth(){
         nicotineDisplay= 
         <Box mx='auto' width="75%" >
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
          <CardContent>
-           <Divider />
            <NicotineMonthPie />
            <p>Nicotine in the last month Yes:{nicotineMonthlyYes}</p>
            <p>Nicotine in the last month No: {nicotineMonthlyNo}</p>

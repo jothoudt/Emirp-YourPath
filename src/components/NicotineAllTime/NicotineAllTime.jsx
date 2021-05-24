@@ -48,11 +48,7 @@ function NicotineAllTime(){
         nicotineDisplay= 
         <Box mx='auto' width="75%" >
           <Card>
-            <CardHeader 
-              title={answer.text}
-            />
             <CardContent>
-              <Divider />
               <NicotinePieChartDetails />           
               <p>Nicotine Yes:{nicotineYes}</p>
               <p>Nicotine No: {nicotineNo}</p>

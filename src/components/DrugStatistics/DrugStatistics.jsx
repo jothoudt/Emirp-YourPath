@@ -14,15 +14,17 @@ import OTCDetails from '../OTCDetails/OTCDetails';
 import OtherSubstancesDetails from '../OtherSubstancesDetails/OtherSubstancesDetails';
 import HeroinDetails from '../HeroinDetails/HeroinDetails';
 import './DrugStatistics.css';
+import {useHistory} from 'react-router-dom';
 
 
 function DrugStatistics(){
 
   const dispatch=useDispatch();
+  const history= useHistory();
 
-  const onLoad=()=>{
-  dispatch({type:'FETCH_FORM'});
-  }
+  // const onLoad=()=>{
+  // dispatch({type:'FETCH_FORM'});
+  // }
 
     let [component, setComponent]=useState('');
 
@@ -32,50 +34,50 @@ function DrugStatistics(){
     const getComponent=()=>{
     switch (component){
         case 'AllDrugsDetails':
-          return <AllDrugsDetails />
+          return history.push('/all_drugs_details')
           break;
         case 'AlcoholDetails':
-          return <AlcoholDetails />
+          return history.push('/alcohol_details')
           break;
           case 'NicotineDetails':
-            return <NicotineDetails />
+            return history.push('/nicotine_details')
             break;
           case 'MarijuanaDetails':
-            return <MarijuanaDetails />
+            return history.push('/marijuana_details')
             break;
           case 'CocaineDetails':
-            return <CocaineDetails />
+            return history.push('/cocaine_details');
             break;
           case 'MethDetails':
-            return <MethDetails />
+            return history.push('/meth_details')
             break;
           case 'OpioidsDetails':
-            return <OpioidsDetails />
+            return history.push('/opioids_details')
             break;
           case 'BenzodiazepinesDetails':
-            return <BenzodiazepinesDetails />
+            return history.push('/benzodiazepines_details');
             break;
           case 'HallucinogenDetails':
-            return <HallucinogenDetails />
+            return history.push('/hallucinogen_details');
             break;
           case 'InhalantsDetails':
-            return <InhalantsDetails />
+            return history.push('/inhalants_details')
             break;
           case 'OTCDetails':
-            return <OTCDetails />
+            return history.push('/OTC_details')
             break;
           case 'OtherSubstancesDetails':
-            return <OtherSubstancesDetails />
+            return history.push('/other_substances_details')
             break;
           case 'HeroinDetails':
-            return <HeroinDetails />
+            return history.push('/heroin_details')
         default:
-            return <><h2>Select a chart</h2></>
+            return <></>
     }
 }
-useEffect(()=>
-    onLoad()
-  ,[]);
+// useEffect(()=>
+//     onLoad()
+//   ,[]);
 
     return(
         <div>

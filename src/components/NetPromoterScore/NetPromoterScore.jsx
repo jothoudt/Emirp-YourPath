@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import Hi from '../HiComponent/HiComponent';
 import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
 
 function NetPromoterScore(){

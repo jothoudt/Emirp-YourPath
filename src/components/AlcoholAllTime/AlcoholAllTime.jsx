@@ -45,20 +45,20 @@ function AlcoholAllTime(){
 
         //define display
         alcoholDisplay= 
-        <Box mx="auto" width="75%">
-          <Card>
-            <CardHeader 
-              title={answer.text}
-            />
-            <CardContent>
-              <Divider />
-              <AlcoholPieChartDetails />
-              <p>Alcohol Used Yes:{ alcoholYes}</p>
-              <p>Alcohol Used No: {alcoholNo}</p>
-              <Divider />
-              <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used alcohol, including beer, wine or liquor, at some point in their life. </p>
-            </CardContent>
-          </Card>
+          <Box mx="auto" width="75%">
+            <Card>
+              <CardHeader 
+                title={answer.text}
+              />
+              <CardContent>
+                <Divider />
+                <AlcoholPieChartDetails />
+                <p>Alcohol Used Yes:{ alcoholYes}</p>
+                <p>Alcohol Used No: {alcoholNo}</p>
+                <Divider />
+                <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used alcohol, including beer, wine or liquor, at some point in their life. </p>
+              </CardContent>
+            </Card>
         </Box>
         })
       }

@@ -25,7 +25,8 @@ import MentalHealth from '../MentalHealth/MentalHealth';
 import TotalAssessments from '../TotalAssesments/TotalAssesments';
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 import PastServices from '../PastServices/PastServices';
-import HiComponent from '../HiComponent/HiComponent';
+import Box from '@material-ui/core/Box';
+
 //material-ui for styling
 import { Button, Grid, Card, CardActions, Collapse, IconButton } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -72,12 +73,6 @@ function UserPage() {
   // const report =useSelector((store)=>store.report1)
 
 
-  const componentMapping={
-    HiComponent: <HiComponent />,
-    CocaineAllTime: <CocaineAllTime />,
-    Race: <Race />
-  }
-
   //for collapsable table
   //local state to expand email
   const [ expanded, setExpanded ] = useState( false );
@@ -105,7 +100,7 @@ function UserPage() {
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
-      <TotalAssessments />
+        <TotalAssessments />
       <Favorites />
       <LogOutButton className="btn" />
       {/* <Button

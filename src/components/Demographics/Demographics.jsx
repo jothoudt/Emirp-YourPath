@@ -5,29 +5,30 @@ import JusticeInvolved from '../JusticeInvolved/JusticeInvolved';
 import Race from '../Race/Race';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import './Demographics.css';
-
+import {useHistory} from 'react-router-dom';
 function Demographics(){
 
     const dispatch=useDispatch();
+    const history=useHistory();
     
     let [component, setComponent]=useState('')
 
     const getComponent=()=>{
         switch(component){
             case 'Gender':
-                return <Gender />
+                return history.push('/gender')
                 break;
             case 'Race':
-                return <Race />
+                return history.push('/race')
                 break;
             case 'SexualOrientation':
-                return <SexualOrientation />
+                return history.push('/sexual_orientation')
                 break;
             case 'JusticeInvolved':
-                return <JusticeInvolved />
+                return history.push('/justice_involved')
                 break;
             default:
-                return <h2>Select a chart.</h2>
+                return <></>
         }
     }
 

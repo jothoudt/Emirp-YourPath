@@ -47,11 +47,7 @@ function OtherSubstancesAllTime(){
         otherDisplay= 
         <Box mx='auto' width="75%" >
           <Card>
-            <CardHeader 
-              title={answer.text}
-            />
             <CardContent>
-              <Divider />
               <OtherSubstanceAllTimePieDetails />             
               <p>Other Substances Used Yes:{ otherYes}</p>
               <p>Other Substances Used No: {otherNo}</p>

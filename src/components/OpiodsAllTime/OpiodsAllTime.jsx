@@ -41,11 +41,7 @@ function OpiodsAllTime(){
        display= 
        <Box mx='auto' width="75%" >
         <Card>
-            <CardHeader 
-              title={answer.text}
-            />
-            <CardContent>
-              <Divider />   
+            <CardContent> 
               <OpiodsPieChartDetails />        
               <p>Opioids Yes:{opiodsYes}</p>
               <p>Opioids No: {opiodsNo}</p>

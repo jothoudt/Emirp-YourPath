@@ -50,11 +50,7 @@ function MethAllTime(){
         methDisplay= 
         <Box mx="auto" width="75%">
           <Card>
-            <CardHeader
-            title={answer.text}
-            />
             <CardContent>
-              <Divider />
               <MethPieChartDetails />
               <p>Meth Yes:{methYes}</p>
               <p>Meth No: {methNo}</p>

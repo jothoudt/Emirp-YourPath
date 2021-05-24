@@ -40,11 +40,7 @@ function OTCAllTime(){
        display= 
       <Box mx='auto' width="75%" >
         <Card>
-          <CardHeader 
-            title={answer.text}
-          />
           <CardContent>
-            <Divider />
             <OTCPieChartDetails />
             <p>Over-the-Counter Yes:{OTCYes}</p>
             <p>Over-the-Counter No: {OTCNo}</p>

@@ -10,6 +10,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import HealthStatistics from '../HealthStatistics/HealthStatistics';
 
 
 function FetalAlcoholSyndrome(){
@@ -55,6 +56,7 @@ function FetalAlcoholSyndrome(){
    }
     return(
         <>
+        <HealthStatistics />
         {answer1()}
         </>
 
