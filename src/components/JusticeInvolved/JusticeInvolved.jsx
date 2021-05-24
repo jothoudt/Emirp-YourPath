@@ -12,6 +12,7 @@ import {
   Typography
 } from '@material-ui/core';
 import Demographics from '../Demographics/Demographics';
+import Box from '@material-ui/core/Box';
 
 function JusticeInvolved(){
 
@@ -74,24 +75,26 @@ function JusticeInvolved(){
         }
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
-      <Card>
-        <JusticeInvolvedBar />
-        <CardHeader 
-          title={answer.text}
-        />
-        <CardContent>
-          <Divider />        
-          <p>No current or past legal issues: {none}</p>
-          <p>Past issues, no current: {past}</p>
-          <p>Awaiting sentencing: {awaitingSentencing}</p>
-          <p>Part of drug court or other treatment court: {drugCourt}</p>
-          <p>Out on bail: {outOnBail}</p>
-          <p>On probation: {probation}</p>
-          <p>On parole: {parole}</p>
-          <p>In the workhouse: {workhouse}</p>        
-          <p>Declined: {declined}</p>
-        </CardContent>
-      </Card>
+      <Box mx='auto' width="75%" >
+        <Card>
+          <JusticeInvolvedBar />
+          <CardHeader 
+            title={answer.text}
+          />
+          <CardContent>
+            <Divider />        
+            <p>No current or past legal issues: {none}</p>
+            <p>Past issues, no current: {past}</p>
+            <p>Awaiting sentencing: {awaitingSentencing}</p>
+            <p>Part of drug court or other treatment court: {drugCourt}</p>
+            <p>Out on bail: {outOnBail}</p>
+            <p>On probation: {probation}</p>
+            <p>On parole: {parole}</p>
+            <p>In the workhouse: {workhouse}</p>        
+            <p>Declined: {declined}</p>
+          </CardContent>
+        </Card>
+      </Box>
       })
     }
     return display;
