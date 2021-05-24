@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
 import Box from '@material-ui/core/Box';
-
+import { shadows } from '@material-ui/system';
 
 
 
@@ -59,7 +59,7 @@ function MethPieChartDetails () {
         <div className='header'>
             <h1 className='title'>Methamphetamine</h1>
         </div>
-        <Box mx="auto" width="40%">
+        <Box mx="auto" width="40%" >
             <Pie data={data} />
         </Box>
         </>
