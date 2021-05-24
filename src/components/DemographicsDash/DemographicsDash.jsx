@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [<FASChart/>, <GenderBar/>, <JusticeInvolved/>, <MentalHealth/>, <PregnantPieChart/>, <RacePieChart/>, <SexualOrientationPieChart/>]
+const cards = [<GenderBar/>, <JusticeInvolved/>, <RacePieChart/>, <SexualOrientationPieChart/>]
 
 export default function DemographicsDash() {
   const classes = useStyles();

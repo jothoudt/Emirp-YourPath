@@ -15,6 +15,7 @@ import OtherSubstancesDetails from '../OtherSubstancesDetails/OtherSubstancesDet
 import HeroinDetails from '../HeroinDetails/HeroinDetails';
 import './DrugStatistics.css';
 import {useHistory} from 'react-router-dom';
+import Album from '../Layout/Layout';
 
 
 function DrugStatistics(){
@@ -104,6 +105,10 @@ function DrugStatistics(){
           </div>
           <div>
              {getComponent()}
+          </div>
+          <div>
+            {/* Album is the name of the Drugs dashboard located in the layout component bad naming */}
+            <Album />
           </div>
         </div>
     )
