@@ -53,16 +53,14 @@ function SexualOrientation(){
       display= 
       <Box mx='auto' width="75%" >
         <Card>
-          <SexualOrientationPieChartDetails />
-          <CardHeader 
-              title={answer.text}
-          />
           <CardContent>
-            <Divider />
+            <SexualOrientationPieChartDetails />    
             <p>heterosexual: {heterosexual}</p>
             <p>homosexual: {homosexual}</p>
             <p>bisexual: {bisexual}</p>
             <p>asexual: {asexual}</p>
+            <Divider />
+            <p>Assessment takers through YourPath’s web portal have the option of indicating their sexual orientation across four options: heterosexual, homosexual, bisexual or asexual. This pie chart shows a percentage breakdown of each, plus how many declined to answer.</p>
           </CardContent>
         </Card>
         </Box>
