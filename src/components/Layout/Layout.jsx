@@ -134,7 +134,7 @@ export default function Album() {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Dashboard
+              Drug Statistics Dashboard
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
               All of the charts located on the Dashboard below reflect whether or not applicants have ever used the substance in question.
@@ -143,14 +143,6 @@ export default function Album() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Secondary action
-                  </Button>
                 </Grid>
               </Grid>
             </div>
@@ -165,9 +157,6 @@ export default function Album() {
                   <CardMedia className="cards" >
                       {card}
                   </CardMedia>
-                  <Typography className="cardText">
-                      Select button below to view more details including use in last month
-                    </Typography>
                   <CardActions>
                     <Button onClick={()=>viewClick({card})} className="cardBtn" size="small" color="primary" textAlign="center">
                       View Details
