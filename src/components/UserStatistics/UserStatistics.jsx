@@ -3,13 +3,21 @@ import {useSelector} from 'react-redux';
 import TreatmentOptions from '../TreatmentOptions/TreatmentOptions';
 import NetPromoterScore from '../NetPromoterScore/NetPromoterScore';
 
+
+
 function UserStatistics(){
+    
 
     return(
-        <>
-        
-        <TreatmentOptions />
-        </>
+        <div>
+            <div>
+                <h1>User Statistics</h1>
+            </div>
+            <div>
+                <NetPromoterScore />
+            </div>
+            <TreatmentOptions />
+        </div>
     )
 }
 

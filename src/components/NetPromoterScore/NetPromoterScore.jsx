@@ -1,6 +1,14 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
+import Score from "react-score-indicator";
+
+import "./styles.css";
+import Box from '@material-ui/core/Box';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import { CardHeader } from '@material-ui/core';
 
 function NetPromoterScore(){
 
@@ -39,41 +47,45 @@ function NetPromoterScore(){
         console.log(total)
         average= total / promoterScores.length;
         console.log(average)
-        let displayaverage= <><p>Average Score: {average}</p></>
-        return displayaverage;
+        // let displayaverage= <><p>Average Score: {average}</p></>
+        return average;
     }
     const scoresOnLoad =()=>{
     dispatch({type:'FETCH_PROMOTER_SCORES'});
-    dispatch({type:'FETCH_PREFERENCES'});
     }
 
-    const getComponentDisplay=()=>{
-      let prefDisplay=''
-      if(!prefs){
-        prefDisplay=<><h2>Loading</h2></>
-      }
-      else{
-       prefDisplay= prefs.map((pref, index)=>{
-        let ComponentTag=pref.component_name
-        return(
-          <div key={index}>
-            < ComponentTag />
-            </div>
-        ) 
-      })
-      }
-      return prefDisplay
-    }
 
     useEffect(()=>
     scoresOnLoad()
   ,[]);
 
     return(
-        <>
-          {getPromoterScores()}
-          {getComponentDisplay()}
-        </>
+        <div className="Gauge">
+        <Box mx="auto" width="25%" boxShadow={12} height="500px">
+          {/* <CardHeader title='Net Promoter Score' />
+          <Card>
+           <CardMedia> */}
+           <div className=''>
+           <h1>Net Promoter Score</h1>
+          <Score 
+            value= {getPromoterScores()}
+            maxValue={10}
+            borderWidth={30}
+            gap={5}
+            maxAngle={260}
+            rotation={90}
+            colors={[
+              "#d12000",
+              "#f1bc00",
+              "#3da940"
+            ]}
+          />
+          </div>
+          {/* </CardMedia>
+          </Card> */}
+        </Box>
+        </div>
+
     )
 }
 
