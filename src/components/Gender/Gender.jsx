@@ -12,6 +12,7 @@ import {
   Typography
 } from '@material-ui/core';
 import Demographics from '../Demographics/Demographics';
+import Box from '@material-ui/core/Box';
 
 function Gender(){
 
@@ -58,20 +59,22 @@ function Gender(){
         }
       console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
-        <Card>
-          <GenderBarChart />
-          <CardHeader 
-          title={answer.text}
-          />
-          <CardContent>
-            <Divider />
-            <p>Male: {male}</p>
-            <p>Female: {female}</p>
-            <p>Transgender: {transgender}</p>
-            <p>Non-binary: {nonBinary}</p>
-            <p>Declined: {declined}</p>
-          </CardContent>
-        </Card>
+      <Box mx='auto' width="75%" >
+          <Card>
+            <GenderBarChart />
+            <CardHeader 
+            title={answer.text}
+            />
+            <CardContent>
+              <Divider />
+              <p>Male: {male}</p>
+              <p>Female: {female}</p>
+              <p>Transgender: {transgender}</p>
+              <p>Non-binary: {nonBinary}</p>
+              <p>Declined: {declined}</p>
+            </CardContent>
+          </Card>
+        </Box>
       
       })
     }
