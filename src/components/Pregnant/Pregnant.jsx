@@ -46,7 +46,7 @@ function Pregnant(){
       display= 
       <Card>
         <CardContent>    
-          <PregnantPieChart />        
+          <PregnantPieChartDetails />        
           <p>Pregnant: {pregnant}</p>
           <p>Not Pregnant: {notPregnant}</p>
           <p>Not Sure: {notSure}</p>
