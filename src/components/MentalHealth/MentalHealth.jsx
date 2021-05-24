@@ -83,12 +83,8 @@ function MentalHealth(){
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
       <Card>
-        <MentalHealthBar />
-        <CardHeader 
-          title={answer.text}
-        />
         <CardContent>
-          <Divider />          
+          <MentalHealthBar />        
           <p>Post-Traumatic Stress Disorder or PTSD: {ptsd}</p>
           <p>Anxiety or Panic Attacks: {anxiety}</p>
           <p>Depression: {depression}</p>
@@ -100,6 +96,8 @@ function MentalHealth(){
           <p>Borderline Personality Disorder: {personalityDisorder}</p>
           <p>Other mental health issue: {other}</p>        
           <p>Declined: {declined}</p>
+          <Divider />  
+          <p>The YourPath assessment asks people to indicate whether they suspect or were told they have a mental health diagnosis. Because the form allows takers to mark more than one option, we used a bar chart to show full counts for each mental health condition selected.</p>
           </CardContent>
       </Card>
       })
