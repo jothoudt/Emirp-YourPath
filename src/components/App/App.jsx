@@ -113,6 +113,7 @@ import Layout from '../Layout/Layout';
 import AllData from '../AllData/AllData';
 import DemographicsDash from '../DemographicsDash/DemographicsDash';
 import UserStatistics from '../UserStatistics/UserStatistics';
+import DrugsDashboard from '../DrugsDashboard/DrugsDashboard';
 
 
 
@@ -509,7 +510,7 @@ function App() {
             <OtherSubstancesDetails />
           </ProtectedRoute>
           <ProtectedRoute exact path="/drugstatistics">
-            <DrugStatistics />
+            <DrugsDashboard />
           </ProtectedRoute>
           <ProtectedRoute exact path="/all_data">
             <AllData />
