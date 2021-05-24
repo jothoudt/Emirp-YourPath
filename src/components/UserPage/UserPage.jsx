@@ -73,23 +73,6 @@ function UserPage() {
   // const report =useSelector((store)=>store.report1)
 
 
-  //for collapsable table
-  //local state to expand email
-  const [ expanded, setExpanded ] = useState( false );
-  //handle expand click
-  const handleExpandClick = () => {
-      setExpanded(!expanded);
-  };
-  //expand conditional
-  if ( expanded ){
-    return (
-      <>
-        <AllData />
-      </>
-    )
-  }
-  
-  
   useEffect(()=>
     onLoad()
   ,[]);
@@ -103,13 +86,6 @@ function UserPage() {
         <TotalAssessments />
       <Favorites />
       <LogOutButton className="btn" />
-      {/* <Button
-        onClick={handleExpandClick}
-      >
-      All Data
-      </Button>
-      <LogOutButton className="btn" /> */}
-
     </div>
   );
 }

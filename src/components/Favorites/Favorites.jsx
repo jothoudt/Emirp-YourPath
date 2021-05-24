@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {useHistory} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux'
 import AppBar from '@material-ui/core/AppBar';
@@ -42,6 +42,9 @@ import FetalAlcoholSyndromePieChart from '../FetalAlcoholSyndromePieChart/FetalA
 import MentalHealthBar from '../MentalHealthBar/MentalHealthBar';
 import PastServicesBar  from '../PastServicesBar/PastServicesBar';
 import PregnantPieChart from '../PregnantPieChart/PregnantPieChart';
+
+//all data component for bottom
+import AllData from '../AllData/AllData';
 
 import Box from '@material-ui/core/Box';
 
@@ -374,6 +377,24 @@ export default function Favorites() {
      return cardDisplay
    }
    
+  //FOR COLLAPSABLE ALL DATA TABLE
+  //local state to expand email
+  const [ expanded, setExpanded ] = useState( false );
+  //handle expand click
+  const handleExpandClick = () => {
+      setExpanded(!expanded);
+  };
+  const displayAllData = () =>{
+    //let returnDisplay = '';
+    if ( expanded ){
+      return (
+        <>
+          <AllData />
+        </>
+      )
+    }
+
+  }
 
   return (
     <React.Fragment>
@@ -417,8 +438,17 @@ export default function Favorites() {
           
           </Grid>
         </Container>
-        
       </main>
+      <div className="allDataSection">
+          <Button
+            className="allDataBtn"
+            variant="contained"
+            onClick={handleExpandClick}
+          >
+          All Data
+          </Button>
+          { displayAllData() }
+      </div>
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
