@@ -48,7 +48,6 @@ const AllData = () => {
 
     return (
         <>
-            <h2>All data</h2> 
             <table className="allDataTable">
                 <thead>
                     <tr>

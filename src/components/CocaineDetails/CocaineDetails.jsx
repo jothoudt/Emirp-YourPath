@@ -6,8 +6,9 @@ function CocaineDetails (){
 
     return(
         <>
-        <DrugStatistics />
-        <CocaineTabs />
+            
+            <DrugStatistics />
+            <CocaineTabs />
         </>
     )
 }
