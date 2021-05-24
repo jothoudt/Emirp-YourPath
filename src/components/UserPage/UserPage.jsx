@@ -25,7 +25,7 @@ import MentalHealth from '../MentalHealth/MentalHealth';
 import TotalAssessments from '../TotalAssesments/TotalAssesments';
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 import PastServices from '../PastServices/PastServices';
-import HiComponent from '../HiComponent/HiComponent';
+
 //material-ui for styling
 import { Button, Grid, Card, CardActions, Collapse, IconButton } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -71,12 +71,6 @@ function UserPage() {
   const prefs = useSelector((store)=>store.preferences);
   // const report =useSelector((store)=>store.report1)
 
-
-  const componentMapping={
-    HiComponent: <HiComponent />,
-    CocaineAllTime: <CocaineAllTime />,
-    Race: <Race />
-  }
 
   //for collapsable table
   //local state to expand email

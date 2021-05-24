@@ -12,6 +12,7 @@ import {
 import UserPage from '../UserPage/UserPage';
 import { PlaylistAddOutlined } from '@material-ui/icons';
 import Button from '@material-ui/core/Button';
+import Demographics from '../Demographics/Demographics';
 
 function Race(){
   // pulls down assessment results from the store
@@ -107,6 +108,7 @@ function Race(){
    }
     return(
         <>
+        <Demographics />
         {answer1()}
         </>
 

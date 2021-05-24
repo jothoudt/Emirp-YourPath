@@ -38,7 +38,6 @@ import PastServices from '../PastServices/PastServices';
 import FetalAlcoholSyndromePieChart from '../FetalAlcoholSyndromePieChart/FetalAlcoholSyndromePieChart';
 
 import Gender from '../Gender/Gender';
-import Hi from '../HiComponent/HiComponent';
 //styling
 import './App.css';
 //all-time charts

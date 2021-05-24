@@ -11,6 +11,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import Demographics from '../Demographics/Demographics';
 
 function SexualOrientation(){
 
@@ -64,6 +65,7 @@ function SexualOrientation(){
   }
     return(
         <>
+        <Demographics />
         {answer1()}
         </>
 

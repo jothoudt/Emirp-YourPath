@@ -48,8 +48,6 @@ const Swal = require('sweetalert2')
 
 import Icon from '@material-ui/core/Icon';
 
-import HiComponent from '../HiComponent/HiComponent';
-
 import { CardHeader } from '@material-ui/core';
 import UserPage from '../UserPage/UserPage';
 
@@ -326,7 +324,7 @@ export default function Favorites() {
                 return history.push('/race')
                 break;
               case 'SexualOrientation':
-                return history.push('/sexualorientation')
+                return history.push('/sexual_orientation')
                 break;
               case 'FetalAlcoholSyndrome':
                 return history.push('/fetal_alcohol_syndrome')
