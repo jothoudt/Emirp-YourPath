@@ -12,6 +12,8 @@ import {
   Typography
 } from '@material-ui/core';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
+import Box from '@material-ui/core/Box';
+
 
 function PastServices(){
 
@@ -78,36 +80,38 @@ function PastServices(){
         }
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
-      <Card>
-        <CardHeader 
-          title={answer.text}
-        />
-        <CardContent>
-          <Divider />
-          <PastServicesBar 
-              psychWard={psychWard}
-              detox={detox}
-              residential={residential}
-              outpatient={outpatient}
-              mutualSupport={mutualSupport}
-              therapy={therapy}
-              medicationAssisted={medicationAssisted}
-              prescribed={prescribed}
-              soberHousing={soberHousing}
-              declined={declined}
-          />         
-        <p>A psych ward or a psychiatric hold: {psychWard}</p>
-        <p>Detox: {detox}</p>
-        <p>Residential Treatment: {residential}</p>
-        <p>Outpatient Treatment: {outpatient}</p>
-        <p>Attended mutual support meetings (AA, NA, SMART recovery, etc...): {mutualSupport}</p>
-        <p>Attended individual mental health therapy: {therapy}</p>
-        <p>Medication-assisted treatment, i.e. methadone, Vivitrol/Naltrexone or Suboxone/buprenorphine: {medicationAssisted}</p>
-        <p>Been prescribed medication for mental health issues, i.e. depression, anxiety, sleep, etc... {prescribed}</p>   
-        <p>Sober Housing: {soberHousing}</p>     
-        <p>Declined: {declined}</p>
-        </CardContent>
-      </Card>
+      <Box mx='auto' width="75%" >
+        <Card>
+          <CardHeader 
+            title={answer.text}
+          />
+          <CardContent>
+            <Divider />
+            <PastServicesBar 
+                psychWard={psychWard}
+                detox={detox}
+                residential={residential}
+                outpatient={outpatient}
+                mutualSupport={mutualSupport}
+                therapy={therapy}
+                medicationAssisted={medicationAssisted}
+                prescribed={prescribed}
+                soberHousing={soberHousing}
+                declined={declined}
+            />         
+          <p>A psych ward or a psychiatric hold: {psychWard}</p>
+          <p>Detox: {detox}</p>
+          <p>Residential Treatment: {residential}</p>
+          <p>Outpatient Treatment: {outpatient}</p>
+          <p>Attended mutual support meetings (AA, NA, SMART recovery, etc...): {mutualSupport}</p>
+          <p>Attended individual mental health therapy: {therapy}</p>
+          <p>Medication-assisted treatment, i.e. methadone, Vivitrol/Naltrexone or Suboxone/buprenorphine: {medicationAssisted}</p>
+          <p>Been prescribed medication for mental health issues, i.e. depression, anxiety, sleep, etc... {prescribed}</p>   
+          <p>Sober Housing: {soberHousing}</p>     
+          <p>Declined: {declined}</p>
+          </CardContent>
+        </Card>
+      </Box>
       })
     }
     return display;
