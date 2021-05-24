@@ -12,6 +12,8 @@ import {
   Typography
 } from '@material-ui/core';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
+import Box from '@material-ui/core/Box';
+
 
 function MentalHealth(){
 
@@ -82,6 +84,7 @@ function MentalHealth(){
         }
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
+      <Box mx='auto' width="75%" >
       <Card>
         <MentalHealthBar />
         <CardHeader 
@@ -102,6 +105,7 @@ function MentalHealth(){
           <p>Declined: {declined}</p>
           </CardContent>
       </Card>
+      </Box>
       })
     }
     return display;
