@@ -9,6 +9,7 @@ import {
     Typography
   } from '@material-ui/core';
 import OtherSubstancesMonthPie from '../OtherSubstancesMonthPie/OtherSubstancesMonthPie';
+import Box from '@material-ui/core/Box';
 
 function OtherSubstancesMonth(){
 
@@ -40,19 +41,21 @@ function OtherSubstancesMonth(){
         console.log(otherSubstancesMonthlyYes, otherSubstancesMonthlyNo)
         //display for counts
         otherSubstancesDisplay= 
-        <Card>
-           <CardHeader 
-           title={answer.text}
-           />
-         <CardContent>
-           <Divider />
-           <OtherSubstancesMonthPie />
-           <p>Other Substances in the last month Yes:{otherSubstancesMonthlyYes}</p>
-           <p>Other Substances in the last month No: {otherSubstancesMonthlyNo}</p>
-           <Divider />
-           <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used other substances such as bath salts, GHB, ketamine or khat. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
-         </CardContent>
-        </Card>
+        <Box mx='auto' width="75%" >
+          <Card>
+            <CardHeader 
+            title={answer.text}
+            />
+          <CardContent>
+            <Divider />
+            <OtherSubstancesMonthPie />
+            <p>Other Substances in the last month Yes:{otherSubstancesMonthlyYes}</p>
+            <p>Other Substances in the last month No: {otherSubstancesMonthlyNo}</p>
+            <Divider />
+            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used other substances such as bath salts, GHB, ketamine or khat. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
+          </CardContent>
+          </Card>
+        </Box>
         })
       }//end if
       return otherSubstancesDisplay;

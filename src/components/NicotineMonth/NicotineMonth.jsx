@@ -9,6 +9,8 @@ import {
     Typography
   } from '@material-ui/core';
 import NicotineMonthPie from '../NicotineMonthPieChart/NicotineMonthPieChart';
+import Box from '@material-ui/core/Box';
+
 
 function NicotineMonth(){
 
@@ -40,6 +42,7 @@ function NicotineMonth(){
         console.log(nicotineMonthlyYes, nicotineMonthlyNo)
         //display for counts
         nicotineDisplay= 
+        <Box mx='auto' width="75%" >
         <Card>
            <CardHeader 
            title={answer.text}
@@ -53,6 +56,7 @@ function NicotineMonth(){
            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used nicotine products (cigarettes, vaping, chew, cigars, etc.). This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
          </CardContent>
         </Card>
+        </Box>
         })
       }//end if
       return nicotineDisplay;

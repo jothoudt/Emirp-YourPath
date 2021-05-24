@@ -165,9 +165,6 @@ export default function Album() {
                   <CardMedia className="cards" >
                       {card}
                   </CardMedia>
-                  <Typography className="cardText">
-                      Select button below to view more details including use in last month
-                    </Typography>
                   <CardActions>
                     <Button onClick={()=>viewClick({card})} className="cardBtn" size="small" color="primary" textAlign="center">
                       View Details

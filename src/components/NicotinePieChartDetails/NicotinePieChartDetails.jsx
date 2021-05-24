@@ -6,40 +6,37 @@ import Box from '@material-ui/core/Box';
 
 
   
-function OpiodsMonthPie () {
-    //get information from the store
+function NicotinePieChartDetails () {
     const form = useSelector((store)=>store.form);
 
-    //define variables
-    let opiodsTotal=form.length;
-    let opiodsYes=0;
-    let opiodsNo=0;
-    let opiodsYesDisplay= 0;
-    let opiodsNoDisplay=0;
+    
 
-    //map through store info
+    let nicotineTotal=form.length;
+    let nicotineYes=0;
+    let nicotineNo=0;
+    let nicotineYesDisplay= 0;
+    let nicotineNoDisplay=0;
+
+
     form.map((item)=>{
-        //targets data set needed
-        let answer=item.answers[139]
-        //if the answer is yes
-       if(answer.answer){
-        opiodsYes++
+        let answer=item.answers[117]
+       if(answer.answer==='Yes'){
+           nicotineYes++
        }
-       //otherwise undecided and no equal No
        else{
-        opiodsNo++
+           nicotineNo++
       }
-      opiodsYesDisplay = ((opiodsYes / opiodsTotal) * 100).toFixed(1);
-      opiodsNoDisplay = ((opiodsNo / opiodsTotal) * 100).toFixed(1);
+        nicotineYesDisplay = ((nicotineYes / nicotineTotal) * 100).toFixed(1);
+        nicotineNoDisplay = ((nicotineNo / nicotineTotal) * 100).toFixed(1);
       })
       
-      //data for Pie Chart
+
     const data = {
         labels: ['Yes %', 'No %'],
         datasets: [
           {
             label: '# of Votes',
-            data: [opiodsYesDisplay, opiodsNoDisplay],
+            data: [nicotineYesDisplay, nicotineNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -52,17 +49,17 @@ function OpiodsMonthPie () {
           },
         ],
     };
-    //render to dom
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Opioids used in the Last Month</h1>
+            <h1 className='title'>Nicotine</h1>
         </div>
         <Box mx="auto" width="40%">
-          <Pie data={data} />
+            <Pie data={data} />
         </Box>
+
         </>
     )
 }
   
-  export default OpiodsMonthPie;
+  export default NicotinePieChartDetails;
