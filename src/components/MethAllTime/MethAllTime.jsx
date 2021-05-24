@@ -47,9 +47,6 @@ function MethAllTime(){
         //define display
         methDisplay= 
         <Card>
-          <CardHeader
-          title={answer.text}
-          />
           <CardContent>
             <Divider />
             <MethPieChartDetails />

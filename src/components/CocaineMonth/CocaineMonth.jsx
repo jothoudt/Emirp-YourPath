@@ -43,12 +43,9 @@ function CocaineMonth(){
         cocaineDisplay= 
         <Box mx='auto' width="75%" >
         <Card>
-           <CocaineMonthPie />
-           <CardHeader 
-           title={answer.text}
-           />
+           
          <CardContent>
-           <Divider />
+          <CocaineMonthPie />
            <p>Cocaine in the last month Yes:{cocaineMonthlyYes}</p>
            <p>Cocaine in the last month No: {cocaineMonthlyNo}</p>
            <Divider />

@@ -45,11 +45,7 @@ function NicotineAllTime(){
         //define display
         nicotineDisplay= 
         <Card>
-          <CardHeader 
-            title={answer.text}
-          />
           <CardContent>
-            <Divider />
             <NicotinePieChart />           
             <p>Nicotine Yes:{nicotineYes}</p>
             <p>Nicotine No: {nicotineNo}</p>

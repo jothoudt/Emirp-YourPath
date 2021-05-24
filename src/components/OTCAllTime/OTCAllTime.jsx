@@ -38,11 +38,7 @@ function OTCAllTime(){
        console.log(OTCYes, OTCNo)
        display= 
       <Card>
-        <CardHeader 
-          title={answer.text}
-        />
         <CardContent>
-          <Divider />
           <OTCPieChart />
           <p>Over-the-Counter Yes:{OTCYes}</p>
           <p>Over-the-Counter No: {OTCNo}</p>

@@ -44,11 +44,7 @@ function OtherSubstancesAllTime(){
         //define display
         otherDisplay= 
         <Card>
-          <CardHeader 
-            title={answer.text}
-          />
           <CardContent>
-            <Divider />
             <OtherSubstanceAllTimePie />             
             <p>Other Substances Used Yes:{ otherYes}</p>
             <p>Other Substances Used No: {otherNo}</p>

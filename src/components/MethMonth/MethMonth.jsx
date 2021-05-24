@@ -44,12 +44,8 @@ function MethMonth(){
         methDisplay= 
         <Box mx='auto' width="75%" >
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
          <MethMonthPie />
          <CardContent>
-           <Divider />
            <p>Meth in the last month Yes:{methMonthlyYes}</p>
            <p>Meth in the last month No: {methMonthlyNo}</p>
            <Divider />

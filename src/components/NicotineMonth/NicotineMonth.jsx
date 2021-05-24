@@ -41,11 +41,7 @@ function NicotineMonth(){
         //display for counts
         nicotineDisplay= 
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
          <CardContent>
-           <Divider />
            <NicotineMonthPie />
            <p>Nicotine in the last month Yes:{nicotineMonthlyYes}</p>
            <p>Nicotine in the last month No: {nicotineMonthlyNo}</p>

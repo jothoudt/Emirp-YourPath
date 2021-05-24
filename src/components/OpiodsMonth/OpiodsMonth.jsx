@@ -41,11 +41,7 @@ function OpiodsMonth(){
         //display for counts
         opiodsDisplay= 
         <Card>
-           <CardHeader 
-           title={answer.text}
-           />
          <CardContent>
-           <Divider />
            <OpiodsMonthPie />
            <p>Opioids in the last month Yes:{opiodsMonthlyYes}</p>
            <p>Opioids in the last month No: {opiodsMonthlyNo}</p>

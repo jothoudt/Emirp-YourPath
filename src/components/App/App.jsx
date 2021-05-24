@@ -533,7 +533,6 @@ function App() {
           <ProtectedRoute exact path="/fetal_alcohol_syndrome">
             <FetalAlcoholSyndrome />
           </ProtectedRoute>
-
           <ProtectedRoute exact path="/demographics_dash">
             <DemographicsDash />
 
