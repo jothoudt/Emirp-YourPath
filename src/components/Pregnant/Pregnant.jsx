@@ -45,15 +45,13 @@ function Pregnant(){
       console.log('in pregnant:', pregnant, notPregnant, notSure)
       display= 
       <Card>
-        <CardHeader 
-          title={answer.text}
-        />
-        <CardContent>
-          <Divider />    
-          <PregnantPieChartDetails />     
+        <CardContent>    
+          <PregnantPieChart />        
           <p>Pregnant: {pregnant}</p>
           <p>Not Pregnant: {notPregnant}</p>
           <p>Not Sure: {notSure}</p>
+          <Divider />
+          <p>The YourPath assessment gives takers the option of marking whether they are pregnant, plus a third option for anyone unsure. This pie chart shows the overall percentages for the total number of people who marked pregnant, not pregnant or not sure.</p>
         </CardContent>
       </Card>
       })

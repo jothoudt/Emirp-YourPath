@@ -85,11 +85,8 @@ function Race(){
       display= 
       <Box mx='auto' width="75%" >
           <Card>
-            <RacePieChartDetails />
-            <CardHeader 
-            // title={answer.text}
-            />
             <CardContent>
+              <RacePieChartDetails />
               <Divider />
               
               {/* <p>Black or African American: {blackOrAfricanAmerican}</p>
@@ -100,6 +97,7 @@ function Race(){
               <p>White: {white}</p>
               <p>Native American: {nativeAmerican}</p>
               <p>Did not disclose: {noDisclosure}</p> */}
+              <p>YourPath’s assessment asks takers to describe their cultural background, including options for Black, East African/Somali/African Born, Asian, Native Hawaiin/Pacific Islander, Alaska native, white or Native American. This pie chart shows a breakdown of how people responded.</p>
             </CardContent>
             {/* <CardActions>
               <Button onClick={addToFavorites}>Add to Favorites</Button>
