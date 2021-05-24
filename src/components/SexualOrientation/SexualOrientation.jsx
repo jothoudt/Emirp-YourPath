@@ -14,21 +14,22 @@ import {
 import Demographics from '../Demographics/Demographics';
 
 function SexualOrientation(){
-
+  //get info from the store
     const form = useSelector((store)=>store.form);
-
+    //variables to target
     let heterosexual=0;
     let homosexual=0;
     let bisexual=0;
     let asexual=0;
-    
-     // const mjMap=form[119].answer
+    //conditional rendering of the chart
     const answer1 =()=>{
       let display=''
       console.log('in answer')
+      ///if no form information display loading
       if(!form){
         display=<p>loading</p>
       }
+      //if form information map 
       if(form.length){
         form.map((item)=>{
           let answer=item.answers[97]

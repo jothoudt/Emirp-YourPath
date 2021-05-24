@@ -56,8 +56,10 @@ expandOpen: {
 
 
 function UserPage() {
-
+  //define useDispatch
   const dispatch=useDispatch();
+  
+  //function to get all of the data we need on load
   const onLoad=()=>{
     dispatch({type:'FETCH_FORM'});
     dispatch({type:'FETCH_ASSESSMENT'})
@@ -72,13 +74,13 @@ function UserPage() {
   const prefs = useSelector((store)=>store.preferences);
   // const report =useSelector((store)=>store.report1)
 
-
+// triggers multiple dispatches on load
   useEffect(()=>
     onLoad()
   ,[]);
 
 
-  // this component doesn't do much to start, just renders some user reducer info to the DOM
+  //gets user from the store
   const user = useSelector((store) => store.user);
   return (
     <div className="container">

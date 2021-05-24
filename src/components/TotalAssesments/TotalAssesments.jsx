@@ -24,17 +24,10 @@ function TotalAssessments(){
         }
         else{
             totalDisplay=
-            // // <Card>
-            // // <CardHeader
-            // // title="Assessments taken" 
-            // // />
-            // {/* <CardContent>
-            //     <Divider /> */}
                 <div className="total-assessments">
                   <h2>Total number of assessments: {form.length}</h2>
                 </div>
-            // {/* </CardContent>
-            // </Card> */}
+
         }
         return totalDisplay;
     }
