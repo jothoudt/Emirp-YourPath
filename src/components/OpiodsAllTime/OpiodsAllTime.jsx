@@ -9,7 +9,9 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
-import OpiodsPieChart from '../OpiodsPieChart/OpiodsPieChart';
+import OpiodsPieChartDetails from '../OpiodsPieChartDetails/OpiodsPieChartDetails';
+import Box from '@material-ui/core/Box';
+
 
 function OpiodsAllTime(){
 
@@ -37,15 +39,17 @@ function OpiodsAllTime(){
        }
        console.log(opiodsYes, opiodsNo)
        display= 
-       <Card>
-          <CardContent> 
-            <OpiodsPieChart />        
-            <p>Opioids Yes:{opiodsYes}</p>
-            <p>Opioids No: {opiodsNo}</p>
-            <Divider />
-            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used other opioids, including painkillers, fentanyl patches and opium, at some point in their life. </p>
-          </CardContent>
-       </Card>
+       <Box mx='auto' width="75%" >
+        <Card>
+            <CardContent> 
+              <OpiodsPieChartDetails />        
+              <p>Opioids Yes:{opiodsYes}</p>
+              <p>Opioids No: {opiodsNo}</p>
+              <Divider />
+              <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used other opioids, including painkillers, fentanyl patches and opium, at some point in their life. </p>
+            </CardContent>
+        </Card>
+       </Box>
        })
      }
      return display;

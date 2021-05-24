@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux'
-import OTCPieChart from '../OTCPieChart/OTCPieChart';
+import OTCPieChartDetails from '../OTCPieChartDetails/OTCPieChartDetails'
 import { 
   Card,
   CardActions,
@@ -9,6 +9,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import Box from '@material-ui/core/Box';
 
 
 function OTCAllTime(){
@@ -37,15 +38,17 @@ function OTCAllTime(){
        }
        console.log(OTCYes, OTCNo)
        display= 
-      <Card>
-        <CardContent>
-          <OTCPieChart />
-          <p>Over-the-Counter Yes:{OTCYes}</p>
-          <p>Over-the-Counter No: {OTCNo}</p>
-          <Divider />
-          <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used over-the-counter drugs such as Robitussin or Imodium at some point in their life. </p>
-        </CardContent>
-      </Card>
+      <Box mx='auto' width="75%" >
+        <Card>
+          <CardContent>
+            <OTCPieChartDetails />
+            <p>Over-the-Counter Yes:{OTCYes}</p>
+            <p>Over-the-Counter No: {OTCNo}</p>
+            <Divider />
+            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used over-the-counter drugs such as Robitussin or Imodium at some point in their life. </p>
+          </CardContent>
+        </Card>
+      </Box>
        })
      }
      return display;

@@ -9,7 +9,9 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
-import OtherSubstanceAllTimePie from '../OtherSubstancesAllTimePie/OtherSubstancesAllTimePie';
+import OtherSubstanceAllTimePieDetails from '../OtherSubstancesAllTimePieDetails/OtherSubstancesAllTimePieDetails';
+import Box from '@material-ui/core/Box';
+
 
 function OtherSubstancesAllTime(){
   //get information from the store
@@ -43,15 +45,17 @@ function OtherSubstancesAllTime(){
 
         //define display
         otherDisplay= 
-        <Card>
-          <CardContent>
-            <OtherSubstanceAllTimePie />             
-            <p>Other Substances Used Yes:{ otherYes}</p>
-            <p>Other Substances Used No: {otherNo}</p>
-            <Divider />
-            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used other substances such as bath salts, GHB, ketamine or khat at some point in their life. </p>
-         </CardContent>
-        </Card>
+        <Box mx='auto' width="75%" >
+          <Card>
+            <CardContent>
+              <OtherSubstanceAllTimePieDetails />             
+              <p>Other Substances Used Yes:{ otherYes}</p>
+              <p>Other Substances Used No: {otherNo}</p>
+              <Divider />
+              <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used other substances such as bath salts, GHB, ketamine or khat at some point in their life. </p>
+          </CardContent>
+          </Card>
+        </Box>
         })
       }
       //return display

@@ -9,6 +9,8 @@ import {
     Typography
   } from '@material-ui/core';
 import OTCMonthPie from '../OTCMonthPie/OTCMonthPie';
+import Box from '@material-ui/core/Box';
+
 
 function OTCMonth(){
 
@@ -40,15 +42,17 @@ function OTCMonth(){
         console.log(OTCMonthlyYes, OTCMonthlyNo)
         //display for counts
         OTCDisplay= 
-        <Card>
-         <CardContent>
-           <OTCMonthPie />
-           <p>Over the counter used in the last month Yes:{OTCMonthlyYes}</p>
-           <p>Over the Counter used in the last month No: {OTCMonthlyNo}</p>
-           <Divider />
-           <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used over-the-counter drugs such as Robitussin or Imodium. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
-         </CardContent>
-        </Card>
+        <Box mx='auto' width="75%" >
+          <Card>
+          <CardContent>
+            <OTCMonthPie />
+            <p>Over the counter used in the last month Yes:{OTCMonthlyYes}</p>
+            <p>Over the Counter used in the last month No: {OTCMonthlyNo}</p>
+            <Divider />
+            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used over-the-counter drugs such as Robitussin or Imodium. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
+          </CardContent>
+          </Card>
+        </Box>
         })
       }//end if
       return OTCDisplay;
