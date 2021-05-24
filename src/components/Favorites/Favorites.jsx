@@ -43,6 +43,8 @@ import MentalHealthBar from '../MentalHealthBar/MentalHealthBar';
 import PastServicesBar  from '../PastServicesBar/PastServicesBar';
 import PregnantPieChart from '../PregnantPieChart/PregnantPieChart';
 
+import Box from '@material-ui/core/Box';
+
 //import sweetalert2
 const Swal = require('sweetalert2')
 
@@ -152,6 +154,7 @@ export default function Favorites() {
         BenzodiazepinesPieChart: 'Benzodiazepines',
         CocainePieChart: 'Cocaine',
         HallucinogenPieChart: 'Hallucinogen',
+        HeroinAllTimePie: 'Heroin',
         InhalantsPieChart: 'Inhalants',
         MarijuanaPieChart: 'Marijuana',
         MethAllTimePie: 'Meth',
@@ -189,6 +192,10 @@ export default function Favorites() {
         }
         if(value==='HallucinogenPieChart'){
           toAdd.component_name= 'HallucinogenPieChart';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+        }
+        if(value==='HeroinAllTimePie'){
+          toAdd.component_name= 'HeroinAllTimePie';
           dispatch({type:'ADD_PREFERENCES', payload:toAdd})
         }
         if(value==='InhalantsPieChart'){
@@ -342,6 +349,7 @@ export default function Favorites() {
         //to be rendered to the dom
         return(
               <Grid item key={card.id} xs={12} sm={6} md={4}>
+                <Box boxShadow={12}>
                 <Card className={classes.card}>
                   <CardMedia className="cards" >
                       {componentMapping[card.component_name]}
@@ -358,6 +366,7 @@ export default function Favorites() {
                     </Button>
                   </CardActions>
                 </Card>
+                </Box>
               </Grid>
             )}
        )

@@ -34,7 +34,7 @@ function DrugStatistics(){
     const getComponent=()=>{
     switch (component){
         case 'AllDrugsDetails':
-          return <AllDrugsDetails />
+          return history.push('/all_drugs_details')
           break;
         case 'AlcoholDetails':
           return history.push('/alcohol_details')

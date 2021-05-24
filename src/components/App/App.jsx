@@ -112,6 +112,7 @@ import Layout from '../Layout/Layout';
 //all data table
 import AllData from '../AllData/AllData';
 import DemographicsDash from '../DemographicsDash/DemographicsDash';
+import UserStatistics from '../UserStatistics/UserStatistics';
 
 
 
@@ -536,6 +537,10 @@ function App() {
           <ProtectedRoute exact path="/demographics_dash">
             <DemographicsDash />
 
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/userstatistics">
+            <UserStatistics />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

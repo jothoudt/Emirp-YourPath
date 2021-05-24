@@ -25,6 +25,7 @@ import MentalHealth from '../MentalHealth/MentalHealth';
 import TotalAssessments from '../TotalAssesments/TotalAssesments';
 import FetalAlcoholSyndrome from '../FetalAlcoholSyndrome/FetalAlcoholSyndrome';
 import PastServices from '../PastServices/PastServices';
+import Box from '@material-ui/core/Box';
 
 //material-ui for styling
 import { Button, Grid, Card, CardActions, Collapse, IconButton } from '@material-ui/core';
@@ -99,7 +100,7 @@ function UserPage() {
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
-      <TotalAssessments />
+        <TotalAssessments />
       <Favorites />
       <LogOutButton className="btn" />
       {/* <Button

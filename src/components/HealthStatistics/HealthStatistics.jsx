@@ -10,7 +10,7 @@ import {useHistory} from 'react-router-dom';
 function HealthStatistics(){
 
     const dispatch=useDispatch();
-    const history=useHistory;
+    const history=useHistory();
     
     let [component, setComponent]=useState('')
 
