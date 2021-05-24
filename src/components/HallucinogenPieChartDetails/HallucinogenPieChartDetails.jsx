@@ -4,39 +4,38 @@ import { Pie } from 'react-chartjs-2';
 import Box from '@material-ui/core/Box';
 
 
+//Hallucinogen
+//hallucinogen
 
   
-function HeroinMonthPie () {
+function HallucinogenPieChartDetails () {
     const form = useSelector((store)=>store.form);
 
-    
-
-    let heroinTotal=form.length;
-    let heroinYes=0;
-    let heroinNo=0;
-    let heroinYesDisplay= 0;
-    let heroinNoDisplay=0;
+    let hallucinogenTotal=form.length;
+    let hallucinogenYes=0;
+    let hallucinogenNo=0;
+    let hallucinogenYesDisplay= 0;
+    let hallucinogenNoDisplay=0;
 
 
     form.map((item)=>{
-        let answer=item.answers[138]
-       if(answer.answer){
-           heroinYes++
+        let answer=item.answers[125]
+       if(answer.answer==='Yes'){
+          hallucinogenYes++
        }
        else{
-           heroinNo++
+          hallucinogenNo++
       }
-        heroinYesDisplay = ((heroinYes / heroinTotal) * 100).toFixed(1);
-        heroinNoDisplay = ((heroinNo / heroinTotal) * 100).toFixed(1);
+      hallucinogenYesDisplay = ((hallucinogenYes / hallucinogenTotal) * 100).toFixed(1);
+      hallucinogenNoDisplay = ((hallucinogenNo / hallucinogenTotal) * 100).toFixed(1);
       })
-      
 
     const data = {
         labels: ['Yes %', 'No %'],
         datasets: [
           {
             label: '# of Votes',
-            data: [heroinYesDisplay, heroinNoDisplay],
+            data: [hallucinogenYesDisplay, hallucinogenNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -52,13 +51,13 @@ function HeroinMonthPie () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Heroin Use(with in last month)</h1>
+            <h1 className='title'>Hallucinogens</h1>
         </div>
         <Box mx="auto" width="40%">
-          <Pie data={data} />
+        <Pie data={data} />
         </Box>
         </>
     )
 }
   
-  export default HeroinMonthPie;
+  export default HallucinogenPieChartDetails;

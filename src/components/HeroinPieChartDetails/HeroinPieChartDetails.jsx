@@ -5,41 +5,42 @@ import Box from '@material-ui/core/Box';
 
 
 
-  
-function InhalantsMonthPie () {
-    //get information from the store
+
+//function to return pie chart for lifetime heroin use
+function HeroinPieChartDetails () {
+    //select items from the store
     const form = useSelector((store)=>store.form);
 
     //define variables
-    let inhalantTotal=form.length;
-    let inhalantYes=0;
-    let inhalantNo=0;
-    let inhalantYesDisplay= 0;
-    let inhalantNoDisplay=0;
+    let heroinTotal=form.length;
+    let heroinYes=0;
+    let heroinNo=0;
+    let heroinYesDisplay= 0;
+    let heroinNoDisplay=0;
 
-    //map through store info
+    //map through the store data
     form.map((item)=>{
-        //targets data set needed
-        let answer=item.answers[142]
-        //if the answer is yes
-       if(answer.answer){
-        inhalantYes++
+        let answer=item.answers[122]
+        //if answer is yes add one to yes
+       if(answer.answer==='Yes'){
+        heroinYes++
        }
-       //otherwise undecided and no equal No
+       //if answer is no or undecided add one to no
        else{
-        inhalantNo++
+        heroinNo++
       }
-      inhalantYesDisplay = ((inhalantYes / inhalantTotal) * 100).toFixed(1);
-      inhalantNoDisplay = ((inhalantNo / inhalantTotal) * 100).toFixed(1);
+      //display in percentages
+      heroinYesDisplay = ((heroinYes / heroinTotal) * 100).toFixed(1);
+      heroinNoDisplay = ((heroinNo / heroinTotal) * 100).toFixed(1);
       })
       
-      //data for Pie Chart
+      //data for pie chart
     const data = {
         labels: ['Yes %', 'No %'],
         datasets: [
           {
             label: '# of Votes',
-            data: [inhalantYesDisplay, inhalantNoDisplay],
+            data: [heroinYesDisplay, heroinNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -56,13 +57,13 @@ function InhalantsMonthPie () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Inhalants used in the Last Month</h1>
+            <h1 className='title'>Heroin</h1>
         </div>
         <Box mx="auto" width="40%">
-          <Pie data={data} />
+            <Pie data={data} />
         </Box>
         </>
     )
 }
   
-  export default InhalantsMonthPie;
+  export default HeroinPieChartDetails;

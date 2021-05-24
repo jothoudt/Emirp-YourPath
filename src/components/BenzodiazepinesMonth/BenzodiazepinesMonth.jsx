@@ -9,6 +9,7 @@ import {
     Typography
   } from '@material-ui/core';
 import BenzodiazepinesMonthPie from '../BenzodiazepinesMonthPie/BenzodiazepinesMonthPie';
+import Box from '@material-ui/core/Box';
 
 function BenzodiazepinesMonth(){
 
@@ -40,15 +41,21 @@ function BenzodiazepinesMonth(){
         console.log(benzodiazepinesMonthlyYes, benzodiazepinesMonthlyNo)
         //display for counts
         benzodiazepinesDisplay= 
-        <Card>
-         <CardContent>
-           <BenzodiazepinesMonthPie />
-           <p>Benzodiazepines in the last month Yes:{benzodiazepinesMonthlyYes}</p>
-           <p>Benzodiazepines in the last month No: {benzodiazepinesMonthlyNo}</p>
-           <Divider />
-           <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used benzodiazepines such as Xanax, Klonopin or Valium. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
-         </CardContent>
-        </Card>
+        <Box mx='auto' width="75%" >
+          <Card>
+            <CardHeader 
+            title={answer.text}
+            />
+          <CardContent>
+            <Divider />
+            <BenzodiazepinesMonthPie />
+            <p>Benzodiazepines in the last month Yes:{benzodiazepinesMonthlyYes}</p>
+            <p>Benzodiazepines in the last month No: {benzodiazepinesMonthlyNo}</p>
+            <Divider />
+            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used benzodiazepines such as Xanax, Klonopin or Valium. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
+          </CardContent>
+          </Card>
+        </Box>
         })
       }//end if
       return benzodiazepinesDisplay;

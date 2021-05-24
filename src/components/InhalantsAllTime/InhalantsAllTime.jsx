@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 //pass thru pie chart
-import InhalantsPieChart from '../InhalantsPieChart/InhalantsPieChart';
+import InhalantsPieChartDetails from '../InhalantsPieChartDetails/InhalantsPieChartDetails';
 //for styling
 import { 
   Card,
@@ -11,6 +11,8 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import Box from '@material-ui/core/Box';
+
 
 function InhalantsAllTime(){
 
@@ -37,15 +39,21 @@ function InhalantsAllTime(){
       }
       console.log(inhalantYes, inhalantNo)
       display= 
-      <Card>
-        <InhalantsPieChart />
-        <CardContent>
-          <p>Inhalant Yes:{inhalantYes}</p>
-          <p>Inhalant No: {inhalantNo}</p>
-          <Divider />
-          <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used inhalants, including dust-off, glue, paint or whippets at some point in their life.</p>
-        </CardContent>
-      </Card>
+      <Box mx='auto' width="75%" >
+        <Card>
+          <InhalantsPieChartDetails />
+          <CardHeader 
+            title={answer.text}
+          />
+          <CardContent>
+            <Divider />
+            <p>Inhalant Yes:{inhalantYes}</p>
+            <p>Inhalant No: {inhalantNo}</p>
+            <Divider />
+            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used inhalants, including dust-off, glue, paint or whippets at some point in their life.</p>
+          </CardContent>
+        </Card>
+      </Box>
       })
     }
     return display;

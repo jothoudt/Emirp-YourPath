@@ -10,7 +10,9 @@ import {
   Typography
 } from '@material-ui/core';
 //pass thru pie chart
-import HallucinogenPieChart from '../HallucinogenPieChart/HallucinogenPieChart';
+import HallucinogenPieChartDetails from '../HallucinogenPieChartDetails/HallucinogenPieChartDetails';
+import Box from '@material-ui/core/Box';
+
 
 function HallucinogenAllTime(){
 
@@ -37,15 +39,21 @@ function HallucinogenAllTime(){
       }
       console.log(hallucinogenYes, hallucinogenNo)
       display= 
-      <Card>
-        <HallucinogenPieChart />
-        <CardContent>
-          <p>Hallucinogen Yes:{hallucinogenYes}</p>
-          <p>Hallucinogen No: {hallucinogenNo}</p>
-          <Divider />
-          <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used hallucinogens, including LSD, mushrooms or DMT, at some point in their life. </p>
-        </CardContent>
-      </Card>
+      <Box mx='auto' width="75%" >
+        <Card>
+          <HallucinogenPieChartDetails />
+          <CardHeader 
+              title={answer.text}
+              />
+          <CardContent>
+            <Divider />
+            <p>Hallucinogen Yes:{hallucinogenYes}</p>
+            <p>Hallucinogen No: {hallucinogenNo}</p>
+            <Divider />
+            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used hallucinogens, including LSD, mushrooms or DMT, at some point in their life. </p>
+          </CardContent>
+        </Card>
+      </Box>
       })
     }
     return display;

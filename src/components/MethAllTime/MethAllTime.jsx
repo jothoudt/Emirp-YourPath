@@ -9,6 +9,7 @@ import {
   Typography
 } from '@material-ui/core';
 import MethAllTimePie from '../MethAllTimePie/MethAllTimePie';
+import MethPieChartDetails from '../MethPieChartDetails/MethPieChartDetails';
 
 
 function MethAllTime(){
@@ -47,11 +48,10 @@ function MethAllTime(){
         methDisplay= 
         <Card>
           <CardContent>
-            <MethAllTimePie />
-            <p>Meth Yes:{methYes}</p>
-            <p>Meth No: {methNo}</p>
             <Divider />
-            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used meth or other amphetamines at some point in their life. </p>
+            <MethPieChartDetails />
+            <p>Meth Yes:{ methYes}</p>
+            <p>Meth No: {methNo}</p>
           </CardContent>
         </Card>
         })

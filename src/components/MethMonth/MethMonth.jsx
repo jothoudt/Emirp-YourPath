@@ -9,6 +9,8 @@ import {
     Typography
   } from '@material-ui/core';
 import MethMonthPie from '../MethMonthPie/MethMonthPie'
+import Box from '@material-ui/core/Box';
+
 
 function MethMonth(){
 
@@ -40,6 +42,7 @@ function MethMonth(){
         console.log(methMonthlyYes, methMonthlyNo)
         //display for counts
         methDisplay= 
+        <Box mx='auto' width="75%" >
         <Card>
          <MethMonthPie />
          <CardContent>
@@ -49,6 +52,7 @@ function MethMonth(){
            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used meth or other amphetamines. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
          </CardContent>
         </Card>
+        </Box>
         })
       }//end if
       return methDisplay;

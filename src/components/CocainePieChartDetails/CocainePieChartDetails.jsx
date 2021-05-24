@@ -4,39 +4,38 @@ import { Pie } from 'react-chartjs-2';
 import Box from '@material-ui/core/Box';
 
 
+//Cocaine
+//cocaine
 
   
-function HeroinMonthPie () {
+function CocainePieChartDetails () {
     const form = useSelector((store)=>store.form);
 
-    
-
-    let heroinTotal=form.length;
-    let heroinYes=0;
-    let heroinNo=0;
-    let heroinYesDisplay= 0;
-    let heroinNoDisplay=0;
+    let cocaineTotal=form.length;
+    let cocaineYes=0;
+    let cocaineNo=0;
+    let cocaineYesDisplay= 0;
+    let cocaineNoDisplay=0;
 
 
     form.map((item)=>{
-        let answer=item.answers[138]
-       if(answer.answer){
-           heroinYes++
+        let answer=item.answers[120]
+       if(answer.answer==='Yes'){
+        cocaineYes++
        }
        else{
-           heroinNo++
+        cocaineNo++
       }
-        heroinYesDisplay = ((heroinYes / heroinTotal) * 100).toFixed(1);
-        heroinNoDisplay = ((heroinNo / heroinTotal) * 100).toFixed(1);
+      cocaineYesDisplay = ((cocaineYes / cocaineTotal) * 100).toFixed(1);
+      cocaineNoDisplay = ((cocaineNo / cocaineTotal) * 100).toFixed(1);
       })
-      
 
     const data = {
         labels: ['Yes %', 'No %'],
         datasets: [
           {
             label: '# of Votes',
-            data: [heroinYesDisplay, heroinNoDisplay],
+            data: [cocaineYesDisplay, cocaineNoDisplay],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -52,13 +51,13 @@ function HeroinMonthPie () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Heroin Use(with in last month)</h1>
+            <h1 className='title'>Cocaine</h1>
         </div>
         <Box mx="auto" width="40%">
-          <Pie data={data} />
+        <Pie data={data} />
         </Box>
         </>
     )
 }
   
-  export default HeroinMonthPie;
+  export default CocainePieChartDetails;
