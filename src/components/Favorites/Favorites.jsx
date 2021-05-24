@@ -331,18 +331,18 @@ export default function Favorites() {
                 return history.push('/gender')
                 break;
               case 'Race':
-                return history.push('/race')
+                return history.push('/RacePieChart')
                 break;
-              case 'SexualOrientation':
+              case 'SexualOrientationPieChart':
                 return history.push('/sexual_orientation')
                 break;
-              case 'FetalAlcoholSyndrome':
+              case 'FetalAlcoholSyndromePieChart':
                 return history.push('/fetal_alcohol_syndrome')
                 break;
               case 'MentalHealth':
                   return history.push('/mental_health')
                   break;
-              case 'Pregnant':
+              case 'PregnantPieChart':
                   return history.push('/pregnant')
                   break;
               default:

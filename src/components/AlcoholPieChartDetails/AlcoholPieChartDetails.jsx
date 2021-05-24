@@ -5,30 +5,35 @@ import Box from '@material-ui/core/Box';
 
 
 function AlcoholPieChartDetails () {
+  //get information from the store
     const form = useSelector((store)=>store.form);
 
-    
-
+    //variables to target
     let alcoholTotal=form.length;
     let alcoholYes=0;
     let alcoholNo=0;
     let alcoholYesDisplay= 0;
     let alcoholNoDisplay=0;
 
-
+    //map through the information from the store
     form.map((item)=>{
+      //targets the proper question
         let answer=item.answers[118]
+        //if answer is yes add one to Yes
        if(answer.answer==='Yes'){
            alcoholYes++
        }
+       //else for undecided and no add one to no
        else{
            alcoholNo++
       }
+      //alcohol yes as a percentage
         alcoholYesDisplay = ((alcoholYes / alcoholTotal) * 100).toFixed(1);
+      //alcohol no as a percentage
         alcoholNoDisplay = ((alcoholNo / alcoholTotal) * 100).toFixed(1);
       })
       
-
+    //data for charts
     const data = {
         labels: ['Yes %', 'No %'],
         datasets: [
@@ -47,6 +52,7 @@ function AlcoholPieChartDetails () {
           },
         ],
     };
+    //returns title and pie chart
     return (
         <>
         <div className='header'>

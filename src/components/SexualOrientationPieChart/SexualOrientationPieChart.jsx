@@ -6,10 +6,10 @@ import { Pie } from 'react-chartjs-2';
 
   
 function SexualOrientationPieChart () {
+    //get info from the store
     const form = useSelector((store)=>store.form);
 
-    
-
+    //variables to target
     let total=form.length;
     let heterosexual=0;
     let homosexual=0;
@@ -22,32 +22,42 @@ function SexualOrientationPieChart () {
     let asexualDisplay=0;
     let noDisclosureDisplay=0;
 
-
-
+    //map through data from the store
     form.map((item)=>{
+        //targets proper question
         let answer=item.answers[97]
+        //if heterosexual add 1 to heterosexual
         if(answer.answer==='Heterosexual (straight)'){
             heterosexual++
         }
+        //if homosexual add 1 to homosexual
         else if(answer.answer==='Homosexual'){
             homosexual++
         }
+        //if bisexual add 1 to bisexual
         else if(answer.answer==='Bisexual'){
             bisexual++
         }
+        //if asexual add 1 to asexual
         else if(answer.answer==='Asexual'){
             asexual++
         }
+        //if nothing add one to no disclosure
         else {
             noDisclosure++
         }
+        //display heterosexual count as a percentage of the total
         heterosexualDisplay = ((heterosexual / total) * 100).toFixed(1);
+        //display homosexual count as a percentage of the total
         homosexualDisplay = ((homosexual / total) * 100).toFixed(1);
+        //display bisexual count as a percentage of the total
         bisexualDisplay = ((bisexual / total) * 100).toFixed(1);
+        //display asexual count as a percentage of the total
         asexualDisplay = ((asexual / total) * 100).toFixed(1);
+        //display no disclosure as a percentage of the total
         noDisclosureDisplay = ((noDisclosure / total) * 100).toFixed(1);
     })
-
+    //data for the table
     const data = {
         labels: ['Heterosexual (straight)', 'Homosexual', 'Bisexual', 'Asexual', 'Not Disclosed '],
         datasets: [
@@ -84,7 +94,7 @@ function SexualOrientationPieChart () {
           },
         ],
     };
-      
+      //returns total and pie chart
     return (
         <>
         <div className='header'>
