@@ -8,7 +8,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 import './TreatmentOptions.css';
+import { AutorenewTwoTone } from '@material-ui/icons';
 
 function TreatmentOptions(){
 
@@ -22,6 +24,11 @@ function TreatmentOptions(){
           margin: 'auto',
           marginBottom: '50px',
         },
+        box:{
+            width: "80%",
+            margin: 'auto',
+            marginBottom:'50px',
+        }
       });
     
       const classes=useStyles();
@@ -31,24 +38,7 @@ function TreatmentOptions(){
     let total=0;
     let average=0;
 
-    // -------------------arrays to target for visual------------------------------
-    // let medicationNumbers= [];
-    // let residentialNumbers=[];
-    // let outpatientNumbers=[];
-    // let individualTherapyNumbers=[];
-    // let housingSupportNumbers=[];
-    // let individualPeerRecoveryNumbers=[];
-    // let mutualAidMeetingsNumbers=[];
-    // let mentorNumbers=[];
-    // let jobHelpNumbers=[];
-    // let medCareNumbers=[];
-    // let educationSupportNumbers=[];
-    // let twelveStepResourceNumbers=[];
-    // let nonTwelveStepResourceNumbers=[];
-    // let legalSupportNumbers=[];
-    // let transportationSupportNumbers=[];
-    // let benefitHelpNumbers=[];
-    // let harmReductionNumbers=[];
+    // -------------------array to target for visual------------------------------
     let scoresArray=[];
     //---------------------------------------------------------------------------
    
@@ -87,6 +77,7 @@ function TreatmentOptions(){
     return(
         
         <div>
+        <Box className={classes.box} boxShadow={12} textAlign="center">
             <TableContainer component={Paper}>
                 <Table className={classes.table}>
                 <TableHead>
@@ -158,6 +149,7 @@ function TreatmentOptions(){
                 </TableBody>
                 </Table>
             </TableContainer>
+            </Box>
         </div>
         
     )
