@@ -12,6 +12,11 @@ import {
   Typography
 } from '@material-ui/core';
 import Demographics from '../Demographics/Demographics';
+import Box from '@material-ui/core/Box';
+import SexualOrientationPieChartDetails from '../SexualOrientationPieChartDetails/SexualOrientationPieChartDetails';
+
+
+
 
 function SexualOrientation(){
 
@@ -46,19 +51,21 @@ function SexualOrientation(){
         }
       console.log('in orientation:', heterosexual, homosexual, bisexual, asexual)
       display= 
-      <Card>
-        <SexualOrientationPieChart />
-        <CardHeader 
-            title={answer.text}
-        />
-        <CardContent>
-          <Divider />
-          <p>heterosexual: {heterosexual}</p>
-          <p>homosexual: {homosexual}</p>
-          <p>bisexual: {bisexual}</p>
-          <p>asexual: {asexual}</p>
-        </CardContent>
-      </Card>
+      <Box mx='auto' width="75%" >
+        <Card>
+          <SexualOrientationPieChartDetails />
+          <CardHeader 
+              title={answer.text}
+          />
+          <CardContent>
+            <Divider />
+            <p>heterosexual: {heterosexual}</p>
+            <p>homosexual: {homosexual}</p>
+            <p>bisexual: {bisexual}</p>
+            <p>asexual: {asexual}</p>
+          </CardContent>
+        </Card>
+        </Box>
       })
     }
     return display;

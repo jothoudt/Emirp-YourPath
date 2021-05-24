@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import RacePieChart from '../RacePieChart/RacePieChart';
+import RacePieChartDetails from '../RacePieChartDetails/RacePieChartDetails';
 import { 
   Card,
   CardActions,
@@ -13,6 +13,8 @@ import UserPage from '../UserPage/UserPage';
 import { PlaylistAddOutlined } from '@material-ui/icons';
 import Button from '@material-ui/core/Button';
 import Demographics from '../Demographics/Demographics';
+import Box from '@material-ui/core/Box';
+
 
 function Race(){
   // pulls down assessment results from the store
@@ -81,27 +83,29 @@ function Race(){
         }
 
       display= 
-        <Card>
-          <RacePieChart />
-          <CardHeader 
-          // title={answer.text}
-          />
-          <CardContent>
-            <Divider />
-            
-            {/* <p>Black or African American: {blackOrAfricanAmerican}</p>
-            <p>East African/Somali/AfricanBorn: {eastAfricanSomaliAfricanBorn}</p>
-            <p>Asian: {asian}</p>
-            <p>Native Hawaiin/Pacific Islander: {nativeHawaiinOrPacificIslander}</p>
-            <p>Alaska Native: {alaskaNative}</p>
-            <p>White: {white}</p>
-            <p>Native American: {nativeAmerican}</p>
-            <p>Did not disclose: {noDisclosure}</p> */}
-          </CardContent>
-          {/* <CardActions>
-            <Button onClick={addToFavorites}>Add to Favorites</Button>
-          </CardActions> */}
-        </Card>
+      <Box mx='auto' width="75%" >
+          <Card>
+            <RacePieChartDetails />
+            <CardHeader 
+            // title={answer.text}
+            />
+            <CardContent>
+              <Divider />
+              
+              {/* <p>Black or African American: {blackOrAfricanAmerican}</p>
+              <p>East African/Somali/AfricanBorn: {eastAfricanSomaliAfricanBorn}</p>
+              <p>Asian: {asian}</p>
+              <p>Native Hawaiin/Pacific Islander: {nativeHawaiinOrPacificIslander}</p>
+              <p>Alaska Native: {alaskaNative}</p>
+              <p>White: {white}</p>
+              <p>Native American: {nativeAmerican}</p>
+              <p>Did not disclose: {noDisclosure}</p> */}
+            </CardContent>
+            {/* <CardActions>
+              <Button onClick={addToFavorites}>Add to Favorites</Button>
+            </CardActions> */}
+          </Card>
+        </Box>
        })
      }
      return display;

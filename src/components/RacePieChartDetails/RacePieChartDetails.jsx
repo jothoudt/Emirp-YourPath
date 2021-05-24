@@ -1,13 +1,13 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
-
+import Box from '@material-ui/core/Box';
 
 
 
 
   
-function RacePieChart () {
+function RacePieChartDetails () {
     const form = useSelector((store)=>store.form);
 
     
@@ -108,10 +108,12 @@ function RacePieChart () {
         <div className='header'>
             <h1 className='title'>Race</h1>
         </div>
+        <Box mx="auto" width="40%">
             <Pie data={data} />
+        </Box>
         {/* <p>{blackOrAfricanAmerican}</p> */}
         </>
     )
 }
   
-  export default RacePieChart;
+  export default RacePieChartDetails;
