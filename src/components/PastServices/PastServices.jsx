@@ -12,6 +12,8 @@ import {
   Typography
 } from '@material-ui/core';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
+import Box from '@material-ui/core/Box';
+
 
 function PastServices(){
 
@@ -77,24 +79,26 @@ function PastServices(){
           declined++
         }
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
-      display= 
-      <Card>
-        <CardContent>
-          <PastServicesBar />         
-          <p>A psych ward or a psychiatric hold: {psychWard}</p>
-          <p>Detox: {detox}</p>
-          <p>Residential Treatment: {residential}</p>
-          <p>Outpatient Treatment: {outpatient}</p>
-          <p>Attended mutual support meetings (AA, NA, SMART recovery, etc...): {mutualSupport}</p>
-          <p>Attended individual mental health therapy: {therapy}</p>
-          <p>Medication-assisted treatment, i.e. methadone, Vivitrol/Naltrexone or Suboxone/buprenorphine: {medicationAssisted}</p>
-          <p>Been prescribed medication for mental health issues, i.e. depression, anxiety, sleep, etc... {prescribed}</p>   
-          <p>Sober Housing: {soberHousing}</p>     
-          <p>Declined: {declined}</p>
-          <Divider />
-          <p>Assessment takers have the option to indicate the types of support services they’ve used in the past. Because the form allows users to choose more than one, we used a bar chart to show the total count of services used, by category.</p>
-        </CardContent>
-      </Card>
+      <Box mx='auto' width="75%" >
+        <Card>
+          <CardContent>
+            <PastServicesBar />         
+            <p>A psych ward or a psychiatric hold: {psychWard}</p>
+            <p>Detox: {detox}</p>
+            <p>Residential Treatment: {residential}</p>
+            <p>Outpatient Treatment: {outpatient}</p>
+            <p>Attended mutual support meetings (AA, NA, SMART recovery, etc...): {mutualSupport}</p>
+            <p>Attended individual mental health therapy: {therapy}</p>
+            <p>Medication-assisted treatment, i.e. methadone, Vivitrol/Naltrexone or Suboxone/buprenorphine: {medicationAssisted}</p>
+            <p>Been prescribed medication for mental health issues, i.e. depression, anxiety, sleep, etc... {prescribed}</p>   
+            <p>Sober Housing: {soberHousing}</p>     
+            <p>Declined: {declined}</p>
+            <Divider />
+            <p>Assessment takers have the option to indicate the types of support services they’ve used in the past. Because the form allows users to choose more than one, we used a bar chart to show the total count of services used, by category.</p>
+          </CardContent>
+        </Card>
+      </Box>
+
       })
     }
     return display;

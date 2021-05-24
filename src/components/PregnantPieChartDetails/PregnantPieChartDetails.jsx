@@ -1,11 +1,13 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
+import Box from '@material-ui/core/Box';
+
 
 
 
   
-function PregnantPieChart () {
+function PregnantPieChartDetails () {
     const form = useSelector((store)=>store.form);
 
     
@@ -25,16 +27,15 @@ function PregnantPieChart () {
         if(answer.answer==='Yes'){
             pregnant++
         }
-        else if(answer.answer==='Not sure'){
+        else if(answer.answer==='No'){
+            notPregnant++
+        }
+        else if(answer.answer==='Not Sure'){
             notSure++
         }
-        else{
-          notPregnant++
-      }
         pregnantDisplay = ((pregnant / pregnantTotal) * 100).toFixed(1);
         notPregnantDisplay = ((notPregnant / pregnantTotal) * 100).toFixed(1);
         notSureDisplay = ((notSure / pregnantTotal) * 100).toFixed(1);
-        console.log('pregnant display', notSureDisplay)
       })
       
 
@@ -74,9 +75,11 @@ function PregnantPieChart () {
         <div className='header'>
             <h1 className='title'>Pregnant</h1>
         </div>
-        <Pie data={data} />
+        <Box mx="auto" width="40%">
+            <Pie data={data} />
+        </Box>
         </>
     )
 }
   
-  export default PregnantPieChart;
+  export default PregnantPieChartDetails;

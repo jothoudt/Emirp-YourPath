@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux'
 //pass thru pie chart
-import FetalAlcoholSyndromePieChart from '../FetalAlcoholSyndromePieChart/FetalAlcoholSyndromePieChart';
+import FetalAlcoholSyndromePieChartDetails from '../FetalAlcoholSyndromePieChartDetails/FetalAlcoholSyndromePieChart';
 import { 
   Card,
   CardActions,
@@ -11,6 +11,8 @@ import {
   Typography
 } from '@material-ui/core';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
+import Box from '@material-ui/core/Box';
+
 
 
 function FetalAlcoholSyndrome(){
@@ -39,17 +41,19 @@ function FetalAlcoholSyndrome(){
        }
        console.log(fasYes, fasNo)
       display= 
+      <Box mx='auto' width="75%" >
         <Card>
           <CardHeader 
           title={answer.text}
           />
           <CardContent>
             <Divider />
-            <FetalAlcoholSyndromePieChart />
+            <FetalAlcoholSyndromePieChartDetails />
               <p>Fetal Alcohol Syndrome Yes: {fasYes}</p>
               <p>Fetal Alcohol Syndrome No: {fasNo}</p>
           </CardContent>
         </Card>
+        </Box>
        })
      }
      return display;

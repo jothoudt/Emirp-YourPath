@@ -12,6 +12,8 @@ import {
   Typography
 } from '@material-ui/core';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
+import Box from '@material-ui/core/Box';
+
 
 function MentalHealth(){
 
@@ -82,6 +84,7 @@ function MentalHealth(){
         }
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
+      <Box mx='auto' width="75%" >
       <Card>
         <CardContent>
           <MentalHealthBar />        
@@ -100,6 +103,7 @@ function MentalHealth(){
           <p>The YourPath assessment asks people to indicate whether they suspect or were told they have a mental health diagnosis. Because the form allows takers to mark more than one option, we used a bar chart to show full counts for each mental health condition selected.</p>
           </CardContent>
       </Card>
+      </Box>
       })
     }
     return display;
