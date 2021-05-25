@@ -19,13 +19,13 @@ function TotalAssessments(){
         if(!form){
             totalDisplay= 
             <div className="total-assessments">
-              <h2>Loading</h2>
+              <h1>Loading</h1>
             </div>
         }
         else{
             totalDisplay=
                 <div className="total-assessments">
-                  <h2>Total number of assessments: {form.length}</h2>
+                  <h1>Total number of assessments: {form.length}</h1>
                 </div>
 
         }

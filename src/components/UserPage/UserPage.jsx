@@ -85,7 +85,6 @@ function UserPage() {
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
-        <TotalAssessments />
       <Favorites />
       <LogOutButton className="btn" />
     </div>
