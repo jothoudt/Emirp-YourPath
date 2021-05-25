@@ -25,16 +25,15 @@ function PregnantPieChart () {
         if(answer.answer==='Yes'){
             pregnant++
         }
-        else if(answer.answer==='Not sure'){
+        else if(answer.answer==='No'){
+            notPregnant++
+        }
+        else if(answer.answer==='Not Sure'){
             notSure++
         }
-        else{
-          notPregnant++
-      }
         pregnantDisplay = ((pregnant / pregnantTotal) * 100).toFixed(1);
         notPregnantDisplay = ((notPregnant / pregnantTotal) * 100).toFixed(1);
         notSureDisplay = ((notSure / pregnantTotal) * 100).toFixed(1);
-        console.log('pregnant display', notSureDisplay)
       })
       
 
