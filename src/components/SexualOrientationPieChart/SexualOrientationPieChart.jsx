@@ -98,7 +98,7 @@ function SexualOrientationPieChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Demographics-Sexual Orientation</h1>
+            <h1 className='title'>Sexual Orientation</h1>
         </div>
         <Pie data={data} />
         </>
