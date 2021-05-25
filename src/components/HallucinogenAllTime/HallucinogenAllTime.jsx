@@ -41,12 +41,8 @@ function HallucinogenAllTime(){
       display= 
       <Box mx='auto' width="75%" >
         <Card>
-          <HallucinogenPieChartDetails />
-          <CardHeader 
-              title={answer.text}
-              />
           <CardContent>
-            <Divider />
+            <HallucinogenPieChartDetails />
             <p>Hallucinogen Yes:{hallucinogenYes}</p>
             <p>Hallucinogen No: {hallucinogenNo}</p>
             <Divider />
