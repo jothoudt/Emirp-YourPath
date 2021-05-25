@@ -43,6 +43,7 @@ const AllData = () => {
     // const listItems = rows.map( ( number )=>
     //     <AllDataRows key={number} number={number} />
     // )
+    //
 
 
 
