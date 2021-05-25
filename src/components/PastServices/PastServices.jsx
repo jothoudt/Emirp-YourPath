@@ -79,6 +79,7 @@ function PastServices(){
           declined++
         }
       //console.log('in gender:', male, female, transgender, nonBinary, declined )
+      display=
       <Box mx='auto' width="75%" >
         <Card>
           <CardContent>
