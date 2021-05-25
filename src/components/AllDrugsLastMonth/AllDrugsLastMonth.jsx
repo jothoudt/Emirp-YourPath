@@ -10,6 +10,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import Box from '@material-ui/core/Box';
 
 function AllDrugsLastMonth (){
 
@@ -86,6 +87,7 @@ function AllDrugsLastMonth (){
       };
 
     return(
+      <Box mx='auto' width="75%" >
         <Card>
           <CardContent>
             <div className='header'>
@@ -96,6 +98,7 @@ function AllDrugsLastMonth (){
             <p>YourPath assessment takers were given the choice of entering how many days in the previous month they ingested a selection of different substances in the last month. This bar chart summarizes the percentage of people who had used at least one day in the previous month, across all of the included categories.</p>
           </CardContent>
         </Card>
+      </Box>
     )
 }
 

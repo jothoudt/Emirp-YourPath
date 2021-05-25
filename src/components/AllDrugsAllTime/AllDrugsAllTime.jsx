@@ -9,6 +9,7 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
+import Box from '@material-ui/core/Box';
 
 
 function AllDrugsAllTime(){
@@ -372,6 +373,7 @@ function AllDrugsAllTime(){
     }
 
     return(
+      <Box mx='auto' width="75%" >
       <Card>
         <CardContent>
           <AllDrugsBar />
@@ -391,6 +393,7 @@ function AllDrugsAllTime(){
         <Divider />
         <p>This bar chart shows all-time drug usage rates, by category, of YourPath assessment takers. Each category of drug shows the percentage of responders who indicated they had ingested the respective substance at some point in their life. </p>
     </Card>
+    </Box>
     )
         
 }
