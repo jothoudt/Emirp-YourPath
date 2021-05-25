@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux'
 //pass thru pie chart
-import FetalAlcoholSyndromePieChart from '../FetalAlcoholSyndromePieChart/FetalAlcoholSyndromePieChart';
+import FetalAlcoholSyndromePieChartDetails from '../FetalAlcoholSyndromePieChartDetails/FetalAlcoholSyndromePieChartDetails';
 import { 
   Card,
   CardActions,
@@ -11,6 +11,8 @@ import {
   Typography
 } from '@material-ui/core';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
+import Box from '@material-ui/core/Box';
+
 
 
 function FetalAlcoholSyndrome(){
@@ -39,15 +41,17 @@ function FetalAlcoholSyndrome(){
        }
        console.log(fasYes, fasNo)
       display= 
-        <Card>
-          <CardContent>
-            <FetalAlcoholSyndromePieChart />
-              <p>Fetal Alcohol Syndrome Yes: {fasYes}</p>
-              <p>Fetal Alcohol Syndrome No: {fasNo}</p>
-              <Divider />
-              <p>People taking the YourPath assessment are given the option of indicating whether they have been diagnosed with fetal alcohol syndrome. This pie chart shows the percentage of people who marked “Yes.”</p>
-          </CardContent>
-        </Card>
+      <Box mx='auto' width="75%" >
+          <Card>
+            <CardContent>
+              <FetalAlcoholSyndromePieChartDetails />
+                <p>Fetal Alcohol Syndrome Yes: {fasYes}</p>
+                <p>Fetal Alcohol Syndrome No: {fasNo}</p>
+                <Divider />
+                <p>People taking the YourPath assessment are given the option of indicating whether they have been diagnosed with fetal alcohol syndrome. This pie chart shows the percentage of people who marked “Yes.”</p>
+            </CardContent>
+          </Card>
+        </Box>
        })
      }
      return display;

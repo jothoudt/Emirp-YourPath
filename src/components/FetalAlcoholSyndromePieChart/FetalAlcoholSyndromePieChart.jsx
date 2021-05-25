@@ -51,7 +51,7 @@ function FASChart () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Fetal Alcohol Syndrome Diagnoses</h1>
+            <h1 className='title'>FAS Diganoses</h1>
         </div>
         <Pie data={data} />
         </>
