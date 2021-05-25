@@ -407,9 +407,11 @@ export default function Favorites() {
               All of the charts located on the Dashboard below reflect whether or not applicants have ever used the substance in question.
               For more information and to see the data element reflected for the last month click the view button. 
             </Typography> */}
+            <div className="add-chart">
             <Button onClick={addMenu} color="primary" ><Icon className={classes.icon} color="primary" style={{fontSize:'48px'}}>
         add_circle
       </Icon>Add a Chart</Button>
+      </div>
             {/* <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
