@@ -1,8 +1,35 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
+//styling
+import {
+  Button,
+  Box,
+  Grid, 
+  TextField,
+  Typography
+} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+const  useStyles = makeStyles( ( theme )=>({
+  formPanel: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  dividerCaption: {
+    marginBottom: '70px',
+  },
+  textField: {
+    paddingBottom: '10px',
+  },
+  textFieldColor: {
+    color: '#169873',
+  }
+}))
+
 
 function LoginForm() {
+  //for styling login
+  const classes = useStyles();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const errors = useSelector(store => store.errors);
@@ -25,41 +52,52 @@ function LoginForm() {
   }; // end login
 
   return (
-    <form className="formPanel" onSubmit={login}>
-      <h2>Login</h2>
-      {errors.loginMessage && (
-        <h3 className="alert" role="alert">
-          {errors.loginMessage}
-        </h3>
-      )}
-      <div>
-        <label htmlFor="username">
-          Username:
-          <input
-            type="text"
-            name="username"
-            required
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="password">
-          Password:
-          <input
-            type="password"
-            name="password"
-            required
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <input className="btn" type="submit" name="submit" value="Log In" />
-      </div>
-    </form>
+    <Box className={classes.loginRoot}>
+      <Typography
+      className={classes.dividerCaption}
+      color="textSecondary"
+      display="block"
+      variant="caption"
+      >
+      Login
+      </Typography> 
+      <form className={classes.formPanel} onSubmit={login}>
+        {errors.loginMessage && (
+          <h3 className="alert" role="alert">
+            {errors.loginMessage}
+          </h3>
+        )}
+        <Grid container justify="center">
+          <Grid item xs={12}>
+            <TextField
+                label="Username"
+                type="text"
+                className={classes.textField}
+                variant="outlined"
+                color="secondary"
+                required
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
+              />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+                label="Password"
+                type="password"
+                className={classes.textField}
+                variant="outlined"
+                color="secondary"
+                required
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
+          </Grid>
+          <Grid item xs={12}>
+            <Button variant="contained" color="primary" type="submit" name="submit">Login</Button>
+          </Grid>
+        </Grid>
+      </form>
+    </Box>
   );
 }
 
