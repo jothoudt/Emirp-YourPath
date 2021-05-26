@@ -34,7 +34,6 @@ function PregnantPieChart () {
         pregnantDisplay = ((pregnant / pregnantTotal) * 100).toFixed(1);
         notPregnantDisplay = ((notPregnant / pregnantTotal) * 100).toFixed(1);
         notSureDisplay = ((notSure / pregnantTotal) * 100).toFixed(1);
-        console.log('pregnant display', notSureDisplay)
       })
       
 

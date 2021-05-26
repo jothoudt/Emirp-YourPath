@@ -81,7 +81,7 @@ function AllDrugsBar () {
           {
             label: '# of Red Votes',
             data: [getDrugs(marijuana, marijuanaDisplay, 119), getDrugs(overTheCounter, overTheCounterDisplay, 127), getDrugs(hallucinogen, hallucinogenDisplay, 125), getDrugs(methamphetamine, methamphetamineDisplay, 121), getDrugs(cocaine, concaineDisplay, 120), getDrugs(inhalants, inhalantsDisplay, 126), getDrugs(benzodiazepines, benzodiazepinesDisplay, 124), getDrugs(otherOpiods, otherOpiodsDisplay, 123), getDrugs(heroin, heroinDisplay, 122), getDrugs(alcohol, alcoholDisplay, 118) , getDrugs(nicotine, nicotineDisplay, 117), getDrugs(other, otherDisplay, 128)],
-            backgroundColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(167, 221, 205, 1)',
           },
         ],
       };

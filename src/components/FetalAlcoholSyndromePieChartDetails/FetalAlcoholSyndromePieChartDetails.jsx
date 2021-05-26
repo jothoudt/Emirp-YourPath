@@ -39,12 +39,12 @@ function FASChartDetails () {
             label: '# of Votes',
             data: [fasYesDisplay, fasNoDisplay],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
+              'rgba(167, 221, 205, .3)',
+              'rgba(0, 73, 116, .2)',
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
+              'rgba(0, 73, 116, 1)',
+              'rgba(0, 73, 116, 1)',
             ],
             borderWidth: 1,
           },
@@ -53,7 +53,7 @@ function FASChartDetails () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Fetal Alcohol Syndrome Diagnoses</h1>
+            <h1 className='title'>FAS Diagnoses</h1>
         </div>
         <Box mx="auto" width="40%">
             <Pie data={data} />

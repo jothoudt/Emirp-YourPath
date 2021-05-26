@@ -21,42 +21,7 @@ function PastServicesBar () {
     let soberHousing=0;
     let declined=0;
 
-    // form.map((item)=>{
-    //     let answer=item.answers[119]
-    //     if(answer.answer==='Yes'){
-    //        marijuana++
-    //     }
-    //     marijuanaDisplay = ((marijuana / total) * 100).toFixed(1);
-    //     })
     
-    // form.map((item)=>{
-    //     let answer=item.answers[127]
-    //     if(answer.answer==='Yes'){
-    //          overTheCounter++
-    //     }
-    //     overTheCounterDisplay = ((overTheCounter / total) * 100).toFixed(1);
-    //     })
-    
-    // form.map((item)=>{
-    //     let answer=item.answers[125]
-    //     if(answer.answer==='Yes'){
-    //         hallucinogen++
-    //     }
-    //     hallucinogenDisplay = ((hallucinogen / total) * 100).toFixed(1);
-    //     }) 
-    
-    // function getServices(counter, display, number) {
-    //     counter=0;
-    //     form.map((item)=>{
-    //         let answer=item.answers[number]
-    //         if(answer.answer==='Yes'){
-    //             counter++
-    //     }
-    //       display = ((counter / total) * 100).toFixed(1);
-    //     })
-    //     console.log('this is the display:', display);
-    //     return display;
-    // }
     
       form.map((item)=>{
         let answer=item.answers[113]
@@ -99,6 +64,17 @@ function PastServicesBar () {
     }
   })
 
+  psychWard = ((psychWard / total) * 100).toFixed(1);
+  detox = ((detox / total) * 100).toFixed(1);
+  residential = ((residential / total) * 100).toFixed(1);
+  outpatient = ((outpatient / total) * 100).toFixed(1);
+  mutualSupport = ((mutualSupport / total) * 100).toFixed(1);
+  therapy = ((therapy / total) * 100).toFixed(1);
+  medicationAssisted = ((medicationAssisted / total) * 100).toFixed(1);
+  prescribed = ((prescribed / total) * 100).toFixed(1);
+  soberHousing = ((soberHousing / total) * 100).toFixed(1);
+  declined = ((declined / total) * 100).toFixed(1);
+
 
 
     const data = {
@@ -115,7 +91,7 @@ function PastServicesBar () {
           'Declined'],
         datasets: [
           {
-            label: '# of responders',
+            label: '% of respondents',
             data: [
               psychWard,
               detox,
@@ -128,7 +104,7 @@ function PastServicesBar () {
               soberHousing,
               declined
             ],
-            backgroundColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(167, 221, 205, 1)',
           },
         ],
       };

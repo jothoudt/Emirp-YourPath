@@ -60,18 +60,16 @@ function Gender(){
       console.log('in gender:', male, female, transgender, nonBinary, declined )
       display= 
       <Box mx='auto' width="75%" >
-          <Card>
-            <GenderBarChart />
-            <CardHeader 
-            title={answer.text}
-            />
+          <Card> 
             <CardContent>
-              <Divider />
+              <GenderBarChart />
               <p>Male: {male}</p>
               <p>Female: {female}</p>
               <p>Transgender: {transgender}</p>
               <p>Non-binary: {nonBinary}</p>
               <p>Declined: {declined}</p>
+              <Divider />
+              <p>People taking the YourPath assessment are given the option of indicating their gender. Because the form allows more than one response, we used a bar chart to visualize the count totals of each category.</p>
             </CardContent>
           </Card>
         </Box>

@@ -77,12 +77,8 @@ function JusticeInvolved(){
       display= 
       <Box mx='auto' width="75%" >
         <Card>
-          <JusticeInvolvedBar />
-          <CardHeader 
-            title={answer.text}
-          />
           <CardContent>
-            <Divider />        
+            <JusticeInvolvedBar />       
             <p>No current or past legal issues: {none}</p>
             <p>Past issues, no current: {past}</p>
             <p>Awaiting sentencing: {awaitingSentencing}</p>
@@ -92,6 +88,8 @@ function JusticeInvolved(){
             <p>On parole: {parole}</p>
             <p>In the workhouse: {workhouse}</p>        
             <p>Declined: {declined}</p>
+            <Divider /> 
+            <p>This bar chart shows the various responses to a question in YourPath’s assessment that asks the taker to describe their legal issues. Because the person can mark multiple options, we used a bar chart instead of a pie graph to give count totals for each answer category.</p>
           </CardContent>
         </Card>
       </Box>

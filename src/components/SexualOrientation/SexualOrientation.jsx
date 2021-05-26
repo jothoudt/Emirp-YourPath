@@ -19,21 +19,22 @@ import SexualOrientationPieChartDetails from '../SexualOrientationPieChartDetail
 
 
 function SexualOrientation(){
-
+  //get info from the store
     const form = useSelector((store)=>store.form);
-
+    //variables to target
     let heterosexual=0;
     let homosexual=0;
     let bisexual=0;
     let asexual=0;
-    
-     // const mjMap=form[119].answer
+    //conditional rendering of the chart
     const answer1 =()=>{
       let display=''
       console.log('in answer')
+      ///if no form information display loading
       if(!form){
         display=<p>loading</p>
       }
+      //if form information map 
       if(form.length){
         form.map((item)=>{
           let answer=item.answers[97]
@@ -53,16 +54,14 @@ function SexualOrientation(){
       display= 
       <Box mx='auto' width="75%" >
         <Card>
-          <SexualOrientationPieChartDetails />
-          <CardHeader 
-              title={answer.text}
-          />
           <CardContent>
-            <Divider />
+            <SexualOrientationPieChartDetails />    
             <p>heterosexual: {heterosexual}</p>
             <p>homosexual: {homosexual}</p>
             <p>bisexual: {bisexual}</p>
             <p>asexual: {asexual}</p>
+            <Divider />
+            <p>Assessment takers through YourPath’s web portal have the option of indicating their sexual orientation across four options: heterosexual, homosexual, bisexual or asexual. This pie chart shows a percentage breakdown of each, plus how many declined to answer.</p>
           </CardContent>
         </Card>
         </Box>

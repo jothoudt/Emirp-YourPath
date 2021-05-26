@@ -8,3 +8,10 @@ CREATE TABLE "user" (
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL
 );
+
+-- table to allow user to customize dashboard
+CREATE TABLE "favorite" (
+"id" SERIAL PRIMARY KEY,
+"component_name" VARCHAR,
+"user_id" int REFERENCES "user"
+);

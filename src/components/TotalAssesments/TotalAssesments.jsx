@@ -19,22 +19,15 @@ function TotalAssessments(){
         if(!form){
             totalDisplay= 
             <div className="total-assessments">
-              <h2>Loading</h2>
+              <h1>Loading</h1>
             </div>
         }
         else{
             totalDisplay=
-            // // <Card>
-            // // <CardHeader
-            // // title="Assessments taken" 
-            // // />
-            // {/* <CardContent>
-            //     <Divider /> */}
                 <div className="total-assessments">
-                  <h2>Total number of assessments: {form.length}</h2>
+                  <h1>Total number of assessments: {form.length}</h1>
                 </div>
-            // {/* </CardContent>
-            // </Card> */}
+
         }
         return totalDisplay;
     }

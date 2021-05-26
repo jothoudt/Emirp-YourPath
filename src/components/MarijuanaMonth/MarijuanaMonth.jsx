@@ -43,9 +43,6 @@ function MarijuanaMonth(){
         marijuanaDisplay= 
         <Box mx='auto' width="75%" >
         <Card >
-          <CardHeader 
-          title={answer.text}
-          />
         <CardContent>
           <Divider />
           {/* <Box mx="auto" width="40%"> */}

@@ -31,11 +31,10 @@ const AllData = () => {
         { chart: 'Sexual orientation', details: 'Rate of responders who are straight, gay, bisexual or asexual', link_path: '/sexual_orientation'},
         { chart: 'Gender', details: 'A bar chart showing the gender of responders', link_path: '/gender'},
         { chart: 'Justice involved', details: 'A bar chart illustrating criminal justice experiences of responders', link_path: '/justice_involved'},
-        { chart: 'Net promoter score', details: 'Average net promoter score of survey responders', link_path: '/net_promoter_score'},
         { chart: 'Mental Health', details: 'A bar chart showing suspected or diagnosed mental health issues of responders', link_path: '/mental_health'},
         { chart: 'Race', details: 'A bar chart showing the race/ethnicity of responders', link_path: '/race'},
         { chart: 'Past services', details: 'A bar chart showing support services used previously by responders', link_path: '/past_services'},
-        { chart: 'Fetal alcohol syndrom', details: 'Rate of responders diagnosed with fetal alcohol syndrom', link_path: '/fas'},
+        { chart: 'Fetal alcohol syndrome', details: 'Rate of responders diagnosed with fetal alcohol syndrome', link_path: '/fas'},
 
     ]
 
@@ -43,6 +42,7 @@ const AllData = () => {
     // const listItems = rows.map( ( number )=>
     //     <AllDataRows key={number} number={number} />
     // )
+    //
 
 
 

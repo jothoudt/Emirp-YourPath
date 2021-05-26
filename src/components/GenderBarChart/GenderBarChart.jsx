@@ -16,42 +16,7 @@ function GenderBar () {
   let nonBinary=0;
   let declined=0;
 
-  // form.map((item)=>{
-  //     let answer=item.answers[119]
-  //     if(answer.answer==='Yes'){
-  //        marijuana++
-  //     }
-  //     marijuanaDisplay = ((marijuana / total) * 100).toFixed(1);
-  //     })
   
-  // form.map((item)=>{
-  //     let answer=item.answers[127]
-  //     if(answer.answer==='Yes'){
-  //          overTheCounter++
-  //     }
-  //     overTheCounterDisplay = ((overTheCounter / total) * 100).toFixed(1);
-  //     })
-  
-  // form.map((item)=>{
-  //     let answer=item.answers[125]
-  //     if(answer.answer==='Yes'){
-  //         hallucinogen++
-  //     }
-  //     hallucinogenDisplay = ((hallucinogen / total) * 100).toFixed(1);
-  //     }) 
-  
-  // function getServices(counter, display, number) {
-  //     counter=0;
-  //     form.map((item)=>{
-  //         let answer=item.answers[number]
-  //         if(answer.answer==='Yes'){
-  //             counter++
-  //     }
-  //       display = ((counter / total) * 100).toFixed(1);
-  //     })
-  //     console.log('this is the display:', display);
-  //     return display;
-  // }
   
     form.map((item)=>{
       let answer=item.answers[83]
@@ -79,6 +44,11 @@ function GenderBar () {
   }
 })
 
+  male = ((male / total) * 100).toFixed(1);
+  female = ((female / total) * 100).toFixed(1);
+  transgender = ((transgender / total) * 100).toFixed(1);
+  nonBinary = ((nonBinary / total) * 100).toFixed(1);
+  declined = ((declined / total) * 100).toFixed(1);
 
 
   const data = {
@@ -90,7 +60,7 @@ function GenderBar () {
         'Declined'],
       datasets: [
         {
-          label: '# of responders',
+          label: '% of respondents',
           data: [
             male,
             female,
@@ -98,7 +68,7 @@ function GenderBar () {
             nonBinary,
             declined,
           ],
-          backgroundColor: 'rgb(255, 99, 132)',
+          backgroundColor: 'rgba(167, 221, 205, 1)',
         },
       ],
     };

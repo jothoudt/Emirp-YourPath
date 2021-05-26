@@ -331,18 +331,18 @@ export default function Favorites() {
                 return history.push('/gender')
                 break;
               case 'Race':
-                return history.push('/race')
+                return history.push('/RacePieChart')
                 break;
-              case 'SexualOrientation':
+              case 'SexualOrientationPieChart':
                 return history.push('/sexual_orientation')
                 break;
-              case 'FetalAlcoholSyndrome':
+              case 'FetalAlcoholSyndromePieChart':
                 return history.push('/fetal_alcohol_syndrome')
                 break;
               case 'MentalHealth':
                   return history.push('/mental_health')
                   break;
-              case 'Pregnant':
+              case 'PregnantPieChart':
                   return history.push('/pregnant')
                   break;
               default:
@@ -357,9 +357,6 @@ export default function Favorites() {
                   <CardMedia className="cards" >
                       {componentMapping[card.component_name]}
                   </CardMedia>
-                  <Typography className="cardText">
-                      Select button below to view more details including use in last month
-                    </Typography>
                   <CardActions>
                     <Button onClick={()=>viewClick({card})} className="cardBtn" size="small" color="primary" textAlign="center">
                       View Details
@@ -410,9 +407,11 @@ export default function Favorites() {
               All of the charts located on the Dashboard below reflect whether or not applicants have ever used the substance in question.
               For more information and to see the data element reflected for the last month click the view button. 
             </Typography> */}
+            <div className="add-chart">
             <Button onClick={addMenu} color="primary" ><Icon className={classes.icon} color="primary" style={{fontSize:'48px'}}>
         add_circle
       </Icon>Add a Chart</Button>
+      </div>
             {/* <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>

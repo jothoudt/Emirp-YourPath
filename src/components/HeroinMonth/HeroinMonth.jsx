@@ -44,9 +44,6 @@ function HeroinMonth(){
         heroinDisplay= 
         <Box mx='auto' width="75%" >
           <Card>
-            <CardHeader 
-            title={answer.text}
-            />
           <CardContent>
             <Divider />
             <HeroinMonthPie />  
