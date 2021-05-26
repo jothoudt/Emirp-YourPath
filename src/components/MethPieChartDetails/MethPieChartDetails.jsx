@@ -42,12 +42,12 @@ function MethPieChartDetails () {
             label: '# of Votes',
             data: [methYesDisplay, methNoDisplay],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
+              'rgba(167, 221, 205, .3)',
+              'rgba(0, 73, 116, .2)',
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
+              'rgba(0, 73, 116, 1)',
+              'rgba(0, 73, 116, 1)',
             ],
             borderWidth: 1,
           },
