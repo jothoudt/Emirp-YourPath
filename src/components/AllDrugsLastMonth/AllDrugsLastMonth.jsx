@@ -66,7 +66,7 @@ function AllDrugsLastMonth (){
           {
             label: '# of Red Votes',
             data: [getDrugs(marijuana, marijuanaDisplay, 135), getDrugs(overTheCounter, overTheCounterDisplay, 143), getDrugs(hallucinogen, hallucinogenDisplay, 141), getDrugs(methamphetamine, methamphetamineDisplay, 1137), getDrugs(cocaine, concaineDisplay, 136), getDrugs(inhalants, inhalantsDisplay, 142), getDrugs(benzodiazepines, benzodiazepinesDisplay, 140), getDrugs(otherOpiods, otherOpiodsDisplay, 139), getDrugs(heroin, heroinDisplay, 138), getDrugs(alcohol, alcoholDisplay, 134) , getDrugs(nicotine, nicotineDisplay, 133), getDrugs(other, otherDisplay, 144)],
-            backgroundColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(167, 221, 205, 1)',
           },
         ],
       };
