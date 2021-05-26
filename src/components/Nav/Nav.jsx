@@ -37,7 +37,7 @@ function Nav() {
 function Navbar(props) {
   return(
     <nav className="navbar">
-      <h2>YourPath</h2>
+      <img className="logo-type" src="/logotype.png"/>
       <ul className="navbar-nav">{props.children}</ul>
 
      
@@ -102,7 +102,7 @@ function DropdownMenu () {
               </Link>
           </DropdownItem>
 
-        {/* <Link to="/drugstatistics"> */}
+        
           <DropdownItem
             leftIcon={<BiCapsule />}
             rightIcon={<FiChevronRight />}
@@ -144,7 +144,7 @@ function DropdownMenu () {
           </DropdownItem>
           </div>
         </CSSTransition>
-
+        {/* Below is the secondary menu for Drug Usage */}
         <CSSTransition 
       in={activeMenu === 'drug-usage' } 
       unmountOnExit 
@@ -154,15 +154,135 @@ function DropdownMenu () {
       >
         <div className="menu">
         <DropdownItem leftIcon={<FiArrowLeft />} goToMenu="main"/>
-          <DropdownItem
-            leftIcon={<FiUser />}
-            >
-              <Link to="/user">
+
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/drugstatistics">
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Dashboard</h4>
-            
                 {/* </a>  */}
               </Link>
+
+          </DropdownItem>
+
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/alcohol_details">
+                {/* <a href="/user" className="user"> */}
+                  <h4 className="link-header">Alcohol</h4>
+                {/* </a>  */}
+              </Link>
+
+          </DropdownItem>
+
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/benzodiazepines_details">
+                {/* <a href="/user" className="user"> */}
+                  <h4 className="link-header">Benzodiazepines</h4>
+                {/* </a>  */}
+              </Link>
+
+          </DropdownItem>
+
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/cocaine_details">
+                {/* <a href="/user" className="user"> */}
+                  <h4 className="link-header">Cocaine</h4>
+                {/* </a>  */}
+              </Link>
+
+          </DropdownItem>
+
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/hallucinogen_details">
+                {/* <a href="/user" className="user"> */}
+                  <h4 className="link-header">Hallucinogens</h4>
+                {/* </a>  */}
+              </Link>
+
+          </DropdownItem>
+
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/heroin_details">
+                {/* <a href="/user" className="user"> */}
+                  <h4 className="link-header">Heroin</h4>
+                {/* </a>  */}
+              </Link>
+
+          </DropdownItem>
+
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/inhalants_details">
+                {/* <a href="/user" className="user"> */}
+                  <h4 className="link-header">Inhalants</h4>
+                {/* </a>  */}
+              </Link>
+
+          </DropdownItem>
+
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/marijuana_details">
+                {/* <a href="/user" className="user"> */}
+                  <h4 className="link-header">Marijuana</h4>
+                {/* </a>  */}
+              </Link>
+
+          </DropdownItem>
+
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/meth_details">
+                {/* <a href="/user" className="user"> */}
+                  <h4 className="link-header">Meth</h4>
+                {/* </a>  */}
+              </Link>
+
+          </DropdownItem>
+
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/nicotine_details">
+                {/* <a href="/user" className="user"> */}
+                  <h4 className="link-header">Nicotine</h4>
+                {/* </a>  */}
+              </Link>
+
+          </DropdownItem>
+
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/opioids_details">
+                {/* <a href="/user" className="user"> */}
+                  <h4 className="link-header">Opioids</h4>
+                {/* </a>  */}
+              </Link>
+
+          </DropdownItem>
+          
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/OTC_details">
+                {/* <a href="/user" className="user"> */}
+                  <h4 className="link-header">Over-The-Counter</h4>
+                {/* </a>  */}
+              </Link>
+
+          </DropdownItem>
+
+          <DropdownItem leftIcon={<FiUser />}>
+
+              <Link to="/other_substances_details">
+                {/* <a href="/user" className="user"> */}
+                  <h4 className="link-header">Other Substances</h4>
+                {/* </a>  */}
+              </Link>
+
           </DropdownItem>
 
           </div>
