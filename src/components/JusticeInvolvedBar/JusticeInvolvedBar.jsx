@@ -18,6 +18,7 @@ function JusticeInvolvedBar () {
     let parole=0;
     let workhouse=0;
     let declined=0;
+    let total = form.length;
 
     // form.map((item)=>{
     //     let answer=item.answers[119]
@@ -94,6 +95,16 @@ function JusticeInvolvedBar () {
     }
   })
 
+  none = ((none / total) * 100).toFixed(1);
+  past = ((past / total) * 100).toFixed(1);
+  awaitingSentencing = ((awaitingSentencing / total) * 100).toFixed(1);
+  drugCourt = ((drugCourt / total) * 100).toFixed(1);
+  outOnBail = ((outOnBail / total) * 100).toFixed(1);
+  probation = ((probation / total) * 100).toFixed(1);
+  parole = ((parole / total) * 100).toFixed(1);
+  workhouse = ((workhouse / total) * 100).toFixed(1);
+  declined = ((declined / total) * 100).toFixed(1);
+
 
 
     const data = {
@@ -110,7 +121,7 @@ function JusticeInvolvedBar () {
         ],
         datasets: [
           {
-            label: '# of responders',
+            label: '% of respondents',
             data: [
               none,
               past,

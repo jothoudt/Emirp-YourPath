@@ -79,6 +79,11 @@ function GenderBar () {
   }
 })
 
+  male = ((male / total) * 100).toFixed(1);
+  female = ((female / total) * 100).toFixed(1);
+  transgender = ((transgender / total) * 100).toFixed(1);
+  nonBinary = ((nonBinary / total) * 100).toFixed(1);
+  declined = ((declined / total) * 100).toFixed(1);
 
 
   const data = {
@@ -90,7 +95,7 @@ function GenderBar () {
         'Declined'],
       datasets: [
         {
-          label: '# of responders',
+          label: '% of respondents',
           data: [
             male,
             female,

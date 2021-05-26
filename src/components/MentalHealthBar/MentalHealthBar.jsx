@@ -20,6 +20,7 @@ function MentalHealthBar () {
     let personalityDisorder=0;
     let other=0;
     let declined=0;
+    let total = form.length;
 
     // form.map((item)=>{
     //     let answer=item.answers[119]
@@ -102,6 +103,19 @@ function MentalHealthBar () {
     }
   })
 
+    ptsd = ((ptsd / total) * 100).toFixed(1);
+    anxiety = ((anxiety / total) * 100).toFixed(1);
+    depression = ((depression / total) * 100).toFixed(1);
+    bipolar = ((bipolar / total) * 100).toFixed(1);
+    schizophrenia = ((schizophrenia / total) * 100).toFixed(1);
+    adhd = ((adhd / total) * 100).toFixed(1);
+    eatingDisorder = ((eatingDisorder / total) * 100).toFixed(1);
+    ocd = ((ocd / total) * 100).toFixed(1);
+    personalityDisorder = ((personalityDisorder / total) * 100).toFixed(1);
+    other = ((other / total) * 100).toFixed(1);
+    declined = ((declined / total) * 100).toFixed(1);
+    
+
 
 
     const data = {
@@ -119,7 +133,7 @@ function MentalHealthBar () {
           'Declined'],
         datasets: [
           {
-            label: '# of responders',
+            label: '% of respondents',
             data: [
               ptsd,
               anxiety,
