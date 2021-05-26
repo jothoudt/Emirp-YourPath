@@ -37,7 +37,7 @@ function Nav() {
 function Navbar(props) {
   return(
     <nav className="navbar">
-      <img className="logo-type" src="/logotype.png"/>
+      <img className="logoype" src="/logotype.png"/>
       <ul className="navbar-nav">{props.children}</ul>
 
      
@@ -120,13 +120,13 @@ function DropdownMenu () {
         
         {/* </Link>   */}
 
-        {/* <Link to="/healthstatistics"> */}
+        <Link to="/healthstatistics">
           <DropdownItem
             leftIcon={<BiHeartCircle />}
             rightIcon={<FiChevronRight />}>
               <h4 className="link-header">Health</h4>
           </DropdownItem>
-        {/* </Link>   */}
+        </Link>  
 
         {/* <Link to="/about"> */}
           <DropdownItem
