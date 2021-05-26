@@ -5,7 +5,7 @@
   --nav-size: 60px;
   --border: 1px solid #474a4d;
   --border-radius: 8px;
-  --speed: 500ms;
+  --speed: 300ms;
 }
 
 ul {
@@ -23,7 +23,7 @@ a {
 
 .navbar {
   height: var(--nav-size);
-  background-color: var(--bg);
+  background-color: var(--bg); 
   padding: 0 1rem;
   border-bottom: var(--border);
   display: flex;
@@ -70,7 +70,12 @@ a {
   border-radius: var(--border-radius);
   padding: 1rem;
   overflow: hidden;
+  transition: height var(--speed) ease;
 
+}
+
+.menu {
+  width: 100%;
 }
 
 .menu-item {
@@ -78,8 +83,8 @@ a {
   display: flex;
   align-items: center;
   border-radius: var(--border-radius);
-  transition: filter background var(--speed);
-  padding: 0.5rem;
+  transition: background var(--speed);
+  padding: 1rem;
 }
 
 .menu-item:hover {
@@ -91,4 +96,35 @@ a {
 }
 .icon-left {
   margin-right: 10% ;
+}
+
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease; 
+}
+.menu-primary-exit {
+  position: absolute;
+}
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}
+
+
+
+.menu-secondary-enter {
+  transform: translateX( 110% );
+}
+.menu-secondary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease; 
+}
+
+.menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
 }
