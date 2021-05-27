@@ -92,7 +92,19 @@ a {
   border-radius: var(--border-radius);
   transition: background var(--speed);
   padding: 1rem;
+
 }
+
+.bttn {
+  
+  border: none;
+  cursor: pointer;
+  outline: 0;
+}
+.bttn:hover {
+  background-color: var(--bg-accent);
+}
+
 
 .menu-item:hover {
   background-color: var(--bg-accent);
