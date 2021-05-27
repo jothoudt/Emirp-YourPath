@@ -111,14 +111,14 @@ function DropdownMenu () {
           </DropdownItem>
         {/* </Link> */}
 
-        {/* <Link to="/demographics"> */}
+        <Link to="/demographics">
           <DropdownItem
             leftIcon={<BiBarChartAlt2 />}
             rightIcon={<FiChevronRight />}>
               <h4 className="link-header">Demographics</h4>
           </DropdownItem>
         
-        {/* </Link>   */}
+        </Link>  
 
         <Link to="/healthstatistics">
           <DropdownItem

@@ -63,14 +63,11 @@ function SexualOrientationPieChartDetails () {
                 noDisclosureDisplay
             ],
             backgroundColor: [
-                'rgba(167, 221, 205, .3)',
-                'rgba(0, 73, 116, .2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(102, 73, 189, .5)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'red',
-                'blue',
+                'rgba(188, 149, 255, .2)',
+                'rgba(255, 184, 111, .2)',
+                'rgba(148, 197, 204, 0.2)',
+                'rgba(224, 202, 60, .5)',
+                'rgba(114, 24, 23, 0.2)',
             ],
             borderColor: [
                 'rgba(0, 73, 116, 1)',
@@ -78,9 +75,6 @@ function SexualOrientationPieChartDetails () {
                 'rgba(0, 73, 116, 1)',
                 'rgba(0, 73, 116, 1)',
                 'rgba(0, 73, 116, 1)',
-                'rgba(255, 159, 64, 1)',
-                'black',
-                'black',
             ],
             borderWidth: 1,
           },
@@ -90,7 +84,7 @@ function SexualOrientationPieChartDetails () {
     return (
         <>
         <div className='header'>
-            <h1 className='title'>Demographics-Sexual Orientation</h1>
+            <h1 className='title'>Sexual Orientation</h1>
         </div>
         <Box mx="auto" width="40%">
             <Pie data={data} />
