@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {useHistory} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux'
 import AppBar from '@material-ui/core/AppBar';
@@ -41,7 +41,7 @@ import SexualOrientationPieChart from '../SexualOrientationPieChart/SexualOrient
 import FetalAlcoholSyndromePieChart from '../FetalAlcoholSyndromePieChart/FetalAlcoholSyndromePieChart';
 import MentalHealthBar from '../MentalHealthBar/MentalHealthBar';
 import PastServicesBar  from '../PastServicesBar/PastServicesBar';
-import PregnantPieChart from '../PregnantPieChart/PregnantPieChart';
+import PregnantPieChartDetails from '../PregnantPieChartDetails/PregnantPieChartDetails';
 
 //all data component for bottom
 import AllData from '../AllData/AllData';
@@ -115,6 +115,14 @@ export default function Favorites() {
   //variable for components
   const cards=prefs;
 
+  const onLoad=()=>{
+    dispatch({type:'FETCH_FORM'});
+    dispatch({type:'FETCH_ASSESSMENT'})
+    dispatch({type:'FETCH_PROMOTER_SCORES'})
+    dispatch({type: 'FETCH_PREFERENCES', payload: user.id})
+    // dispatch({type:'FETCH_REPORT_1'});
+  }
+
   //A map of components so they can be loaded from the database
   const componentMapping={
     AlcoholPieChart: <AlcoholPieChart />,
@@ -136,7 +144,10 @@ export default function Favorites() {
     FetalAlcoholSyndromePieChart: <FetalAlcoholSyndromePieChart />,
     // MentalHealth: <MentalHealth />,
     // PastServices: <PastServices />,
-    PregnantPieChart: <PregnantPieChart />,
+    PregnantPieChartDetails: <PregnantPieChartDetails />,
+  }
+  const getUpdate=()=>{
+    dispatch({type: 'FETCH_PREFERENCES', payload: user.id})
   }
 
   //function to add a chart to the database for the users favorites
@@ -168,7 +179,7 @@ export default function Favorites() {
         },
         Demographics: {
           // GenderBarChart: 'Gender',
-          RacePieChart: 'Race',
+          RacePieChartDetails: 'Race',
           SexualOrientationPieChart: 'Sexual Orientation'
         },
         HealthStatistics:{
@@ -183,51 +194,63 @@ export default function Favorites() {
       inputValidator: (value) => {
         if(value==='AlcoholPieChart'){
           toAdd.component_name= 'AlcoholPieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='BenzodiazepinesPieChart'){
           toAdd.component_name= 'BenzodiazepinesPieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='CocainePieChart'){
           toAdd.component_name= 'CocainePieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='HallucinogenPieChart'){
           toAdd.component_name= 'HallucinogenPieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='HeroinAllTimePie'){
           toAdd.component_name= 'HeroinAllTimePie';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='InhalantsPieChart'){
           toAdd.component_name= 'InhalantsPieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='MarijuanaPieChart'){
           toAdd.component_name= 'MarijuanaPieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='MethAllTimePie'){
           toAdd.component_name= 'MethAllTimePie';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='NicotinePieChart'){
           toAdd.component_name= 'NicotinePieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='OpiodsPieChart'){
           toAdd.component_name= 'OpiodsPieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='OTCPieChart'){
           toAdd.component_name= 'OTCPieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='OtherSubstanceAllTimePie'){
           toAdd.component_name= 'OtherSubstanceAllTimePie';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         // if(value==='Gender'){
         //   toAdd.component_name= 'GenderBarChart';
@@ -235,28 +258,31 @@ export default function Favorites() {
         // }
         if(value==='RacePieChart'){
           toAdd.component_name= 'RacePieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='SexualOrientationPieChart'){
           toAdd.component_name= 'SexualOrientationPieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         if(value==='FetalAlcoholSyndromePieChart'){
           toAdd.component_name= 'FetalAlcoholSyndromePieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
         // if(value==='MentalHealth'){
         //   toAdd.component_name= 'MentalHealth';
         //   dispatch({type:'ADD_PREFERENCES', payload:toAdd})
         // }
-        if(value==='PregnantPieChart'){
-          toAdd.component_name= 'PregnantPieChart';
-          dispatch({type:'ADD_PREFERENCES', payload:toAdd})
+        if(value==='PregnantPieChartDetails'){
+          toAdd.component_name= 'PregnantPieChartDetails';
+          dispatch({type:'ADD_PREFERENCES', payload:toAdd});
+          getUpdate()
         }
       }
     })
     if (charts) {
-    
       Swal.fire(`You selected: ${charts}`)
     }
   }
@@ -278,12 +304,13 @@ export default function Favorites() {
         const removeFavorite=()=>{
           //object that defines the id to delete
           let toRemove={
-            id: card.id
+            id: card.id,
+            user_id: user.id
           }
           console.log(toRemove);
           //dispatch to delete and then dispatch to get updated preferences
           dispatch({type:'DELETE_CHART', payload:toRemove})
-          dispatch({type: 'FETCH_PREFERENCES'})
+          dispatch({type: 'FETCH_PREFERENCES', payload: user.id})
         }
 
         // function that brings the user to the details of the chart depending on which one they clicked
@@ -373,6 +400,10 @@ export default function Favorites() {
      }
      return cardDisplay
    }
+
+   useEffect(()=>
+   onLoad()
+ ,[]);
    
   //FOR COLLAPSABLE ALL DATA TABLE
   //local state to expand email
