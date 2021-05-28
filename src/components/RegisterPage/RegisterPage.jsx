@@ -20,7 +20,7 @@ function RegisterPage() {
     const classes = useStyles();
 
   return (
-    <Box className={classes.registerRoot}>
+    <Box className="registerContainer">
           <center>
             <RegisterForm />
             <br />

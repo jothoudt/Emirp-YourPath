@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import './LandingPage.css';
-import { Typescript } from '@material-ui/core'
+import { Typescript } from '@material-ui/core';
+import { Button } from '@material-ui/core';
+
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
+import LoginForm from '../LoginForm/LoginForm';
 
 function LandingPage() {
   const [heading, setHeading] = useState('Welcome');
@@ -14,23 +17,33 @@ function LandingPage() {
     history.push('/login');
   };
 
-  return (
-    <div className="container">
-      <h2>{heading}</h2>
+  const [ loginToggle, setLoginToggle ] = useState( 'false' )
 
+  const showLogin = () => {
+    if ( !loginToggle ) {
+      return (
+        <RegisterForm loginToggle={loginToggle} setLoginToggle={setLoginToggle} />
+      )
+    }
+    else {
+      return (
+        <LoginForm loginToggle={loginToggle} setLoginToggle={setLoginToggle}  />
+      )
+    }
+  }
+
+  return (
+    <div className="landingContainer">
       <div className="grid">
         <div className="grid-col grid-col_8">
-          <p>
-            High-res background photo of path here.
-          </p>
         </div>
         <div className="grid-col grid-col_4">
           <center>
-            <RegisterForm />
-            <h4>Already a Member?</h4>
-            <Link to="/login">
+            {showLogin()}
+            
+            {/* <Link to="/login">
               Login
-            </Link>
+            </Link> */}
           </center>
         </div>
       </div>

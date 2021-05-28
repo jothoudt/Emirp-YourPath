@@ -28,7 +28,7 @@ const  useStyles = makeStyles( ( theme )=>({
   }
 }))
 
-function RegisterForm() {
+function RegisterForm( { setLoginToggle, loginToggle } ) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const errors = useSelector((store) => store.errors);
@@ -89,8 +89,11 @@ function RegisterForm() {
               onChange={(event) => setPassword(event.target.value)}
             />
           </Grid>
-          <Grid item xs={6} justify="center">
+          <Grid item xs={12} justify="center">
               <Button variant="contained" color="primary" type="submit" name="submit">Join</Button>
+          </Grid>
+          <Grid item xs={12} justify="center">
+            <Button onClick={()=>setLoginToggle(!loginToggle)}>Go to login</Button>
           </Grid>
         </Grid>
       </form>
