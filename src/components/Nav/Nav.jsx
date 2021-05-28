@@ -144,7 +144,12 @@ function DropdownMenu ( { open, setOpen }) {
         
           <DropdownItem
             leftIcon={<FiLogOut />}>
-              <LogOutButton className="bttn" />
+              
+              <LogOutButton
+              className="bttn"
+              open = {open}
+              setOpen = {setOpen}
+              />
             
           </DropdownItem>
           </div>
