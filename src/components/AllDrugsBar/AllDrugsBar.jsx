@@ -79,7 +79,7 @@ function AllDrugsBar () {
         labels: ['Marijuana', 'Over The Counter', 'Hallucinogens', 'Methamphetamine', 'Cocaine', 'Inhalants', 'Benzodiazepines', 'Other Opiods', 'Heroin', 'Alcohol', 'Nicotine', 'Other'],
         datasets: [
           {
-            label: '# of Red Votes',
+            label: '% of Respondents',
             data: [getDrugs(marijuana, marijuanaDisplay, 119), getDrugs(overTheCounter, overTheCounterDisplay, 127), getDrugs(hallucinogen, hallucinogenDisplay, 125), getDrugs(methamphetamine, methamphetamineDisplay, 121), getDrugs(cocaine, concaineDisplay, 120), getDrugs(inhalants, inhalantsDisplay, 126), getDrugs(benzodiazepines, benzodiazepinesDisplay, 124), getDrugs(otherOpiods, otherOpiodsDisplay, 123), getDrugs(heroin, heroinDisplay, 122), getDrugs(alcohol, alcoholDisplay, 118) , getDrugs(nicotine, nicotineDisplay, 117), getDrugs(other, otherDisplay, 128)],
             backgroundColor: 'rgba(167, 221, 205, 1)',
           },

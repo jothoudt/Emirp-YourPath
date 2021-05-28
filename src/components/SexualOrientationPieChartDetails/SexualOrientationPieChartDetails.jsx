@@ -51,7 +51,7 @@ function SexualOrientationPieChartDetails () {
     })
 
     const data = {
-        labels: ['Heterosexual (straight)', 'Homosexual', 'Bisexual', 'Asexual', 'Not Disclosed '],
+        labels: ['Heterosexual (straight) %', 'Homosexual %', 'Bisexual %', 'Asexual %', 'Not Disclosed %'],
         datasets: [
           {
             label: '# of Votes',
