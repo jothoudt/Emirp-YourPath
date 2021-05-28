@@ -13,8 +13,25 @@ import {
   Typography
 } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
+
 
 function BenzodiazepinesAllTime(){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     const form = useSelector((store)=>store.form);
 
@@ -41,16 +58,23 @@ function BenzodiazepinesAllTime(){
       display= 
       <Box mx='auto' width="75%" >
         <Card>
-          <BenzodiazepinesPieChartDetails />
-          <CardHeader 
-            title={answer.text}
-          />
           <CardContent>
             <Divider />
-            <p>Benzodiazepines Yes:{benzYes}</p>
-            <p>Benzodiazepines No: {benzNo}</p>
+            <BenzodiazepinesPieChartDetails />
+            <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used benzodiazepines such as Xanax, Klonopin or Valium, at some point in their life.   </h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered YES to using Benzodiazepines in their lifetime.</p></TableCell><TableCell align="right">{benzYes}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered NO to using Benzodiazepines in their lifetime.</p></TableCell><TableCell align="right">{benzNo}</TableCell>
+                    </TableRow>
+                  </TableHead>
+                </Table>
             <Divider />
-            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used benzodiazepines such as Xanax, Klonopin or Valium, at some point in their life. </p>
           </CardContent>
         </Card>
       </Box>

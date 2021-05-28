@@ -10,9 +10,25 @@ import {
 } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import HeroinPieChartDetails from '../HeroinPieChartDetails/HeroinPieChartDetails';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 function HeroinAllTime(){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     const form = useSelector((store)=>store.form);
 
@@ -43,11 +59,20 @@ function HeroinAllTime(){
           <Card>
             <CardContent>
               <Divider />   
-              <HeroinPieChartDetails />         
-              <p>Heroin Yes:{heroinYes}</p>
-              <p>Heroin No: {heroinNo}</p>
-              <Divider />
-              <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used heroin or fentanyl powder at some point in their life. </p>
+              <HeroinPieChartDetails />    
+              <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used heroin or fentanyl powder at some point in their life.</h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered YES to using Heroin in their lifetime.</p></TableCell><TableCell align="right">{heroinYes}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered NO to using Heroin in their lifetime.</p></TableCell><TableCell align="right">{heroinNo}</TableCell>
+                    </TableRow>
+                  </TableHead>
+                </Table>
             </CardContent>
           </Card>
         </Box>

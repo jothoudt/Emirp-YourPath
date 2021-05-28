@@ -12,10 +12,26 @@ import {
 } from '@material-ui/core';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 
 function FetalAlcoholSyndrome(){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     const form = useSelector((store)=>store.form);
 
@@ -45,10 +61,19 @@ function FetalAlcoholSyndrome(){
           <Card>
             <CardContent>
               <FetalAlcoholSyndromePieChartDetails />
-                <p>Fetal Alcohol Syndrome Yes: {fasYes}</p>
-                <p>Fetal Alcohol Syndrome No: {fasNo}</p>
-                <Divider />
-                <p>People taking the YourPath assessment are given the option of indicating whether they have been diagnosed with fetal alcohol syndrome. This pie chart shows the percentage of people who marked “Yes.”</p>
+              <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>People taking the YourPath assessment are given the option of indicating whether they have been diagnosed with fetal alcohol syndrome. This pie chart shows the percentage of people who marked “Yes.” </h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered YES to being diagnosed with Fetal Alcohol Syndrome</p></TableCell><TableCell align="right">{fasYes}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered NO to being diagnosed with Fetal Alcohol Syndrome</p></TableCell><TableCell align="right">{fasNo}</TableCell>
+                    </TableRow>
+                  </TableHead>
+                </Table>
             </CardContent>
           </Card>
         </Box>
