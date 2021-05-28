@@ -7,10 +7,16 @@ import {
   CardContent,
   CardHeader,
   Divider,
+  TableHead,
   Typography
 } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import AlcoholPieChartDetails from '../AlcoholPieChartDetails/AlcoholPieChartDetails';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 function AlcoholAllTime(){
@@ -20,6 +26,17 @@ function AlcoholAllTime(){
     //variables for counting
     let alcoholYes=0;
     let alcoholNo=0;
+
+    const useStyles = makeStyles({
+      table: {
+        width: "50%",
+        margin: 'auto',
+        marginBottom: '50px',
+      },
+    });
+  
+    const classes=useStyles();
+
 
     //function to display results
     const answerAlcohol =()=>{
@@ -50,10 +67,23 @@ function AlcoholAllTime(){
               <CardContent>
                 <Divider />
                 <AlcoholPieChartDetails />
-                <p>Alcohol Used Yes:{ alcoholYes}</p>
-                <p>Alcohol Used No: {alcoholNo}</p>
+                <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used alcohol, including beer, wine or liquor, at some point in their life.  </h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered YES to using Alcohol in their lifetime.</p></TableCell><TableCell align="right">{ alcoholYes}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered NO to using Alcohol in their lifetime.</p></TableCell><TableCell align="right">{alcoholNo}</TableCell>
+                    </TableRow>
+                  </TableHead>
+                </Table>
+                
+                {/* <p>Alcohol Used No: {alcoholNo}</p> */}
                 <Divider />
-                <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used alcohol, including beer, wine or liquor, at some point in their life. </p>
+                {/* <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used alcohol, including beer, wine or liquor, at some point in their life. </p> */}
               </CardContent>
             </Card>
         </Box>

@@ -10,9 +10,25 @@ import {
   } from '@material-ui/core';
 import HeroinMonthPie from '../HeroinMonthPie/HeroinMonthPie';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 function HeroinMonth(){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     //select info from store
     const form = useSelector((store)=>store.form);
@@ -47,10 +63,19 @@ function HeroinMonth(){
           <CardContent>
             <Divider />
             <HeroinMonthPie />  
-            <p>Heroin in the last month Yes:{heroinMonthlyYes}</p>
-            <p>Heroin in the last month No: {heroinMonthlyNo}</p>
-            <Divider />
-            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used heroin or fentanyl powder. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
+            <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>YourPath assessment takers were given the choice of entering how many days in the previous month they used heroin or fentanyl powder. This pie graph shows the percentage of people who had used at least one day in the previous month.</h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered YES to using Heroin in their lifetime.</p></TableCell><TableCell align="right">{heroinMonthlyYes}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered NO to using Heroin in their lifetime.</p></TableCell><TableCell align="right">{heroinMonthlyNo}</TableCell>
+                    </TableRow>
+                  </TableHead>
+                </Table>
           </CardContent>
           </Card>
         </Box>

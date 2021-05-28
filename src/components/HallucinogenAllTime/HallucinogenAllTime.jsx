@@ -12,9 +12,25 @@ import {
 //pass thru pie chart
 import HallucinogenPieChartDetails from '../HallucinogenPieChartDetails/HallucinogenPieChartDetails';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 function HallucinogenAllTime(){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     const form = useSelector((store)=>store.form);
 
@@ -43,10 +59,19 @@ function HallucinogenAllTime(){
         <Card>
           <CardContent>
             <HallucinogenPieChartDetails />
-            <p>Hallucinogen Yes:{hallucinogenYes}</p>
-            <p>Hallucinogen No: {hallucinogenNo}</p>
-            <Divider />
-            <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used hallucinogens, including LSD, mushrooms or DMT, at some point in their life. </p>
+            <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used hallucinogens, including LSD, mushrooms or DMT, at some point in their life. </h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered YES to using Hallucinogen in their lifetime.</p></TableCell><TableCell align="right">{hallucinogenYes}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered NO to using Hallucinogen in their lifetime.</p></TableCell><TableCell align="right">{hallucinogenNo}</TableCell>
+                    </TableRow>
+                  </TableHead>
+                </Table>
           </CardContent>
         </Card>
       </Box>
