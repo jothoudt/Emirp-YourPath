@@ -14,6 +14,8 @@ import { CSSTransition } from 'react-transition-group';
 
 function Nav() {
   const user = useSelector((store) => store.user);
+  //local state for opening Nav
+  const [open, setOpen] = useState(false);
 
   let loginLinkData = {
     path: '/login',
@@ -26,9 +28,13 @@ function Nav() {
   }
 
   return (
-    <Navbar>
-    <NavItem icon={<FiMenu/>}>
-      <DropdownMenu />
+  <Navbar>
+    <NavItem 
+    icon={<FiMenu/>}
+    open={open}
+    setOpen={setOpen}
+    >
+      <DropdownMenu open={open} setOpen={setOpen} />
     </NavItem>
   </Navbar>
   );
@@ -39,31 +45,29 @@ function Navbar(props) {
     <nav className="navbar">
       <img className="logoype" src="/logotype.png"/>
       <ul className="navbar-nav">{props.children}</ul>
-
-     
     </nav>
-
   )
 }
 
-function NavItem(props) {
+function NavItem({ children, icon, setOpen, open }) {
 
-  const [open, setOpen] = useState(false);
-  return(
+  // console.log( 'props in NavItem:', props );
+  return( 
     <li className="nav-item">
-      <a className="icon-button" onClick={() => setOpen(!open)}>
-        {props.icon}
+      <a className="icon-button" onClick={()=>setOpen( !open )}>
+        {icon}
       </a>
-
-      {open && props.children}
+      {open && children}
     </li>
   )
 }
 
-function DropdownMenu () {
+function DropdownMenu ( { open, setOpen }) {
 
   const [activeMenu, setActiveMenu] = useState('main'); // settings, about userpage, logout
   const [menuHeight, setMenuHeight] = useState(null); 
+
+
 
   function calcHeight(el) {
     const height = el.offsetHeight;
@@ -71,6 +75,7 @@ function DropdownMenu () {
   }
 
   function DropdownItem(props) {
+
     return(
       <a className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
         <span className="icon-left">{props.leftIcon}</span>
@@ -94,9 +99,9 @@ function DropdownMenu () {
           <DropdownItem
             leftIcon={<FiUser />}
             >
-              <Link to="/user">
+              <Link to="/user" >
                 {/* <a href="/user" className="user"> */}
-                  <h4 className="link-header">User Page</h4>
+                  <h4 className="link-header" onClick={()=>setOpen(!open)}>User Page</h4>
             
                 {/* </a>  */}
               </Link>
@@ -111,7 +116,7 @@ function DropdownMenu () {
           </DropdownItem>
         {/* </Link> */}
 
-        <Link to="/demographics">
+        <Link to="/demographics" onClick={()=>setOpen(!open)}>
           <DropdownItem
             leftIcon={<BiBarChartAlt2 />}
             rightIcon={<FiChevronRight />}>
@@ -120,7 +125,7 @@ function DropdownMenu () {
         
         </Link>  
 
-        <Link to="/healthstatistics">
+        <Link to="/healthstatistics" onClick={()=>setOpen(!open)}>
           <DropdownItem
             leftIcon={<BiHeartCircle />}
             rightIcon={<FiChevronRight />}>
@@ -157,7 +162,7 @@ function DropdownMenu () {
 
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/drugstatistics">
+              <Link to="/drugstatistics" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Dashboard</h4>
                 {/* </a>  */}
@@ -167,7 +172,7 @@ function DropdownMenu () {
 
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/alcohol_details">
+              <Link to="/alcohol_details" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Alcohol</h4>
                 {/* </a>  */}
@@ -177,7 +182,7 @@ function DropdownMenu () {
 
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/benzodiazepines_details">
+              <Link to="/benzodiazepines_details" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Benzodiazepines</h4>
                 {/* </a>  */}
@@ -187,7 +192,7 @@ function DropdownMenu () {
 
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/cocaine_details">
+              <Link to="/cocaine_details" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Cocaine</h4>
                 {/* </a>  */}
@@ -197,7 +202,7 @@ function DropdownMenu () {
 
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/hallucinogen_details">
+              <Link to="/hallucinogen_details" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Hallucinogens</h4>
                 {/* </a>  */}
@@ -207,7 +212,7 @@ function DropdownMenu () {
 
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/heroin_details">
+              <Link to="/heroin_details" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Heroin</h4>
                 {/* </a>  */}
@@ -217,7 +222,7 @@ function DropdownMenu () {
 
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/inhalants_details">
+              <Link to="/inhalants_details" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Inhalants</h4>
                 {/* </a>  */}
@@ -227,7 +232,7 @@ function DropdownMenu () {
 
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/marijuana_details">
+              <Link to="/marijuana_details" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Marijuana</h4>
                 {/* </a>  */}
@@ -237,7 +242,7 @@ function DropdownMenu () {
 
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/meth_details">
+              <Link to="/meth_details" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Meth</h4>
                 {/* </a>  */}
@@ -247,7 +252,7 @@ function DropdownMenu () {
 
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/nicotine_details">
+              <Link to="/nicotine_details" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Nicotine</h4>
                 {/* </a>  */}
@@ -257,7 +262,7 @@ function DropdownMenu () {
 
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/opioids_details">
+              <Link to="/opioids_details" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Opioids</h4>
                 {/* </a>  */}
@@ -267,7 +272,7 @@ function DropdownMenu () {
           
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/OTC_details">
+              <Link to="/OTC_details" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Over-The-Counter</h4>
                 {/* </a>  */}
@@ -277,7 +282,7 @@ function DropdownMenu () {
 
           <DropdownItem leftIcon={<FiUser />}>
 
-              <Link to="/other_substances_details">
+              <Link to="/other_substances_details" onClick={()=>setOpen(!open)}>
                 {/* <a href="/user" className="user"> */}
                   <h4 className="link-header">Other Substances</h4>
                 {/* </a>  */}
