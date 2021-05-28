@@ -144,7 +144,7 @@ function DropdownMenu ( { open, setOpen }) {
         
           <DropdownItem
             leftIcon={<FiLogOut />}>
-              <h4 className="link-header">Log Out</h4>
+              <LogOutButton className="bttn" />
             
           </DropdownItem>
           </div>

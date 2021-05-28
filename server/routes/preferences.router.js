@@ -7,10 +7,10 @@ const pool = require('../modules/pool');
 
 require('dotenv').config();
 
-preferencesRouter.get('/', (req, res)=>{
+preferencesRouter.get('/:id', (req, res)=>{
   console.log('in apiRouter')
-  const preferencesQuery=`SELECT component_name, id From favorite WHERE user_id=1;`
-  pool.query(preferencesQuery)
+  const preferencesQuery=`SELECT component_name, id From favorite WHERE user_id=$1;`
+  pool.query(preferencesQuery,[req.params.id])
   .then(result=>{
       console.log(result.rows)
       res.send(result.rows)
