@@ -11,6 +11,9 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 //styling
 const  useStyles = makeStyles( ( theme )=>({
+  registrationRoot: {
+    padding: '0 80px',
+  },
   formPanel: {
     display: 'flex',
     justifyContent: 'center',
@@ -20,11 +23,19 @@ const  useStyles = makeStyles( ( theme )=>({
     maxWidth: '75px',
     margin: 'auto',
   },
-  dividerCaption: {
-    marginBottom: '70px',
+  registerIntro: {
+    paddingTop: '35px',
+    marginBottom: '13px',
+    fontWeight: '600',
+  },
+  explainer: {
+    marginBottom: '60px',
   },
   textField: {
     paddingBottom: '10px',
+  },
+  mainBtn: {
+    marginTop: '40px',
   }
 }))
 
@@ -51,12 +62,16 @@ function RegisterForm( { setLoginToggle, loginToggle } ) {
   return (
     <Box className={classes.registrationRoot}>
     <Typography
-    className={classes.dividerCaption}
-    color="textSecondary"
+    className={classes.registerIntro}
+    color="primary"
     display="block"
-    variant="caption"
+    variant="h4"
   >
-    Registration
+    Register
+  </Typography>
+  <Typography variant="body2" className={classes.explainer}>
+    Welcome to YourPath Dashboard. 
+    Please fill out these two fields:
   </Typography>
       <form className={classes.formPanel} onSubmit={registerUser}>
         {errors.registrationMessage && (
@@ -66,15 +81,16 @@ function RegisterForm( { setLoginToggle, loginToggle } ) {
         )}
         <Grid container justify="center">
           <Grid item xs={12}>
-                <TextField
-                  label="Username"
-                  type="text"
-                  className={classes.textField}
-                  variant="outlined"
-                  color="secondary"
-                  value={username}
-                  required
-                  onChange={(event) => setUsername(event.target.value)}
+            <TextField
+              label="Username"
+              type="text"
+              className={classes.textField}
+              variant="standard"
+              color="secondary"
+              fullWidth
+              value={username}
+              required
+              onChange={(event) => setUsername(event.target.value)}
                 />
           </Grid>
           <Grid item xs={12}>
@@ -82,15 +98,16 @@ function RegisterForm( { setLoginToggle, loginToggle } ) {
               label="Password"
               type="password"
               className={classes.textField}
-              variant="outlined"
+              variant="standard"
               color="secondary"
+              fullWidth
               value={password}
               required
               onChange={(event) => setPassword(event.target.value)}
             />
           </Grid>
           <Grid item xs={12} justify="center">
-              <Button variant="contained" color="primary" type="submit" name="submit">Join</Button>
+              <Button variant="contained" color="primary" type="submit" name="submit" className={classes.mainBtn}>Join</Button>
           </Grid>
           <Grid item xs={12} justify="center">
             <Button onClick={()=>setLoginToggle(!loginToggle)}>Go to login</Button>

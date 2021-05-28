@@ -14,9 +14,6 @@ function LoginPage() {
     <Box className="registrationRoot">
       <center>
         <LoginForm />
-        <Button onClick={() => { history.push( '/registration' ) } }>
-          Register
-        </Button>
       </center>
     </Box>
   );

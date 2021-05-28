@@ -11,18 +11,28 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 const  useStyles = makeStyles( ( theme )=>({
+  loginRoot: {
+    padding: '0 80px',
+  },
   formPanel: {
     display: 'flex',
     justifyContent: 'center',
   },
-  dividerCaption: {
-    marginBottom: '70px',
+  loginIntro: {
+    paddingTop: '35px',
+    fontWeight: '600',
+  },
+  explainer: {
+    marginBottom: '60px',
   },
   textField: {
     paddingBottom: '10px',
   },
   textFieldColor: {
     color: '#169873',
+  },
+  mainBtn: {
+    marginTop: '40px',
   }
 }))
 
@@ -54,12 +64,15 @@ function LoginForm( { loginToggle, setLoginToggle }) {
   return (
     <Box className={classes.loginRoot}>
       <Typography
-      className={classes.dividerCaption}
-      color="textSecondary"
+      className={classes.loginIntro}
+      color="primary"
       display="block"
-      variant="caption"
+      variant="h4"
       >
-      Login
+      Sign in
+      </Typography>
+      <Typography variant="body2" className={classes.explainer}>
+        Enter to view your customizable dashboard.
       </Typography> 
       <form className={classes.formPanel} onSubmit={login}>
         {errors.loginMessage && (
@@ -73,8 +86,9 @@ function LoginForm( { loginToggle, setLoginToggle }) {
                 label="Username"
                 type="text"
                 className={classes.textField}
-                variant="outlined"
+                variant="standard"
                 color="secondary"
+                fullWidth
                 required
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
@@ -85,15 +99,16 @@ function LoginForm( { loginToggle, setLoginToggle }) {
                 label="Password"
                 type="password"
                 className={classes.textField}
-                variant="outlined"
+                variant="standard"
                 color="secondary"
+                fullWidth
                 required
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
               />
           </Grid>
           <Grid item xs={12}>
-            <Button variant="contained" color="primary" type="submit" name="submit">Login</Button>
+            <Button variant="contained" color="primary" type="submit" name="submit" className={classes.mainBtn}>Login</Button>
           </Grid>
           <Grid item xs={12} justify="center">
             <Button onClick={()=>setLoginToggle(!loginToggle)}>Go to register</Button>
