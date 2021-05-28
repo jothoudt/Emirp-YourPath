@@ -58,15 +58,18 @@ expandOpen: {
 function UserPage() {
   //define useDispatch
   const dispatch=useDispatch();
+
+  //gets user from the store
+  const user = useSelector((store) => store.user);
   
   //function to get all of the data we need on load
-  const onLoad=()=>{
-    dispatch({type:'FETCH_FORM'});
-    dispatch({type:'FETCH_ASSESSMENT'})
-    dispatch({type:'FETCH_PROMOTER_SCORES'})
-    dispatch({type: 'FETCH_PREFERENCES'})
-    // dispatch({type:'FETCH_REPORT_1'});
-  }
+  // const onLoad=()=>{
+  //   dispatch({type:'FETCH_FORM'});
+  //   dispatch({type:'FETCH_ASSESSMENT'})
+  //   dispatch({type:'FETCH_PROMOTER_SCORES'})
+  //   dispatch({type: 'FETCH_PREFERENCES', payload: user.id})
+  //   // dispatch({type:'FETCH_REPORT_1'});
+  // }
   //for styling
   const classes= useStyles();
   //get Jotform data from redux store
@@ -75,13 +78,12 @@ function UserPage() {
   // const report =useSelector((store)=>store.report1)
 
 // triggers multiple dispatches on load
-  useEffect(()=>
-    onLoad()
-  ,[]);
+  // useEffect(()=>
+  //   onLoad()
+  // ,[]);
 
 
-  //gets user from the store
-  const user = useSelector((store) => store.user);
+  
   return (
     <div className="container">
       <Favorites />
