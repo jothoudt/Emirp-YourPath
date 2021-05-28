@@ -27,7 +27,7 @@ const  useStyles = makeStyles( ( theme )=>({
 }))
 
 
-function LoginForm() {
+function LoginForm( { loginToggle, setLoginToggle }) {
   //for styling login
   const classes = useStyles();
   const [username, setUsername] = useState('');
@@ -94,6 +94,9 @@ function LoginForm() {
           </Grid>
           <Grid item xs={12}>
             <Button variant="contained" color="primary" type="submit" name="submit">Login</Button>
+          </Grid>
+          <Grid item xs={12} justify="center">
+            <Button onClick={()=>setLoginToggle(!loginToggle)}>Go to register</Button>
           </Grid>
         </Grid>
       </form>
