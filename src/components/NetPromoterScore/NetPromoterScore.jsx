@@ -81,6 +81,9 @@ function NetPromoterScore(){
             ]}
           />
           </div>
+          <div>
+            <p>Net Promoter Score measures a participants likelihood of recommending YourPath to a peer. The rating is on a scale of 1 to 10.</p>
+          </div>
           {/* </CardMedia>
           </Card> */}
         </Box>
