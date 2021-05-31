@@ -10,9 +10,24 @@ import {
   } from '@material-ui/core';
 import OTCMonthPie from '../OTCMonthPie/OTCMonthPie';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 function OTCMonth(){
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     //select info from store
     const form = useSelector((store)=>store.form);
@@ -46,10 +61,19 @@ function OTCMonth(){
           <Card>
           <CardContent>
             <OTCMonthPie />
-            <p>Over the counter used in the last month Yes:{OTCMonthlyYes}</p>
-            <p>Over the Counter used in the last month No: {OTCMonthlyNo}</p>
-            <Divider />
-            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used over-the-counter drugs such as Robitussin or Imodium. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
+            <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used over-the-counter drugs such as Robitussin or Imodium at some point in the last month.</h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered YES to using Over-the-Counter substances in their last month.</p></TableCell><TableCell align="right">{OTCMonthlyYes}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered NO to using Over-the-Counter substances in their last month.</p></TableCell><TableCell align="right">{OTCMonthlyNo}</TableCell>
+                    </TableRow>
+                  </TableHead>
+                </Table> 
           </CardContent>
           </Card>
         </Box>

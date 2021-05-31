@@ -42,7 +42,7 @@ function OtherSubstancesMonthPie () {
             label: '# of Votes',
             data: [otherSubstancesYesDisplay, otherSubstancesNoDisplay],
             backgroundColor: [
-              'rrgba(167, 221, 205, .3)',
+              'rgba(167, 221, 205, .3)',
               'rgba(0, 73, 116, .2)',
             ],
             borderColor: [

@@ -10,9 +10,25 @@ import {
   Typography
 } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 function AllDrugsAllTime(){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
     //select info from store
     const form = useSelector((store)=>store.form);
 
@@ -64,8 +80,12 @@ function AllDrugsAllTime(){
         //define display
         nicotineDisplay= 
         <>
-        <p>Nicotine Yes:{ nicotineYes}</p>
-        <p>Nicotine No: {nicotineNo}</p>
+        <TableRow>
+       <TableCell> <p>The number of users that said YES to using Nicotine in their lifetime</p></TableCell> <TableCell align="right">{ nicotineYes}</TableCell>
+       </TableRow>
+       <TableRow>
+        <TableCell><p>The number of users that said NO to using Nicotine in their lifetime</p></TableCell><TableCell align="right">{nicotineNo}</TableCell> 
+        </TableRow>
         </>
         })
       }
@@ -96,8 +116,12 @@ function AllDrugsAllTime(){
         //define display
         alcoholDisplay= 
         <>
-        <p>Alcohol Used Yes:{ alcoholYes}</p>
-        <p>Alcohol Used No: {alcoholNo}</p>
+        <TableRow>
+       <TableCell> <p>The number of users that said YES to using Alcohol in their lifetime</p></TableCell> <TableCell align="right">{ alcoholYes}</TableCell>
+       </TableRow>
+       <TableRow>
+        <TableCell><p>The number of users that said NO to using Alcohol in their lifetime</p></TableCell><TableCell align="right">{alcoholNo}</TableCell> 
+        </TableRow>
         </>
         })
       }
@@ -123,9 +147,13 @@ function AllDrugsAllTime(){
        console.log(marijuanaYes, marijuanaNo)
        display= 
        <>
-       <p>Marijuana Yes:{marijuanaYes}</p>
-       <p>Marijuana No: {marijuanaNo}</p>
-       </>
+        <TableRow>
+       <TableCell> <p>The number of users that said YES to using Marijuana in their lifetime</p></TableCell> <TableCell align="right">{marijuanaYes}</TableCell>
+       </TableRow>
+       <TableRow>
+        <TableCell><p>The number of users that said NO to using Marijuana in their lifetime</p></TableCell><TableCell align="right">{marijuanaNo}</TableCell> 
+        </TableRow>
+        </>
        })
      }
      return display;
@@ -148,9 +176,13 @@ function AllDrugsAllTime(){
        console.log(cocaineYes, cocaineNo)
        display= 
        <>
-       <p>Cocaine Yes:{cocaineYes}</p>
-       <p>Cocaine No: {cocaineNo}</p>
-       </>
+        <TableRow>
+       <TableCell> <p>The number of users that said YES to using Cocaine in their lifetime</p></TableCell> <TableCell align="right">{cocaineYes}</TableCell>
+       </TableRow>
+       <TableRow>
+        <TableCell><p>The number of users that said NO to using Cocaine in their lifetime</p></TableCell><TableCell align="right">{cocaineNo}</TableCell> 
+        </TableRow>
+        </>
        })
      }
      return display;
@@ -179,8 +211,12 @@ function AllDrugsAllTime(){
         //define display
         methDisplay= 
         <>
-        <p>Meth Yes:{ methYes}</p>
-        <p>Meth No: {methNo}</p>
+        <TableRow>
+       <TableCell> <p>The number of users that said YES to using Meth in their lifetime</p></TableCell> <TableCell align="right">{ methYes}</TableCell>
+       </TableRow>
+       <TableRow>
+        <TableCell><p>The number of users that said NO to using Meth in their lifetime</p></TableCell><TableCell align="right">{methNo}</TableCell> 
+        </TableRow>
         </>
         })
       }
@@ -201,14 +237,15 @@ function AllDrugsAllTime(){
          else{
              heroinNo++
          }
-        //  if(!answer.answer){
-        //      methNo++
-        // }
         console.log(heroinYes, heroinNo)
         heroinDisplay= 
         <>
-        <p>Heroin Yes:{heroinYes}</p>
-        <p>Heroin No: {heroinNo}</p>
+        <TableRow>
+       <TableCell> <p>The number of users that said YES to using Heroin in their lifetime</p></TableCell> <TableCell align="right">{heroinYes}</TableCell>
+       </TableRow>
+       <TableRow>
+        <TableCell><p>The number of users that said NO to using Heroin in their lifetime</p></TableCell><TableCell align="right">{heroinNo}</TableCell> 
+        </TableRow>
         </>
         })
       }
@@ -232,8 +269,12 @@ function AllDrugsAllTime(){
        console.log(opiodsYes, opiodsNo)
        display= 
        <>
-       <p>Opiods Yes:{opiodsYes}</p>
-       <p>Opiods No: {opiodsNo}</p>
+       <TableRow>
+      <TableCell> <p>The number of users that said YES to using Opioids in their lifetime</p></TableCell> <TableCell align="right">{opiodsYes}</TableCell>
+      </TableRow>
+      <TableRow>
+       <TableCell><p>The number of users that said NO to using Opioids in their lifetime</p></TableCell><TableCell align="right">{opiodsNo}</TableCell> 
+       </TableRow>
        </>
        })
      }
@@ -257,9 +298,14 @@ function AllDrugsAllTime(){
         console.log(benzYes, benzNo)
         display= 
         <>
-        <p>Benzodiazepines Yes:{benzYes}</p>
-        <p>Benzodiazepines No: {benzNo}</p>
+        <TableRow>
+       <TableCell> <p>The number of users that said YES to using Benzodiazepines in their lifetime</p></TableCell> <TableCell align="right">{benzYes}</TableCell>
+       </TableRow>
+       <TableRow>
+        <TableCell><p>The number of users that said NO to using Benzodiazepines in their lifetime</p></TableCell><TableCell align="right">{benzNo}</TableCell> 
+        </TableRow>
         </>
+
         })
       }
       return display;
@@ -282,9 +328,14 @@ function AllDrugsAllTime(){
        console.log(hallucinogenYes, hallucinogenNo)
        display= 
        <>
-       <p>Hallucinogen Yes:{hallucinogenYes}</p>
-       <p>Hallucinogen No: {hallucinogenNo}</p>
-       </>
+        <TableRow>
+       <TableCell> <p>The number of users that said YES to using Hallucinogen in their lifetime</p></TableCell> <TableCell align="right">{hallucinogenYes}</TableCell>
+       </TableRow>
+       <TableRow>
+        <TableCell><p>The number of users that said NO to using Hallucinogen in their lifetime</p></TableCell><TableCell align="right">{hallucinogenNo}</TableCell> 
+        </TableRow>
+        </>
+
        })
      }
      return display;
@@ -307,8 +358,12 @@ function AllDrugsAllTime(){
       console.log(inhalantYes, inhalantNo)
       display= 
       <>
-      <p>Inhalant Yes:{inhalantYes}</p>
-      <p>Inhalant No: {inhalantNo}</p>
+      <TableRow>
+     <TableCell> <p>The number of users that said YES to using Inhalant in their lifetime</p></TableCell> <TableCell align="right">{inhalantYes}</TableCell>
+     </TableRow>
+     <TableRow>
+      <TableCell><p>The number of users that said NO to using Inhalant in their lifetime</p></TableCell><TableCell align="right">{inhalantNo}</TableCell> 
+      </TableRow>
       </>
       })
     }
@@ -332,9 +387,14 @@ function AllDrugsAllTime(){
        console.log(OTCYes, OTCNo)
        display= 
        <>
-       <p>Over-the-Counter Yes:{OTCYes}</p>
-       <p>Over-the-Counter No: {OTCNo}</p>
-       </>
+      <TableRow>
+     <TableCell> <p>The number of users that said YES to using Over-the-Counter in their lifetime</p></TableCell> <TableCell align="right">{OTCYes}</TableCell>
+     </TableRow>
+     <TableRow>
+      <TableCell><p>The number of users that said NO to using Over-the-Counter in their lifetime</p></TableCell><TableCell align="right">{OTCNo}</TableCell> 
+      </TableRow>
+      </>
+
        })
      }
      return display;
@@ -363,8 +423,12 @@ function AllDrugsAllTime(){
         //define display
         otherDisplay= 
         <>
-        <p>Other Substances Used Yes:{ otherYes}</p>
-        <p>Other Substances Used No: {otherNo}</p>
+        <TableRow>
+       <TableCell> <p>The number of users that said YES to using Other Substances in their lifetime</p></TableCell> <TableCell align="right">{ otherYes}</TableCell>
+       </TableRow>
+       <TableRow>
+        <TableCell><p>The number of users that said NO to using Other Substances in their lifetime</p></TableCell><TableCell align="right">{otherNo}</TableCell> 
+        </TableRow>
         </>
         })
       }
@@ -377,21 +441,28 @@ function AllDrugsAllTime(){
       <Card>
         <CardContent>
           <AllDrugsBar />
-          {getNicotineAT()}
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell><h3>This bar chart shows all-time drug usage rates, by category, of YourPath assessment takers. Each category of drug shows the percentage of responders who indicated they had ingested the respective substance at some point in their life.</h3></TableCell><TableCell></TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
           {getAlcoholAT()}
-          {getMarijuanaAT()}
-          {getCocaineAT()}
-          {getMethAT()}
-          {getHeroinAT()}
-          {getOtherOpiodsAT()}
           {getBenzoAT()}
+          {getCocaineAT()}
           {getHallucinogenAT()}
+          {getHeroinAT()}
           {getInhalantAT()}
-          {getOTCAT()}
-          {getOtherSubsAT()}    
+          {getMarijuanaAT()}
+          {getMethAT()}
+          {getNicotineAT()}
+          {getOtherOpiodsAT()}\
+          {getOtherSubsAT()} 
+          {getOTCAT()} 
+            </TableBody>
+          </Table>
         </CardContent>
-        <Divider />
-        <p>This bar chart shows all-time drug usage rates, by category, of YourPath assessment takers. Each category of drug shows the percentage of responders who indicated they had ingested the respective substance at some point in their life. </p>
     </Card>
     </Box>
     )

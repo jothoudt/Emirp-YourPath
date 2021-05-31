@@ -10,9 +10,24 @@ import {
   } from '@material-ui/core';
 import InhalantsMonthPie from '../InhalantsMonthPie/InhalantsMonthPie';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 function InhalantsMonth(){
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     //select info from store
     const form = useSelector((store)=>store.form);
@@ -47,10 +62,19 @@ function InhalantsMonth(){
           <CardContent>
             <Divider />
             <InhalantsMonthPie />
-            <p>Inhalants in the last month Yes:{inhalantsMonthlyYes}</p>
-            <p>Inhalants in the last month No: {inhalantsMonthlyNo}</p>
-            <Divider />
-            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used inhalants, including dust-off, glue, paint or whippets. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
+            <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>YourPath assessment takers were given the choice of entering how many days in the previous month they used inhalants, including dust-off, glue, paint or whippets. This pie graph shows the percentage of people who had used at least one day in the previous month.</h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered YES to using Inhalants in their last month.</p></TableCell><TableCell align="right">{inhalantsMonthlyYes}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered NO to using Inhalants in their last month</p></TableCell><TableCell align="right">{inhalantsMonthlyNo}</TableCell>
+                    </TableRow>
+                  </TableHead>
+                </Table>
           </CardContent>
           </Card>
         </Box>

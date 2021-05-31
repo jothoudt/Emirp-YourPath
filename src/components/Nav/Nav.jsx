@@ -132,6 +132,14 @@ function DropdownMenu ( { open, setOpen }) {
               <h4 className="link-header">Health</h4>
           </DropdownItem>
         </Link>  
+        
+        <Link to="/userstatistics" onClick={()=>setOpen(!open)}>
+          <DropdownItem
+            leftIcon={<BiHeartCircle />}
+            rightIcon={<FiChevronRight />}>
+              <h4 className="link-header">Admin</h4>
+          </DropdownItem>
+        </Link>  
 
         {/* <Link to="/about"> */}
           <DropdownItem

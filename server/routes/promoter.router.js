@@ -12,7 +12,7 @@ promoterRouter.get('/', (req, res)=>{
 
     console.log(process.env.API_KEY);
   
-    const options={url: `https://hipaa-api.jotform.com/form/211324333888154/submissions?apiKey=${process.env.API_KEY}`}
+    const options={url: `https://hipaa-api.jotform.com/form/211324333888154/submissions?apiKey=${process.env.API_KEY}&limit=100&orderby=id`}
     console.log(options)
     axios.request(options).then(function (response) {
       console.log(response.data);

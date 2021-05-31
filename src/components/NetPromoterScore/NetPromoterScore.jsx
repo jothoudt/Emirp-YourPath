@@ -45,7 +45,7 @@ function NetPromoterScore(){
             total += Number(score);
         })
         console.log(total)
-        average= total / promoterScores.length;
+        average= (total / promoterScores.length).toFixed(1);
         console.log(average)
         // let displayaverage= <><p>Average Score: {average}</p></>
         return average;
