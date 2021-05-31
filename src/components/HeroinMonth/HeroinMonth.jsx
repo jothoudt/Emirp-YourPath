@@ -69,10 +69,10 @@ function HeroinMonth(){
                       <TableCell><h3>YourPath assessment takers were given the choice of entering how many days in the previous month they used heroin or fentanyl powder. This pie graph shows the percentage of people who had used at least one day in the previous month.</h3></TableCell><TableCell></TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell><p>The number of users that anwered YES to using Heroin in their lifetime.</p></TableCell><TableCell align="right">{heroinMonthlyYes}</TableCell>
+                      <TableCell><p>The number of users that indicated using heroin in the last month.</p></TableCell><TableCell align="right">{heroinMonthlyYes}</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell><p>The number of users that anwered NO to using Heroin in their lifetime.</p></TableCell><TableCell align="right">{heroinMonthlyNo}</TableCell>
+                      <TableCell><p>The number of users that indicated they haven't used heroin in the last month.</p></TableCell><TableCell align="right">{heroinMonthlyNo}</TableCell>
                     </TableRow>
                   </TableHead>
                 </Table>
