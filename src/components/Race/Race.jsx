@@ -14,9 +14,25 @@ import { PlaylistAddOutlined } from '@material-ui/icons';
 import Button from '@material-ui/core/Button';
 import Demographics from '../Demographics/Demographics';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 function Race(){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
   // pulls down assessment results from the store
     const form = useSelector((store)=>store.form);
     const user = useSelector((store)=>store.user);
@@ -87,21 +103,38 @@ function Race(){
           <Card>
             <CardContent>
               <RacePieChartDetails />
-              <Divider />
-              
-              {/* <p>Black or African American: {blackOrAfricanAmerican}</p>
-              <p>East African/Somali/AfricanBorn: {eastAfricanSomaliAfricanBorn}</p>
-              <p>Asian: {asian}</p>
-              <p>Native Hawaiin/Pacific Islander: {nativeHawaiinOrPacificIslander}</p>
-              <p>Alaska Native: {alaskaNative}</p>
-              <p>White: {white}</p>
-              <p>Native American: {nativeAmerican}</p>
-              <p>Did not disclose: {noDisclosure}</p> */}
-              <p>YourPath’s assessment asks takers to describe their cultural background, including options for Black, East African/Somali/African Born, Asian, Native Hawaiin/Pacific Islander, Alaska native, white or Native American. This pie chart shows a breakdown of how people responded.</p>
+              <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>YourPath’s assessment asks takers to describe their cultural background, including options for Black, East African/Somali/African Born, Asian, Native Hawaiin/Pacific Islander, Alaska native, white or Native American. This pie chart shows a breakdown of how people responded.</h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    </TableHead>
+                    <TableRow>
+                      <TableCell><p>The number of users that identified as Black or African American.</p></TableCell><TableCell align="right">{blackOrAfricanAmerican}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that identified as East African/Somali/African Born.</p></TableCell><TableCell align="right">{eastAfricanSomaliAfricanBorn}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that identified as Asian.</p></TableCell><TableCell align="right">{asian}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that identified as Native Hawaiin/Pacific Islander</p></TableCell><TableCell align="right">{nativeHawaiinOrPacificIslander}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that identified as Alaska Native.</p></TableCell><TableCell align="right">{alaskaNative}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that identified as White.</p></TableCell><TableCell align="right">{white}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that identified as Native American.</p></TableCell><TableCell align="right">{nativeAmerican}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that did not disclose.</p></TableCell><TableCell align="right">{noDisclosure}</TableCell>
+                    </TableRow>
+                </Table>
             </CardContent>
-            {/* <CardActions>
-              <Button onClick={addToFavorites}>Add to Favorites</Button>
-            </CardActions> */}
           </Card>
         </Box>
        })

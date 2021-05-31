@@ -34,30 +34,6 @@ function AllDrugsBar () {
     let nicotineDisplay=0;
     let other=0;
     let otherDisplay=0;
-
-    // form.map((item)=>{
-    //     let answer=item.answers[119]
-    //     if(answer.answer==='Yes'){
-    //        marijuana++
-    //     }
-    //     marijuanaDisplay = ((marijuana / total) * 100).toFixed(1);
-    //     })
-    
-    // form.map((item)=>{
-    //     let answer=item.answers[127]
-    //     if(answer.answer==='Yes'){
-    //          overTheCounter++
-    //     }
-    //     overTheCounterDisplay = ((overTheCounter / total) * 100).toFixed(1);
-    //     })
-    
-    // form.map((item)=>{
-    //     let answer=item.answers[125]
-    //     if(answer.answer==='Yes'){
-    //         hallucinogen++
-    //     }
-    //     hallucinogenDisplay = ((hallucinogen / total) * 100).toFixed(1);
-    //     }) 
     
     function getDrugs(counter, display, number) {
         counter=0;

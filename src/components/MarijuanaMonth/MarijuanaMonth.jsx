@@ -10,8 +10,24 @@ import {
   } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import MarijuanaMonthPieChart from '../MarijuanaMonthPieChart/MarijuanaMonthPieChart';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 function MarijuanaMonth(){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     //select info from store
     const form = useSelector((store)=>store.form);
@@ -45,13 +61,20 @@ function MarijuanaMonth(){
         <Card >
         <CardContent>
           <Divider />
-          {/* <Box mx="auto" width="40%"> */}
           <MarijuanaMonthPieChart />
-          {/* </Box> */}
-            <p>Marijuana in the last month Yes:{marijuanaMonthlyYes}</p>
-            <p>Marijuana in the last month No: {marijuanaMonthlyNo}</p>
-          <Divider />
-            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they ingested marijuana, including K2, wax and spice. This pie graph shows the percentage of people who had used at least one day in the previous month.</p>
+          <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>YourPath assessment takers were given the choice of entering how many days in the previous month they ingested marijuana, including K2, wax and spice. This pie graph shows the percentage of people who had used at least one day in the previous month.</h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered YES to using Marijuana in their last month</p></TableCell><TableCell align="right">{marijuanaMonthlyYes}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered NO to using Marijuana in their last month</p></TableCell><TableCell align="right">{marijuanaMonthlyNo}</TableCell>
+                    </TableRow>
+                  </TableHead>
+                </Table>
         </CardContent>
         </Card>
         </Box>

@@ -11,9 +11,25 @@ import {
 } from '@material-ui/core';
 import NicotinePieChartDetails from '../NicotinePieChartDetails/NicotinePieChartDetails';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 function NicotineAllTime(){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     //select information from the store
     const form = useSelector((store)=>store.form);
@@ -49,11 +65,20 @@ function NicotineAllTime(){
         <Box mx='auto' width="75%" >
           <Card>
             <CardContent>
-              <NicotinePieChartDetails />           
-              <p>Nicotine Yes:{nicotineYes}</p>
-              <p>Nicotine No: {nicotineNo}</p>
-              <Divider />
-              <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used nicotine products (cigarettes, vaping, chew, cigars, etc.), at some point in their life. </p>
+              <NicotinePieChartDetails />  
+              <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used nicotine products (cigarettes, vaping, chew, cigars, etc.), at some point in their life.</h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered YES to using Nicotine in their lifetime.</p></TableCell><TableCell align="right">{nicotineYes}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered NO to using Nicotine in their lifetime.</p></TableCell><TableCell align="right">{nicotineNo}</TableCell>
+                    </TableRow>
+                  </TableHead>
+                </Table> 
             </CardContent>
           </Card>
         </Box>

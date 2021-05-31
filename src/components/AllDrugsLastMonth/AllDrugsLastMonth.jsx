@@ -8,11 +8,29 @@ import {
   CardContent,
   CardHeader,
   Divider,
+  TableCell,
+  TableRow,
   Typography
 } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import { makeStyles } from '@material-ui/core/styles';
+
 
 function AllDrugsLastMonth (){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
+
 
     // pulls down assessment results from the store
     const form = useSelector((store)=>store.form);
@@ -43,6 +61,9 @@ function AllDrugsLastMonth (){
     let nicotineDisplay=0;
     let other=0;
     let otherDisplay=0;
+    let yCounter= 0;
+    let nCounter=0;
+    let counterDisplay=0;
 
     function getDrugs(counter, display, number) {
         counter=0;
@@ -59,6 +80,42 @@ function AllDrugsLastMonth (){
         console.log('this is the display:', display);
         return display;
     }
+
+   const getCount=(drug, number)=>{
+     yCounter=0
+     nCounter=0
+     counterDisplay=<></>
+     form.map((item)=>{
+       let answer=item.answers[number]
+       if(!answer){
+        counterDipslay= <p>loading</p>
+       }
+       if(!answer.answer){
+         nCounter++
+       }
+       else if(answer.answer){
+         yCounter++
+       }
+       counterDisplay=
+       <>
+       <TableRow>
+         <TableCell>The number of users that selected YES to using {drug} in the last month.</TableCell><TableCell align="right">{yCounter}</TableCell>
+       </TableRow>
+       <TableRow>
+         <TableCell>The number of users that selected NO to using {drug} in the last month.</TableCell><TableCell align="right">{nCounter}</TableCell>
+         </TableRow>
+       </>
+     }
+   )
+   return counterDisplay;
+   }
+   const getTable=()=>{
+     let tableDisplay=
+     <>
+     
+     </>
+
+   }
 
     const data = {
         labels: ['Marijuana', 'Over The Counter', 'Hallucinogens', 'Methamphetamine', 'Cocaine', 'Inhalants', 'Benzodiazepines', 'Other Opiods', 'Heroin', 'Alcohol', 'Nicotine', 'Other'],
@@ -96,8 +153,27 @@ function AllDrugsLastMonth (){
               <h1 className='title'>All Drugs Used</h1>
             </div>
             <Bar data={data} options={options} />
-            <Divider />
-            <p>YourPath assessment takers were given the choice of entering how many days in the previous month they ingested a selection of different substances in the last month. This bar chart summarizes the percentage of people who had used at least one day in the previous month, across all of the included categories.</p>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell><h3>YourPath assessment takers were given the choice of entering how many days in the previous month they ingested a selection of different substances in the last month. This bar chart summarizes the percentage of people who had used at least one day in the previous month, across all of the included categories.</h3></TableCell><TableCell></TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {getCount('Alcohol', 134)}
+                {getCount('Benzodiazepines', 140)}
+                {getCount('Cocaine', 136)}
+                {getCount('Hallucinogen', 141)}
+                {getCount('Heroin', 138)}
+                {getCount('Inhalants', 142)}
+                {getCount('Marijuana', 135)}
+                {getCount('Methamphetamine', 137)}
+                {getCount('Nicotine', 133)}
+                {getCount('Opioids', 139)}
+                {getCount('Over the Counter', 143)}
+                {getCount('Other Substances', 144)}
+              </TableBody>
+            </Table>
           </CardContent>
         </Card>
       </Box>

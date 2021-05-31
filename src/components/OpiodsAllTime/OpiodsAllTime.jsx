@@ -11,9 +11,25 @@ import {
 } from '@material-ui/core';
 import OpiodsPieChartDetails from '../OpiodsPieChartDetails/OpiodsPieChartDetails';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 function OpiodsAllTime(){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     const form = useSelector((store)=>store.form);
 
@@ -42,11 +58,20 @@ function OpiodsAllTime(){
        <Box mx='auto' width="75%" >
         <Card>
             <CardContent> 
-              <OpiodsPieChartDetails />        
-              <p>Opioids Yes:{opiodsYes}</p>
-              <p>Opioids No: {opiodsNo}</p>
-              <Divider />
-              <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used other opioids, including painkillers, fentanyl patches and opium, at some point in their life. </p>
+              <OpiodsPieChartDetails /> 
+              <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used other opioids, including painkillers, fentanyl patches and opium, at some point in their life.</h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered YES to using Opioids in their lifetime.</p></TableCell><TableCell align="right">{opiodsYes}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that anwered NO to using Opioidsin their lifetime.</p></TableCell><TableCell align="right">{opiodsNo}</TableCell>
+                    </TableRow>
+                  </TableHead>
+                </Table>  
             </CardContent>
         </Card>
        </Box>

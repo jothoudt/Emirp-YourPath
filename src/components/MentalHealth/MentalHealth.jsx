@@ -13,9 +13,25 @@ import {
 } from '@material-ui/core';
 import HealthStatistics from '../HealthStatistics/HealthStatistics';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 function MentalHealth(){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     const form = useSelector((store)=>store.form);
 
@@ -87,20 +103,47 @@ function MentalHealth(){
       <Box mx='auto' width="75%" >
       <Card>
         <CardContent>
-          <MentalHealthBar />        
-          <p>Post-Traumatic Stress Disorder or PTSD: {ptsd}</p>
-          <p>Anxiety or Panic Attacks: {anxiety}</p>
-          <p>Depression: {depression}</p>
-          <p>Bipolar Disorder {bipolar}</p>
-          <p>Schizophrenia: {schizophrenia}</p>
-          <p>Attention-deficit hyperactivity disorder or ADHD: {adhd}</p>
-          <p>Eating disorder, including anorexia or bulimia: {eatingDisorder}</p>
-          <p>Obsessive-Compulsive Disorder: {ocd}</p>
-          <p>Borderline Personality Disorder: {personalityDisorder}</p>
-          <p>Other mental health issue: {other}</p>        
-          <p>Declined: {declined}</p>
-          <Divider />  
-          <p>The YourPath assessment asks people to indicate whether they suspect or were told they have a mental health diagnosis. Because the form allows takers to mark more than one option, we used a bar chart to show full counts for each mental health condition selected.</p>
+          <MentalHealthBar /> 
+          <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>The YourPath assessment asks people to indicate whether they suspect or were told they have a mental health diagnosis. Because the form allows takers to mark more than one option, we used a bar chart to show full counts for each mental health condition selected.</h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    </TableHead>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Post-Traumatic Stress Disorder or PTSD.</p></TableCell><TableCell align="right">{ptsd}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Anxiety or Panic Attacks.</p></TableCell><TableCell align="right">{anxiety}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Depression.</p></TableCell><TableCell align="right">{depression}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Bipolar Disorder .</p></TableCell><TableCell align="right">{bipolar}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Schizophrenia.</p></TableCell><TableCell align="right">{schizophrenia}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Attention-deficit hyperactivity disorder or ADHD .</p></TableCell><TableCell align="right">{adhd}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Eating disorder, including anorexia or bulimia.</p></TableCell><TableCell align="right">{eatingDisorder}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Obsessive-Compulsive Disorder.</p></TableCell><TableCell align="right">{ocd}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Borderline Personality Disorder.</p></TableCell><TableCell align="right">{personalityDisorder}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Other mental health issue.</p></TableCell><TableCell align="right">{other}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that declined to answer.</p></TableCell><TableCell align="right">{declined}</TableCell>
+                    </TableRow>
+                </Table> 
           </CardContent>
       </Card>
       </Box>

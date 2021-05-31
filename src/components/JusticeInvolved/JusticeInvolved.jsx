@@ -13,8 +13,24 @@ import {
 } from '@material-ui/core';
 import Demographics from '../Demographics/Demographics';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 function JusticeInvolved(){
+
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     const form = useSelector((store)=>store.form);
 
@@ -78,18 +94,41 @@ function JusticeInvolved(){
       <Box mx='auto' width="75%" >
         <Card>
           <CardContent>
-            <JusticeInvolvedBar />       
-            <p>No current or past legal issues: {none}</p>
-            <p>Past issues, no current: {past}</p>
-            <p>Awaiting sentencing: {awaitingSentencing}</p>
-            <p>Part of drug court or other treatment court: {drugCourt}</p>
-            <p>Out on bail: {outOnBail}</p>
-            <p>On probation: {probation}</p>
-            <p>On parole: {parole}</p>
-            <p>In the workhouse: {workhouse}</p>        
-            <p>Declined: {declined}</p>
-            <Divider /> 
-            <p>This bar chart shows the various responses to a question in YourPath’s assessment that asks the taker to describe their legal issues. Because the person can mark multiple options, we used a bar chart instead of a pie graph to give count totals for each answer category.</p>
+            <JusticeInvolvedBar />  
+            <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>This bar chart shows the various responses to a question in YourPath’s assessment that asks the taker to describe their legal issues. Because the person can mark multiple options, we used a bar chart instead of a pie graph to give count totals for each answer category.</h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    </TableHead>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected no current or past legal issues.</p></TableCell><TableCell align="right">{none}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Past issues, no current.</p></TableCell><TableCell align="right">{past}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Awaiting sentencing.</p></TableCell><TableCell align="right">{awaitingSentencing}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Part of drug court or other treatment court .</p></TableCell><TableCell align="right">{drugCourt}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected Out on bail.</p></TableCell><TableCell align="right">{outOnBail}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected On probation.</p></TableCell><TableCell align="right">{probation}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected On parole.</p></TableCell><TableCell align="right">{parole}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that selected In the workhouse.</p></TableCell><TableCell align="right">{workhouse}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that Declined to answer.</p></TableCell><TableCell align="right">{declined}</TableCell>
+                    </TableRow>
+                </Table>
           </CardContent>
         </Card>
       </Box>

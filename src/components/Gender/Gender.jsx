@@ -13,8 +13,23 @@ import {
 } from '@material-ui/core';
 import Demographics from '../Demographics/Demographics';
 import Box from '@material-ui/core/Box';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 function Gender(){
+  const useStyles = makeStyles({
+    table: {
+      width: "50%",
+      margin: 'auto',
+      marginBottom: '50px',
+    },
+  });
+  const classes=useStyles();
 
     const form = useSelector((store)=>store.form);
 
@@ -63,13 +78,28 @@ function Gender(){
           <Card> 
             <CardContent>
               <GenderBarChart />
-              <p>Male: {male}</p>
-              <p>Female: {female}</p>
-              <p>Transgender: {transgender}</p>
-              <p>Non-binary: {nonBinary}</p>
-              <p>Declined: {declined}</p>
-              <Divider />
-              <p>People taking the YourPath assessment are given the option of indicating their gender. Because the form allows more than one response, we used a bar chart to visualize the count totals of each category.</p>
+              <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell><h3>People taking the YourPath assessment are given the option of indicating their gender. Because the form allows more than one response, we used a bar chart to visualize the count totals of each category.</h3></TableCell><TableCell></TableCell>
+                    </TableRow>
+                    </TableHead>
+                    <TableRow>
+                      <TableCell><p>The number of users that identified as Male.</p></TableCell><TableCell align="right">{male}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that identified as Female.</p></TableCell><TableCell align="right">{female}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that identified as Transgender.</p></TableCell><TableCell align="right">{transgender}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that identified as Non-binary</p></TableCell><TableCell align="right">{nonBinary}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell><p>The number of users that Declined to answer.</p></TableCell><TableCell align="right">{declined}</TableCell>
+                    </TableRow>
+                </Table>
             </CardContent>
           </Card>
         </Box>
