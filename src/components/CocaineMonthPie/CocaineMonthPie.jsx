@@ -24,12 +24,14 @@ function CocaineMonthPie () {
         //if the answer is yes
        if(answer.answer){
         cocaineYes++
-       }
+       }//end if 
        //otherwise undecided and no equal No
        else{
         cocaineNo++
-      }
+      }//end else
+      //display yes results as a percentage
       cocaineYesDisplay = ((cocaineYes / cocaineTotal) * 100).toFixed(1);
+      //display no results as a percentage
       cocaineNoDisplay = ((cocaineNo / cocaineTotal) * 100).toFixed(1);
       })
       
@@ -52,7 +54,7 @@ function CocaineMonthPie () {
           },
         ],
     };
-    //render to dom
+    //render to dom a title and a pie chart for cocaine usage in the last month
     return (
         <>
         <div className='header'>

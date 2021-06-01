@@ -10,6 +10,8 @@ import Box from '@material-ui/core/Box';
 import CocaineMonth from '../CocaineMonth/CocaineMonth';
 import CocaineAllTime from '../CocaineAllTime/CocaineAllTime';
 
+//--------------this component allows the user to switch between results of Cocaine in last month and Cocaine usage all time-------------------------
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   

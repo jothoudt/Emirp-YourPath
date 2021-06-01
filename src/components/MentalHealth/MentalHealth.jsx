@@ -21,9 +21,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
-
+//returns results for mental health
 function MentalHealth(){
-
+//used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -31,10 +31,11 @@ function MentalHealth(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
-
+  //get data from the store
     const form = useSelector((store)=>store.form);
-
+    //define the necessary variables
     let ptsd=0;
     let anxiety=0;
     let depression=0;
@@ -47,58 +48,63 @@ function MentalHealth(){
     let other=0;
     let declined=0;
     
-     // const mjMap=form[119].answer
+    //conditionally renders card to the DOM
     const answer1 =()=>{
       let display=''
       console.log('in answer')
+      //if form data doesn't exist display loading
       if(!form){
         display=<p>loading</p>
-      }
+      }//end if
+      //if form data does exist map through data
       if(form.length){
         form.map((item)=>{
           console.log( 'item', item );
+          //target a specific question number to return results from the api
           let answer=item.answers[150]
           console.log( 'mental health:', answer.answer );
+          //if answer.answer exists proceed through next set of conditionals if itemAnswer matches string add one to variable in that conditional
         if ( answer.answer ) {
           let answerArray = answer.answer
           console.log( 'answer length:', answerArray.length );
           answerArray.map( ( itemAnswer )=>{
             if(itemAnswer === 'Post-Traumatic Stress Disorder or PTSD'){
               ptsd++
-            }
+            }//end if
             else if (itemAnswer === 'Anxiety or Panic Attacks') {
               anxiety++
-            }
+            }//end else if
             else if (itemAnswer === 'Depression') {
               depression++
-            }
+            }//end else if
             else if (itemAnswer === 'Bipolar Disorder') {
               bipolar++
-            }
+            }//end else if
             else if (itemAnswer === 'Schizophrenia') {
               schizophrenia++
-            }
+            }//end else if
             else if (itemAnswer === 'Attention-deficit hyperactivity disorder (ADHD)') {
               adhd++
-            }
+            }//end else if
             else if (itemAnswer === 'Eating disorder, including anorexia or bulimia') {
               eatingDisorder++
-            }
+            }//end else if
             else if (itemAnswer === 'Obsessive-Compulsive Disorder') {
               ocd++
-            }
+            }//end else if
             else if (itemAnswer === 'Borderline Personality Disorder') {
               personalityDisorder++
-            }
+            }//end else if
             else if (itemAnswer === 'Other mental health issue') {
               other++
-            }
+            }//end else if
         })
       }
+      //if no answer or declined add one to declined
         else{
           declined++
         }
-      //console.log('in gender:', male, female, transgender, nonBinary, declined )
+      //display returns a bar chart and table with the details from the responses to mental health
       display= 
       <Box mx='auto' width="75%" >
       <Card>
@@ -151,6 +157,7 @@ function MentalHealth(){
     }
     return display;
   }
+  //render health statistics dropdown and conditionally render Mental health card to the DOm
     return(
         <>
         <HealthStatistics />

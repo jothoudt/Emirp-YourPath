@@ -21,51 +21,54 @@ function MentalHealthBar () {
     let other=0;
     let declined=0;
     let total = form.length;
-    
+    //map through data from the store
       form.map((item)=>{
+        //target specific question number to return results from the api
         let answer=item.answers[150]
         console.log( 'past services:', answer.answer );
+        //if answer.answer exists proceed through the next set of conditionals. If itemAnswer matches string add one to the variable in that conditional
         if ( answer.answer ) {
         let answerArray = answer.answer
         console.log( 'answer length:', answerArray.length );
         answerArray.map( ( itemAnswer )=>{  
           if(itemAnswer === 'Post-Traumatic Stress Disorder or PTSD'){
             ptsd++
-          }
+          }//end if
           else if (itemAnswer === 'Anxiety or Panic Attacks') {
             anxiety++
-          }
+          }//end else if
           else if (itemAnswer === 'Depression') {
             depression++
-          }
+          }//end else if
           else if (itemAnswer === 'Bipolar Disorder') {
             bipolar++
-          }
+          }//end else if
           else if (itemAnswer === 'Schizophrenia') {
             schizophrenia++
-          }
+          }//end else if
           else if (itemAnswer === 'Attention-deficit hyperactivity disorder (ADHD)') {
             adhd++
-          }
+          }//end else if
           else if (itemAnswer === 'Eating disorder, including anorexia or bulimia') {
             eatingDisorder++
-          }
+          }//end else if
           else if (itemAnswer === 'Obsessive-Compulsive Disorder') {
             ocd++
-          }
+          }//end else if
           else if (itemAnswer === 'Borderline Personality Disorder') {
             personalityDisorder++
-          }
+          }//end else if
           else if (itemAnswer === 'Other mental health issue') {
             other++
-          }          
+          }//end else if          
       })  
     }
+    //if no answer or declined add one to declined
     else{
       declined++
     }
   })
-
+  //display results as percentages
     ptsd = ((ptsd / total) * 100).toFixed(1);
     anxiety = ((anxiety / total) * 100).toFixed(1);
     depression = ((depression / total) * 100).toFixed(1);
@@ -77,10 +80,7 @@ function MentalHealthBar () {
     personalityDisorder = ((personalityDisorder / total) * 100).toFixed(1);
     other = ((other / total) * 100).toFixed(1);
     declined = ((declined / total) * 100).toFixed(1);
-    
-
-
-
+    //data for the bar chart
     const data = {
         labels: [
           'Post-Traumatic Stress Disorder or PTSD', 
@@ -129,6 +129,7 @@ function MentalHealthBar () {
           ],
         },
       };
+      //renders title and a bar chart
     return(
         <>
             <div className='header'>

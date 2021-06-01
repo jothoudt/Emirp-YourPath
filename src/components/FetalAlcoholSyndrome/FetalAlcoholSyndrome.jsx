@@ -21,9 +21,9 @@ import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-
+//function that returns the results of users with Fetal Alcohol Syndrome
 function FetalAlcoholSyndrome(){
-
+//used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -31,31 +31,36 @@ function FetalAlcoholSyndrome(){
       marginBottom: '50px',
     },
   });
+  //define classes to style table
   const classes=useStyles();
-
+  //get info from the store
     const form = useSelector((store)=>store.form);
-
+    //define variables to count
     let fasYes=0;
     let fasNo=0;
-    
-     // const mjMap=form[119].answer
-
+//conditionally renders results
     const answer1 =()=>{
        let display=''
        console.log('in answer')
+       //if form data doesn't exist display loading
        if(!form){
          display=<p>loading</p>
-       }
+       }//end if
+       //if form information does exist map through the results
        if(form.length){
        form.map((item)=>{
+         //target a specific question to return results from the api
          let answer=item.answers[108]
+         //if answer.answer is yes add one to fasYes
         if(answer.answer==='Yes'){
             fasYes++
-        }
+        }//end if
+        //if answer.answer is no or no answer add one to fasNo
         else{
             fasNo++
-       }
+       }//end else
        console.log(fasYes, fasNo)
+       //display that returns a card with a pie chart and a small table that has a description as the header and display the results in two rows. One for users that selected yes and one for users that selected no
       display= 
       <Box mx='auto' width="75%" >
           <Card>
@@ -79,8 +84,10 @@ function FetalAlcoholSyndrome(){
         </Box>
        })
      }
+     //return display
      return display;
    }
+   //renders health statistics dropdown and conditionally renders the Fetal Alcohol Syndrome Card.
     return(
         <>
         <HealthStatistics />

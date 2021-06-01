@@ -18,6 +18,7 @@ function HeroinAllTimePie () {
 
     //map through the store data
     form.map((item)=>{
+      //target a specific question number to return results from DOM
         let answer=item.answers[122]
         //if answer is yes add one to yes
        if(answer.answer==='Yes'){
@@ -51,7 +52,7 @@ function HeroinAllTimePie () {
           },
         ],
     };
-    //render to dom
+    //render a title and pie chart to the DOM
     return (
         <>
         <div className='header'>

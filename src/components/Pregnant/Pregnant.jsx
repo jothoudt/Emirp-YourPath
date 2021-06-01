@@ -54,7 +54,7 @@ function Pregnant(){
         else if (answer.answer === 'No') {
           notPregnant++
         }
-        else if (answer.answer === 'Not Sure') {
+        else if (answer.answer === 'Not sure') {
           notSure++
         }
       console.log('in pregnant:', pregnant, notPregnant, notSure)

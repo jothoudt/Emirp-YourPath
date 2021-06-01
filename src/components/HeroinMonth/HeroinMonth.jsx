@@ -20,7 +20,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 function HeroinMonth(){
-
+  //used to style table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -28,6 +28,7 @@ function HeroinMonth(){
       marginBottom: '50px',
     },
   });
+  //define classes to style table
   const classes=useStyles();
 
     //select info from store
@@ -37,26 +38,29 @@ function HeroinMonth(){
     let heroinMonthlyYes=0;
     let heroinMonthlyNo=0;
 
-    //function to display count of Marijuana users in the last month
+    //function to display count of Heroin users in the last month
     const answerHeroin=()=>{
         let heroinDisplay=''
         console.log('in answer')
-        //if no data exists
+        //if no data exists display loading
         if(!form){
             heroinDisplay=<p>loading</p>
         }//end if
         //if data exists map through for counts of yes and no
         if(form.length){
         form.map((item)=>{
+          //target specific question number to return results from api
           let answer=item.answers[138]
+          //if answer.answer is yes add one to heroinMonthlyYes
          if(answer.answer){
             heroinMonthlyYes++
          }//end if
+         //if answer.answer is no or no answer add one to heroinMonthllyNo
          else{
             heroinMonthlyNo++
         }//end else
         console.log(heroinMonthlyYes, heroinMonthlyNo)
-        //display for counts
+        //display returns card with heroin use last month pie chart. it also returns a table with a description as the header an two rows. One row for users that selected yes and on for users that selected no
         heroinDisplay= 
         <Box mx='auto' width="75%" >
           <Card>
@@ -81,10 +85,11 @@ function HeroinMonth(){
         </Box>
         })
       }//end if
+      //renturn heroinDisplay
       return heroinDisplay;
     }
 
-    //render to dom
+    //conditionally render card to dom
     return(
         <>
         {answerHeroin()}

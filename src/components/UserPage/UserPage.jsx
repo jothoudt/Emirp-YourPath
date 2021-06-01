@@ -83,7 +83,7 @@ function UserPage() {
   // ,[]);
 
 
-  
+  //renders favorit dashboard and LogOutButton
   return (
     <div className="container">
       <Favorites />

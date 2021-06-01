@@ -8,7 +8,7 @@ function* preferencesSaga(){
     yield takeEvery('DELETE_CHART', deletePreferences)
 }//end searchSaga
 
-//to fetch recipes from 3rd party api that match the search
+//to fetch users favorite charts from the databse
 function* fetchPreferences(action){
     try{
         console.log('in fetch preferences', action.payload )
@@ -17,8 +17,8 @@ function* fetchPreferences(action){
         }
     catch(error){ console.log('get results error', error);
     }
-}//end fetchSearch
-
+}//end fetchPreferences
+//to add users favorite tables to the database
 function* addPreferences(action){
     try{
         console.log('in add preferences', action.payload.id);
@@ -28,8 +28,8 @@ function* addPreferences(action){
     catch{
         console.log('add preferences error' )
     }
-}
-
+}//end addPreferences
+//to delete users favorite table
 function* deletePreferences(action){
     try{
         console.log('in delete', action.payload.user_id)
@@ -39,6 +39,6 @@ function* deletePreferences(action){
     catch(error){
         console.log('delete chart error', error)
     }
-}
+}//end deletePreferences
 
 export default preferencesSaga;

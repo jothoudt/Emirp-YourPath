@@ -2,10 +2,6 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
 import Box from '@material-ui/core/Box';
-
-
-
-
 //function to return pie chart for lifetime heroin use
 function HeroinPieChartDetails () {
     //select items from the store
@@ -20,6 +16,7 @@ function HeroinPieChartDetails () {
 
     //map through the store data
     form.map((item)=>{
+      //target specific question number to return results from the api
         let answer=item.answers[122]
         //if answer is yes add one to yes
        if(answer.answer==='Yes'){
@@ -53,7 +50,7 @@ function HeroinPieChartDetails () {
           },
         ],
     };
-    //render to dom
+    //render a title and resized pie chart to dom
     return (
         <>
         <div className='header'>

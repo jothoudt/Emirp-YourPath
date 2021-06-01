@@ -6,7 +6,7 @@ var jf = require("jotForm");
 const pool = require('../modules/pool');
 
 require('dotenv').config();
-
+//gets network promoter scores from jotform api
 promoterRouter.get('/', (req, res)=>{
     console.log('in apiRouter')
 
@@ -22,8 +22,6 @@ promoterRouter.get('/', (req, res)=>{
       res.sendStatus(500)
     })
   
-})
-
-//get route
+});//end GET
 
 module.exports= promoterRouter;

@@ -28,7 +28,7 @@ function PregnantPieChart () {
         else if(answer.answer==='No'){
             notPregnant++
         }
-        else if(answer.answer==='Not Sure'){
+        else if(answer.answer==='Not sure'){
             notSure++
         }
         pregnantDisplay = ((pregnant / pregnantTotal) * 100).toFixed(1);

@@ -18,9 +18,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
-
+//returns information of Cocaine usage among users in their lifetime
 function CocaineAllTime(){
-  
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -28,31 +28,37 @@ function CocaineAllTime(){
       marginBottom: '50px',
     },
   });
+  //define classes to style table
   const classes=useStyles();
-
+  //get information from the store
     const form = useSelector((store)=>store.form);
-
+    //define variables to count
     let cocaineYes=0;
     let cocaineNo=0;
-    
-     // const mjMap=form[119].answer
-   
+  
+    //function that conditionally renders results to the dom
      const answer1 =()=>{
        let display=''
        console.log('in answer')
+       //if form data doesn't exist display loading
        if(!form){
          display=<p>loading</p>
-       }
+       }//end if 
+       //if form data does exist, map through the information from the store
        if(form.length){
        form.map((item)=>{
+         //target a specific question in the form to return answers from api
          let answer=item.answers[120]
+         //if answer is Yes add one to cocaineYes
         if(answer.answer==='Yes'){
             cocaineYes++
-        }
+        }//end if
+        //if answer is no or no answer add one to cocaineNo
         else{
             cocaineNo++
-       }
+       }//end else
        console.log(cocaineYes, cocaineNo)
+       //display returns a pie chart of cocaine use all time as well as a table to display a description and details in text form.
        display= 
        <Box mx='auto' width="75%" >
         <Card>
@@ -79,8 +85,10 @@ function CocaineAllTime(){
        </Box>
        })
      }
+     //return display
      return display;
    }
+   //conditionally render results to the dom
     return(
         <>
         {answer1()}

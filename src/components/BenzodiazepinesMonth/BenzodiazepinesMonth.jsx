@@ -17,9 +17,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
-
+//returns the information of Benzodiazepine use in the last month
 function BenzodiazepinesMonth(){
-
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -27,6 +27,7 @@ function BenzodiazepinesMonth(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
 
     //select info from store
@@ -48,14 +49,16 @@ function BenzodiazepinesMonth(){
         if(form.length){
         form.map((item)=>{
           let answer=item.answers[140]
+          //if answer.answer exists add one to benzodiazepinesMonthlyYes
          if(answer.answer){
             benzodiazepinesMonthlyYes++
          }//end if
+         //if answer.answer doesn't exist add one to benzodiazepinesMonthlyNo
          else{
             benzodiazepinesMonthlyNo++
         }//end else
         console.log(benzodiazepinesMonthlyYes, benzodiazepinesMonthlyNo)
-        //display for counts
+        //display returns a pie chart of Benzodiazepine use in the last month, along with a table that displays the information in text form
         benzodiazepinesDisplay= 
         <Box mx='auto' width="75%" >
           <Card>
@@ -81,6 +84,7 @@ function BenzodiazepinesMonth(){
         </Box>
         })
       }//end if
+      //return display
       return benzodiazepinesDisplay;
     }
 

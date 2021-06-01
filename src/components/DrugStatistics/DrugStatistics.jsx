@@ -19,19 +19,16 @@ import {useHistory} from 'react-router-dom';
 
 
 function DrugStatistics(){
-
+  //define dispatch and history
   const dispatch=useDispatch();
   const history= useHistory();
-
-  // const onLoad=()=>{
-  // dispatch({type:'FETCH_FORM'});
-  // }
-
+  //useState to select component
     let [component, setComponent]=useState('');
 
     const Components={
         All: <AllDrugsDetails />
     }
+    //when component is selected from the dropdown. This function will push the user to the proper url
     const getComponent=()=>{
     switch (component){
         case 'AllDrugsDetails':
@@ -76,10 +73,7 @@ function DrugStatistics(){
             return <></>
     }
 }
-// useEffect(()=>
-//     onLoad()
-//   ,[]);
-
+//returns a dropdown menu to navigate to all of the different drug statistic charts
     return(
         <div>
           <div className="page-title">

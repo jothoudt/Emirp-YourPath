@@ -10,6 +10,8 @@ import Box from '@material-ui/core/Box';
 import InhalantsMonth from '../InhalantsMonth/InhalantsMonth';
 import InhalantsAllTime from '../InhalantsAllTime/InhalantsAllTime';
 
+//--------------------This component allows the user to toggle between Inhalant use all time and in the last month----------------
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   

@@ -18,9 +18,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
-
+//function that returns the results of Marijuana use all time
 function MarijuanaAllTime(){
-
+//used to style table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -28,30 +28,36 @@ function MarijuanaAllTime(){
       marginBottom: '50px',
     },
   });
+  //define classes to style table
   const classes=useStyles();
+  //get data from the store
     const form = useSelector((store)=>store.form);
-
+    //define variables for count
     let marijuanaYes=0;
     let marijuanaNo=0;
-    
-     // const mjMap=form[119].answer
-   
+    //function that conditionally renders card for marijuana use all time
      const answer1 =()=>{
        let display=''
        console.log('in answer')
+       //if form data doesnt exist display loading
        if(!form){
          display=<p>loading</p>
-       }
+       }//end if 
+       //if form data does exist map through the data
        if(form.length){
        form.map((item)=>{
+         //target specific question number to return results from the api
          let answer=item.answers[119]
+         //if answer.answer is yes add one to marijuanaYes
         if(answer.answer==='Yes'){
             marijuanaYes++
-        }
+        }//end if
+        //if answer.answer is no or unanswered add one to marijuana no
         else{
             marijuanaNo++
-       }
+       }//end else
        console.log(marijuanaYes, marijuanaNo)
+       //display returns a card with Marijuana All time use pie chart. It also returns a table with a description as the header and two rows. One row is for users that selected yes and the other is for users that selected no
        display= 
        <Box mx='auto' width="75%" >
        <Card>
@@ -78,6 +84,7 @@ function MarijuanaAllTime(){
      }
      return display;
    }
+   //conditionally renders marijuana all time use card to DOM
     return(
         <>
         {answer1()}

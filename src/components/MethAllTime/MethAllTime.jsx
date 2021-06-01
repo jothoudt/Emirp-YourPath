@@ -18,12 +18,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
-
-
-
+//returns results of meth use all time
 function MethAllTime(){
-
-
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -31,6 +28,7 @@ function MethAllTime(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
     
     //get information from the store
@@ -48,22 +46,22 @@ function MethAllTime(){
         //if data doesn't exist display loading
         if(!form){
           methDisplay=<p>loading</p>
-        }
+        }//end if
         //if data exists map through and count answers
         if(form.length){
         form.map((item)=>{
+          //target specific question number to return the results from the api
           let answer=item.answers[121]
+          //if answer.answer is yes add one to methYes
          if(answer.answer==='Yes'){
              methYes++
-         }
+         }//end if
+         //if answer.answer is no or no answer add one to methNo
          else{
              methNo++
-         }
-        //  if(!answer.answer){
-        //      methNo++
-        // }
+         }//end else
         console.log(methYes, methNo)
-        //define display
+        //display returns a card with a pie chart and a table of all the information in text form
         methDisplay= 
         <Box mx="auto" width="75%">
           <Card>
@@ -89,7 +87,7 @@ function MethAllTime(){
       }
       return methDisplay;
     }
-    //return to dom
+    //conditionally render the card to dom
     return(
         <>
         {answerMeth()}

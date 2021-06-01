@@ -35,22 +35,24 @@ function AllDrugsBar () {
     let other=0;
     let otherDisplay=0;
     
+    //function that takes in the drug, displayname and the question number that it targets in the api
     function getDrugs(counter, display, number) {
         counter=0;
+        //map through the answers
         form.map((item)=>{
             let answer=item.answers[number]
+            //if answer equals yes add one to the answer
             if(answer.answer==='Yes'){
                 counter++
         }
+        //display as a percentage
           display = ((counter / total) * 100).toFixed(1);
         })
         console.log('this is the display:', display);
+        //return display
         return display;
     }
-    
-
-
-
+    //data for the bar chart
     const data = {
         labels: ['Marijuana', 'Over The Counter', 'Hallucinogens', 'Methamphetamine', 'Cocaine', 'Inhalants', 'Benzodiazepines', 'Other Opiods', 'Heroin', 'Alcohol', 'Nicotine', 'Other'],
         datasets: [
@@ -76,6 +78,7 @@ function AllDrugsBar () {
           ],
         },
       };
+      ///returns a title and a bar chart to the dom.
     return(
         <>
             <div className='header'>

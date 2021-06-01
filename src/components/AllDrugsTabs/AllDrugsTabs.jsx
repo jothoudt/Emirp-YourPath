@@ -10,6 +10,9 @@ import Box from '@material-ui/core/Box';
 import AllDrugsLastMonth from '../AllDrugsLastMonth/AllDrugsLastMonth';
 import AllDrugsAllTime from '../AllDrugsAllTime/AllDrugsAllTime';
 
+
+//--------------component returns tabs to switch between all drugs monthly and all drugs all time.------------------
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   

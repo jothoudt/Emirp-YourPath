@@ -20,7 +20,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 function MethMonth(){
-
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -28,6 +28,7 @@ function MethMonth(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
 
     //select info from store
@@ -48,15 +49,18 @@ function MethMonth(){
         //if data exists map through for counts of yes and no
         if(form.length){
         form.map((item)=>{
+          //target specific questioon number to return the results from the api
           let answer=item.answers[137]
+          //if answer.answer is yes add one to methMonthlyYes
          if(answer.answer){
             methMonthlyYes++
          }//end if
+         //if answer.answer doesn't exist add one to methMonthlyNo
          else{
             methMonthlyNo++
         }//end else
         console.log(methMonthlyYes, methMonthlyNo)
-        //display for counts
+        //display returns a card with a pie chart and a table that displays the data of Meth use in the last month
         methDisplay= 
         <Box mx='auto' width="75%" >
         <Card>
@@ -83,7 +87,7 @@ function MethMonth(){
       return methDisplay;
     }
 
-    //render to dom
+    //conditionally render card to dom
     return(
         <>
         {answerMeth()}

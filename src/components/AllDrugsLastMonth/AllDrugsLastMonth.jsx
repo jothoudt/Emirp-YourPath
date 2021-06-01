@@ -64,38 +64,50 @@ function AllDrugsLastMonth (){
     let yCounter= 0;
     let nCounter=0;
     let counterDisplay=0;
-
+//function that returns the counts of users that selected yes to a specified drug
     function getDrugs(counter, display, number) {
         counter=0;
+        //map through the answers
         form.map((item)=>{
+          //targets specific question in the dataset
             let answer=item.answers[number]
+            //if answer doesn't exist, display 0
             if(!answer){
               display=0;
             }
+            //if answer does exist add one to counter
             else if(answer.answer){
                 counter++
         }
+        //display result as a percentage
           display = ((counter / total) * 100).toFixed(1);
         })
         console.log('this is the display:', display);
+        //returns display
         return display;
     }
-
+    //function that gets the yes and no counts of each specified drug and number to target the correct api location for that drug
    const getCount=(drug, number)=>{
+     //clear the variables
      yCounter=0
      nCounter=0
      counterDisplay=<></>
+     //map through answers
      form.map((item)=>{
        let answer=item.answers[number]
+       //if anwer doesn't exist display loading
        if(!answer){
         counterDipslay= <p>loading</p>
        }
+       //if answer.answer doesn't exist add one to nCounter
        if(!answer.answer){
          nCounter++
        }
+       //if answer.answer does exist add one to yCounter
        else if(answer.answer){
          yCounter++
        }
+       //counterDisplay returns two rows.  One for users that selected YES to using a specified drug and one for users that selected NO.
        counterDisplay=
        <>
        <TableRow>
@@ -107,16 +119,10 @@ function AllDrugsLastMonth (){
        </>
      }
    )
+   //returns display
    return counterDisplay;
    }
-   const getTable=()=>{
-     let tableDisplay=
-     <>
-     
-     </>
-
-   }
-
+//data for the table
     const data = {
         labels: ['Marijuana', 'Over The Counter', 'Hallucinogens', 'Methamphetamine', 'Cocaine', 'Inhalants', 'Benzodiazepines', 'Other Opiods', 'Heroin', 'Alcohol', 'Nicotine', 'Other'],
         datasets: [
@@ -144,7 +150,7 @@ function AllDrugsLastMonth (){
           ],
         },
       };
-
+//returns a card with a barchart and a table with all of the information in text form.
     return(
       <Box mx='auto' width="75%" >
         <Card>

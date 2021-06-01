@@ -5,7 +5,7 @@ function* apiSaga(){
     yield takeLatest('FETCH_FORM', fetchAPI)
 }//end searchSaga
 
-//to fetch recipes from 3rd party api that match the search
+//to fetch submission results from jotform api
 function* fetchAPI(action){
     try{
         console.log('in fetch')
@@ -14,6 +14,6 @@ function* fetchAPI(action){
         }
     catch(error){ console.log('get results error', error);
     }
-}//end fetchSearch
+}//end fetch
 
 export default apiSaga;

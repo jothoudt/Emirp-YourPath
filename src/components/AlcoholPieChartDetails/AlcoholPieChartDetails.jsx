@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
 import Box from '@material-ui/core/Box';
 
-
+//used to properly size chart
 function AlcoholPieChartDetails () {
   //get information from the store
     const form = useSelector((store)=>store.form);

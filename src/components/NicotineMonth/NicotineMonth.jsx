@@ -20,7 +20,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 function NicotineMonth(){
-
+//used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -28,6 +28,7 @@ function NicotineMonth(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
 
     //select info from store
@@ -41,22 +42,25 @@ function NicotineMonth(){
     const answerNicotine=()=>{
         let nicotineDisplay=''
         console.log('in answer')
-        //if no data exists
+        //if no data exists display loading
         if(!form){
           nicotineDisplay=<p>loading</p>
         }//end if
         //if data exists map through for counts of yes and no
         if(form.length){
         form.map((item)=>{
+          //target specific question number to get results from the api
           let answer=item.answers[133]
+          //if answer.answer exists add one to nicotineMonthlyYes
          if(answer.answer){
             nicotineMonthlyYes++
          }//end if
+         //if answer.answer doesn't exist add on to nicotineMonthlyNo
          else{
             nicotineMonthlyNo++
         }//end else
         console.log(nicotineMonthlyYes, nicotineMonthlyNo)
-        //display for counts
+        //display returns a card with a pie chart and table with the details of Nicotine use in the last month
         nicotineDisplay= 
         <Box mx='auto' width="75%" >
         <Card>
@@ -83,7 +87,7 @@ function NicotineMonth(){
       return nicotineDisplay;
     }
 
-    //render to dom
+    //conditionally render card to dom
     return(
         <>
         {answerNicotine()}
