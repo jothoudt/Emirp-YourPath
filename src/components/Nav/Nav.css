@@ -1,5 +1,5 @@
 :root {
-  --bg: #e6e7e8;
+  --bg: #ffffff;
   --bg-accent: #76c8b4;
   --text-color: #242526;
   --nav-size: 90px;
@@ -22,17 +22,17 @@ a {
 
 .logo-type {
   display: flex;
-  justify-self: flex-end;
   height: 100%;
+  justify-self: flex-start;
 }
 
 .navbar {
   height: var(--nav-size);
   background-color: var(--bg); 
-  padding: 0 1rem;
+  padding: 1rem;
 
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .navbar-nav {
