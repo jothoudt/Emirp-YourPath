@@ -29,7 +29,9 @@ function AlcoholMonthPie () {
        else{
         alcoholNo++
       }
+      //returns alcohol yes as a percentage
       alcoholYesDisplay = ((alcoholYes / alcoholTotal) * 100).toFixed(1);
+      //returns alcohol no as a percentage
       alcoholNoDisplay = ((alcoholNo / alcoholTotal) * 100).toFixed(1);
       })
       

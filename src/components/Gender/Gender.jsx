@@ -22,6 +22,7 @@ import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
 function Gender(){
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -29,50 +30,61 @@ function Gender(){
       marginBottom: '50px',
     },
   });
+  //define classes to style table
   const classes=useStyles();
-
+    //get data from the store
     const form = useSelector((store)=>store.form);
-
+    //define variables to count
     let male=0;
     let female=0;
     let transgender=0;
     let nonBinary=0;
     let declined = 0
     
-     // const mjMap=form[119].answer
+    //function to conditionally render results from Gender question
     const answer1 =()=>{
       let display=''
       console.log('in answer')
+      //if form data doesn't exist display loading
       if(!form){
         display=<p>loading</p>
       }
+      //if form data does exist map through the form
       if(form.length){
         form.map((item)=>{
           console.log( 'item', item );
+          //target a specific question number to get results from the api
           let answer=item.answers[83]
           console.log( 'gender answer:', answer.answer );
+          //if answer.anser exists go through the next set of coniditionals
         if ( answer.answer ) {
           let answerArray = answer.answer
           console.log( 'answer length:', answerArray.length );
           answerArray.map( ( itemAnswer )=>{
+            //if answer is male add one to male
             if(itemAnswer === 'Male'){
               male++
-            }
+            }//end if
+            //if answer is female add one to female
             else if (itemAnswer === 'Female') {
               female++
-            }
+            }//end else if 
+            //if answer is transgender add one to transgender
             else if (itemAnswer === 'Transgender') {
               transgender++
-            }
+            }//end else if
+            //if answer is non-binary add one to nonBinary
             else if (itemAnswer === 'Non-binary') {
               nonBinary++
-            }
+            }//end else if
         })
       }
+      //if no answer add one to declined
         else{
           declined++
-        }
+        }//end else
       console.log('in gender:', male, female, transgender, nonBinary, declined )
+      //display that returns a bar char along with table. The description of the numbers will be the table header and return 5 table rows. One for each possible answer
       display= 
       <Box mx='auto' width="75%" >
           <Card> 
@@ -106,8 +118,10 @@ function Gender(){
       
       })
     }
+    //return display
     return display;
   }
+  //return demographics dropdown menu and conditionally render Gender card to the DOM
     return(
         <>
         <Demographics />

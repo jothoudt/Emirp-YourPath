@@ -5,7 +5,7 @@ import NetPromoterScore from '../NetPromoterScore/NetPromoterScore';
 import TotalAssessments from '../TotalAssesments/TotalAssesments';
 
 
-
+//function that returns total assessments, net promoter score, and perceived best treatment options
 function UserStatistics(){
     
 //returns net promoter scores and results from questionaire about perceived helpfulness of different treatments

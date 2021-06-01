@@ -10,6 +10,9 @@ import Box from '@material-ui/core/Box';
 import NicotineMonth from '../NicotineMonth/NicotineMonth';
 import NicotineAllTime from '../NicotineAllTime/NicotineAllTime';
 
+
+//----------------------------------------------This component allows the user to toggle between two tabs. One for Nicotine use all time and the other for use in the last month--------
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   

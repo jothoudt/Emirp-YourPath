@@ -22,11 +22,11 @@ function MethAllTimePie () {
         //if answer is yes add one to yes
        if(answer.answer==='Yes'){
         methYes++
-       }
+       }//end if
        //if answer is no or undecided add one to no
        else{
         methNo++
-      }
+      }//end else
       //display in percentages
       methYesDisplay = ((methYes / methTotal) * 100).toFixed(1);
       methNoDisplay = ((methNo / methTotal) * 100).toFixed(1);
@@ -51,7 +51,7 @@ function MethAllTimePie () {
           },
         ],
     };
-    //render to dom
+    //render title and pie chart to dom
     return (
         <>
         <div className='header'>

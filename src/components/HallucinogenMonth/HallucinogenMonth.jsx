@@ -18,9 +18,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
-
+//returns the results of Hallucinogen use in the last month
 function HallucinogenMonth(){
-
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -28,6 +28,7 @@ function HallucinogenMonth(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
 
     //select info from store
@@ -41,22 +42,25 @@ function HallucinogenMonth(){
     const answerHallucinogen=()=>{
         let hallucinogenDisplay=''
         console.log('in answer')
-        //if no data exists
+        //if no data exists display loading
         if(!form){
             hallucinogenDisplay=<p>loading</p>
         }//end if
         //if data exists map through for counts of yes and no
         if(form.length){
         form.map((item)=>{
+          //targets specific question number to return results from the api
           let answer=item.answers[141]
+          //if answer.answer exists add one to hallucinogenMonthlyYes
          if(answer.answer){
             hallucinogenMonthlyYes++
          }//end if
+         //if answer.answer doesn't exist add one to hallucinogenMonthlyNo
          else{
             hallucinogenMonthlyNo++
         }//end else
         console.log(hallucinogenMonthlyYes, hallucinogenMonthlyNo)
-        //display for counts
+        //display returns pie chart of Hallucinogen use in the last month. It also returns a small table with a description as the header and two rows. One for users that selected yes and one for users that selected no.
         hallucinogenDisplay= 
         <Box mx='auto' width="75%" >
           <Card>
@@ -80,10 +84,11 @@ function HallucinogenMonth(){
         </Box>
         })
       }//end if
+      //return display
       return hallucinogenDisplay;
     }
 
-    //render to dom
+    //conditionally render Hallucinogen use in the last month card to dom
     return(
         <>
         {answerHallucinogen()}

@@ -17,9 +17,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
-
+//function returns the results of marijuana use in the last month
 function MarijuanaMonth(){
-
+//used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -27,6 +27,7 @@ function MarijuanaMonth(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
 
     //select info from store
@@ -40,22 +41,25 @@ function MarijuanaMonth(){
     const answerMarijuana=()=>{
         let marijuanaDisplay=''
         console.log('in answer')
-        //if no data exists
+        //if no data exists display loading
         if(!form){
             marijuanaDisplay=<p>loading</p>
         }//end if
         //if data exists map through for counts of yes and no
         if(form.length){
         form.map((item)=>{
+          //target specific question number to return results from the api
           let answer=item.answers[135]
+          //if answer.answer exists add one to marijuanaMonthlyYes
          if(answer.answer){
             marijuanaMonthlyYes++
          }//end if
+         //if answer.answer doesn't exist add one to marijuanaMonthlyNo
          else{
             marijuanaMonthlyNo++
         }//end else
         console.log(marijuanaMonthlyYes, marijuanaMonthlyNo)
-        //display for counts
+        //display renders a card with a pie chart and a table with data pertaining to Marijuana use in the last month
         marijuanaDisplay= 
         <Box mx='auto' width="75%" >
         <Card >
@@ -83,7 +87,7 @@ function MarijuanaMonth(){
       return marijuanaDisplay;
     }
 
-    //render to dom
+    //conditionally render card to the DOM
     return(
         <>
         {answerMarijuana()}

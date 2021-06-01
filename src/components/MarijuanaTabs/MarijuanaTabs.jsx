@@ -10,6 +10,9 @@ import Box from '@material-ui/core/Box';
 import MarijuanaAllTime from '../MarijuanaAllTime/MarijuanaAllTime';
 import MarijuanaMonth from '../MarijuanaMonth/MarijuanaMonth';
 
+
+//---------------------------This component allows the user to toggle between two tabs one for marijuana use all time and one for use in the last month ------------------
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   

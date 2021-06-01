@@ -26,7 +26,7 @@ function AlcoholAllTime(){
     //variables for counting
     let alcoholYes=0;
     let alcoholNo=0;
-
+    //used to style the table
     const useStyles = makeStyles({
       table: {
         width: "50%",
@@ -34,7 +34,8 @@ function AlcoholAllTime(){
         marginBottom: '50px',
       },
     });
-  
+
+    //define classes to style the table
     const classes=useStyles();
 
 
@@ -47,7 +48,7 @@ function AlcoholAllTime(){
         if(!form){
           alcoholDisplay=<p>loading</p>
         }
-        //map through form data and count yes/no answers
+        //map through form data and count yes/no answers for alcohol
         if(form.length){
         form.map((item)=>{
           let answer=item.answers[118]
@@ -60,7 +61,7 @@ function AlcoholAllTime(){
         //console log results
         console.log(alcoholYes, alcoholNo)
 
-        //define display
+        //alcoholDisplay returns a card with a Pie Chart for all time alcohol use. It also returns a small table of the information in text form with the description as the header.
         alcoholDisplay= 
           <Box mx="auto" width="75%">
             <Card>
@@ -80,16 +81,13 @@ function AlcoholAllTime(){
                     </TableRow>
                   </TableHead>
                 </Table>
-                
-                {/* <p>Alcohol Used No: {alcoholNo}</p> */}
                 <Divider />
-                {/* <p>This pie chart shows the percentage of people taking YourPath’s assessment who indicated that they had used alcohol, including beer, wine or liquor, at some point in their life. </p> */}
               </CardContent>
             </Card>
         </Box>
         })
       }
-      //return display
+      //return alcoholDisplay
       return alcoholDisplay;
     }
 

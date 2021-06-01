@@ -10,6 +10,8 @@ import Box from '@material-ui/core/Box';
 import MethMonth from '../MethMonth/MethMonth';
 import MethAllTime from '../MethAllTime/MethAllTime';
 
+//-------------------------This component allows user to toggle between Meth use in the last month and use all time-------------------------------
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   

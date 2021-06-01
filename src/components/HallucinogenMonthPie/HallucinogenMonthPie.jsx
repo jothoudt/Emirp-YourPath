@@ -21,15 +21,17 @@ function HallucinogenMonthPie () {
     form.map((item)=>{
         //targets data set needed
         let answer=item.answers[141]
-        //if the answer is yes
+        //if the answer is yes add one to hallucinogenYes
        if(answer.answer){
         hallucinogenYes++
-       }
-       //otherwise undecided and no equal No
+       }//end if
+       //otherwise undecided or no add one to hallucinogenNo
        else{
         hallucinogenNo++
-      }
+      }//end else
+      //display yes results as a percentage
       hallucinogenYesDisplay = ((hallucinogenYes / hallucinogenTotal) * 100).toFixed(1);
+      //display no results as a percentage
       hallucinogenNoDisplay = ((hallucinogenNo / hallucinogenTotal) * 100).toFixed(1);
       })
       
@@ -52,7 +54,7 @@ function HallucinogenMonthPie () {
           },
         ],
     };
-    //render to dom
+    //render a title and pie chart to the DOM
     return (
         <>
         <div className='header'>

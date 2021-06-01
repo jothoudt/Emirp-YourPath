@@ -434,33 +434,14 @@ export default function Favorites() {
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               Your Saved Charts
             </Typography>
-            {/* <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              All of the charts located on the Dashboard below reflect whether or not applicants have ever used the substance in question.
-              For more information and to see the data element reflected for the last month click the view button. 
-            </Typography> */}
             <div className="add-chart">
             <Button onClick={addMenu} color="primary" ><Icon className={classes.icon} color="primary" style={{fontSize:'48px'}}>
         add_circle
       </Icon>Add a Chart</Button>
       </div>
-            {/* <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Secondary action
-                  </Button>
-                </Grid>
-              </Grid>
-            </div> */}
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
           <Grid container spacing={4}>
             {displayFavorites()} 
           </Grid>

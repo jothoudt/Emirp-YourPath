@@ -5,7 +5,7 @@ const apiRouter = express.Router();
 var jf = require("jotForm");
 
 require('dotenv').config();
-
+//gets the results of the rule 25 forms submitted by the user
 apiRouter.get('/', (req, res)=>{
   console.log('in apiRouter')
 
@@ -21,7 +21,7 @@ apiRouter.get('/', (req, res)=>{
     res.sendStatus(500)
   })
 
-})
+});// end GET
 
 //get route
 

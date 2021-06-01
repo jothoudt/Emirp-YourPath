@@ -9,7 +9,6 @@ import {
   Divider,
   Typography
 } from '@material-ui/core';
-//pass thru pie chart
 import HallucinogenPieChartDetails from '../HallucinogenPieChartDetails/HallucinogenPieChartDetails';
 import Box from '@material-ui/core/Box';
 import Table from '@material-ui/core/Table';
@@ -20,9 +19,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
-
+//function to return results of Hallucinogen use during the users lifetime
 function HallucinogenAllTime(){
-
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -30,10 +29,11 @@ function HallucinogenAllTime(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
-
+  //get data from the store
     const form = useSelector((store)=>store.form);
-
+    //define variables to count
     let hallucinogenYes=0;
     let hallucinogenNo=0;
     
@@ -41,19 +41,25 @@ function HallucinogenAllTime(){
     const answer1 =()=>{
       let display=''
       console.log('in answer')
+      //if form data doesn't exist display loading
       if(!form){
         display=<p>loading</p>
-      }
+      }//end if 
+      //if form data does exist map through the results
       if(form.length){
       form.map((item)=>{
+        //target a specific question number to get results from the api
         let answer=item.answers[125]
+        ///if answer.answer is yes add one to hallucinogenYes
         if(answer.answer==='Yes'){
             hallucinogenYes++
-        }
+        }//end if
+        //if the answer is no or unanswered add one to hallucinogenNo
         else{
             hallucinogenNo++
-      }
+      }//end else
       console.log(hallucinogenYes, hallucinogenNo)
+      //display returns a card with a pie chart, a table with the description as the header and two table rows. One row is for users that answered yes. The other is for users that answered no.
       display= 
       <Box mx='auto' width="75%" >
         <Card>
@@ -77,8 +83,10 @@ function HallucinogenAllTime(){
       </Box>
       })
     }
+    //return display
     return display;
   }
+  //conditionally render card to the DOM
     return(
         <>
         {answer1()}

@@ -20,9 +20,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
-
+//function that returns the results of Inhalants used all time
 function InhalantsAllTime(){
-
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -30,34 +30,40 @@ function InhalantsAllTime(){
       marginBottom: '50px',
     },
   });
+  //define classes to style table
   const classes=useStyles();
-
+//get data from the store
     const form = useSelector((store)=>store.form);
-
+    //define variables to count
     let inhalantYes=0;
     let inhalantNo=0;
     
-     // const mjMap=form[119].answer
+     //conditionally render card to the DOM
     const answer1 =()=>{
       let display=''
       console.log('in answer')
+      //if form data doesn't exist display loading
       if(!form){
         display=<p>loading</p>
-      }
+      }//end if
+      //if form data does exist map through data from the store
       if(form.length){
         form.map((item)=>{
+          //target specific question number to return results from the api
           let answer=item.answers[126]
+          //if answer.answer is yes add one to inhalantYes
         if(answer.answer === 'Yes'){
             inhalantYes++
-        }
+        }//end if
+        //if answer.answer is No or no answer add one to inhalantNo
         else {
             inhalantNo++
-      }
+      }//end else
       console.log(inhalantYes, inhalantNo)
+      //display returns a card with a pie chart of all time inhalants used. It also returns a table with the data description as the header and two rows. One row is for users that selected yes and the other is for users that selected no.
       display= 
       <Box mx='auto' width="75%" >
         <Card>
-          
           <CardContent>
             <Divider />
             <InhalantsPieChartDetails />
@@ -79,8 +85,10 @@ function InhalantsAllTime(){
       </Box>
       })
     }
+    //return display
     return display;
   }
+  //conditionally render card to the DOM
     return(
         <>
         {answer1()}

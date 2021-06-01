@@ -10,6 +10,8 @@ import Box from '@material-ui/core/Box';
 import AlcoholMonth from '../AlcoholMonth/AlcoholMonth';
 import AlcoholAllTime from '../AlcoholAllTime/AlcoholAllTime';
 
+//allow users to switch back and forth between alcohol use monthly and lifetime
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   

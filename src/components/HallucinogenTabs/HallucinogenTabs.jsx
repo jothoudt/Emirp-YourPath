@@ -10,6 +10,8 @@ import Box from '@material-ui/core/Box';
 import HallucinogenMonth from '../HallucinogenMonth/HallucinogenMonth';
 import HallucinogenAllTime from '../HallucinogenAllTime/HallucinogenAllTime';
 
+//------------------------This component allows the user to toggle between Hallucinogen use last month and use all time---------
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   

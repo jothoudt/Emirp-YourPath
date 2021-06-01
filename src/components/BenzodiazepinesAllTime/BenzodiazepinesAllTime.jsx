@@ -21,9 +21,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
-
+//returns info from user submissions about use of Benzodiazepines in their life time
 function BenzodiazepinesAllTime(){
-
+  //used  to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -31,10 +31,11 @@ function BenzodiazepinesAllTime(){
       marginBottom: '50px',
     },
   });
+  //define classes to style table
   const classes=useStyles();
-
+//get info from the store
     const form = useSelector((store)=>store.form);
-
+//variables to cun Benzodiazepine use 
     let benzYes=0;
     let benzNo=0;
     
@@ -42,19 +43,24 @@ function BenzodiazepinesAllTime(){
     const answer1 =()=>{
       let display=''
       console.log('in answer')
+      //if form data doesn't exist display loading
       if(!form){
         display=<p>loading</p>
       }
+      //if form data does exist map through the answers
       if(form.length){
         form.map((item)=>{
           let answer=item.answers[124]
+          //if answer is yes add one to benzYes
         if(answer.answer === 'Yes'){
             benzYes++
         }
+        //if the answer is no or no answer add one to benzNo
         else {
             benzNo++
       }
       console.log(benzYes, benzNo)
+      //display returns card with a pie chart of Benzodiazepine use all time along with a small table to display the information in text form
       display= 
       <Box mx='auto' width="75%" >
         <Card>
@@ -80,8 +86,10 @@ function BenzodiazepinesAllTime(){
       </Box>
       })
     }
+    //return display
     return display;
   }
+  //conditionally render to DOM
     return(
         <>
         {answer1()}

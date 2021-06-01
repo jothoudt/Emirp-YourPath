@@ -18,9 +18,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
-
+//returns a card with a bar chart and a table of information from all of the drugs monitorred in the assessment
 function AllDrugsAllTime(){
-
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -28,6 +28,7 @@ function AllDrugsAllTime(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
     //select info from store
     const form = useSelector((store)=>store.form);
@@ -71,13 +72,15 @@ function AllDrugsAllTime(){
         if(form.length){
         form.map((item)=>{
           let answer=item.answers[117]
+          //if answer is using Nicotine is yes add one to yes
          if(answer.answer==='Yes'){
              nicotineYes++
          }
+         //if answer is no or no answer, add one to no
          else{
              nicotineNo++
          }
-        //define display
+        //define display. It will return two rows of the table. One for users that said yes to using Nicotine in their life. One for users that said No.
         nicotineDisplay= 
         <>
         <TableRow>
@@ -89,10 +92,11 @@ function AllDrugsAllTime(){
         </>
         })
       }
+      //return display
       return nicotineDisplay;
 
     }
-
+    //function to get alcohol numbers
     const getAlcoholAT=()=>{
         let alcoholDisplay=''
         console.log('in answer')
@@ -100,20 +104,22 @@ function AllDrugsAllTime(){
         if(!form){
           alcoholDisplay=<p>loading</p>
         }
-        //map through form data and count yes/no answers
+        //if form data exists map through form data and count yes/no answers
         if(form.length){
         form.map((item)=>{
           let answer=item.answers[118]
+          //if answer to using alcohol is yes add one to yes
          if(answer.answer==='Yes'){
              alcoholYes++
          }
+         //if answer to using alcohol is no add one to no.
          else{
              alcoholNo++
          }
         //console log results
         console.log(alcoholYes, alcoholNo)
 
-        //define display
+        //define display. It will return two rows of the table. One for answers of yes and one for answers of no to using alcohol sometime in their life.
         alcoholDisplay= 
         <>
         <TableRow>
@@ -128,23 +134,28 @@ function AllDrugsAllTime(){
       //return display
       return alcoholDisplay;
     }
-
+    //function to get marijuana numbers
     const getMarijuanaAT=()=>{
         let display=''
        console.log('in answer')
+       //if form data doesnt exist, display loading
        if(!form){
          display=<p>loading</p>
        }
+       //if form data exists map through the yes and no counts for marijuana.
        if(form.length){
        form.map((item)=>{
          let answer=item.answers[119]
+         //if answer to using marijuana is yes add one to yes
         if(answer.answer==='Yes'){
             marijuanaYes++
         }
+        //else if answer is no or unanswered add one to no
         else{
             marijuanaNo++
        }
        console.log(marijuanaYes, marijuanaNo)
+       //display will return two rows of the table. One for users that said yes and one for users that said no to using Marijuana in their lifetime.
        display= 
        <>
         <TableRow>
@@ -156,24 +167,31 @@ function AllDrugsAllTime(){
         </>
        })
      }
+     //returns display
      return display;
     }
+    //function to get Cocaine numbers
     const getCocaineAT=()=>{
         let display=''
        console.log('in answer')
+       //if form data doesn't exist display loading
        if(!form){
          display=<p>loading</p>
        }
+       //if form data exists map through yes and no counts to use of Cocaine
        if(form.length){
        form.map((item)=>{
          let answer=item.answers[120]
+         //if anwer is yes to using Cocaine add one
         if(answer.answer==='Yes'){
             cocaineYes++
         }
+        //if the answer is no or unanswered add one to no.
         else{
             cocaineNo++
        }
        console.log(cocaineYes, cocaineNo)
+       //display that returns two rows of the table. One for users that selected yes and one for users that selected no to using Cocaine in their lifetime.
        display= 
        <>
         <TableRow>
@@ -187,6 +205,7 @@ function AllDrugsAllTime(){
      }
      return display;
     }
+    //function to get Meth numbers
     const getMethAT=()=>{
         let methDisplay=''
         console.log('in answer')
@@ -198,17 +217,16 @@ function AllDrugsAllTime(){
         if(form.length){
         form.map((item)=>{
           let answer=item.answers[121]
+          //if answers to using Meth is yes add one to Meth
          if(answer.answer==='Yes'){
              methYes++
          }
+         //if answer is no or unanswered add one to no.
          else{
              methNo++
          }
-        //  if(!answer.answer){
-        //      methNo++
-        // }
         console.log(methYes, methNo)
-        //define display
+        //define display. It will add two rows to the table. One row for users that answered yes and one row for the users that answered no to using mMeth in their lifetime.
         methDisplay= 
         <>
         <TableRow>
@@ -222,22 +240,28 @@ function AllDrugsAllTime(){
       }
       return methDisplay;
     }
+    //function to get heroin numbers
     const getHeroinAT=()=>{
         let heroinDisplay=''
         console.log('in answer')
+        //if no form data display loading
         if(!form){
           heroinDisplay=<p>loading</p>
         }
+        //if for data exists map through answers
         if(form.length){
         form.map((item)=>{
           let answer=item.answers[122]
+          //if answer is yes to using heroin add one to yes
          if(answer.answer==='Yes'){
              heroinYes++
          }
+         //if answer is no or no answer add one to no
          else{
              heroinNo++
          }
         console.log(heroinYes, heroinNo)
+        //heroin display returns two rows of the table. One for users that answered yes and one for users that answered no to using heroin in their lifetime.
         heroinDisplay= 
         <>
         <TableRow>
@@ -251,22 +275,28 @@ function AllDrugsAllTime(){
       }
       return heroinDisplay;
     }
+    //function to return the numbers for opioids
     const getOtherOpiodsAT=()=>{
         let display=''
        console.log('in answer')
+       //if there is no form data display loading
        if(!form){
          display=<p>loading</p>
        }
+       //if form data exists map through the answers
        if(form.length){
        form.map((item)=>{
          let answer=item.answers[123]
+         //if answer is yes to using opioids in the user's lifetime add one to yes
         if(answer.answer==='Yes'){
             opiodsYes++
         }
+        //if answer is no or unanswered to using opioids add one to no
         else{
             opiodsNo++
        }
        console.log(opiodsYes, opiodsNo)
+       //display returns two rows. One for users that said yes and one for users that said no to using opioids in their lifetime.
        display= 
        <>
        <TableRow>
@@ -280,22 +310,28 @@ function AllDrugsAllTime(){
      }
      return display;
     }
+    //function to get the numbers for Benzodiazepines
     const getBenzoAT=()=>{
         let display=''
         console.log('in answer')
+        //if form doesn't exist, display loading
         if(!form){
           display=<p>loading</p>
         }
+        //if form data does exist map through the answers
         if(form.length){
           form.map((item)=>{
             let answer=item.answers[124]
+            //if the answer to using Benzos is yes. Add one to BenzYes
           if(answer.answer === 'Yes'){
               benzYes++
           }
+          //if answer is no or no answer, Add one to BenzNo.
           else {
               benzNo++
         }
         console.log(benzYes, benzNo)
+        //display returns two rows of the table. One for users that said yes and one for users that said no to using Benzos in their lifetime.
         display= 
         <>
         <TableRow>
@@ -310,22 +346,28 @@ function AllDrugsAllTime(){
       }
       return display;
     }
+    //function to return the hallucinogen numbers
     const getHallucinogenAT=()=>{
         let display=''
        console.log('in answer')
+       //if form data doesn't exist display loading
        if(!form){
          display=<p>loading</p>
        }
+       //if form data does exist map through the answers
        if(form.length){
        form.map((item)=>{
          let answer=item.answers[125]
+         //if the answer is yes to using Hallucinogen in their lifetime, add one to yes
         if(answer.answer==='Yes'){
             hallucinogenYes++
         }
+        //if answer is no or no answwer add one to no
         else{
             hallucinogenNo++
        }
        console.log(hallucinogenYes, hallucinogenNo)
+       //display returns two rows of the table. One for users that answered yes and one for users that answered no to using hallucinogens in their lifetime.
        display= 
        <>
         <TableRow>
@@ -338,24 +380,31 @@ function AllDrugsAllTime(){
 
        })
      }
+     //return display
      return display;
     }
+    //function to get inhalant numbers
     const getInhalantAT=()=>{
         let display=''
       console.log('in answer')
+      //if form data doesn't exist, display loading
       if(!form){
         display=<p>loading</p>
       }
+      //if form data does exist, map through the answers
       if(form.length){
         form.map((item)=>{
           let answer=item.answers[126]
+          //if answer is yes to using Inhalants, add one to inhalantYes
         if(answer.answer === 'Yes'){
             inhalantYes++
         }
+        //if answwer is no to using Inhalants, add one to inhalantNo
         else {
             inhalantNo++
       }
       console.log(inhalantYes, inhalantNo)
+      //display returns two rows. One for users that selected Yes and one for users that selected no to using inhalants in their lifetime.
       display= 
       <>
       <TableRow>
@@ -367,24 +416,31 @@ function AllDrugsAllTime(){
       </>
       })
     }
+    //return display
     return display;
     }
+    //returns the over the counter numbeers
     const getOTCAT=()=>{
         let display=''
        console.log('in answer')
+       //if form data doesn't exist, display loading
        if(!form){
          display=<p>loading</p>
        }
+       //if form data exists, map through the answers
        if(form.length){
        form.map((item)=>{
          let answer=item.answers[127]
+         //if answer to using over the counteer substances is yes, add one to OTCYes
         if(answer.answer==='Yes'){
             OTCYes++
         }
+        //if answer to using over the counter substances is no or no answer, add one to OTCNo
         else{
             OTCNo++
        }
        console.log(OTCYes, OTCNo)
+       //display returns two rows. One for users that selected Yes and one for users that selected No to using Over the counter substances in their lifetime.
        display= 
        <>
       <TableRow>
@@ -399,6 +455,7 @@ function AllDrugsAllTime(){
      }
      return display;
     }
+    //get other substances numbers
     const getOtherSubsAT=()=>{
         //variable to be returned
         let otherDisplay=''
@@ -420,7 +477,7 @@ function AllDrugsAllTime(){
         //console log results
         console.log(otherYes, otherNo)
 
-        //define display
+        //define display returns two rows. One row for users that answer yes and one row for users that answer no to using other substances in their lifetime.
         otherDisplay= 
         <>
         <TableRow>
@@ -435,7 +492,7 @@ function AllDrugsAllTime(){
       //return display
       return otherDisplay;
     }
-
+    //returns a card with a bar chart and a table with the numbers of all the drugs monitored in the assessment form.
     return(
       <Box mx='auto' width="75%" >
       <Card>

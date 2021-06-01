@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 
 
 
-  
+  //function that returns a pie chart of Benzodiazepine use in the last month
 function BenzodiazepinesMonthPie () {
     //get information from the store
     const form = useSelector((store)=>store.form);
@@ -24,12 +24,14 @@ function BenzodiazepinesMonthPie () {
         //if the answer is yes
        if(answer.answer){
         benzodiazepinesYes++
-       }
+       }//end if
        //otherwise undecided and no equal No
        else{
         benzodiazepinesNo++
-      }
+      }//end else
+      //display Yes count as a percentage
       benzodiazepinesYesDisplay = ((benzodiazepinesYes / benzodiazepinesTotal) * 100).toFixed(1);
+      //display no count as a percentage
       benzodiazepinesNoDisplay = ((benzodiazepinesNo / benzodiazepinesTotal) * 100).toFixed(1);
       })
       

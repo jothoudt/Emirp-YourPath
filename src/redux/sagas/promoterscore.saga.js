@@ -5,7 +5,7 @@ function* PromoterScoreSaga(){
     yield takeLatest('FETCH_PROMOTER_SCORES', fetchPromoterScores)
 }//end searchSaga
 
-//to fetch recipes from 3rd party api that match the search
+//to fetch network promoter scores from jotform api
 function* fetchPromoterScores(action){
     try{
         console.log('in fetch promoter')
@@ -14,6 +14,6 @@ function* fetchPromoterScores(action){
         }
     catch(error){ console.log('get results error', error);
     }
-}//end fetchSearch
+}//end fetchPromoter scores
 
 export default PromoterScoreSaga;

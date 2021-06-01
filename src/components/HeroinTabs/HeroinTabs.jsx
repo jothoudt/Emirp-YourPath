@@ -10,6 +10,8 @@ import Box from '@material-ui/core/Box';
 import HeroinMonth from '../HeroinMonth/HeroinMonth';
 import HeroinAllTime from '../HeroinAllTime/HeroinAllTime';
 
+//----------------------This component allows the user to toggle between Heroin use in the last month and Heroin use in lifetime-----------------------
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   

@@ -21,7 +21,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 function NicotineAllTime(){
-
+//used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -29,6 +29,7 @@ function NicotineAllTime(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
 
     //select information from the store
@@ -41,26 +42,26 @@ function NicotineAllTime(){
        
         let nicotineDisplay=''
         console.log('in answer')
-        //if data doesn't exist
+        //if data doesn't exist display loading
         if(!form){
           nicotineDisplay=<p>loading</p>
         }
         //map through and count yes/no answers
         if(form.length){
         form.map((item)=>{
+          //target specific question number to return results from the api
           let answer=item.answers[117]
+          //if answer.answer is yes add one to nicotineYes
          if(answer.answer==='Yes'){
              nicotineYes++
-         }
+         }//end if 
+         //if answer.answer is no or no answer add one to nicotineNo
          else{
              nicotineNo++
          }
-        //  if(!answer.answer){
-        //      methNo++
-        // }
         console.log(nicotineYes, nicotineNo)
 
-        //define display
+        //display returns a card with a pie chart and a table with all the details of nicotine use all time
         nicotineDisplay= 
         <Box mx='auto' width="75%" >
           <Card>
@@ -86,7 +87,7 @@ function NicotineAllTime(){
       }
       return nicotineDisplay;
     }
-
+    //conditionally renders Nicotine all time card to the DOM
     return(
         <>
         {answerNicotine()}

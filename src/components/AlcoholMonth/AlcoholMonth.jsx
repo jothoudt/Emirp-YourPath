@@ -20,6 +20,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 function AlcoholMonth(){
 
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -27,7 +28,7 @@ function AlcoholMonth(){
       marginBottom: '50px',
     },
   });
-
+  //define classes to style table
   const classes=useStyles();
 
     //select info from store
@@ -56,7 +57,7 @@ function AlcoholMonth(){
             alcoholMonthlyNo++
         }//end else
         console.log(alcoholMonthlyYes, alcoholMonthlyNo)
-        //display for counts
+        //display that returns a card with a pie chart of alcohol use in the last month. There is also a small table with the information in text form.
         alcoholDisplay= 
         <Box mx='auto' width="75%" >
           <Card>
@@ -76,12 +77,7 @@ function AlcoholMonth(){
                     </TableRow>
                   </TableHead>
                 </Table>
-
-
-            {/* <p>Alcohol in the last month Yes:{alcoholMonthlyYes}</p>
-            <p>Alcohol in the last month No: {alcoholMonthlyNo}</p> */}
             <Divider />
-            {/* <p>YourPath assessment takers were given the choice of entering how many days in the previous month they used alcohol, including beer, wine or liquor. This pie graph shows the percentage of people who had used at least one day in the previous month.</p> */}
           </CardContent>
           </Card>
         </Box>

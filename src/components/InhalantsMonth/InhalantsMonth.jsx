@@ -18,8 +18,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
-
+//returns results of Inhalant usage in the last month
 function InhalantsMonth(){
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -27,6 +28,7 @@ function InhalantsMonth(){
       marginBottom: '50px',
     },
   });
+  //define classe to style the table
   const classes=useStyles();
 
     //select info from store
@@ -40,22 +42,25 @@ function InhalantsMonth(){
     const answerInhalants=()=>{
         let inhalantsDisplay=''
         console.log('in answer')
-        //if no data exists
+        //if no data exists display loading
         if(!form){
             inhalantsDisplay=<p>loading</p>
         }//end if
         //if data exists map through for counts of yes and no
         if(form.length){
         form.map((item)=>{
+          //target a specific question number to return results from the api
           let answer=item.answers[142]
+          //if answer.answer is yes add one to inhalantsMonthlyYes
          if(answer.answer){
             inhalantsMonthlyYes++
          }//end if
+         //if answer.answer doesn't exist add one to inhalantsMonthlyNo
          else{
             inhalantsMonthlyNo++
         }//end else
         console.log(inhalantsMonthlyYes, inhalantsMonthlyNo)
-        //display for counts
+        //display returns card with Inhalants monthly pie chart. It also returns a table with a description as the header and two rows. One row for users that selected yes and one row for users that selected no
         inhalantsDisplay= 
         <Box mx='auto' width="75%" >
           <Card>
@@ -83,7 +88,7 @@ function InhalantsMonth(){
       return inhalantsDisplay;
     }
 
-    //render to dom
+    //conditionally render card to dom
     return(
         <>
         {answerInhalants()}

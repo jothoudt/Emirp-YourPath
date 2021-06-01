@@ -6,14 +6,14 @@ import PastServices from '../PastServices/PastServices';
 import Pregnant from '../Pregnant/Pregnant';
 import './HealthStatistics.css';
 import {useHistory} from 'react-router-dom';
-
+//function that returns a dropdown menu for health statistics
 function HealthStatistics(){
-
+    //define dispatch and history
     const dispatch=useDispatch();
     const history=useHistory();
-    
+    //useState to select a component
     let [component, setComponent]=useState('')
-
+    //function that takes the selected component and pushes the user to the correct url based on what the selected
     const getComponent=()=>{
         switch(component){
             case 'FetalAlcoholSyndrome':
@@ -30,9 +30,9 @@ function HealthStatistics(){
                 break;
             default:
                 return <></>
-        }
-    }
-
+        }//end switch
+    };//end getComponent
+    //renders the health statistics dropdown menu to the DOM
     return(
         <div>
           <div className="page-title">

@@ -24,15 +24,18 @@ function NetPromoterScore(){
     //---------------------------------------------------------------------------
     //brings in all info from survery and returns an array of the scores from the survey
     const getPromoterScores=()=>{
+      //if data doesn't exist display loading
         if(!scores){
             display=<p>loading</p>
-          }
+          }//end if
+          //if data does exist map through the data
           if(scores.length){
           scores.map((score)=>{
+            //target specific number to return results from the api
             let answer=score.answers[4]
            if(answer.answer){
                promoterScores.push(score.answers[4].answer)
-           }
+           }//end if
           })
         }
         console.log(promoterScores)
@@ -45,6 +48,7 @@ function NetPromoterScore(){
             total += Number(score);
         })
         console.log(total)
+        //returns an average
         average= (total / promoterScores.length).toFixed(1);
         console.log(average)
         // let displayaverage= <><p>Average Score: {average}</p></>
@@ -58,7 +62,7 @@ function NetPromoterScore(){
     useEffect(()=>
     scoresOnLoad()
   ,[]);
-
+//renders an gauge display with the the average score out of 10
     return(
         <div className="Gauge">
         <Box mx="auto" width="25%" boxShadow={12} height="500px">

@@ -18,9 +18,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
-
+//function that returns the details of cocaine usage within the last month
 function CocaineMonth(){
-
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -28,6 +28,7 @@ function CocaineMonth(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
 
     //select info from store
@@ -41,22 +42,25 @@ function CocaineMonth(){
     const answerCocaine=()=>{
         let cocaineDisplay=''
         console.log('in answer')
-        //if no data exists
+        //if no data exists display loading
         if(!form){
           cocaineDisplay=<p>loading</p>
         }//end if
         //if data exists map through for counts of yes and no
         if(form.length){
         form.map((item)=>{
+          //target specific question in the form to return answers from api
           let answer=item.answers[136]
+          //if answer.answer exists add one to cocaineMonthlyYes
          if(answer.answer){
           cocaineMonthlyYes++
          }//end if
+         // if answer.answer doesn't exist add one to cocaineMonthlyNo
          else{
           cocaineMonthlyNo++
         }//end else
         console.log(cocaineMonthlyYes, cocaineMonthlyNo)
-        //display for counts
+        //display that returns information as a card with a pie chart of cocaine usage in the users lifetime . It will also return a small table to display the information in text form with a description as the header.
         cocaineDisplay= 
         <Box mx='auto' width="75%" >
         <Card>
@@ -85,7 +89,7 @@ function CocaineMonth(){
       return cocaineDisplay;
     }
 
-    //render to dom
+    //conditionally render to dom
     return(
         <>
         {answerCocaine()}

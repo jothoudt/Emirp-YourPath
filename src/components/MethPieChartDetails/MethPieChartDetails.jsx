@@ -20,15 +20,16 @@ function MethPieChartDetails () {
 
     //map through the store data
     form.map((item)=>{
+      //target specific question number to return results from the api
         let answer=item.answers[121]
         //if answer is yes add one to yes
        if(answer.answer==='Yes'){
         methYes++
-       }
+       }//end if 
        //if answer is no or undecided add one to no
        else{
         methNo++
-      }
+      }//end else
       //display in percentages
       methYesDisplay = ((methYes / methTotal) * 100).toFixed(1);
       methNoDisplay = ((methNo / methTotal) * 100).toFixed(1);
@@ -53,7 +54,7 @@ function MethPieChartDetails () {
           },
         ],
     };
-    //render to dom
+    //render a pie chart and title to dom
     return (
         <>
         <div className='header'>

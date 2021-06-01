@@ -10,6 +10,8 @@ import Box from '@material-ui/core/Box';
 import BenzodiazepinesMonth from '../BenzodiazepinesMonth/BenzodiazepinesMonth';
 import BenzodiazepinesAllTime from '../BenzodiazepinesAllTime/BenzodiazepinesAllTime';
 
+//----------------------Component allows user to toggle between Benzodiazepines Monthly Usee and Benzodiazepine use all time-------//
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   

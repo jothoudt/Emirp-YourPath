@@ -6,7 +6,7 @@ const AllDataItem = ( { row } ) => {
 
     //needed for history
     const history = useHistory();
-
+    //directs user to the details of the chart they select
     const seeDetails = () =>{
         history.push(row.link_path)
     }

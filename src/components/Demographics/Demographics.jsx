@@ -6,13 +6,14 @@ import Race from '../Race/Race';
 import SexualOrientation from '../SexualOrientation/SexualOrientation';
 import './Demographics.css';
 import {useHistory} from 'react-router-dom';
+//returns a drop down ment
 function Demographics(){
-
+    //define dispatch and history
     const dispatch=useDispatch();
     const history=useHistory();
-    
+    //use state to select component
     let [component, setComponent]=useState('')
-
+    // when a component is selected from the drop down the user will be pushed to the url that matches the case
     const getComponent=()=>{
         switch(component){
             case 'Gender':
@@ -31,7 +32,7 @@ function Demographics(){
                 return <></>
         }
     }
-
+    //returns drop down menu
     return(
         <div>
           <div className="page-title">
