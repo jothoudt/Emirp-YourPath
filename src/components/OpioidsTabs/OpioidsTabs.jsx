@@ -10,6 +10,8 @@ import Box from '@material-ui/core/Box';
 import OpiodsMonth from '../OpiodsMonth/OpiodsMonth';
 import OpiodsAllTime from '../OpiodsAllTime/OpiodsAllTime';
 
+//-----------------This component allows the user to toggle between two tabs one for opioid use in last month and one for opioid use all time----------------
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
   

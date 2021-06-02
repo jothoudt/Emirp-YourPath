@@ -19,9 +19,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
-
+//returns the results of the form for pregnancy
 function Pregnant(){
-
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -29,35 +29,41 @@ function Pregnant(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
-
+  //get data from the store
     const form = useSelector((store)=>store.form);
-
+    //define variables to count
     let pregnant=0;
     let notPregnant=0;
     let notSure=0;
-
-    
-     // const mjMap=form[119].answer
+    //function to conditionally render card
     const answer1 =()=>{
       let display=''
       console.log('in answer')
+      //if form data doesn't exist, display loading
       if(!form){
         display=<p>loading</p>
-      }
+      }//end if
+      //if form data does exist, map through the data
       if(form.length){
         form.map((item)=>{
+          //target specific question number to return results from the data
           let answer=item.answers[103]
+          //if answer.answer is yes add one to pregnant
         if(answer.answer === 'Yes'){
           pregnant++
-        }
+        }//end if
+        //if answer.answer is no add one to notPregnant
         else if (answer.answer === 'No') {
           notPregnant++
-        }
+        }//end else if
+        //if answer.answer is notSure add one to notSure
         else if (answer.answer === 'Not sure') {
           notSure++
-        }
+        }//end else if
       console.log('in pregnant:', pregnant, notPregnant, notSure)
+      //display returns a card with a pie chart and a table that shows the details of user pregnancy in text form
       display=
       <Box mx='auto' width="75%" >
         <Card>
@@ -86,6 +92,7 @@ function Pregnant(){
     }
     return display;
   }
+  //render health statistics dropdown menu and conditionally render card to DOM
     return(
         <>
         <HealthStatistics />

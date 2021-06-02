@@ -20,10 +20,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
-
-
+//function returns results of past services used
 function PastServices(){
-
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -31,10 +30,11 @@ function PastServices(){
       marginBottom: '50px',
     },
   });
+  //define classes to style table
   const classes=useStyles();
-
+  //get data from the store
     const form = useSelector((store)=>store.form);
-
+    //define necessary variables
     let psychWard=0;
     let detox=0;
     let residential=0;
@@ -45,56 +45,60 @@ function PastServices(){
     let prescribed=0;
     let soberHousing=0;
     let declined=0;
-    
-     // const mjMap=form[119].answer
+    //function conditionally renders a bar chart to the dom
     const answer1 =()=>{
       let display=''
       console.log('in answer')
+      //if form data doesn't exist, display loading
       if(!form){
         display=<p>loading</p>
-      }
+      }//end if
+      //if form data does exist, map through data
       if(form.length){
         form.map((item)=>{
           console.log( 'item', item );
+          //target specific question number to return results from the api
           let answer=item.answers[113]
           console.log( 'past services:', answer.answer );
+          //if answer.answer exists proceed through next set of conditionals, adding one to the variable in the matching conditional
         if ( answer.answer ) {
           let answerArray = answer.answer
           console.log( 'answer length:', answerArray.length );
           answerArray.map( ( itemAnswer )=>{  
             if(itemAnswer === 'A psych ward or a psychiatric hold'){
               psychWard++
-            }
+            }//end if
             else if (itemAnswer === 'Detox') {
               detox++
-            }
+            }//end else if
             else if (itemAnswer === 'Residential Treatment') {
               residential++
-            }
+            }//end else if
             else if (itemAnswer === 'Outpatient treatment') {
               outpatient++
-            }
+            }//end else if
             else if (itemAnswer === 'Attended mutual support meetings (AA, NA, SMART recovery, etc...)') {
               mutualSupport++
-            }
+            }//end else if
             else if (itemAnswer === 'Attended individual mental health therapy') {
               therapy++
-            }
+            }//end else if
             else if (itemAnswer === 'Medication-assisted treatment (i.e. methadone, Vivitrol/Naltrexone or Suboxone/buprenorphine)') {
               medicationAssisted++
-            }
+            }//end else if
             else if (itemAnswer === 'Been prescribed medication for mental health issues (depression, anxiety, sleep, etc...)') {
               prescribed++
-            }
+            }//end else if
             else if (itemAnswer === 'Sober Housing') {
               soberHousing++
-            }
+            }//end else if
         })  
       }
+      //if answer.answer doesn't exist or declined add one to decline
         else{
           declined++
-        }
-      //console.log('in gender:', male, female, transgender, nonBinary, declined )
+        }//end else
+      //display returns a card with a bar chart and a table of detailed information of past services used
       display=
       <Box mx='auto' width="75%" >
         <Card>
@@ -145,6 +149,7 @@ function PastServices(){
     }
     return display;
   }
+  //render the health statistics dropdown menu and conditionally render card to the DOM
     return(
         <>
         <HealthStatistics />

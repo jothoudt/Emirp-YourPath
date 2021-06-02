@@ -11,13 +11,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import './TreatmentOptions.css';
 import { AutorenewTwoTone } from '@material-ui/icons';
-
+//returns a table of options for care that users perceive to be the most helpful
 function TreatmentOptions(){
 
     //define dispatch and store
     const dispatch= useDispatch();
     const form= useSelector((store)=>store.form);
-
+    //use to style tables
     const useStyles = makeStyles({
         table: {
           width: "80%",
@@ -30,7 +30,7 @@ function TreatmentOptions(){
             marginBottom:'50px',
         }
       });
-    
+    //define classes to style table
       const classes=useStyles();
 
     //---------variables to utilize for each question/function set-----------
@@ -45,12 +45,16 @@ function TreatmentOptions(){
         //---------reuseable functions-------
         const getScores=(array, number)=>{
             array=[];
+            //if form data doesn't exist, display loading
             if(!form){
                 display=<p>loading</p>
-              }
+              }//end if
+              //if form data doesn't exist, map through data
               if(form.length){
               form.map((item)=>{
+                  //targets the question number from the input to return results from the api
                 let answer=item.answers[number]
+                //if answer.answer exists add number to array
                if(answer.answer){
                 array.push(item.answers[number].answer)
                }
@@ -63,6 +67,7 @@ function TreatmentOptions(){
                 const getAverageScore=(array)=>{
                     total=0;
                 console.log(array)
+                //map through the array
                 array.map((item)=>{
                     total += Number(item);
                     })
@@ -73,7 +78,7 @@ function TreatmentOptions(){
                     return average;
                 }
     //------------------------------------------------------------
-         
+      //renders table to the DOM   
     return(
         
         <div>
