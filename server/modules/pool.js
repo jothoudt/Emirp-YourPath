@@ -21,6 +21,7 @@ if (process.env.DATABASE_URL) {
     password: auth[1],
     host: params.hostname,
     port: params.port,
+    connectionString: process.env.DATABASE_URL,
     database: params.pathname.split('/')[1],
     ssl: { rejectUnauthorized: false },
     max: 10, // max number of clients in the pool
@@ -38,6 +39,10 @@ if (process.env.DATABASE_URL) {
 
 // this creates the pool that will be shared by all other modules
 const pool = new pg.Pool(config);
+
+pool.on('connect', () => {
+  console.log('Postgresql connected');
+});
 
 // the pool with emit an error on behalf of any idle clients
 // it contains if a backend error or network partition happens
