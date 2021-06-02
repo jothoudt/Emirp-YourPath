@@ -17,8 +17,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
-
+//this function returns the results of other substances used in the last month
 function OtherSubstancesMonth(){
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -26,6 +27,7 @@ function OtherSubstancesMonth(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
 
     //select info from store
@@ -46,15 +48,18 @@ function OtherSubstancesMonth(){
         //if data exists map through for counts of yes and no
         if(form.length){
         form.map((item)=>{
+          //target specific question number to return the results from the api
           let answer=item.answers[144]
+          //if answer.answer exists add one to otherSubstancesMonthlyYes
          if(answer.answer){
             otherSubstancesMonthlyYes++
          }//end if
+         //if answer.answer doesn't exist, add one to otherSubstancesMonthlyNo
          else{
             otherSubstancesMonthlyNo++
         }//end else
         console.log(otherSubstancesMonthlyYes, otherSubstancesMonthlyNo)
-        //display for counts
+        //display returns a card with a pie chart and table with details of other substances use in the last month
         otherSubstancesDisplay= 
         <Box mx='auto' width="75%" >
           <Card>
@@ -81,7 +86,7 @@ function OtherSubstancesMonth(){
       return otherSubstancesDisplay;
     }
 
-    //render to dom
+    //conditionally render card to dom
     return(
         <>
         {answerOtherSubstances()}

@@ -21,15 +21,17 @@ function OpiodsMonthPie () {
     form.map((item)=>{
         //targets data set needed
         let answer=item.answers[139]
-        //if the answer is yes
+        //if the answer.answer exists add one to opiodsYes
        if(answer.answer){
         opiodsYes++
-       }
-       //otherwise undecided and no equal No
+       }//end if
+       //otherwise undecided and no add one to opiodsNo
        else{
         opiodsNo++
-      }
+      }//end else
+      //display yes results as a percentage
       opiodsYesDisplay = ((opiodsYes / opiodsTotal) * 100).toFixed(1);
+      //display no results as a percentage
       opiodsNoDisplay = ((opiodsNo / opiodsTotal) * 100).toFixed(1);
       })
       
@@ -52,7 +54,7 @@ function OpiodsMonthPie () {
           },
         ],
     };
-    //render to dom
+    //render a title and a pie chart to the DOM
     return (
         <>
         <div className='header'>

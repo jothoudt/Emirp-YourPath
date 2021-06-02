@@ -21,10 +21,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
-
-
+//returns the results of race question
 function Race(){
-
+//use to style the able
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -32,6 +31,7 @@ function Race(){
       marginBottom: '50px',
     },
   });
+  //define classes to style table
   const classes=useStyles();
   // pulls down assessment results from the store
     const form = useSelector((store)=>store.form);
@@ -53,51 +53,45 @@ function Race(){
      const answer1 =()=>{
        let display=''
        console.log('in answer')
+       //if form data doesn't exist, display loading
        if(!form){
          display=<p>loading</p>
-       }
+       }//end if
+       //if form data does exist, map through data
        if(form.length){
        form.map((item)=>{
-          
-        const addToFavorites=()=>{
-          console.log('in add favorites')
-           let toAdd={
-             id: user.id,
-             component_name: 'Race'
-           }
-           dispatch({type:'ADD_PREFERENCES', payload:toAdd})
-         }
-
-
+         //target specific question number to return results from the api
          let answer=item.answers[95] 
+         //if answer.answer matches the string add on to the variable in that conditional
         if(answer.answer==='Native American'){
           nativeAmerican++
-        }
+        }//end if
         else if(answer.answer==='Black or African American'){
           blackOrAfricanAmerican++
-        }
+        }//end else if
         else if(answer.answer==='East African/Somali/African-born'){
           eastAfricanSomaliAfricanBorn++
-        }
+        }//end else if
         else if(answer.answer==='East African/Somali/African-born'){
           eastAfricanSomaliAfricanBorn++
-        }
+        }//end else if
         else if(answer.answer==='Asian'){
           asian++
-        }
+        }//end else if
         else if(answer.answer==='Native Hawaiian or Pacific Islander'){
           nativeHawaiinOrPacificIslander++
-        }
+        }//end else if
         else if(answer.answer==='Alaska Native'){
           alaskaNative++
-        }
+        }//end else if
         else if(answer.answer==='White'){
           white++
-        }
+        }//end else if
+        //if answer.answer doesn't exist, add one to noDisclosure
         else {
           noDisclosure++
-        }
-
+        }//end else
+        //display returns card with pie chart and table with the details of race
       display= 
       <Box mx='auto' width="75%" >
           <Card>
@@ -141,6 +135,7 @@ function Race(){
      }
      return display;
    }
+   //renders the demographic dropdown, and conditionally renders card
     return(
         <>
         <Demographics />

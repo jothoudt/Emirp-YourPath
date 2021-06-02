@@ -2,11 +2,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
 import Box from '@material-ui/core/Box';
-
-
-
-
-  
+//function returns a pie chart of other substances used in the last month
 function OtherSubstancesMonthPie () {
     //get information from the store
     const form = useSelector((store)=>store.form);
@@ -22,18 +18,19 @@ function OtherSubstancesMonthPie () {
     form.map((item)=>{
         //targets data set needed
         let answer=item.answers[144]
-        //if the answer is yes
+        //if the answer is yes add one to otherSubstancesYes
        if(answer.answer){
         otherSubstancesYes++
-       }
-       //otherwise undecided and no equal No
+       }//end if
+       //otherwise undecided and no add one to otherSubstancesNo
        else{
         otherSubstancesNo++
-      }
+      }//end else
+      //display yes results as a percentage
       otherSubstancesYesDisplay = ((otherSubstancesYes / otherSubstancesTotal) * 100).toFixed(1);
+      //display no results as a percentage
       otherSubstancesNoDisplay = ((otherSubstancesNo / otherSubstancesTotal) * 100).toFixed(1);
       })
-      
       //data for Pie Chart
     const data = {
         labels: ['Yes %', 'No %'],
@@ -53,7 +50,7 @@ function OtherSubstancesMonthPie () {
           },
         ],
     };
-    //render to dom
+    //render a pie chart and title to dom
     return (
         <>
         <div className='header'>

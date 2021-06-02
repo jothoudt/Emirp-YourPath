@@ -1,10 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
-
-
-
-  
+//function that returns pie chart 
 function SexualOrientationPieChart () {
     //get info from the store
     const form = useSelector((store)=>store.form);

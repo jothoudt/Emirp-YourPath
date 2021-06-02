@@ -2,16 +2,11 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
 import Box from '@material-ui/core/Box';
-
-
-
-
-  
+//returns a resized pie chart
 function RacePieChartDetails () {
+    //get data from the store
     const form = useSelector((store)=>store.form);
-
-    
-
+    //define the necessary variables
     let raceTotal=form.length;
     let blackOrAfricanAmerican=0;
     let blackOrAfricanAmericanDisplay=0;
@@ -29,38 +24,40 @@ function RacePieChartDetails () {
     let nativeAmericanDisplay=0;
     let noDisclosure=0;
     let noDisclosureDisplay=0;
-
-
-
+    //map through data from the store
     form.map((item)=>{
+        //target specific question number to return results from the store
         let answer=item.answers[95]
+        //if answer.answer matches the string add one to the variable in that conditional
         if(answer.answer==='Native American'){
             nativeAmerican++
-        }
+        }//end if
         else if(answer.answer==='Black or African American'){
             blackOrAfricanAmerican++
-        }
+        }//end else if
         else if(answer.answer==='East African/Somali/African-born'){
             eastAfricanSomaliAfricanBorn++
-        }
+        }//end else if
         else if(answer.answer==='East African/Somali/African-born'){
             eastAfricanSomaliAfricanBorn++
-        }
+        }//end else if
         else if(answer.answer==='Asian'){
             asian++
-        }
+        }//end else if
         else if(answer.answer==='Native Hawaiian or Pacific Islander'){
             nativeHawaiinOrPacificIslander++
-        }
+        }//end else if
         else if(answer.answer==='Alaska Native'){
             alaskaNative++
-        }
+        }//end else if
         else if(answer.answer==='White'){
             white++
-        }
+        }//end else if
+        //if answer.answer doesn't exist add one to noDisclosure
         else {
             noDisclosure++
-        }
+        }//end else
+        //display results as percentages
         blackOrAfricanAmericanDisplay = ((blackOrAfricanAmerican / raceTotal) * 100).toFixed(1);
         eastAfricanSomaliAfricanBornDisplay = ((eastAfricanSomaliAfricanBorn / raceTotal) * 100).toFixed(1);
         asianDisplay = ((asian / raceTotal) * 100).toFixed(1);
@@ -70,8 +67,7 @@ function RacePieChartDetails () {
         nativeAmericanDisplay = ((nativeAmerican / raceTotal) * 100).toFixed(1);
         noDisclosureDisplay = ((noDisclosure / raceTotal) * 100).toFixed(1);
       })
-      
-
+      //data for the pie chart
     const data = {
         labels: ['Black %', 'East African %', 'Asian %', 'Hawaiin/Pacific Islander %', 'Alaska Native %', 'White %', 'Native American %', 'Not Disclosed %'],
         datasets: [
@@ -104,7 +100,7 @@ function RacePieChartDetails () {
           },
         ],
     };
-      
+      //renders resized pie chart and title to the DOM
     return (
         <>
         <div className='header'>

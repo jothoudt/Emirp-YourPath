@@ -20,7 +20,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 function OpiodsMonth(){
-
+  //use to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -28,6 +28,7 @@ function OpiodsMonth(){
       marginBottom: '50px',
     },
   });
+  //define classes to style table
   const classes=useStyles();
 
     //select info from store
@@ -41,22 +42,25 @@ function OpiodsMonth(){
     const answerOpiods=()=>{
         let opiodsDisplay=''
         console.log('in answer')
-        //if no data exists
+        //if no data exists display loading
         if(!form){
             opiodsDisplay=<p>loading</p>
         }//end if
         //if data exists map through for counts of yes and no
         if(form.length){
         form.map((item)=>{
+          //target specific question to return results from the api
           let answer=item.answers[139]
+          //if answer.answer exists add one to opiodsMonthlyYes
          if(answer.answer){
             opiodsMonthlyYes++
          }//end if
+         //if answer.answer doesn't exist add one to opiodsMonthlyNo
          else{
             opiodsMonthlyNo++
         }//end else
         console.log(opiodsMonthlyYes, opiodsMonthlyNo)
-        //display for counts
+        //display returns a card with pie chart and table of details about Opioid use in the last month
         opiodsDisplay= 
         <Box mx='auto' width="75%" >
           <Card>
@@ -83,7 +87,7 @@ function OpiodsMonth(){
       return opiodsDisplay;
     }
 
-    //render to dom
+    //conditionally render card to the DOM
     return(
         <>
         {answerOpiods()}

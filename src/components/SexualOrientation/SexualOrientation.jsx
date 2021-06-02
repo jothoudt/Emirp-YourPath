@@ -21,11 +21,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
-
-
-
+//returns all the results of sexual orientation
 function SexualOrientation(){
-
+//used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -33,6 +31,7 @@ function SexualOrientation(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
   //get info from the store
     const form = useSelector((store)=>store.form);
@@ -53,23 +52,27 @@ function SexualOrientation(){
       //if form information map 
       if(form.length){
         form.map((item)=>{
+          //target specific question number to return results from the api
           let answer=item.answers[97]
+          //if answer.answer matches the string add one to the variable in the matching conditional
         if(answer.answer === 'Heterosexual (straight)'){
           heterosexual++
-        }
+        }//end if
         else if (answer.answer === 'Homosexual') {
           homosexual++
-        }
+        }//end else if
         else if (answer.answer === 'Bisexual') {
           bisexual++
-        }
+        }//end else if
         else if (answer.answer === 'Asexual') {
           asexual++
-        }
+        }//end else if
+        //if answer.answer doesn't exist, add one to noDisclosure
         else {
           noDisclosure++
       }
       console.log('in orientation:', heterosexual, homosexual, bisexual, asexual)
+      //display returns a card with a pie chart and a table that displays all of the sexual orientation info in text form
       display= 
       <Box mx='auto' width="75%" >
         <Card>
@@ -105,6 +108,7 @@ function SexualOrientation(){
     }
     return display;
   }
+  //renders demographic dropdown menu and conditionally render card
     return(
         <>
         <Demographics />

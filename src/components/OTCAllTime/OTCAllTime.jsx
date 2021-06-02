@@ -18,9 +18,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 
-
+//returns results for over the counter substances use all time
 function OTCAllTime(){
-
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -28,31 +28,36 @@ function OTCAllTime(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
-
+  //get data from the store
     const form = useSelector((store)=>store.form);
-
+    //define the variables
     let OTCYes=0;
     let OTCNo=0;
-    
-     // const mjMap=form[119].answer
-   
+    //conditionally render card to the DOM
      const answer1 =()=>{
        let display=''
        console.log('in answer')
+       //if form data doesn't exist, display loading
        if(!form){
          display=<p>loading</p>
-       }
+       }//end if
+       //if form data does exist map through the data
        if(form.length){
        form.map((item)=>{
+         //target specific question number to return results from the api
          let answer=item.answers[127]
+         //if answer.answer is yes add one to OTCYes
         if(answer.answer==='Yes'){
             OTCYes++
-        }
+        }//end if
+        //if answer.answer is no or no answer add one to OTCNo
         else{
             OTCNo++
-       }
+       }//end else
        console.log(OTCYes, OTCNo)
+       //display returns a card with a pie chart and a table of details of over the counter substance use all time
        display= 
       <Box mx='auto' width="75%" >
         <Card>
@@ -78,6 +83,7 @@ function OTCAllTime(){
      }
      return display;
    }
+   //conditionally renders card to the DOM
     return(
         <>
         {answer1()}

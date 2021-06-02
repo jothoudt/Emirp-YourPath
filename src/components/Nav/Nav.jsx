@@ -13,6 +13,7 @@ import {BiBarChartAlt2, BiHeartCircle, BiCapsule, BiInfoCircle} from "react-icon
 import { CSSTransition } from 'react-transition-group';
 
 function Nav() {
+  //get data from the store
   const user = useSelector((store) => store.user);
   //local state for opening Nav
   const [open, setOpen] = useState(false);
@@ -25,7 +26,7 @@ function Nav() {
   if (user.id != null) {
     loginLinkData.path = '/user';
     loginLinkData.text = 'Home';
-  }
+  }//end if
 
   return (
   <Navbar>
@@ -47,7 +48,7 @@ function Navbar(props) {
       <ul className="navbar-nav">{props.children}</ul>
     </nav>
   )
-}
+}//end Navbar
 
 function NavItem({ children, icon, setOpen, open }) {
 
@@ -60,7 +61,7 @@ function NavItem({ children, icon, setOpen, open }) {
       {open && children}
     </li>
   )
-}
+}//end NavItem
 
 function DropdownMenu ( { open, setOpen }) {
 
@@ -72,7 +73,7 @@ function DropdownMenu ( { open, setOpen }) {
   function calcHeight(el) {
     const height = el.offsetHeight;
     setMenuHeight(height);
-  }
+  }//end DropdownMenu
 
   function DropdownItem(props) {
 
@@ -83,7 +84,7 @@ function DropdownMenu ( { open, setOpen }) {
         <span className="icon-right">{props.rightIcon}</span>
       </a>      
     );
-  }
+  }//end DropdownItem
 
   return (
     <div className="dropdown" style={{ height: menuHeight }}>

@@ -2,16 +2,10 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
 import Box from '@material-ui/core/Box';
-
-
-
-
-  
+//function returns pie chart  
 function SexualOrientationPieChartDetails () {
     const form = useSelector((store)=>store.form);
-
-    
-
+    //define the necessary variables
     let total=form.length;
     let heterosexual=0;
     let homosexual=0;
@@ -23,33 +17,34 @@ function SexualOrientationPieChartDetails () {
     let bisexualDisplay=0;
     let asexualDisplay=0;
     let noDisclosureDisplay=0;
-
-
-
+    //map through data from the store
     form.map((item)=>{
+        //target specific question number to return results from the api
         let answer=item.answers[97]
+        //if answer.answer matches the string, add one to the variable in the matching conditional
         if(answer.answer==='Heterosexual (straight)'){
             heterosexual++
-        }
+        }//end if
         else if(answer.answer==='Homosexual'){
             homosexual++
-        }
+        }//end else if
         else if(answer.answer==='Bisexual'){
             bisexual++
-        }
+        }//end else if
         else if(answer.answer==='Asexual'){
             asexual++
-        }
+        }//end else if
         else {
             noDisclosure++
-        }
+        }//end else 
+        //display results as a percentage
         heterosexualDisplay = ((heterosexual / total) * 100).toFixed(1);
         homosexualDisplay = ((homosexual / total) * 100).toFixed(1);
         bisexualDisplay = ((bisexual / total) * 100).toFixed(1);
         asexualDisplay = ((asexual / total) * 100).toFixed(1);
         noDisclosureDisplay = ((noDisclosure / total) * 100).toFixed(1);
     })
-
+//data for the pie chart
     const data = {
         labels: ['Heterosexual (straight) %', 'Homosexual %', 'Bisexual %', 'Asexual %', 'Not Disclosed %'],
         datasets: [
@@ -80,7 +75,7 @@ function SexualOrientationPieChartDetails () {
           },
         ],
     };
-      
+     //render pie chart and title to the DOM 
     return (
         <>
         <div className='header'>

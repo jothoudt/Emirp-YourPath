@@ -1,15 +1,11 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
-
-
-
-  
+//function that returns a pie chart 
 function PregnantPieChart () {
+  //get data from the store
     const form = useSelector((store)=>store.form);
-
-    
-
+    //define the necessary variables
     let pregnantTotal=form.length;
     let pregnant=0;
     let pregnantDisplay=0;
@@ -17,26 +13,28 @@ function PregnantPieChart () {
     let notPregnantDisplay=0;
     let notSure=0;
     let notSureDisplay=0;
-
-
-
+    //map through data from the store
     form.map((item)=>{
+      //target specific question number to return the results from the api
         let answer=item.answers[103]
+        //if answer.answer is yes add one to pregnant
         if(answer.answer==='Yes'){
             pregnant++
-        }
+        }//end if
+        //if answer.anser is no add one to not pregnant
         else if(answer.answer==='No'){
             notPregnant++
-        }
+        }//end else if
+        //if answer.answer is Not sure add one to notSure
         else if(answer.answer==='Not sure'){
             notSure++
-        }
+        }//end else if
+        //display results as percentages
         pregnantDisplay = ((pregnant / pregnantTotal) * 100).toFixed(1);
         notPregnantDisplay = ((notPregnant / pregnantTotal) * 100).toFixed(1);
         notSureDisplay = ((notSure / pregnantTotal) * 100).toFixed(1);
       })
-      
-
+      //data for the pie chart
     const data = {
         labels: ['Pregnant %', 'Not Pregnant %', 'Not Sure %'],
         datasets: [
@@ -67,7 +65,7 @@ function PregnantPieChart () {
           },
         ],
     };
-      
+      //render a pie chart and title to the DOM
     return (
         <>
         <div className='header'>
