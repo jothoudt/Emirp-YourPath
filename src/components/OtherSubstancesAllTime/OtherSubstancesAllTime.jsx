@@ -18,10 +18,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
-
-
+//function returns results of Other substances use all time
 function OtherSubstancesAllTime(){
-
+  //used to style the table
   const useStyles = makeStyles({
     table: {
       width: "50%",
@@ -29,6 +28,7 @@ function OtherSubstancesAllTime(){
       marginBottom: '50px',
     },
   });
+  //define classes to style the table
   const classes=useStyles();
   //get information from the store
     const form = useSelector((store)=>store.form);
@@ -42,24 +42,27 @@ function OtherSubstancesAllTime(){
        //variable to be returned
         let otherDisplay=''
         console.log('in answer')
-        //if the form data doesn't exist
+        //if the form data doesn't exist, display loading
         if(!form){
           otherDisplay=<p>loading</p>
         }
         //map through form data and count yes/no answers
         if(form.length){
         form.map((item)=>{
+          //target a specific question number to return the results from the api
           let answer=item.answers[128]
+          //if answer.anser is yes add one to otherYes
          if(answer.answer==='Yes'){
              otherYes++
-         }
+         }//end if
+         //if answer.answer is no or no answer add one to otherNo
          else{
              otherNo++
-         }
+         }//end else
         //console log results
         console.log(otherYes, otherNo)
 
-        //define display
+        //display returns a card with a pie chart and a table with the details of other substances use all time
         otherDisplay= 
         <Box mx='auto' width="75%" >
           <Card>
@@ -87,7 +90,7 @@ function OtherSubstancesAllTime(){
       return otherDisplay;
     }
 
-    //to display on the dom
+    //conditionally renders a card to the DOM
     return(
         <>
         {answerMeth()}

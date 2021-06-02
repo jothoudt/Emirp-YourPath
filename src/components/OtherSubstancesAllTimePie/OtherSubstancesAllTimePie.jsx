@@ -2,8 +2,6 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import { Pie } from 'react-chartjs-2';
 
-
-
 //function to return pie chart for lifetime other substance use
 function OtherSubstanceAllTimePie () {
     //select items from the store
@@ -18,6 +16,7 @@ function OtherSubstanceAllTimePie () {
 
     //map through the store data
     form.map((item)=>{
+      //target specific question number to returm the results from the api
         let answer=item.answers[128]
         //if answer is yes add one to yes
        if(answer.answer==='Yes'){
@@ -51,7 +50,7 @@ function OtherSubstanceAllTimePie () {
           },
         ],
     };
-    //render to dom
+    //render a title and pie chart to dom
     return (
         <>
         <div className='header'>

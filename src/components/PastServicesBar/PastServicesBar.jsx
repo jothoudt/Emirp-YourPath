@@ -2,8 +2,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import { Bar } from 'react-chartjs-2';
 import { LogarithmicScale } from 'chart.js';
-
-
+//function returns a bar chart of past services used
 function PastServicesBar () {
     // pulls down assessment results from the store
     const form = useSelector((store)=>store.form);
@@ -20,50 +19,51 @@ function PastServicesBar () {
     let prescribed=0;
     let soberHousing=0;
     let declined=0;
-
-    
-    
+    //map through the data from the store
       form.map((item)=>{
+        //target a specific question number to return the results from the api
         let answer=item.answers[113]
         console.log( 'past services:', answer.answer );
+        //if answer.answer exists, proceed through the next set of conditionals, adding one to the variable in the matching conditional
         if ( answer.answer ) {
         let answerArray = answer.answer
         console.log( 'answer length:', answerArray.length );
         answerArray.map( ( itemAnswer )=>{  
           if(itemAnswer === 'A psych ward or a psychiatric hold'){
             psychWard++
-          }
+          }//end if
           else if (itemAnswer === 'Detox') {
             detox++
-          }
+          }//end else if
           else if (itemAnswer === 'Residential Treatment') {
             residential++
-          }
+          }//end else if
           else if (itemAnswer === 'Outpatient treatment') {
             outpatient++
-          }
+          }//end else if
           else if (itemAnswer === 'Attended mutual support meetings (AA, NA, SMART recovery, etc...)') {
             mutualSupport++
-          }
+          }//end else if
           else if (itemAnswer === 'Attended individual mental health therapy') {
             therapy++
-          }
+          }//end else if
           else if (itemAnswer === 'Medication-assisted treatment (i.e. methadone, Vivitrol/Naltrexone or Suboxone/buprenorphine)') {
             medicationAssisted++
-          }
+          }//end else if
           else if (itemAnswer === 'Been prescribed medication for mental health issues (depression, anxiety, sleep, etc...)') {
             prescribed++
-          }
+          }//end else if
           else if (itemAnswer === 'Sober Housing') {
             soberHousing++
-          }
+          }//end else if
       })  
     }
+    //if answer.answer doesn't exist or answer is declined add one to declined
     else{
       declined++
     }
   })
-
+  //display results as percentages
   psychWard = ((psychWard / total) * 100).toFixed(1);
   detox = ((detox / total) * 100).toFixed(1);
   residential = ((residential / total) * 100).toFixed(1);
@@ -74,9 +74,7 @@ function PastServicesBar () {
   prescribed = ((prescribed / total) * 100).toFixed(1);
   soberHousing = ((soberHousing / total) * 100).toFixed(1);
   declined = ((declined / total) * 100).toFixed(1);
-
-
-
+  //data for the table
     const data = {
         labels: [
           'A psych ward or a psychiatric hold', 
@@ -123,6 +121,7 @@ function PastServicesBar () {
           ],
         },
       };
+      //render title and pie chart to the DOM
     return(
         <>
             <div className='header'>
