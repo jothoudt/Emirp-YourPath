@@ -16,16 +16,23 @@ function HeroinPieChartDetails () {
 
     //map through the store data
     form.map((item)=>{
+      //if api number exists proceed through conditionals
+      if(item.answers[122]){
       //target specific question number to return results from the api
         let answer=item.answers[122]
         //if answer is yes add one to yes
-       if(answer.answer==='Yes'){
+        if(answer.answer==='Yes'){
         heroinYes++
-       }
-       //if answer is no or undecided add one to no
-       else{
+        }//end if
+        //if answer is no or undecided add one to no
+        else{
+          heroinNo++
+        }//end else
+      }//end if
+      //if api number does not exist add one to heroinPie
+      else{
         heroinNo++
-      }
+      }//end else
       //display in percentages
       heroinYesDisplay = ((heroinYes / heroinTotal) * 100).toFixed(1);
       heroinNoDisplay = ((heroinNo / heroinTotal) * 100).toFixed(1);

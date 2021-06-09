@@ -46,16 +46,23 @@ function HeroinAllTime(){
         //if form data does exist map through data from the store
         if(form.length){
         form.map((item)=>{
+          //if api number exists proceed through conditionals
+          if(item.answers[122]){
           //targets specific question number to return results from the api
-          let answer=item.answers[122]
-          //if answer.answer is yes add one to heroinYes
-         if(answer.answer==='Yes'){
-             heroinYes++
-         }//end if
-         //if answer.answer is no or no answer add one to heroinNo
-         else{
-             heroinNo++
-         }//end else
+            let answer=item.answers[122]
+            //if answer.answer is yes add one to heroinYes
+            if(answer.answer==='Yes'){
+              heroinYes++
+            }//end if
+            //if answer.answer is no or no answer add one to heroinNo
+            else{
+              heroinNo++
+            }//end else
+          }
+          //if api number doesn't exist add one to heroinNo
+          else{
+            heroinNo++
+          }
         console.log(heroinYes, heroinNo)
         //display returns a card with a pie char of heroin all time use. It also returns a table with a description as the header and two rows. One row for users that selected yes and one for users that selected no.
         heroinDisplay= 

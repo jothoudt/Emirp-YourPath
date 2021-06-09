@@ -40,11 +40,13 @@ function AllDrugsBar () {
         counter=0;
         //map through the answers
         form.map((item)=>{
+          if(item.answers[number]){
             let answer=item.answers[number]
             //if answer equals yes add one to the answer
             if(answer.answer==='Yes'){
                 counter++
-        }
+            }
+          }
         //display as a percentage
           display = ((counter / total) * 100).toFixed(1);
         })

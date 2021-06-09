@@ -46,16 +46,22 @@ function MarijuanaAllTime(){
        //if form data does exist map through the data
        if(form.length){
        form.map((item)=>{
-         //target specific question number to return results from the api
-         let answer=item.answers[119]
-         //if answer.answer is yes add one to marijuanaYes
-        if(answer.answer==='Yes'){
+         //if api number exists proceed through conditionals
+          if(item.answers[119]){
+          //target specific question number to return results from the api
+          let answer=item.answers[119]
+          //if answer.answer is yes add one to marijuanaYes
+          if(answer.answer==='Yes'){
             marijuanaYes++
-        }//end if
-        //if answer.answer is no or unanswered add one to marijuana no
-        else{
+          }//end if
+          //if answer.answer is no or unanswered add one to marijuana no
+          else{
             marijuanaNo++
-       }//end else
+          }//end else
+        }//end if
+        else{
+          marijuanaNo++
+        }
        console.log(marijuanaYes, marijuanaNo)
        //display returns a card with Marijuana All time use pie chart. It also returns a table with a description as the header and two rows. One row is for users that selected yes and the other is for users that selected no
        display= 

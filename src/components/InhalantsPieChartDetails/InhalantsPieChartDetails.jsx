@@ -15,16 +15,22 @@ function InhalantsPieChartDetails () {
     let noDisplay=0;
     //map through data from the store
     form.map((item)=>{
+      //if api number exists proceed through conditionals
+      if(item.answers[126]){
       //target specific question number to return results from the api
         let answer=item.answers[126]
         //if answer.answer is yess add one to yes
-       if(answer.answer==='Yes'){
+        if(answer.answer==='Yes'){
            yes++
-       }//end if
-       //if answer.answer is no or no answer add one to no
-       else{
+        }//end if
+        //if answer.answer is no or no answer add one to no
+        else{
            no++
-      }//end else
+        }//end else
+      }//end if
+      else{
+        no++
+      }
       //display yes results as a percentage
         yesDisplay = ((yes / total) * 100).toFixed(1);
         //return no results as a percentage

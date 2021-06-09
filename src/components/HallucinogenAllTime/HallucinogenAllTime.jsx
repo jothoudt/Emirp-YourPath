@@ -48,6 +48,8 @@ function HallucinogenAllTime(){
       //if form data does exist map through the results
       if(form.length){
       form.map((item)=>{
+        //if api number exists proceed through conditionals
+        if(item.answers[125]){
         //target a specific question number to get results from the api
         let answer=item.answers[125]
         ///if answer.answer is yes add one to hallucinogenYes
@@ -57,7 +59,12 @@ function HallucinogenAllTime(){
         //if the answer is no or unanswered add one to hallucinogenNo
         else{
             hallucinogenNo++
-      }//end else
+       }//end else
+    }
+    //if api number doesn't exist add one to hallucinogenNo
+    else{
+      hallucinogenNo++
+    }
       console.log(hallucinogenYes, hallucinogenNo)
       //display returns a card with a pie chart, a table with the description as the header and two table rows. One row is for users that answered yes. The other is for users that answered no.
       display= 

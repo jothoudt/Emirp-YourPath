@@ -15,16 +15,23 @@ function HallucinogenPieChartDetails () {
     let hallucinogenNoDisplay=0;
     //map through the data from the store
     form.map((item)=>{
+      //if api number exists proceed through conditionals
+      if(item.answers[125]){
       //target a specific question number to return results from the api
         let answer=item.answers[125]
         //if answer.answer is yes add one to hallucinogenYes
-       if(answer.answer==='Yes'){
+        if(answer.answer==='Yes'){
           hallucinogenYes++
-       }//end if
-       //if answer.answer is no or no answer add one to hallucinogenNo
-       else{
+        }//end if
+        //if answer.answer is no or no answer add one to hallucinogenNo
+        else{
           hallucinogenNo++
-      }//end else
+        }//end else
+      }
+    //if api number doesn't exist add one to hallucinogenNo
+      else{
+        hallucinogenNo++
+      }
       //display yes results as a percentage
       hallucinogenYesDisplay = ((hallucinogenYes / hallucinogenTotal) * 100).toFixed(1);
       //display no results as a percentage

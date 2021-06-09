@@ -47,16 +47,23 @@ function CocaineAllTime(){
        //if form data does exist, map through the information from the store
        if(form.length){
        form.map((item)=>{
-         //target a specific question in the form to return answers from api
-         let answer=item.answers[120]
-         //if answer is Yes add one to cocaineYes
-        if(answer.answer==='Yes'){
-            cocaineYes++
-        }//end if
-        //if answer is no or no answer add one to cocaineNo
-        else{
+         //if api number exists proceed through conditionals
+         if(item.answers[120]){
+           //target a specific question in the form to return answers from api
+           let answer=item.answers[120]
+           //if answer is Yes add one to cocaineYes
+           if(answer.answer==='Yes'){
+             cocaineYes++
+           }//end if
+            //if answer is no or no answer add one to cocaineNo
+           else{
             cocaineNo++
-       }//end else
+           }//end else
+          }
+          //if api number doesn't exist add one to no
+          else{
+            cocaineNo++
+          }
        console.log(cocaineYes, cocaineNo)
        //display returns a pie chart of cocaine use all time as well as a table to display a description and details in text form.
        display= 

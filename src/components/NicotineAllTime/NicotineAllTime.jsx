@@ -49,16 +49,23 @@ function NicotineAllTime(){
         //map through and count yes/no answers
         if(form.length){
         form.map((item)=>{
-          //target specific question number to return results from the api
-          let answer=item.answers[117]
-          //if answer.answer is yes add one to nicotineYes
-         if(answer.answer==='Yes'){
-             nicotineYes++
-         }//end if 
-         //if answer.answer is no or no answer add one to nicotineNo
-         else{
-             nicotineNo++
-         }
+          //if api number exists proceed through conditionals
+          if(item.answers[117]){
+            //target specific question number to return results from the api
+            let answer=item.answers[117]
+            //if answer.answer is yes add one to nicotineYes
+            if(answer.answer==='Yes'){
+              nicotineYes++
+            }//end if 
+            //if answer.answer is no or no answer add one to nicotineNo
+            else{
+              nicotineNo++
+            }//end else
+          }//end if
+          //if api number doesn't exist add one to nicotineNo
+          else{
+            nicotineNo++
+          }//end else
         console.log(nicotineYes, nicotineNo)
 
         //display returns a card with a pie chart and a table with all the details of nicotine use all time

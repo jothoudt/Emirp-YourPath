@@ -50,16 +50,23 @@ function MethAllTime(){
         //if data exists map through and count answers
         if(form.length){
         form.map((item)=>{
-          //target specific question number to return the results from the api
-          let answer=item.answers[121]
-          //if answer.answer is yes add one to methYes
-         if(answer.answer==='Yes'){
-             methYes++
-         }//end if
-         //if answer.answer is no or no answer add one to methNo
-         else{
-             methNo++
-         }//end else
+          //if api number exists proceed through conditionals
+          if(item.answers[121]){
+            //target specific question number to return the results from the api
+            let answer=item.answers[121]
+            //if answer.answer is yes add one to methYes
+            if(answer.answer==='Yes'){
+              methYes++
+            }//end if
+            //if answer.answer is no or no answer add one to methNo
+            else{
+              methNo++
+            }//end else
+          }//end if
+          //if api number does not exist add one to methNo
+          else{
+            methNo++
+          }
         console.log(methYes, methNo)
         //display returns a card with a pie chart and a table of all the information in text form
         methDisplay= 

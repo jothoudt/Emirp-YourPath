@@ -14,16 +14,23 @@ function MarijuanaPieChart () {
     let marijuanaNoDisplay=0;
     //map through data from the store
     form.map((item)=>{
+      //if api number exists proceed through conditionals
+      if(item.answers[119]){
       //target specific question number to return results from the api
         let answer=item.answers[119]
         //if answer.answer is yes add one to marijuanaYes
-       if(answer.answer==='Yes'){
+        if(answer.answer==='Yes'){
            marijuanaYes++
-       }//end if
-       //if answer.answer is no or no answer add one to marijuanaNo
-       else{
+        }//end if
+        //if answer.answer is no or no answer add one to marijuanaNo
+        else{
            marijuanaNo++
-      }//end else
+        }//end else
+      }//end if
+      //if api number doesn't exist add one to No
+      else{
+        marijuanaNo++
+      }
       //display yes results as a percentage
         marijuanaYesDisplay = ((marijuanaYes / marijuanaTotal) * 100).toFixed(1);
         //display no results as a percentage

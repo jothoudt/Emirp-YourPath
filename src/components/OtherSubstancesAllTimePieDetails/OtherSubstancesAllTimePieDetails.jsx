@@ -16,16 +16,23 @@ function OtherSubstanceAllTimePieDetails () {
 
     //map through the store data
     form.map((item)=>{
-      //target specific question number to return results from the api
+      //if api number exists proceed through conditionals
+      if(item.answers[128]){
+        //target specific question number to return results from the api
         let answer=item.answers[128]
         //if answer is yes add one to yes
-       if(answer.answer==='Yes'){
-        otherSubstanceYes++
-       }
-       //if answer is no or undecided add one to no
-       else{
+        if(answer.answer==='Yes'){
+          otherSubstanceYes++
+        }//end if
+        //if answer is no or undecided add one to no
+        else{
+          otherSubstanceNo++
+        }//end else
+      }//end if
+      //if api number doesn't exist add one to otherSubstanceNo
+      else{
         otherSubstanceNo++
-      }
+      }//end else
       //display in percentages
       otherSubstanceYesDisplay = ((otherSubstanceYes / otherSubstanceTotal) * 100).toFixed(1);
       otherSubstanceNoDisplay = ((otherSubstanceNo / otherSubstanceTotal) * 100).toFixed(1);

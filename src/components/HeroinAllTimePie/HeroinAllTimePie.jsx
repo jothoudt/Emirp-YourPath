@@ -18,16 +18,23 @@ function HeroinAllTimePie () {
 
     //map through the store data
     form.map((item)=>{
+      //if api number exists proceed through conditionals
+      if(item.answers[122]){
       //target a specific question number to return results from DOM
         let answer=item.answers[122]
         //if answer is yes add one to yes
-       if(answer.answer==='Yes'){
-        heroinYes++
-       }
-       //if answer is no or undecided add one to no
-       else{
-        heroinNo++
+        if(answer.answer==='Yes'){
+          heroinYes++
+        }//end if
+        //if answer is no or undecided add one to no
+        else{
+          heroinNo++
+        }//end else
       }
+      //if api number does exist add one to heroinNo++
+      else{
+        heroinNo++
+      }//end else
       //display in percentages
       heroinYesDisplay = ((heroinYes / heroinTotal) * 100).toFixed(1);
       heroinNoDisplay = ((heroinNo / heroinTotal) * 100).toFixed(1);

@@ -46,16 +46,23 @@ function OTCAllTime(){
        //if form data does exist map through the data
        if(form.length){
        form.map((item)=>{
-         //target specific question number to return results from the api
-         let answer=item.answers[127]
-         //if answer.answer is yes add one to OTCYes
-        if(answer.answer==='Yes'){
-            OTCYes++
-        }//end if
-        //if answer.answer is no or no answer add one to OTCNo
-        else{
-            OTCNo++
-       }//end else
+         //if api number exists proceed through conditionals
+         if(item.answers[127]){
+           //target specific question number to return results from the api
+           let answer=item.answers[127]
+           //if answer.answer is yes add one to OTCYes
+           if(answer.answer==='Yes'){
+             OTCYes++
+           }//end if
+           //if answer.answer is no or no answer add one to OTCNo
+           else{
+             OTCNo++
+           }//end else
+         }//end if
+         //if api number doesn't exist add one to OTCNo
+         else{
+           OTCNo++
+         }//end else
        console.log(OTCYes, OTCNo)
        //display returns a card with a pie chart and a table of details of over the counter substance use all time
        display= 

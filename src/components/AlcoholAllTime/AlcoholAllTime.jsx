@@ -51,6 +51,7 @@ function AlcoholAllTime(){
         //map through form data and count yes/no answers for alcohol
         if(form.length){
         form.map((item)=>{
+         if(item.answers[118]){
           let answer=item.answers[118]
          if(answer.answer==='Yes'){
              alcoholYes++
@@ -58,6 +59,10 @@ function AlcoholAllTime(){
          else{
              alcoholNo++
          }
+        }
+        else{
+          alcoholNo++
+        }
         //console log results
         console.log(alcoholYes, alcoholNo)
 

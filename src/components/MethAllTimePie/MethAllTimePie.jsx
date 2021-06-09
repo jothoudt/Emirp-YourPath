@@ -18,13 +18,20 @@ function MethAllTimePie () {
 
     //map through the store data
     form.map((item)=>{
+      //if api number exists proceed through conditionals
+      if(item.answers[121]){
         let answer=item.answers[121]
         //if answer is yes add one to yes
-       if(answer.answer==='Yes'){
-        methYes++
-       }//end if
-       //if answer is no or undecided add one to no
-       else{
+        if(answer.answer==='Yes'){
+          methYes++
+        }//end if
+        //if answer is no or undecided add one to no
+        else{
+          methNo++
+        }//end else
+      }//end if
+      //if api number doesn't exist add one to methNo
+      else{
         methNo++
       }//end else
       //display in percentages

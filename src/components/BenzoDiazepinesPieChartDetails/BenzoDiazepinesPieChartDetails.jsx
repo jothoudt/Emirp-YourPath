@@ -17,16 +17,22 @@ function BenzodiazepinesPieChartDetails () {
     let noDisplay=0;
     //map through information from the store
     form.map((item)=>{
+      //if api number exists proceed through conditionals
+      if(item.answers[124]){
       //targets a specific question in the form to get the answers from the api
-        let answer=item.answers[119]
+        let answer=item.answers[124]
         //if answer.answer is yes add one to yes
-       if(answer.answer==='Yes'){
+        if(answer.answer==='Yes'){
            yes++
-       }//end if
-       //if answer.answer is no or no answer add one to no
-       else{
+        }//end if
+        //if answer.answer is no or no answer add one to no
+        else{
            no++
-      }//end else
+        }//end else
+      }
+      else{
+        no++
+      }
       //display yes results as a percentage
         yesDisplay = ((yes / total) * 100).toFixed(1);
         //display no results as a percentage

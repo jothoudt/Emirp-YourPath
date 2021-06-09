@@ -47,16 +47,22 @@ function OpiodsAllTime(){
        //if form data does exist map through the data
        if(form.length){
        form.map((item)=>{
+         //if api number exists proceed through conditionals
+         if(item.answers[123]){
          //target specific question number to get results from the api
-         let answer=item.answers[123]
-         //if answer.answer is yes add one to opiodsYes
-        if(answer.answer==='Yes'){
+          let answer=item.answers[123]
+          //if answer.answer is yes add one to opiodsYes
+          if(answer.answer==='Yes'){
             opiodsYes++
-        }//end if
-        // if answer.answer is no or no answer add one to opiodsNo
-        else{
+          }//end if
+          // if answer.answer is no or no answer add one to opiodsNo
+          else{
             opiodsNo++
-       }//end else
+          }//end else
+         }//end if
+         else{
+           opiodsNo++
+         }
        console.log(opiodsYes, opiodsNo)
        //display returns a card with a pie chart and a table with details about opioids use all time
        display= 

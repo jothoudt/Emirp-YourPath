@@ -49,16 +49,23 @@ function OtherSubstancesAllTime(){
         //map through form data and count yes/no answers
         if(form.length){
         form.map((item)=>{
-          //target a specific question number to return the results from the api
-          let answer=item.answers[128]
-          //if answer.anser is yes add one to otherYes
-         if(answer.answer==='Yes'){
+          //if api number exists proceed through conditionals
+          if(item.answers[128]){
+            //target a specific question number to return the results from the api
+            let answer=item.answers[128]
+            //if answer.anser is yes add one to otherYes
+          if(answer.answer==='Yes'){
              otherYes++
-         }//end if
-         //if answer.answer is no or no answer add one to otherNo
-         else{
+          }//end if
+          //if answer.answer is no or no answer add one to otherNo
+          else{
              otherNo++
-         }//end else
+          }//end else
+        }//end if
+        //if api number does not exist add one to otherNo
+        else{
+          otherNo++
+        }//end else
         //console log results
         console.log(otherYes, otherNo)
 
