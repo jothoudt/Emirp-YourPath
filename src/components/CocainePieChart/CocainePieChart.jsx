@@ -14,17 +14,24 @@ function CocainePieChart () {
     let cocaineNoDisplay=0;
     //map through information from the store
     form.map((item)=>{
+      //if api number exists proceed through conditionals
+      if(item.answers[120]){
       //target a specific question to get answers from the api
         let answer=item.answers[120]
         //if answer.answer is Yes add one to cocaineYes
-       if(answer.answer==='Yes'){
+        if(answer.answer==='Yes'){
         cocaineYes++
-       }//end if
+        }//end if
        //if answer is no or no answer add one to cocaineNo
-       else{
+        else{
+          cocaineNo++
+        }//end else
+      }
+      //if api number doesn't exist add on to cocaineNo
+      else{
         cocaineNo++
-      }//end else
-      //display yes results as a percentage
+      }
+        //display yes results as a percentage
       cocaineYesDisplay = ((cocaineYes / cocaineTotal) * 100).toFixed(1);
       //display no results as a percentage
       cocaineNoDisplay = ((cocaineNo / cocaineTotal) * 100).toFixed(1);

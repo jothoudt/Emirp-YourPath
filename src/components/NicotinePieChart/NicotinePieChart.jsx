@@ -14,15 +14,22 @@ function NicotinePieChart () {
     let nicotineNoDisplay=0;
     //map through data from the store
     form.map((item)=>{
+      //if api number exists proceed through conditionals
+      if(item.answers[117]){
       //target specific question number to return results from the api
         let answer=item.answers[117]
         //if answer.answer is yes add one to nicotineYes
-       if(answer.answer==='Yes'){
-           nicotineYes++
-       }//end if
-       //if answer.answer doesn't exist add one to nicotineNo
-       else{
+        if(answer.answer==='Yes'){
+          nicotineYes++
+        }//end if
+        //if answer.answer doesn't exist add one to nicotineNo
+        else{
            nicotineNo++
+        }//end else
+      }//end if
+      //if api number doesn't exist add one to nicotineNo
+      else{
+        nicotineNo++
       }//end else
       //display yes results as a percentage
         nicotineYesDisplay = ((nicotineYes / nicotineTotal) * 100).toFixed(1);

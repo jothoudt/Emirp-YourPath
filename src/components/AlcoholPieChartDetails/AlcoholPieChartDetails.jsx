@@ -18,6 +18,7 @@ function AlcoholPieChartDetails () {
     //map through the information from the store
     form.map((item)=>{
       //targets the proper question
+    if(item.answers[118]){
         let answer=item.answers[118]
         //if answer is yes add one to Yes
        if(answer.answer==='Yes'){
@@ -27,6 +28,10 @@ function AlcoholPieChartDetails () {
        else{
            alcoholNo++
       }
+    }
+    else{
+      alcoholNo++
+    }  
       //alcohol yes as a percentage
         alcoholYesDisplay = ((alcoholYes / alcoholTotal) * 100).toFixed(1);
       //alcohol no as a percentage

@@ -71,15 +71,20 @@ function AllDrugsAllTime(){
         //map through and count yes/no answers
         if(form.length){
         form.map((item)=>{
-          let answer=item.answers[117]
+          if(item.answers[117]){
+            let answer=item.answers[117]
           //if answer is using Nicotine is yes add one to yes
-         if(answer.answer==='Yes'){
+            if(answer.answer==='Yes'){
              nicotineYes++
-         }
+            }
          //if answer is no or no answer, add one to no
-         else{
-             nicotineNo++
-         }
+            else{
+              nicotineNo++
+            }
+          }
+          else{
+            nicotineNo++
+          }
         //define display. It will return two rows of the table. One for users that said yes to using Nicotine in their life. One for users that said No.
         nicotineDisplay= 
         <>
@@ -107,15 +112,20 @@ function AllDrugsAllTime(){
         //if form data exists map through form data and count yes/no answers
         if(form.length){
         form.map((item)=>{
+          if(item.answers[118]){
           let answer=item.answers[118]
           //if answer to using alcohol is yes add one to yes
-         if(answer.answer==='Yes'){
+            if(answer.answer==='Yes'){
              alcoholYes++
-         }
-         //if answer to using alcohol is no add one to no.
-         else{
+           }
+           //if answer to using alcohol is no add one to no.
+           else{
              alcoholNo++
-         }
+           }
+          }
+        else{
+          alcoholNo++
+        }
         //console log results
         console.log(alcoholYes, alcoholNo)
 
@@ -145,15 +155,20 @@ function AllDrugsAllTime(){
        //if form data exists map through the yes and no counts for marijuana.
        if(form.length){
        form.map((item)=>{
-         let answer=item.answers[119]
+        if(item.answers[119]){
+          let answer=item.answers[119]
          //if answer to using marijuana is yes add one to yes
-        if(answer.answer==='Yes'){
+          if(answer.answer==='Yes'){
             marijuanaYes++
-        }
+          }
         //else if answer is no or unanswered add one to no
-        else{
+          else{
             marijuanaNo++
-       }
+         }
+        }
+        else{
+          marijuanaNo++
+        }
        console.log(marijuanaYes, marijuanaNo)
        //display will return two rows of the table. One for users that said yes and one for users that said no to using Marijuana in their lifetime.
        display= 
@@ -181,15 +196,20 @@ function AllDrugsAllTime(){
        //if form data exists map through yes and no counts to use of Cocaine
        if(form.length){
        form.map((item)=>{
-         let answer=item.answers[120]
+         if(item.answers[120]){
+           let answer=item.answers[120]
          //if anwer is yes to using Cocaine add one
-        if(answer.answer==='Yes'){
-            cocaineYes++
-        }
+           if(answer.answer==='Yes'){
+             cocaineYes++
+           }
         //if the answer is no or unanswered add one to no.
-        else{
+           else{
             cocaineNo++
-       }
+          }
+        }
+        else{
+          cocaineNo++
+        }
        console.log(cocaineYes, cocaineNo)
        //display that returns two rows of the table. One for users that selected yes and one for users that selected no to using Cocaine in their lifetime.
        display= 
@@ -216,15 +236,20 @@ function AllDrugsAllTime(){
         //if data exists map through and count answers
         if(form.length){
         form.map((item)=>{
-          let answer=item.answers[121]
+          if(item.answers[121]){
+            let answer=item.answers[121]
           //if answers to using Meth is yes add one to Meth
-         if(answer.answer==='Yes'){
-             methYes++
-         }
+             if(answer.answer==='Yes'){
+               methYes++
+             }
          //if answer is no or unanswered add one to no.
-         else{
-             methNo++
-         }
+             else{
+               methNo++
+             }
+          }
+          else{
+            methNo++
+          }
         console.log(methYes, methNo)
         //define display. It will add two rows to the table. One row for users that answered yes and one row for the users that answered no to using mMeth in their lifetime.
         methDisplay= 
@@ -251,14 +276,19 @@ function AllDrugsAllTime(){
         //if for data exists map through answers
         if(form.length){
         form.map((item)=>{
+         if(item.answers[122]){
           let answer=item.answers[122]
           //if answer is yes to using heroin add one to yes
-         if(answer.answer==='Yes'){
+           if(answer.answer==='Yes'){
              heroinYes++
-         }
+           }
          //if answer is no or no answer add one to no
-         else{
+           else{
              heroinNo++
+           }
+         }
+         else{
+           heroinNo++
          }
         console.log(heroinYes, heroinNo)
         //heroin display returns two rows of the table. One for users that answered yes and one for users that answered no to using heroin in their lifetime.
@@ -286,15 +316,20 @@ function AllDrugsAllTime(){
        //if form data exists map through the answers
        if(form.length){
        form.map((item)=>{
+        if(item.answers[123]){
          let answer=item.answers[123]
          //if answer is yes to using opioids in the user's lifetime add one to yes
-        if(answer.answer==='Yes'){
+          if(answer.answer==='Yes'){
             opiodsYes++
-        }
+          }
         //if answer is no or unanswered to using opioids add one to no
-        else{
+          else{
             opiodsNo++
-       }
+          }
+        }
+        else{
+          opiodsNo++
+        }
        console.log(opiodsYes, opiodsNo)
        //display returns two rows. One for users that said yes and one for users that said no to using opioids in their lifetime.
        display= 
@@ -321,15 +356,20 @@ function AllDrugsAllTime(){
         //if form data does exist map through the answers
         if(form.length){
           form.map((item)=>{
+          if(item.answers[124]){
             let answer=item.answers[124]
             //if the answer to using Benzos is yes. Add one to BenzYes
-          if(answer.answer === 'Yes'){
+            if(answer.answer === 'Yes'){
               benzYes++
-          }
+            }
           //if answer is no or no answer, Add one to BenzNo.
-          else {
+            else {
               benzNo++
-        }
+           }
+         }
+         else{
+           benzNo++
+         }
         console.log(benzYes, benzNo)
         //display returns two rows of the table. One for users that said yes and one for users that said no to using Benzos in their lifetime.
         display= 
@@ -357,15 +397,20 @@ function AllDrugsAllTime(){
        //if form data does exist map through the answers
        if(form.length){
        form.map((item)=>{
+         if(item.answers[125]){
          let answer=item.answers[125]
          //if the answer is yes to using Hallucinogen in their lifetime, add one to yes
-        if(answer.answer==='Yes'){
-            hallucinogenYes++
-        }
+           if(answer.answer==='Yes'){
+             hallucinogenYes++
+           }
         //if answer is no or no answwer add one to no
+           else{
+             hallucinogenNo++
+          }
+        }
         else{
-            hallucinogenNo++
-       }
+          hallucinogenNo++
+        }
        console.log(hallucinogenYes, hallucinogenNo)
        //display returns two rows of the table. One for users that answered yes and one for users that answered no to using hallucinogens in their lifetime.
        display= 
@@ -394,15 +439,20 @@ function AllDrugsAllTime(){
       //if form data does exist, map through the answers
       if(form.length){
         form.map((item)=>{
+        if(item.answers[126]){
           let answer=item.answers[126]
           //if answer is yes to using Inhalants, add one to inhalantYes
-        if(answer.answer === 'Yes'){
+          if(answer.answer === 'Yes'){
             inhalantYes++
-        }
+          }
         //if answwer is no to using Inhalants, add one to inhalantNo
-        else {
+          else {
             inhalantNo++
-      }
+         }
+        }
+        else{
+          inhalantNo++
+        }
       console.log(inhalantYes, inhalantNo)
       //display returns two rows. One for users that selected Yes and one for users that selected no to using inhalants in their lifetime.
       display= 
@@ -430,15 +480,20 @@ function AllDrugsAllTime(){
        //if form data exists, map through the answers
        if(form.length){
        form.map((item)=>{
-         let answer=item.answers[127]
+        if(item.answers[127]){
+          let answer=item.answers[127]
          //if answer to using over the counteer substances is yes, add one to OTCYes
-        if(answer.answer==='Yes'){
+          if(answer.answer==='Yes'){
             OTCYes++
-        }
+          }
         //if answer to using over the counter substances is no or no answer, add one to OTCNo
-        else{
+          else{
             OTCNo++
-       }
+          }
+        }
+        else{
+          OTCNo++
+        }
        console.log(OTCYes, OTCNo)
        //display returns two rows. One for users that selected Yes and one for users that selected No to using Over the counter substances in their lifetime.
        display= 
@@ -467,13 +522,18 @@ function AllDrugsAllTime(){
         //map through form data and count yes/no answers
         if(form.length){
         form.map((item)=>{
-          let answer=item.answers[128]
-         if(answer.answer==='Yes'){
-             otherYes++
-         }
-         else{
-             otherNo++
-         }
+          if(item.answers[128]){
+            let answer=item.answers[128]
+            if(answer.answer==='Yes'){
+              otherYes++
+            }
+            else{
+              otherNo++
+            }
+          }
+          else{
+            otherNo++
+          }
         //console log results
         console.log(otherYes, otherNo)
 

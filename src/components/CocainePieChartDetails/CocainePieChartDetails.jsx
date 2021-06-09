@@ -14,6 +14,8 @@ function CocainePieChartDetails () {
     let cocaineNoDisplay=0;
     //map through information from the store
     form.map((item)=>{
+      //if api number exists proceed through conditionals
+      if(item.answers[120]){
       //target a specific question to get answers from the api
         let answer=item.answers[120]
         //if answer.answer is yes add one to cocaineYes
@@ -24,6 +26,11 @@ function CocainePieChartDetails () {
        else{
         cocaineNo++
       }//end else
+    }
+    //if api number doesn't exist add one to cocaineNo
+    else{
+      cocaineNo++
+    }
       //display yes results as a percentage
       cocaineYesDisplay = ((cocaineYes / cocaineTotal) * 100).toFixed(1);
       //display no results as a percentage

@@ -13,17 +13,24 @@ function OpiodsPieChart () {
     let opiodsNoDisplay=0;
     //map through the data from the store
     form.map((item)=>{
-      //target specific question number to return results from the api
+      //if api number exists proceed through conditionals
+      if(item.answers[123]){
+        //target specific question number to return results from the api
         let answer=item.answers[123]
         //if answer.answer is yes, add one to opiodsYes
-       if(answer.answer==='Yes'){
+        if(answer.answer==='Yes'){
            opiodsYes++
-       }//end if
-       //if answer.answer is no or undecided add one to opiodsNo
-       else{
+        }//end if
+        //if answer.answer is no or undecided add one to opiodsNo
+        else{
            opiodsNo++
+        }//end else
+      }//end if
+      //if api number doesn't exist add one to opiodsNo
+      else{
+        opiodsNo++
       }
-      //display yes results as a percentage
+        //display yes results as a percentage
         opiodsYesDisplay = ((opiodsYes / opiodsTotal) * 100).toFixed(1);
         //display no results as a percentage
         opiodsNoDisplay = ((opiodsNo / opiodsTotal) * 100).toFixed(1);

@@ -50,15 +50,20 @@ function BenzodiazepinesAllTime(){
       //if form data does exist map through the answers
       if(form.length){
         form.map((item)=>{
-          let answer=item.answers[124]
+          if(item.answers[124]){
+            let answer=item.answers[124]
           //if answer is yes add one to benzYes
-        if(answer.answer === 'Yes'){
-            benzYes++
-        }
+            if(answer.answer === 'Yes'){
+              benzYes++
+            }// end if
         //if the answer is no or no answer add one to benzNo
-        else {
+            else {
+              benzNo++
+            }//end else
+          }//end if
+          else{
             benzNo++
-      }
+          }//end else
       console.log(benzYes, benzNo)
       //display returns card with a pie chart of Benzodiazepine use all time along with a small table to display the information in text form
       display= 

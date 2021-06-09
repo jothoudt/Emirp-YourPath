@@ -49,16 +49,22 @@ function InhalantsAllTime(){
       //if form data does exist map through data from the store
       if(form.length){
         form.map((item)=>{
+          //if api number exists proceed through conditionals
+          if(item.answers[126]){
           //target specific question number to return results from the api
-          let answer=item.answers[126]
-          //if answer.answer is yes add one to inhalantYes
-        if(answer.answer === 'Yes'){
+            let answer=item.answers[126]
+            //if answer.answer is yes add one to inhalantYes
+            if(answer.answer === 'Yes'){
             inhalantYes++
-        }//end if
-        //if answer.answer is No or no answer add one to inhalantNo
-        else {
+            }//end if
+            //if answer.answer is No or no answer add one to inhalantNo
+            else {
+              inhalantNo++
+            }//end else
+          }
+          else{
             inhalantNo++
-      }//end else
+          }
       console.log(inhalantYes, inhalantNo)
       //display returns a card with a pie chart of all time inhalants used. It also returns a table with the data description as the header and two rows. One row is for users that selected yes and the other is for users that selected no.
       display= 

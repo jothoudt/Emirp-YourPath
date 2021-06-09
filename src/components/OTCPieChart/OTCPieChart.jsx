@@ -13,15 +13,22 @@ function OTCPieChart () {
     let OTCNoDisplay= 0;
     //map through data from the store
     form.map((item)=>{
+      //if api number exists proceed through conditionals
+      if(item.answers[127]){
       //target specific question number to return results from the api
         let answer=item.answers[127]
         //if answer.answer is yes add one to OTCYes
-       if(answer.answer==='Yes'){
+        if(answer.answer==='Yes'){
           OTCYes++
-       }//end if
-       //if answer.answer is no or no answer add one to OTCNo
-       else{
+        }//end if
+        //if answer.answer is no or no answer add one to OTCNo
+        else{
           OTCNo++
+        }//end else
+      }//end if
+      //if api number doesn't exist add one to OTCNo
+      else{
+        OTCNo++
       }//end else
       //display yes results as a percentage
       OTCYesDisplay = ((OTCYes / OTCTotal) * 100).toFixed(1);
